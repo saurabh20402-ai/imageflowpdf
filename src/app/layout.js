@@ -20,6 +20,9 @@ export const metadata = {
     description: 'Every image tool you need, in one place. 100% free and private.',
     type: 'website',
   },
+  verification: {
+    google: 'eGTKl5-SMFU8xaqm_y1NXf0Iz5Y7oANPjHMV2QXan-I',
+  },
 };
 
 export default function RootLayout({ children }) {
