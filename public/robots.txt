@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://saurabh20402-ai.github.io/imageflowpdf/sitemap.xml
+
+# Crawl-delay (be nice to servers)
+Crawl-delay: 1
