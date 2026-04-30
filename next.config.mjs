@@ -1,18 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Enable static export for GitHub Pages / custom domain
-  output: 'export',
+  // Vercel handles Next.js natively — no static export needed
 
-  // Custom domain — NO basePath needed (site is at root /)
-  // basePath and assetPrefix removed for custom domain
-
-  // Disable image optimization for static export (no server)
+  // Disable image optimization (keep consistent behavior)
   images: {
     unoptimized: true,
   },
-
-  // Trailing slash for GitHub Pages compatibility
-  trailingSlash: true,
 };
 
 export default nextConfig;
