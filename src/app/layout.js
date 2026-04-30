@@ -11,7 +11,7 @@ const inter = Inter({
   display: 'swap',
 });
 
-const BASE_URL = 'https://saurabh20402-ai.github.io/imageflowpdf';
+const BASE_URL = 'https://imageflow.in';
 
 export const metadata = {
   metadataBase: new URL(BASE_URL),

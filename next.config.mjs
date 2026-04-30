@@ -1,11 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Enable static export for GitHub Pages
+  // Enable static export for GitHub Pages / custom domain
   output: 'export',
 
-  // GitHub Pages: repo is "imageflowpdf" so set basePath
-  basePath: '/imageflowpdf',
-  assetPrefix: '/imageflowpdf/',
+  // Custom domain — NO basePath needed (site is at root /)
+  // basePath and assetPrefix removed for custom domain
 
   // Disable image optimization for static export (no server)
   images: {

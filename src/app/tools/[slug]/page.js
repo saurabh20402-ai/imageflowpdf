@@ -1,7 +1,7 @@
 import { TOOLS } from '@/lib/tools-registry';
 import ToolPageClient from '@/components/ToolPageClient';
 
-const BASE_URL = 'https://saurabh20402-ai.github.io/imageflowpdf';
+const BASE_URL = 'https://imageflow.in';
 
 // Unique, keyword-rich meta descriptions per tool
 const TOOL_META = {

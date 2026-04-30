@@ -3,206 +3,206 @@
 
   <!-- Homepage -->
   <url>
-    <loc>https://saurabh20402-ai.github.io/imageflowpdf/</loc>
+    <loc>https://imageflow.in/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <!-- Static Pages -->
   <url>
-    <loc>https://saurabh20402-ai.github.io/imageflowpdf/tutorials/</loc>
+    <loc>https://imageflow.in/tutorials/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://saurabh20402-ai.github.io/imageflowpdf/blog/</loc>
+    <loc>https://imageflow.in/blog/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://saurabh20402-ai.github.io/imageflowpdf/donate/</loc>
+    <loc>https://imageflow.in/donate/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://saurabh20402-ai.github.io/imageflowpdf/privacy-policy/</loc>
+    <loc>https://imageflow.in/privacy-policy/</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://saurabh20402-ai.github.io/imageflowpdf/terms/</loc>
+    <loc>https://imageflow.in/terms/</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://saurabh20402-ai.github.io/imageflowpdf/security/</loc>
+    <loc>https://imageflow.in/security/</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://saurabh20402-ai.github.io/imageflowpdf/cookies/</loc>
+    <loc>https://imageflow.in/cookies/</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
 
   <!-- Convert Tools -->
   <url>
-    <loc>https://saurabh20402-ai.github.io/imageflowpdf/tools/jpg-to-png/</loc>
+    <loc>https://imageflow.in/tools/jpg-to-png/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://saurabh20402-ai.github.io/imageflowpdf/tools/png-to-jpg/</loc>
+    <loc>https://imageflow.in/tools/png-to-jpg/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://saurabh20402-ai.github.io/imageflowpdf/tools/webp-converter/</loc>
+    <loc>https://imageflow.in/tools/webp-converter/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://saurabh20402-ai.github.io/imageflowpdf/tools/svg-to-png/</loc>
+    <loc>https://imageflow.in/tools/svg-to-png/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://saurabh20402-ai.github.io/imageflowpdf/tools/heic-converter/</loc>
+    <loc>https://imageflow.in/tools/heic-converter/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://saurabh20402-ai.github.io/imageflowpdf/tools/image-to-pdf/</loc>
+    <loc>https://imageflow.in/tools/image-to-pdf/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://saurabh20402-ai.github.io/imageflowpdf/tools/convert-format/</loc>
+    <loc>https://imageflow.in/tools/convert-format/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- Transform Tools -->
   <url>
-    <loc>https://saurabh20402-ai.github.io/imageflowpdf/tools/resize-image/</loc>
+    <loc>https://imageflow.in/tools/resize-image/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://saurabh20402-ai.github.io/imageflowpdf/tools/crop-image/</loc>
+    <loc>https://imageflow.in/tools/crop-image/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://saurabh20402-ai.github.io/imageflowpdf/tools/rotate-image/</loc>
+    <loc>https://imageflow.in/tools/rotate-image/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://saurabh20402-ai.github.io/imageflowpdf/tools/flip-image/</loc>
+    <loc>https://imageflow.in/tools/flip-image/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://saurabh20402-ai.github.io/imageflowpdf/tools/thumbnail-creator/</loc>
+    <loc>https://imageflow.in/tools/thumbnail-creator/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <!-- Optimize Tools -->
   <url>
-    <loc>https://saurabh20402-ai.github.io/imageflowpdf/tools/compress-image/</loc>
+    <loc>https://imageflow.in/tools/compress-image/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://saurabh20402-ai.github.io/imageflowpdf/tools/bulk-compress/</loc>
+    <loc>https://imageflow.in/tools/bulk-compress/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://saurabh20402-ai.github.io/imageflowpdf/tools/quality-optimizer/</loc>
+    <loc>https://imageflow.in/tools/quality-optimizer/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://saurabh20402-ai.github.io/imageflowpdf/tools/metadata-remover/</loc>
+    <loc>https://imageflow.in/tools/metadata-remover/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://saurabh20402-ai.github.io/imageflowpdf/tools/batch-resize/</loc>
+    <loc>https://imageflow.in/tools/batch-resize/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- Edit & Enhance Tools -->
   <url>
-    <loc>https://saurabh20402-ai.github.io/imageflowpdf/tools/image-filters/</loc>
+    <loc>https://imageflow.in/tools/image-filters/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://saurabh20402-ai.github.io/imageflowpdf/tools/adjust-colors/</loc>
+    <loc>https://imageflow.in/tools/adjust-colors/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://saurabh20402-ai.github.io/imageflowpdf/tools/blur-image/</loc>
+    <loc>https://imageflow.in/tools/blur-image/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://saurabh20402-ai.github.io/imageflowpdf/tools/sharpen-image/</loc>
+    <loc>https://imageflow.in/tools/sharpen-image/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://saurabh20402-ai.github.io/imageflowpdf/tools/grayscale/</loc>
+    <loc>https://imageflow.in/tools/grayscale/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://saurabh20402-ai.github.io/imageflowpdf/tools/watermark/</loc>
+    <loc>https://imageflow.in/tools/watermark/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://saurabh20402-ai.github.io/imageflowpdf/tools/add-text/</loc>
+    <loc>https://imageflow.in/tools/add-text/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://saurabh20402-ai.github.io/imageflowpdf/tools/add-border/</loc>
+    <loc>https://imageflow.in/tools/add-border/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://saurabh20402-ai.github.io/imageflowpdf/tools/round-corners/</loc>
+    <loc>https://imageflow.in/tools/round-corners/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <!-- Create Tools -->
   <url>
-    <loc>https://saurabh20402-ai.github.io/imageflowpdf/tools/meme-generator/</loc>
+    <loc>https://imageflow.in/tools/meme-generator/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://saurabh20402-ai.github.io/imageflowpdf/tools/collage-maker/</loc>
+    <loc>https://imageflow.in/tools/collage-maker/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://saurabh20402-ai.github.io/imageflowpdf/tools/merge-images/</loc>
+    <loc>https://imageflow.in/tools/merge-images/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <!-- Extract & Analyze Tools -->
   <url>
-    <loc>https://saurabh20402-ai.github.io/imageflowpdf/tools/ocr-extract-text/</loc>
+    <loc>https://imageflow.in/tools/ocr-extract-text/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
