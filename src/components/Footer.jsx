@@ -1,0 +1,141 @@
+'use client';
+
+import Link from 'next/link';
+import { ImageIcon, Heart } from 'lucide-react';
+
+const FOOTER_LINKS = {
+  Tools: [
+    { label: 'Compress Image', href: '/tools/compress-image/' },
+    { label: 'Resize Image', href: '/tools/resize-image/' },
+    { label: 'Crop Image', href: '/tools/crop-image/' },
+    { label: 'Convert Format', href: '/tools/convert-format/' },
+    { label: 'Bulk Compressor', href: '/tools/bulk-compress/' },
+    { label: 'Batch Resize', href: '/tools/batch-resize/' },
+    { label: 'All Tools →', href: '/#all-tools' },
+  ],
+  Learn: [
+    { label: 'Tutorials', href: '/tutorials/' },
+    { label: 'Blog', href: '/blog/' },
+    { label: 'JPG to PNG Guide', href: '/tutorials/#tut-jpg-to-png' },
+    { label: 'Image Compression 101', href: '/tutorials/#tut-compress-image' },
+    { label: 'OCR Guide', href: '/tutorials/#tut-ocr-extract-text' },
+    { label: 'Image Filters Guide', href: '/tutorials/#tut-image-filters' },
+  ],
+  Company: [
+    { label: 'Features', href: '/#features' },
+    { label: 'Donate', href: '/donate/' },
+    { label: 'Blog', href: '/blog/' },
+    { label: 'Support', href: 'mailto:support@imageflow.app' },
+  ],
+  Legal: [
+    { label: 'Privacy Policy', href: '/privacy-policy/' },
+    { label: 'Terms & Conditions', href: '/terms/' },
+    { label: 'Security', href: '/security/' },
+    { label: 'Cookies', href: '/cookies/' },
+  ],
+};
+
+export default function Footer() {
+  return (
+    <footer style={{
+      background: 'var(--surface-card)',
+      borderTop: '1px solid var(--hairline-soft)',
+      paddingTop: 56,
+      paddingBottom: 28,
+    }}>
+      <div className="container">
+        {/* Main grid */}
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'auto repeat(4, 1fr)',
+          gap: 40,
+          marginBottom: 48,
+        }}
+          className="footer-grid">
+
+          {/* Brand column */}
+          <div>
+            <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: 8, textDecoration: 'none', marginBottom: 14 }}>
+              <div style={{
+                width: 34, height: 34, borderRadius: 9,
+                background: 'var(--primary)', display: 'flex', alignItems: 'center', justifyContent: 'center',
+              }}>
+                <ImageIcon size={18} color="#fff" />
+              </div>
+              <span style={{ fontSize: 17, fontWeight: 800, color: 'var(--ink)', letterSpacing: '-0.01em' }}>
+                Image<span style={{ color: 'var(--primary)' }}>Flow</span>
+              </span>
+            </Link>
+            <p style={{ fontSize: 13, color: 'var(--muted)', lineHeight: 1.7, maxWidth: 200 }}>
+              Free, instant image tools. 100% in your browser. Zero uploads. Zero data collection.
+            </p>
+            <div style={{ marginTop: 16 }}>
+              <span style={{
+                display: 'inline-flex', alignItems: 'center', gap: 6,
+                padding: '5px 12px', borderRadius: 99,
+                background: 'var(--primary-light)', color: 'var(--primary)',
+                fontSize: 12, fontWeight: 700,
+              }}>
+                🔒 Privacy First
+              </span>
+            </div>
+          </div>
+
+          {/* Link columns */}
+          {Object.entries(FOOTER_LINKS).map(([group, links]) => (
+            <div key={group}>
+              <p style={{
+                fontSize: 11, fontWeight: 800, textTransform: 'uppercase',
+                letterSpacing: '0.1em', color: 'var(--ink)', marginBottom: 16,
+              }}>
+                {group}
+              </p>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 9 }}>
+                {links.map((link) => (
+                  <li key={link.label}>
+                    <Link
+                      href={link.href}
+                      style={{
+                        fontSize: 13,
+                        color: 'var(--muted)',
+                        textDecoration: 'none',
+                        transition: 'color 150ms',
+                      }}
+                      onMouseEnter={e => e.target.style.color = 'var(--ink)'}
+                      onMouseLeave={e => e.target.style.color = 'var(--muted)'}>
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        {/* Bottom bar */}
+        <div style={{
+          borderTop: '1px solid var(--hairline-soft)',
+          paddingTop: 20,
+          display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+          flexWrap: 'wrap', gap: 12,
+        }}>
+          <p style={{ fontSize: 12, color: 'var(--muted-soft)' }}>
+            © {new Date().getFullYear()} ImageFlow · All rights reserved
+          </p>
+          <p style={{ fontSize: 12, color: 'var(--muted-soft)', display: 'flex', alignItems: 'center', gap: 4 }}>
+            Made with <Heart size={12} style={{ color: '#ef4444', fill: '#ef4444' }} /> for creators everywhere
+          </p>
+          <div style={{ display: 'flex', gap: 16 }}>
+            {[['Privacy', '/privacy-policy/'], ['Terms', '/terms/'], ['Cookies', '/cookies/']].map(([label, href]) => (
+              <Link key={label} href={href} style={{ fontSize: 12, color: 'var(--muted-soft)', textDecoration: 'none' }}
+                onMouseEnter={e => e.target.style.color = 'var(--muted)'}
+                onMouseLeave={e => e.target.style.color = 'var(--muted-soft)'}>
+                {label}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
