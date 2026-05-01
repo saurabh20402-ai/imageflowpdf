@@ -100,13 +100,13 @@ export const TOOLS = [
     popular: true,
   },
   {
-    slug: 'crop-image',
-    name: 'Crop Image',
-    description: 'Crop images with custom or preset aspect ratios interactively.',
+    slug: 'crop-pdf',
+    name: 'Crop PDF',
+    description: 'Crop PDF pages to remove margins or focus on specific content visually.',
     category: 'transform',
     color: '#0e7490',
     icon: 'Crop',
-    component: 'CropTool',
+    component: 'CropPdfTool',
     config: {},
     popular: true,
   },
@@ -196,27 +196,6 @@ export const TOOLS = [
 
   // === EDIT & ENHANCE ===
   {
-    slug: 'image-filters',
-    name: 'Image Filters',
-    description: 'Apply beautiful filters: grayscale, sepia, vintage, warm, cool, and more.',
-    category: 'edit',
-    color: '#7c3aed',
-    icon: 'Sparkles',
-    component: 'FilterTool',
-    config: { mode: 'presets' },
-    popular: true,
-  },
-  {
-    slug: 'adjust-colors',
-    name: 'Adjust Colors',
-    description: 'Fine-tune brightness, contrast, saturation, hue, and exposure.',
-    category: 'edit',
-    color: '#6d28d9',
-    icon: 'SlidersHorizontal',
-    component: 'FilterTool',
-    config: { mode: 'sliders' },
-  },
-  {
     slug: 'blur-image',
     name: 'Blur Image',
     description: 'Apply gaussian blur to images with adjustable intensity.',
@@ -225,16 +204,6 @@ export const TOOLS = [
     icon: 'Cloud',
     component: 'FilterTool',
     config: { mode: 'blur' },
-  },
-  {
-    slug: 'sharpen-image',
-    name: 'Sharpen Image',
-    description: 'Enhance image clarity and sharpness with precision controls.',
-    category: 'edit',
-    color: '#4c1d95',
-    icon: 'Crosshair',
-    component: 'FilterTool',
-    config: { mode: 'sharpen' },
   },
   {
     slug: 'grayscale',
@@ -246,46 +215,7 @@ export const TOOLS = [
     component: 'FilterTool',
     config: { mode: 'grayscale' },
   },
-  {
-    slug: 'watermark',
-    name: 'Add Watermark',
-    description: 'Add text watermarks to protect your images. Control font, size, opacity, and position.',
-    category: 'edit',
-    color: '#8b5cf6',
-    icon: 'BadgeCheck',
-    component: 'WatermarkTool',
-    config: {},
-  },
-  {
-    slug: 'add-text',
-    name: 'Add Text',
-    description: 'Place custom text anywhere on your image with full styling control.',
-    category: 'edit',
-    color: '#a78bfa',
-    icon: 'Type',
-    component: 'TextTool',
-    config: {},
-  },
-  {
-    slug: 'add-border',
-    name: 'Add Border',
-    description: 'Add colored borders and frames to your images.',
-    category: 'edit',
-    color: '#c084fc',
-    icon: 'Square',
-    component: 'BorderTool',
-    config: { mode: 'border' },
-  },
-  {
-    slug: 'round-corners',
-    name: 'Round Corners',
-    description: 'Add rounded corners or create circular images.',
-    category: 'edit',
-    color: '#d8b4fe',
-    icon: 'Circle',
-    component: 'BorderTool',
-    config: { mode: 'round' },
-  },
+
 
   // === CREATE ===
   {
@@ -320,18 +250,6 @@ export const TOOLS = [
     config: {},
   },
 
-  // === EXTRACT & ANALYZE ===
-  {
-    slug: 'ocr-extract-text',
-    name: 'OCR - Extract Text',
-    description: 'Extract text from images using optical character recognition.',
-    category: 'extract',
-    color: '#2563eb',
-    icon: 'FileSearch',
-    component: 'OcrTool',
-    config: {},
-    popular: true,
-  },
 ];
 
 export function getToolBySlug(slug) {
@@ -355,3 +273,5 @@ export function searchTools(query) {
     t.category.toLowerCase().includes(q)
   );
 }
+// force hot reload
+// hot reload

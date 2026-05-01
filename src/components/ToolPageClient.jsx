@@ -8,18 +8,14 @@ import Link from 'next/link';
 import FormatConverter from '@/components/tools/FormatConverter';
 import CompressTool from '@/components/tools/CompressTool';
 import ResizeTool from '@/components/tools/ResizeTool';
-import CropTool from '@/components/tools/CropTool';
+import CropPdfTool from '@/components/tools/CropPdfTool';
 import TransformTool from '@/components/tools/TransformTool';
 import FilterTool from '@/components/tools/FilterTool';
-import WatermarkTool from '@/components/tools/WatermarkTool';
-import TextTool from '@/components/tools/TextTool';
-import BorderTool from '@/components/tools/BorderTool';
 import MemeTool from '@/components/tools/MemeTool';
 import CollageTool from '@/components/tools/CollageTool';
 import MergeTool from '@/components/tools/MergeTool';
 import MetadataRemover from '@/components/tools/MetadataRemover';
 import ImageToPdf from '@/components/tools/ImageToPdf';
-import OcrTool from '@/components/tools/OcrTool';
 import HeicConverter from '@/components/tools/HeicConverter';
 import BulkCompressTool from '@/components/tools/BulkCompressTool';
 import BatchResizeTool from '@/components/tools/BatchResizeTool';
@@ -28,18 +24,14 @@ const COMPONENT_MAP = {
   FormatConverter,
   CompressTool,
   ResizeTool,
-  CropTool,
+  CropPdfTool,
   TransformTool,
   FilterTool,
-  WatermarkTool,
-  TextTool,
-  BorderTool,
   MemeTool,
   CollageTool,
   MergeTool,
   MetadataRemover,
   ImageToPdf,
-  OcrTool,
   HeicConverter,
   BulkCompressTool,
   BatchResizeTool,

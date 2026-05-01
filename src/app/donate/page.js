@@ -1,41 +1,161 @@
 export const metadata = {
-  title: 'Donate — Support ImageFlow',
-  description: 'Support ImageFlow to help us keep all tools free and build more features.',
+  title: 'Support ImageFlow — Donate',
+  description: 'Support ImageFlow to help us keep all tools free, build new features, and make the web a better place.',
 };
 
 export default function DonatePage() {
   return (
-    <main style={{ padding: '60px 0 100px' }}>
-      <div className="container" style={{ maxWidth: 700 }}>
+    <main style={{ padding: 'clamp(40px, 8vw, 80px) 0 100px' }}>
+      <div className="container" style={{ maxWidth: 600 }}>
 
         {/* Hero */}
-        <div style={{ textAlign: 'center', marginBottom: 56 }}>
-          <div style={{ fontSize: 52, marginBottom: 16 }}>💖</div>
-          <h1 style={{ fontSize: 'clamp(28px, 4vw, 44px)', fontWeight: 800, color: 'var(--ink)', letterSpacing: '-0.02em', marginBottom: 14 }}>
+        <div style={{ textAlign: 'center', marginBottom: 48 }}>
+          <div style={{ fontSize: 56, marginBottom: 16 }}>💖</div>
+          <h1 style={{
+            fontSize: 'clamp(26px, 5vw, 42px)',
+            fontWeight: 800,
+            color: 'var(--ink)',
+            letterSpacing: '-0.02em',
+            marginBottom: 16,
+            lineHeight: 1.2,
+          }}>
             Support ImageFlow
           </h1>
-          <p style={{ fontSize: 17, color: 'var(--muted)', lineHeight: 1.7, maxWidth: 520, margin: '0 auto' }}>
-            ImageFlow is completely free, with no ads and no data selling. If our tools have saved you time or helped your work,
-            consider supporting us to keep the lights on.
+          <p style={{ fontSize: 16, color: 'var(--muted)', lineHeight: 1.8, maxWidth: 500, margin: '0 auto' }}>
+            ImageFlow is 100% free to use — no ads, no subscriptions, no data collection.
+            All tools run entirely in your browser for maximum privacy.
           </p>
         </div>
 
-        {/* Why donate */}
+        {/* QR Code Scanner Card */}
         <div style={{
-          display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: 16, marginBottom: 48,
+          background: 'var(--surface-card)',
+          border: '1px solid var(--hairline)',
+          borderRadius: 24,
+          padding: 'clamp(24px, 5vw, 40px)',
+          boxShadow: 'var(--shadow-lg)',
+          textAlign: 'center',
+          marginBottom: 32,
+        }}>
+          <div style={{
+            display: 'inline-block',
+            fontSize: 13,
+            fontWeight: 600,
+            color: 'var(--primary)',
+            background: 'var(--primary-light)',
+            padding: '6px 16px',
+            borderRadius: 99,
+            marginBottom: 24,
+          }}>
+            🔒 Secure UPI Payment
+          </div>
+
+          <h2 style={{ fontSize: 20, fontWeight: 700, color: 'var(--ink)', marginBottom: 8 }}>
+            Scan QR to Donate
+          </h2>
+          <p style={{ fontSize: 14, color: 'var(--muted)', marginBottom: 28 }}>
+            Scan with any UPI app — PhonePe, Paytm, GPay, BHIM, or any banking app
+          </p>
+
+          {/* QR Code Image */}
+          <div style={{
+            display: 'flex',
+            justifyContent: 'center',
+            marginBottom: 24,
+          }}>
+            <div style={{
+              background: '#fff',
+              borderRadius: 16,
+              padding: 16,
+              border: '2px solid var(--hairline)',
+              boxShadow: 'var(--shadow-md)',
+              maxWidth: 280,
+              width: '100%',
+            }}>
+              <img
+                src="/qr-donate.png"
+                alt="UPI QR Code — Scan to donate to ImageFlow"
+                style={{ width: '100%', borderRadius: 8, display: 'block' }}
+              />
+            </div>
+          </div>
+
+          {/* UPI ID - prominent display */}
+          <div style={{
+            background: 'linear-gradient(135deg, var(--primary-light), var(--surface))',
+            border: '2px solid var(--primary-muted)',
+            borderRadius: 16,
+            padding: '20px 24px',
+            marginBottom: 8,
+          }}>
+            <p style={{ fontSize: 12, color: 'var(--muted)', marginBottom: 8, fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+              UPI ID
+            </p>
+            <p style={{
+              fontSize: 'clamp(18px, 4vw, 24px)',
+              fontWeight: 800,
+              color: 'var(--primary)',
+              letterSpacing: '0.02em',
+              fontFamily: 'monospace',
+            }}>
+              webrise@ptyes
+            </p>
+          </div>
+
+          <p style={{ fontSize: 12, color: 'var(--muted)', marginTop: 12 }}>
+            ✓ Accepted by all major UPI apps in India
+          </p>
+        </div>
+
+        {/* Mission Statement */}
+        <div style={{
+          background: 'linear-gradient(135deg, #1e1b4b, #312e81)',
+          borderRadius: 20,
+          padding: 'clamp(24px, 5vw, 36px)',
+          marginBottom: 32,
+          color: '#e0e7ff',
+        }}>
+          <div style={{ fontSize: 28, marginBottom: 16 }}>🌟</div>
+          <h2 style={{ fontSize: 18, fontWeight: 700, color: '#fff', marginBottom: 16, lineHeight: 1.4 }}>
+            Why We Keep These Tools Free
+          </h2>
+          <p style={{ fontSize: 15, lineHeight: 1.9, color: '#c7d2fe', marginBottom: 16 }}>
+            Your contributions go directly toward developing <strong style={{ color: '#fff' }}>ImageFlow</strong>{' '}and
+            our family of tools — building new features, improving existing ones, and creating future websites
+            that make people&apos;s daily tasks easier and happier.
+          </p>
+          <p style={{ fontSize: 15, lineHeight: 1.9, color: '#c7d2fe', marginBottom: 16 }}>
+            We believe powerful image tools shouldn&apos;t be locked behind subscriptions or paywalls.
+            By keeping everything free, we help students, creators, small businesses, and everyday users
+            around the world — without compromising on quality or privacy.
+          </p>
+          <p style={{ fontSize: 14, lineHeight: 1.9, color: '#a5b4fc', fontStyle: 'italic' }}>
+            &quot;If our tools have saved you time, simplified your workflow, or helped your business —
+            even a small donation encourages us to keep building. Every rupee matters to us. Thank you. 🙏&quot;
+          </p>
+          <p style={{ fontSize: 13, color: '#818cf8', marginTop: 16, fontWeight: 600 }}>
+            — The ImageFlow Team
+          </p>
+        </div>
+
+        {/* What donations fund */}
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))',
+          gap: 16,
+          marginBottom: 32,
         }}>
           {[
-            { icon: '🚀', title: 'More Tools', desc: 'Your support helps us build new image tools and features.' },
-            { icon: '⚡', title: 'Faster Processing', desc: 'Donations fund performance improvements and optimizations.' },
-            { icon: '🔒', title: 'Stay Free', desc: 'Help us keep all tools free, with no ads or subscriptions.' },
-            { icon: '🌍', title: 'Help Everyone', desc: 'Free tools help students, artists, and small businesses globally.' },
+            { icon: '🚀', title: 'New Tools & Features', desc: 'Building more free image tools and expanding to video, PDF, and more.' },
+            { icon: '⚡', title: 'Performance & Speed', desc: 'Faster processing, better mobile support, and a smoother experience.' },
+            { icon: '🔒', title: 'Privacy & Security', desc: 'Keeping your images safe, private, and never stored on any server.' },
+            { icon: '🌍', title: 'Free for Everyone', desc: 'No ads, no premium tiers — free tools for students, creators, and businesses.' },
           ].map(item => (
             <div key={item.title} style={{
-              padding: '20px', borderRadius: 14,
+              padding: 20, borderRadius: 16,
               background: 'var(--surface-card)',
-              border: '1px solid rgba(0,0,0,0.06)',
-              boxShadow: '0 1px 4px rgba(0,0,0,0.04)',
-              textAlign: 'center',
+              border: '1px solid var(--hairline)',
+              boxShadow: 'var(--shadow-xs)',
             }}>
               <div style={{ fontSize: 28, marginBottom: 10 }}>{item.icon}</div>
               <h3 style={{ fontSize: 14, fontWeight: 700, color: 'var(--ink)', marginBottom: 6 }}>{item.title}</h3>
@@ -44,78 +164,9 @@ export default function DonatePage() {
           ))}
         </div>
 
-        {/* Donate options */}
-        <div style={{
-          padding: '36px', borderRadius: 20,
-          background: 'linear-gradient(135deg, var(--primary-light) 0%, var(--surface-card) 100%)',
-          border: '1px solid rgba(99, 102, 241, 0.15)',
-          boxShadow: '0 4px 20px rgba(99, 102, 241, 0.08)',
-          marginBottom: 32,
-        }}>
-          <h2 style={{ fontSize: 22, fontWeight: 700, color: 'var(--ink)', marginBottom: 8 }}>Make a Donation</h2>
-          <p style={{ fontSize: 14, color: 'var(--muted)', marginBottom: 28 }}>
-            Every contribution, big or small, makes a real difference.
-          </p>
-
-          {/* Bank Transfer */}
-          <div style={{ marginBottom: 28 }}>
-            <h3 style={{ fontSize: 15, fontWeight: 700, color: 'var(--ink)', marginBottom: 12 }}>Bank Transfer</h3>
-            <div style={{
-              background: 'var(--surface-card)', borderRadius: 12,
-              border: '1px solid var(--hairline)', overflow: 'hidden',
-            }}>
-              {[
-                ['Bank Name', 'Your Bank Name Here'],
-                ['Account Name', 'ImageFlow'],
-                ['Account Number', 'XXXX XXXX XXXX XXXX'],
-                ['IFSC / SWIFT Code', 'XXXXXXXX'],
-                ['UPI ID', 'imageflow@upi'],
-              ].map(([label, value]) => (
-                <div key={label} style={{
-                  display: 'flex', gap: 16, padding: '12px 16px',
-                  borderBottom: '1px solid var(--hairline-soft)',
-                }}>
-                  <span style={{ fontSize: 13, color: 'var(--muted)', minWidth: 140, flexShrink: 0 }}>{label}</span>
-                  <span style={{ fontSize: 13, fontWeight: 600, color: 'var(--ink)', fontFamily: 'monospace' }}>{value}</span>
-                </div>
-              ))}
-            </div>
-            <p style={{ fontSize: 12, color: 'var(--muted)', marginTop: 10 }}>
-              * Please update with your actual bank details before publishing.
-            </p>
-          </div>
-
-          {/* QR Code placeholder */}
-          <div>
-            <h3 style={{ fontSize: 15, fontWeight: 700, color: 'var(--ink)', marginBottom: 12 }}>Scan to Pay (UPI / QR)</h3>
-            <div style={{
-              width: 180, height: 180, borderRadius: 14,
-              background: 'var(--surface)', border: '2px dashed var(--hairline)',
-              display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
-              gap: 8,
-            }}>
-              <div style={{ fontSize: 36 }}>📱</div>
-              <p style={{ fontSize: 12, color: 'var(--muted)', textAlign: 'center', padding: '0 16px' }}>
-                Add your QR code image here
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Message */}
-        <div style={{
-          padding: '24px 28px', borderRadius: 16,
-          background: 'var(--surface)', borderLeft: '4px solid var(--primary)',
-        }}>
-          <p style={{ fontSize: 15, color: 'var(--ink)', lineHeight: 1.7, fontStyle: 'italic' }}>
-            "We built ImageFlow because we believe powerful image tools should be free and private for everyone.
-            Your donation directly supports server costs, development time, and keeps this project independent.
-            Thank you from the bottom of our hearts. 🙏"
-          </p>
-          <p style={{ fontSize: 13, color: 'var(--muted)', marginTop: 12, fontWeight: 600 }}>
-            — The ImageFlow Team
-          </p>
-        </div>
+        <p style={{ textAlign: 'center', fontSize: 13, color: 'var(--muted)' }}>
+          Made with ❤️ in India · All donations are voluntary and greatly appreciated
+        </p>
 
       </div>
     </main>
