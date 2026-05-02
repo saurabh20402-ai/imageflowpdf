@@ -70,46 +70,66 @@ export default function CropPdfTool() {
     // We'll update the page size to match the rendered canvas later
   };
 
-  // Re-measure when the rendered page resizes
+  // Measure the rendered PDF canvas and keep selector in sync.
+  // This is intentionally resilient: react-pdf renders asynchronously and the canvas
+  // may appear after a few frames (especially on mobile / slow devices).
   useEffect(() => {
-    const el = containerRef.current;
-    if (!el) return;
-    
-    const handleResize = () => {
-      // Find the react-pdf canvas
-      const canvas = el.querySelector('canvas');
-      if (!canvas) return;
-      
-      const rect = canvas.getBoundingClientRect();
-      if (rect.width > 0 && pageSize.w > 0 && (rect.width !== pageSize.w || rect.height !== pageSize.h)) {
-        const scaleX = rect.width / pageSize.w;
-        const scaleY = rect.height / pageSize.h;
-        setPageSize({ w: rect.width, h: rect.height });
-        setBox(prev => ({
-          x: prev.x * scaleX, y: prev.y * scaleY,
-          w: prev.w * scaleX, h: prev.h * scaleY,
-        }));
-      } else if (pageSize.w === 0) {
-        setPageSize({ w: rect.width, h: rect.height });
-        // Initial box size (leave 10% margin)
-        const marginX = rect.width * 0.1;
-        const marginY = rect.height * 0.1;
-        setBox({
-          x: marginX,
-          y: marginY,
-          w: rect.width - (marginX * 2),
-          h: rect.height - (marginY * 2),
-        });
+    const root = containerRef.current;
+    if (!root) return;
+
+    let raf = 0;
+    let tries = 0;
+
+    const measure = () => {
+      const canvas = root.querySelector('canvas');
+      if (!canvas) {
+        if (tries++ < 120) raf = requestAnimationFrame(measure);
+        return;
       }
+
+      const rect = canvas.getBoundingClientRect();
+      if (!rect.width || !rect.height) {
+        if (tries++ < 120) raf = requestAnimationFrame(measure);
+        return;
+      }
+
+      setPageSize((prev) => {
+        if (!prev.w || !prev.h) {
+          const marginX = rect.width * 0.1;
+          const marginY = rect.height * 0.1;
+          setBox({
+            x: marginX,
+            y: marginY,
+            w: rect.width - marginX * 2,
+            h: rect.height - marginY * 2,
+          });
+          return { w: rect.width, h: rect.height };
+        }
+
+        if (prev.w !== rect.width || prev.h !== rect.height) {
+          const scaleX = rect.width / prev.w;
+          const scaleY = rect.height / prev.h;
+          setBox((b) => ({
+            x: b.x * scaleX,
+            y: b.y * scaleY,
+            w: b.w * scaleX,
+            h: b.h * scaleY,
+          }));
+          return { w: rect.width, h: rect.height };
+        }
+
+        return prev;
+      });
     };
-    
-    // Initial measure
-    setTimeout(handleResize, 100);
-    
-    const ro = new ResizeObserver(handleResize);
-    ro.observe(el);
-    return () => ro.disconnect();
-  }, [pageSize, pageNumber]);
+
+    raf = requestAnimationFrame(measure);
+    const ro = new ResizeObserver(() => requestAnimationFrame(measure));
+    ro.observe(root);
+    return () => {
+      cancelAnimationFrame(raf);
+      ro.disconnect();
+    };
+  }, [pageNumber, file]);
 
   // Compute responsive render width based on available space (prevents overflow on mobile)
   useEffect(() => {
@@ -399,7 +419,7 @@ export default function CropPdfTool() {
                     </Document>
 
                     {pageSize.w > 0 && (
-                      <div style={{ position: 'absolute', top: 0, left: 0, width: pageSize.w, height: pageSize.h, overflow: 'hidden' }}>
+                      <div style={{ position: 'absolute', top: 0, left: 0, width: pageSize.w, height: pageSize.h, overflow: 'hidden', zIndex: 10 }}>
                         {/* Dark overlay — 4 sides */}
                         <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }}>
                           <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: box.y, background: 'rgba(0,0,0,0.55)' }} />
@@ -420,6 +440,7 @@ export default function CropPdfTool() {
                             touchAction: 'none',
                             borderRadius: 10,
                             background: 'rgba(99,102,241,0.06)',
+                            zIndex: 11,
                           }}
                           onPointerDown={(e) => startDrag(e, 'move')}
                           onPointerMove={onPointerMove}

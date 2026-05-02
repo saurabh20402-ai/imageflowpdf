@@ -111,6 +111,17 @@ export const TOOLS = [
     popular: true,
   },
   {
+    slug: 'merge-pdf',
+    name: 'Merge PDF',
+    description: 'Combine multiple PDFs into a single file — reorder pages by file order.',
+    category: 'transform',
+    color: '#0b7285',
+    icon: 'Files',
+    component: 'MergePdfTool',
+    config: {},
+    popular: true,
+  },
+  {
     slug: 'rotate-image',
     name: 'Rotate Image',
     description: 'Rotate images by 90°, 180°, 270°, or any custom angle.',

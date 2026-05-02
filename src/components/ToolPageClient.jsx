@@ -12,6 +12,7 @@ import ImageToPdf from '@/components/tools/ImageToPdf';
 import HeicConverter from '@/components/tools/HeicConverter';
 import BulkCompressTool from '@/components/tools/BulkCompressTool';
 import BatchResizeTool from '@/components/tools/BatchResizeTool';
+import MergePdfTool from '@/components/tools/MergePdfTool';
 
 const COMPONENT_MAP = {
   // NOTE: dynamically import to avoid server/prerender evaluating browser-only deps
@@ -28,6 +29,7 @@ const COMPONENT_MAP = {
   HeicConverter,
   BulkCompressTool,
   BatchResizeTool,
+  MergePdfTool,
 };
 
 export default function ToolPageClient({ slug }) {
