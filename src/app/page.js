@@ -12,6 +12,7 @@ import { TOOLS, TOOL_CATEGORIES, getToolsByCategory } from '@/lib/tools-registry
 
 const ALL_CATS = [
   { id: 'all', name: 'All Tools' },
+  { id: 'pdf', name: 'PDF Tools' },
   { id: 'convert', name: 'Convert' },
   { id: 'transform', name: 'Transform' },
   { id: 'optimize', name: 'Optimize' },
