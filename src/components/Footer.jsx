@@ -7,7 +7,6 @@ const FOOTER_LINKS = {
   Tools: [
     { label: 'Compress Image', href: '/tools/compress-image/' },
     { label: 'Resize Image', href: '/tools/resize-image/' },
-    { label: 'Crop Image', href: '/tools/crop-image/' },
     { label: 'Convert Format', href: '/tools/convert-format/' },
     { label: 'Bulk Compressor', href: '/tools/bulk-compress/' },
     { label: 'Batch Resize', href: '/tools/batch-resize/' },
@@ -18,8 +17,6 @@ const FOOTER_LINKS = {
     { label: 'Blog', href: '/blog/' },
     { label: 'JPG to PNG Guide', href: '/tutorials/#tut-jpg-to-png' },
     { label: 'Image Compression 101', href: '/tutorials/#tut-compress-image' },
-    { label: 'OCR Guide', href: '/tutorials/#tut-ocr-extract-text' },
-    { label: 'Image Filters Guide', href: '/tutorials/#tut-image-filters' },
   ],
   Company: [
     { label: 'Features', href: '/#features' },

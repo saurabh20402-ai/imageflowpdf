@@ -32,7 +32,7 @@ export default function PrivacyPolicyPage() {
           },
           {
             title: '4. Third-Party Services',
-            content: `We use Google Fonts to load typography for the "Add Text" tool. This means Google may log that your browser requested a font file. No personal data is shared. We do not use Google Analytics, Meta Pixel, or any advertising SDKs.`,
+            content: `We use Google Fonts to load typography for parts of the site. This means Google may log that your browser requested a font file. No personal data is shared. We do not use Google Analytics, Meta Pixel, or any advertising SDKs.`,
           },
           {
             title: '5. Local Storage',

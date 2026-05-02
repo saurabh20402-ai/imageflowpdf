@@ -10,8 +10,6 @@ import CompressTool from '@/components/tools/CompressTool';
 import ResizeTool from '@/components/tools/ResizeTool';
 import CropPdfTool from '@/components/tools/CropPdfTool';
 import TransformTool from '@/components/tools/TransformTool';
-import FilterTool from '@/components/tools/FilterTool';
-import MemeTool from '@/components/tools/MemeTool';
 import CollageTool from '@/components/tools/CollageTool';
 import MergeTool from '@/components/tools/MergeTool';
 import MetadataRemover from '@/components/tools/MetadataRemover';
@@ -26,8 +24,6 @@ const COMPONENT_MAP = {
   ResizeTool,
   CropPdfTool,
   TransformTool,
-  FilterTool,
-  MemeTool,
   CollageTool,
   MergeTool,
   MetadataRemover,

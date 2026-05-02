@@ -335,7 +335,7 @@ export default function CropPdfTool() {
               </Document>
 
               {pageSize.w > 0 && (
-                <div style={{ position: 'absolute', top: 0, left: 0, width: pageSize.w, height: pageSize.h }}>
+                <div style={{ position: 'absolute', top: 0, left: 0, width: pageSize.w, height: pageSize.h, overflow: 'hidden' }}>
                   {/* Dark overlay — 4 sides */}
                   <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }}>
                     <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: box.y, background: 'rgba(0,0,0,0.6)' }} />

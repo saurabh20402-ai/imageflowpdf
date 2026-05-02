@@ -21,7 +21,7 @@ const testimonials = [
   {
     name: 'Aisha Patel',
     role: 'Content Creator',
-    text: 'The meme generator and collage maker are so polished. I use them daily for my social media content. Better than paid alternatives honestly.',
+    text: 'The collage maker and batch tools are so polished. I use them daily for my social media content. Better than paid alternatives honestly.',
     rating: 5,
     avatar: 'AP',
   },

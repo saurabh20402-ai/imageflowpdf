@@ -9,7 +9,7 @@ const FEATURES = [
   { icon: Laptop, title: 'Works Everywhere', desc: 'Any modern browser, any device. No software to install.' },
   { icon: Lock, title: 'No Sign-up', desc: 'No accounts, no emails, no tracking. Just open and use.' },
   { icon: RefreshCw, title: 'Batch Processing', desc: 'Process multiple images at once with ZIP download support.' },
-  { icon: Layers, title: '30+ Tools', desc: 'From format conversion to meme generation — everything in one place.' },
+  { icon: Layers, title: '30+ Tools', desc: 'From format conversion to compression — everything in one place.' },
 ];
 
 export default function Features() {

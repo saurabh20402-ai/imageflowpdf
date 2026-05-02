@@ -19,13 +19,12 @@ export const metadata = {
     default: 'ImageFlow — Free Online Image Tools',
     template: '%s — ImageFlow',
   },
-  description: 'Free online image tools: compress, convert, resize, crop, add text, remove background and more. 100% private — all processing in your browser. No signup required.',
+  description: 'Free online image tools: compress, convert, resize, and more. 100% private — all processing in your browser. No signup required.',
   keywords: [
-    'image compressor', 'image converter', 'resize image online', 'crop image free',
+    'image compressor', 'image converter', 'resize image online',
     'jpg to png', 'png to jpg', 'webp converter', 'image tools', 'free online image editor',
-    'compress image without losing quality', 'image to pdf', 'ocr text extractor',
-    'bulk image compressor', 'watermark image', 'add text to image', 'meme generator',
-    'heic converter', 'svg to png', 'image filters online', 'batch resize images',
+    'compress image without losing quality', 'image to pdf',
+    'bulk image compressor', 'heic converter', 'svg to png', 'batch resize images',
   ],
   authors: [{ name: 'ImageFlow' }],
   creator: 'ImageFlow',
@@ -114,7 +113,7 @@ export default function RootLayout({ children }) {
       <body className={`${inter.variable} font-sans antialiased`}>
         <ThemeProvider>
           <Navbar />
-          <main className="min-h-screen" style={{ paddingTop: 'var(--nav-height)' }}>
+          <main className="min-h-screen" style={{ paddingTop: 'var(--nav-h)' }}>
             {children}
           </main>
           <Footer />

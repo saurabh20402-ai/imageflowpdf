@@ -7,7 +7,6 @@ export const TOOL_CATEGORIES = [
   { id: 'transform', name: 'Transform', icon: 'Move', color: '#0891b2' },
   { id: 'optimize', name: 'Optimize', icon: 'Zap', color: '#16a34a' },
   { id: 'create', name: 'Create', icon: 'Layers', color: '#ea580c' },
-  { id: 'extract', name: 'Extract & Analyze', icon: 'Search', color: '#2563eb' },
 ];
 
 export const TOOLS = [
@@ -100,17 +99,6 @@ export const TOOLS = [
     popular: true,
   },
   {
-    slug: 'crop-pdf',
-    name: 'Crop PDF',
-    description: 'Crop PDF pages to remove margins or focus on specific content visually.',
-    category: 'transform',
-    color: '#0e7490',
-    icon: 'Crop',
-    component: 'CropPdfTool',
-    config: {},
-    popular: true,
-  },
-  {
     slug: 'rotate-image',
     name: 'Rotate Image',
     description: 'Rotate images by 90°, 180°, 270°, or any custom angle.',
@@ -119,6 +107,16 @@ export const TOOLS = [
     icon: 'RotateCw',
     component: 'TransformTool',
     config: { mode: 'rotate' },
+  },
+  {
+    slug: 'flip-image',
+    name: 'Flip Image',
+    description: 'Flip images horizontally or vertically in one click.',
+    category: 'transform',
+    color: '#164e63',
+    icon: 'FlipHorizontal2',
+    component: 'TransformTool',
+    config: { mode: 'flip' },
   },
   {
     slug: 'thumbnail-creator',
@@ -154,6 +152,16 @@ export const TOOLS = [
     config: {},
   },
   {
+    slug: 'quality-optimizer',
+    name: 'Quality Optimizer',
+    description: 'Find the optimal quality-to-size ratio for your images.',
+    category: 'optimize',
+    color: '#166534',
+    icon: 'Gauge',
+    component: 'CompressTool',
+    config: { batch: false, smartMode: true },
+  },
+  {
     slug: 'metadata-remover',
     name: 'Metadata Remover',
     description: 'Strip EXIF data, GPS location, and camera info from images.',
@@ -175,6 +183,27 @@ export const TOOLS = [
   },
 
   // === EDIT & ENHANCE ===
+  {
+    slug: 'blur-image',
+    name: 'Blur Image',
+    description: 'Apply gaussian blur to images with adjustable intensity.',
+    category: 'edit',
+    color: '#5b21b6',
+    icon: 'Cloud',
+    component: 'FilterTool',
+    config: { mode: 'blur' },
+  },
+  {
+    slug: 'grayscale',
+    name: 'Grayscale',
+    description: 'Convert color images to beautiful black and white.',
+    category: 'edit',
+    color: '#6b7280',
+    icon: 'Contrast',
+    component: 'FilterTool',
+    config: { mode: 'grayscale' },
+  },
+
   // === CREATE ===
   {
     slug: 'collage-maker',
@@ -196,7 +225,6 @@ export const TOOLS = [
     component: 'MergeTool',
     config: {},
   },
-
 ];
 
 export function getToolBySlug(slug) {
@@ -220,5 +248,3 @@ export function searchTools(query) {
     t.category.toLowerCase().includes(q)
   );
 }
-// force hot reload
-// hot reload
