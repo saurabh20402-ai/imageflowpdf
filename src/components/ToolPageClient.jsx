@@ -3,13 +3,8 @@
 import * as Icons from 'lucide-react';
 import { getToolBySlug, TOOLS } from '@/lib/tools-registry';
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
 
-// Import all tool components
-import FormatConverter from '@/components/tools/FormatConverter';
-import CompressTool from '@/components/tools/CompressTool';
-import ResizeTool from '@/components/tools/ResizeTool';
-import CropPdfTool from '@/components/tools/CropPdfTool';
-import TransformTool from '@/components/tools/TransformTool';
 import CollageTool from '@/components/tools/CollageTool';
 import MergeTool from '@/components/tools/MergeTool';
 import MetadataRemover from '@/components/tools/MetadataRemover';
@@ -19,11 +14,13 @@ import BulkCompressTool from '@/components/tools/BulkCompressTool';
 import BatchResizeTool from '@/components/tools/BatchResizeTool';
 
 const COMPONENT_MAP = {
-  FormatConverter,
-  CompressTool,
-  ResizeTool,
-  CropPdfTool,
-  TransformTool,
+  // NOTE: dynamically import to avoid server/prerender evaluating browser-only deps
+  // (e.g. `react-pdf` expects DOMMatrix in some environments).
+  FormatConverter: dynamic(() => import('@/components/tools/FormatConverter'), { ssr: false }),
+  CompressTool: dynamic(() => import('@/components/tools/CompressTool'), { ssr: false }),
+  ResizeTool: dynamic(() => import('@/components/tools/ResizeTool'), { ssr: false }),
+  CropPdfTool: dynamic(() => import('@/components/tools/CropPdfTool'), { ssr: false }),
+  TransformTool: dynamic(() => import('@/components/tools/TransformTool'), { ssr: false }),
   CollageTool,
   MergeTool,
   MetadataRemover,
