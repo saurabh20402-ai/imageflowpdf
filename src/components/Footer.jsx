@@ -1,8 +1,9 @@
 'use client';
 
 import Link from 'next/link';
-import { Heart, Instagram } from 'lucide-react';
+import { Heart } from 'lucide-react';
 import ImageFlowLogoImg from '@/components/ImageFlowLogoImg';
+import InstagramGlyph from '@/components/icons/InstagramGlyph';
 
 const INSTAGRAM_WEBRISE = 'https://www.instagram.com/thewebrise/';
 
@@ -143,7 +144,9 @@ export default function Footer() {
               textDecoration: 'none',
               transition: 'border-color 150ms, box-shadow 150ms',
             }}>
-            <Instagram size={20} style={{ color: '#E4405F' }} aria-hidden />
+            <span style={{ color: '#E4405F', display: 'flex' }}>
+              <InstagramGlyph size={20} />
+            </span>
             The Webrise Company Instagram Handle
           </a>
         </div>

@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { Instagram } from 'lucide-react';
 import CopyTextButton from '@/components/CopyTextButton';
+import InstagramGlyph from '@/components/icons/InstagramGlyph';
 
 export const metadata = {
   title: 'Donate — Support ImageFlow',
@@ -173,7 +173,7 @@ export default function DonatePage() {
               textDecoration: 'none',
               boxShadow: '0 4px 14px rgba(220, 39, 67, 0.35)',
             }}>
-            <Instagram size={22} strokeWidth={2.25} aria-hidden />
+            <InstagramGlyph size={22} style={{ flexShrink: 0 }} />
             <span>The Webrise Company Instagram Handle</span>
           </Link>
         </footer>
