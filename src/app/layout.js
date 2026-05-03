@@ -130,7 +130,7 @@ export default function RootLayout({ children }) {
       <body className={`${inter.variable} font-sans antialiased`}>
         <ThemeProvider>
           <Navbar />
-          <main className="min-h-screen" style={{ paddingTop: 'var(--nav-height)' }}>
+          <main className="min-h-screen main-content">
             {children}
           </main>
           <Footer />

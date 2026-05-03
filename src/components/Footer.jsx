@@ -1,7 +1,10 @@
 'use client';
 
 import Link from 'next/link';
-import { ImageIcon, Heart } from 'lucide-react';
+import { Heart, Instagram } from 'lucide-react';
+import ImageFlowLogoImg from '@/components/ImageFlowLogoImg';
+
+const INSTAGRAM_WEBRISE = 'https://www.instagram.com/thewebrise/';
 
 const FOOTER_LINKS = {
   Tools: [
@@ -22,10 +25,11 @@ const FOOTER_LINKS = {
     { label: 'Image Filters Guide', href: '/tutorials/#tut-image-filters' },
   ],
   Company: [
+    { label: 'About Us', href: '/about-us/' },
     { label: 'Features', href: '/#features' },
     { label: 'Donate', href: '/donate/' },
     { label: 'Blog', href: '/blog/' },
-    { label: 'Support', href: 'mailto:support@imageflow.app' },
+    { label: 'Support', href: '/support/' },
   ],
   Legal: [
     { label: 'Privacy Policy', href: '/privacy-policy/' },
@@ -55,16 +59,8 @@ export default function Footer() {
 
           {/* Brand column */}
           <div>
-            <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: 8, textDecoration: 'none', marginBottom: 14 }}>
-              <div style={{
-                width: 34, height: 34, borderRadius: 9,
-                background: 'var(--primary)', display: 'flex', alignItems: 'center', justifyContent: 'center',
-              }}>
-                <ImageIcon size={18} color="#fff" />
-              </div>
-              <span style={{ fontSize: 17, fontWeight: 800, color: 'var(--ink)', letterSpacing: '-0.01em' }}>
-                Image<span style={{ color: 'var(--primary)' }}>Flow</span>
-              </span>
+            <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', marginBottom: 14 }}>
+              <ImageFlowLogoImg height={38} />
             </Link>
             <p style={{ fontSize: 13, color: 'var(--muted)', lineHeight: 1.7, maxWidth: 200 }}>
               Free, instant image tools. 100% in your browser. Zero uploads. Zero data collection.
@@ -110,6 +106,46 @@ export default function Footer() {
               </ul>
             </div>
           ))}
+        </div>
+
+        {/* Instagram — The Webrise Company */}
+        <div style={{
+          marginBottom: 40,
+          padding: '22px 20px',
+          borderRadius: 14,
+          background: 'var(--surface)',
+          border: '1px solid var(--hairline-soft)',
+          display: 'flex',
+          flexWrap: 'wrap',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: 14,
+          textAlign: 'center',
+        }}>
+          <p style={{ margin: 0, fontSize: 13, fontWeight: 700, color: 'var(--ink)', width: '100%' }}>
+            Follow us on Instagram
+          </p>
+          <a
+            href={INSTAGRAM_WEBRISE}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: 10,
+              padding: '10px 18px',
+              borderRadius: 10,
+              border: '1px solid var(--hairline-soft)',
+              background: 'var(--surface-card)',
+              color: 'var(--ink)',
+              fontSize: 14,
+              fontWeight: 700,
+              textDecoration: 'none',
+              transition: 'border-color 150ms, box-shadow 150ms',
+            }}>
+            <Instagram size={20} style={{ color: '#E4405F' }} aria-hidden />
+            The Webrise Company Instagram Handle
+          </a>
         </div>
 
         {/* Bottom bar */}

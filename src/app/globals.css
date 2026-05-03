@@ -79,13 +79,56 @@
 
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  max-width: 100%;
+}
 
 body {
   font-family: var(--font);
   background: var(--canvas);
   color: var(--ink);
   line-height: 1.6;
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+/* Offset fixed navbar (single token: --nav-h) */
+.main-content {
+  padding-top: var(--nav-h);
+}
+
+/* Grids: never force columns wider than the viewport */
+.tools-responsive-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+}
+
+.features-responsive-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+}
+
+/* Navbar: visibility without relying only on Tailwind responsive utils */
+.navbar-desktop-nav {
+  display: none;
+  align-items: center;
+  gap: 8px;
+}
+.navbar-mobile-menu-btn {
+  display: flex;
+}
+@media (min-width: 768px) {
+  .navbar-desktop-nav {
+    display: flex;
+  }
+  .navbar-mobile-menu-btn {
+    display: none !important;
+  }
 }
 
 ::selection { background: var(--primary); color: #fff; }
@@ -281,11 +324,6 @@ input[type="color"]::-webkit-color-swatch { border: none; border-radius: 4px; }
   .footer-grid {
     grid-template-columns: 1fr 1fr !important;
   }
-}
-
-/* === Smooth scroll === */
-html {
-  scroll-behavior: smooth;
 }
 
 /* === Click ripple === */

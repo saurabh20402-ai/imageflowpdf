@@ -22,11 +22,7 @@ export default function Features() {
             Built for privacy and speed
           </h2>
         </div>
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
-          gap: 16,
-        }}>
+        <div className="features-responsive-grid">
           {FEATURES.map(({ icon: Icon, title, desc }, i) => (
             <motion.div key={title}
               initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }}

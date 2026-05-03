@@ -55,11 +55,7 @@ export default function HomePage() {
               The most-used image tools by creators worldwide
             </p>
           </div>
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
-            gap: '20px',
-          }}>
+          <div className="tools-responsive-grid">
             {popularTools.map((tool, i) => (
               <motion.div
                 key={tool.slug}
@@ -124,11 +120,7 @@ export default function HomePage() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
-              style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
-                gap: '20px',
-              }}>
+              className="tools-responsive-grid">
               {filteredTools.map((tool, i) => (
                 <motion.div
                   key={tool.slug}
