@@ -14,7 +14,7 @@ export default function ImageFlowLogoImg({ height = 36, priority = false }) {
       style={{
         height,
         width: 'auto',
-        maxWidth: 'min(200px, calc(100vw - 120px))',
+        maxWidth: 'min(240px, calc(100vw - 140px))',
         objectFit: 'contain',
       }}
     />

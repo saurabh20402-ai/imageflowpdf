@@ -47,14 +47,6 @@ export default function Navbar() {
   }, [mobileOpen]);
 
   useEffect(() => {
-    const onResize = () => {
-      if (window.innerWidth >= 768) setMobileOpen(false);
-    };
-    window.addEventListener('resize', onResize);
-    return () => window.removeEventListener('resize', onResize);
-  }, []);
-
-  useEffect(() => {
     if (!mobileOpen) return;
     const onKey = (e) => {
       if (e.key === 'Escape') setMobileOpen(false);
@@ -90,13 +82,14 @@ export default function Navbar() {
         <Link
           href="/"
           onClick={closeMobile}
+          className="navbar-logo-wrap"
           style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', flexShrink: 0, minWidth: 0 }}>
-          <ImageFlowLogoImg height={32} />
+          <ImageFlowLogoImg height={40} />
         </Link>
 
-        {/* Desktop — CSS .navbar-desktop-nav hides &lt;768px */}
+        {/* Desktop/tablet — hidden &lt;768px; centered between logo and actions */}
         <nav className="navbar-desktop-nav">
-          <Link href="/" style={{ padding: '8px 14px', fontSize: '14px', fontWeight: 500, color: 'var(--muted)', textDecoration: 'none', borderRadius: 8, transition: 'all 200ms' }}
+          <Link href="/" style={{ padding: '10px 16px', fontSize: '16px', fontWeight: 500, color: 'var(--muted)', textDecoration: 'none', borderRadius: 10, transition: 'all 200ms' }}
             onMouseEnter={e => { e.target.style.color = 'var(--ink)'; e.target.style.background = 'var(--surface)'; }}
             onMouseLeave={e => { e.target.style.color = 'var(--muted)'; e.target.style.background = 'transparent'; }}>
             Home
@@ -106,13 +99,13 @@ export default function Navbar() {
             onMouseEnter={() => setDropdownOpen(true)}
             onMouseLeave={() => setDropdownOpen(false)}>
             <button type="button" style={{
-              display: 'flex', alignItems: 'center', gap: '4px',
-              padding: '8px 14px', fontSize: '14px', fontWeight: 500,
+              display: 'flex', alignItems: 'center', gap: '6px',
+              padding: '10px 16px', fontSize: '16px', fontWeight: 500,
               color: dropdownOpen ? 'var(--ink)' : 'var(--muted)',
               background: dropdownOpen ? 'var(--surface)' : 'transparent',
-              border: 'none', borderRadius: 8, cursor: 'pointer', transition: 'all 200ms',
+              border: 'none', borderRadius: 10, cursor: 'pointer', transition: 'all 200ms',
             }}>
-              Tools <ChevronDown size={14} style={{ transform: dropdownOpen ? 'rotate(180deg)' : 'none', transition: 'transform 200ms' }} />
+              Tools <ChevronDown size={16} style={{ transform: dropdownOpen ? 'rotate(180deg)' : 'none', transition: 'transform 200ms' }} />
             </button>
 
             {dropdownOpen && (
@@ -158,19 +151,19 @@ export default function Navbar() {
             )}
           </div>
 
-          <Link href="/#features" style={{ padding: '8px 14px', fontSize: '14px', fontWeight: 500, color: 'var(--muted)', textDecoration: 'none', borderRadius: 8 }}
+          <Link href="/#features" style={{ padding: '10px 16px', fontSize: '16px', fontWeight: 500, color: 'var(--muted)', textDecoration: 'none', borderRadius: 10 }}
             onMouseEnter={e => { e.target.style.color = 'var(--ink)'; e.target.style.background = 'var(--surface)'; }}
             onMouseLeave={e => { e.target.style.color = 'var(--muted)'; e.target.style.background = 'transparent'; }}>
             Features
           </Link>
         </nav>
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexShrink: 0 }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 10, flexShrink: 0 }}>
           <button
             type="button"
             onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
             style={{
-              width: 36, height: 36, borderRadius: 8,
+              width: 40, height: 40, borderRadius: 10,
               background: 'var(--surface)', border: '1px solid var(--hairline-soft)',
               cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center',
               color: 'var(--muted)', transition: 'all 200ms',
@@ -187,7 +180,7 @@ export default function Navbar() {
             aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
             onClick={() => setMobileOpen((v) => !v)}
             style={{
-              width: 36, height: 36, borderRadius: 8,
+              width: 40, height: 40, borderRadius: 10,
               background: 'var(--surface)', border: '1px solid var(--hairline-soft)',
               cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center',
               color: 'var(--muted)',

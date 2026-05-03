@@ -60,8 +60,8 @@ export default function Footer() {
 
           {/* Brand column */}
           <div>
-            <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', marginBottom: 14 }}>
-              <ImageFlowLogoImg height={38} />
+            <Link href="/" className="navbar-logo-wrap" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', marginBottom: 14, width: 'fit-content' }}>
+              <ImageFlowLogoImg height={40} />
             </Link>
             <p style={{ fontSize: 13, color: 'var(--muted)', lineHeight: 1.7, maxWidth: 200 }}>
               Free, instant image tools. 100% in your browser. Zero uploads. Zero data collection.

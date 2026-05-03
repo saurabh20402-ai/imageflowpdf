@@ -44,7 +44,7 @@
   --radius-full: 9999px;
 
   --font: 'Inter', -apple-system, system-ui, 'Segoe UI', sans-serif;
-  --nav-h: 64px;
+  --nav-h: 68px;
   --max-w: 1200px;
   --transition: 200ms ease;
 }
@@ -117,7 +117,7 @@ body {
 .navbar-desktop-nav {
   display: none;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
 }
 .navbar-mobile-menu-btn {
   display: flex;
@@ -125,10 +125,21 @@ body {
 @media (min-width: 768px) {
   .navbar-desktop-nav {
     display: flex;
+    flex: 1;
+    justify-content: center;
+    min-width: 0;
   }
-  .navbar-mobile-menu-btn {
-    display: none !important;
-  }
+}
+
+/* Logo (PNG has light background): subtle frame in dark theme */
+.navbar-logo-wrap {
+  border-radius: 10px;
+  line-height: 0;
+}
+.dark .navbar-logo-wrap {
+  background: #fff;
+  padding: 3px 8px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 ::selection { background: var(--primary); color: #fff; }
