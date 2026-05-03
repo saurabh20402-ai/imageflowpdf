@@ -84,21 +84,32 @@ function StarRating({ value, onChange, readonly = false, size = 20 }) {
 export default function ReviewSection() {
   const [remoteReviews, setRemoteReviews] = useState([]);
   const [localReviews, setLocalReviews] = useState([]);
+  const [persisted, setPersisted] = useState(false);
   const [name, setName] = useState('');
   const [text, setText] = useState('');
   const [rating, setRating] = useState(5);
   const [submitting, setSubmitting] = useState(false);
   const [mounted, setMounted] = useState(false);
-  const [kvNote, setKvNote] = useState(false);
+  const [storageNote, setStorageNote] = useState(false);
 
   const loadRemote = useCallback(async () => {
     try {
-      const res = await fetch('/api/reviews', { cache: 'no-store' });
+      const res = await fetch('/api/reviews?meta=1', { cache: 'no-store' });
       if (!res.ok) throw new Error('bad');
       const data = await res.json();
-      setRemoteReviews(Array.isArray(data) ? data : SEED_REVIEWS);
+      if (Array.isArray(data.reviews)) {
+        setRemoteReviews(data.reviews);
+        setPersisted(Boolean(data.persisted));
+      } else if (Array.isArray(data)) {
+        setRemoteReviews(data);
+        setPersisted(false);
+      } else {
+        setRemoteReviews(SEED_REVIEWS);
+        setPersisted(false);
+      }
     } catch {
       setRemoteReviews(SEED_REVIEWS);
+      setPersisted(false);
     }
   }, []);
 
@@ -108,16 +119,32 @@ export default function ReviewSection() {
     setLocalReviews(getLocalReviews());
   }, [loadRemote]);
 
-  const reviews = useMemo(
-    () => mergeById([remoteReviews, localReviews]),
-    [remoteReviews, localReviews],
-  );
+  /** Refetch so new reviews from other visitors appear without full reload. */
+  useEffect(() => {
+    if (!mounted) return;
+    const tick = () => {
+      if (typeof document !== 'undefined' && document.visibilityState === 'visible') {
+        loadRemote();
+      }
+    };
+    const id = setInterval(tick, 18000);
+    document.addEventListener('visibilitychange', tick);
+    return () => {
+      clearInterval(id);
+      document.removeEventListener('visibilitychange', tick);
+    };
+  }, [mounted, loadRemote]);
+
+  const reviews = useMemo(() => {
+    if (persisted) return remoteReviews;
+    return mergeById([remoteReviews, localReviews]);
+  }, [persisted, remoteReviews, localReviews]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!name.trim() || !text.trim()) return;
     setSubmitting(true);
-    setKvNote(false);
+    setStorageNote(false);
     try {
       const res = await fetch('/api/reviews', {
         method: 'POST',
@@ -134,10 +161,10 @@ export default function ReviewSection() {
         setName('');
         setText('');
         setRating(5);
-      } else if (data.reason === 'no_kv') {
+      } else if (data.reason === 'no_storage' || data.reason === 'no_kv') {
         saveLocalReview({ name: name.trim(), text: text.trim(), rating });
         setLocalReviews(getLocalReviews());
-        setKvNote(true);
+        setStorageNote(true);
         setName('');
         setText('');
         setRating(5);
@@ -145,7 +172,7 @@ export default function ReviewSection() {
     } catch {
       saveLocalReview({ name: name.trim(), text: text.trim(), rating });
       setLocalReviews(getLocalReviews());
-      setKvNote(true);
+      setStorageNote(true);
       setName('');
       setText('');
       setRating(5);
@@ -203,11 +230,24 @@ export default function ReviewSection() {
           <h3 style={{ fontSize: 16, fontWeight: 600, marginBottom: 16, color: 'var(--ink)' }}>
             Leave a review
           </h3>
-          {kvNote && (
-            <p style={{ fontSize: 13, color: 'var(--muted)', marginBottom: 12, lineHeight: 1.5 }}>
-              Your review is saved on this device. To show new reviews to <strong>everyone</strong>, connect{' '}
-              <strong>Vercel KV</strong> in your project (Storage → Create KV → link env vars). Until then, all
-              visitors still see the featured reviews below.
+          {storageNote && (
+            <p style={{ fontSize: 13, color: 'var(--muted)', marginBottom: 12, lineHeight: 1.55 }}>
+              Abhi aapka review <strong>sirf is device</strong> par save ho raha hai.{' '}
+              <strong>Sab users ko dikhane ke liye</strong> Vercel project par database lagao — sabse aasaan:{' '}
+              <strong>Upstash Redis</strong> (free):{' '}
+              <a href="https://upstash.com/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--primary)', fontWeight: 600 }}>
+                upstash.com
+              </a>{' '}
+              → Redis database → REST URL + token copy karo → Vercel → Project → Settings → Environment Variables
+              mein <code style={{ fontSize: 12 }}>UPSTASH_REDIS_REST_URL</code> aur{' '}
+              <code style={{ fontSize: 12 }}>UPSTASH_REDIS_REST_TOKEN</code> add karo → redeploy. (Vercel KV
+              bhi chalega agar pehle se use kar rahe ho.)
+            </p>
+          )}
+          {!persisted && !storageNote && (
+            <p style={{ fontSize: 13, color: 'var(--warning)', marginBottom: 12, lineHeight: 1.5 }}>
+              Tip: Shared reviews abhi band hain — Upstash Redis ya Vercel KV env vars add karke redeploy karo taaki
+              naye reviews <strong>har visitor</strong> ko dikhen.
             </p>
           )}
           <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
@@ -299,7 +339,7 @@ export default function ReviewSection() {
                         </div>
                       </div>
                     </div>
-                    {r.source === 'local' && (
+                    {!persisted && r.source === 'local' && (
                       <button
                         type="button"
                         onClick={() => handleDelete(r)}
