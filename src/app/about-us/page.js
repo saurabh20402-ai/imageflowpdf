@@ -12,9 +12,7 @@ export default function AboutUsPage() {
       <div className="container" style={{ maxWidth: 720 }}>
 
         <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 36 }}>
-          <div className="brand-logo-link" style={{ lineHeight: 0 }}>
-            <ImageFlowLogoImg height={120} priority unconstrained />
-          </div>
+          <ImageFlowLogoImg height={88} />
         </div>
 
         <article style={{

@@ -82,9 +82,8 @@ export default function Navbar() {
         <Link
           href="/"
           onClick={closeMobile}
-          className="brand-logo-link"
           style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', flexShrink: 0, minWidth: 0, lineHeight: 0 }}>
-          <ImageFlowLogoImg height={38} />
+          <ImageFlowLogoImg height={40} />
         </Link>
 
         {/* Desktop/tablet — hidden &lt;768px; centered between logo and actions */}
