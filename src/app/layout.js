@@ -1,4 +1,5 @@
 import { Inter } from 'next/font/google';
+import Script from 'next/script';
 import './globals.css';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import Navbar from '@/components/Navbar';
@@ -12,6 +13,7 @@ const inter = Inter({
 });
 
 const BASE_URL = 'https://imageflow.in';
+const GA_MEASUREMENT_ID = 'G-XH02BRCHFC';
 
 export const metadata = {
   metadataBase: new URL(BASE_URL),
@@ -111,6 +113,18 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className={`${inter.variable} font-sans antialiased`}>
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-tag-gtag" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_MEASUREMENT_ID}');
+          `}
+        </Script>
         <ThemeProvider>
           <Navbar />
           <main className="min-h-screen" style={{ paddingTop: 'var(--nav-h)' }}>
