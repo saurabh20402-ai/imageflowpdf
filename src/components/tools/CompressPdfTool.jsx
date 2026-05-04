@@ -23,7 +23,7 @@ export default function CompressPdfTool() {
     if (!file) return;
     setProcessing(true);
     try {
-      const pdfjs = await import('pdfjs-dist/build/pdf');
+      const pdfjs = await import('pdfjs-dist/build/pdf.mjs');
       pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
       const task = pdfjs.getDocument({ data: new Uint8Array(await file.arrayBuffer()) });
       const src = await task.promise;

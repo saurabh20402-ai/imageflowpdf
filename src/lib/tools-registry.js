@@ -6,7 +6,6 @@ export const TOOL_CATEGORIES = [
   { id: 'convert', name: 'Convert', icon: 'ArrowLeftRight', color: '#ff385c' },
   { id: 'transform', name: 'Transform', icon: 'Move', color: '#0891b2' },
   { id: 'optimize', name: 'Optimize', icon: 'Zap', color: '#16a34a' },
-  { id: 'pdf', name: 'PDF Tools', icon: 'FileText', color: '#e11d48' },
   { id: 'create', name: 'Create', icon: 'Layers', color: '#ea580c' },
 ];
 
@@ -209,7 +208,6 @@ export const TOOLS = [
     config: { mode: 'rotate' },
   },
   {
-<<<<<<< HEAD
     slug: 'remove-background',
     name: 'Remove Background',
     description: 'Remove solid-color backgrounds.',
@@ -242,8 +240,6 @@ export const TOOLS = [
     config: {},
   },
   {
-=======
->>>>>>> d5c392a19ccb7a34433e5e59da42299d0e85add9
     slug: 'thumbnail-creator',
     name: 'Thumbnail Creator',
     description: 'Create perfectly sized thumbnails for YouTube, social media, and web.',
@@ -297,73 +293,6 @@ export const TOOLS = [
     config: {},
   },
 
-<<<<<<< HEAD
-=======
-  // === PDF TOOLS ===
-  {
-    slug: 'compress-pdf',
-    name: 'Compress PDF',
-    description: 'Reduce PDF file size while maintaining quality. Perfect for sharing and storage.',
-    category: 'pdf',
-    color: '#e11d48',
-    icon: 'FileDown',
-    component: 'CompressPdfTool',
-    config: {},
-    popular: true,
-  },
-  {
-    slug: 'crop-pdf',
-    name: 'Crop PDF',
-    description: 'Crop PDF pages to remove margins and excess whitespace.',
-    category: 'pdf',
-    color: '#dc2626',
-    icon: 'Crop',
-    component: 'CropPdfTool',
-    config: {},
-  },
-  {
-    slug: 'merge-pdf',
-    name: 'Merge PDF',
-    description: 'Combine multiple PDF files into a single document.',
-    category: 'pdf',
-    color: '#b91c1c',
-    icon: 'GitMerge',
-    component: 'MergePdfTool',
-    config: {},
-    popular: true,
-  },
-  {
-    slug: 'split-pdf',
-    name: 'Split PDF',
-    description: 'Split PDF into individual pages or extract specific page ranges.',
-    category: 'pdf',
-    color: '#991b1b',
-    icon: 'Scissors',
-    component: 'SplitPdfTool',
-    config: {},
-  },
-  {
-    slug: 'rotate-pdf',
-    name: 'Rotate PDF',
-    description: 'Rotate PDF pages by 90°, 180°, or 270°.',
-    category: 'pdf',
-    color: '#7f1d1d',
-    icon: 'RotateCw',
-    component: 'RotatePdfTool',
-    config: {},
-  },
-  {
-    slug: 'pdf-to-image',
-    name: 'PDF to Image',
-    description: 'Convert PDF pages to high-quality PNG or JPG images.',
-    category: 'pdf',
-    color: '#5f3dc4',
-    icon: 'FileImage',
-    component: 'PdfToImageTool',
-    config: {},
-  },
-
->>>>>>> d5c392a19ccb7a34433e5e59da42299d0e85add9
   // === CREATE ===
   {
     slug: 'collage-maker',
