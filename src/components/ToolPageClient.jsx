@@ -3,46 +3,32 @@
 import * as Icons from 'lucide-react';
 import { getToolBySlug, TOOLS } from '@/lib/tools-registry';
 import Link from 'next/link';
-
-// Import all tool components
-import FormatConverter from '@/components/tools/FormatConverter';
-import CompressTool from '@/components/tools/CompressTool';
-import ResizeTool from '@/components/tools/ResizeTool';
-import CropTool from '@/components/tools/CropTool';
-import TransformTool from '@/components/tools/TransformTool';
-import FilterTool from '@/components/tools/FilterTool';
-import WatermarkTool from '@/components/tools/WatermarkTool';
-import TextTool from '@/components/tools/TextTool';
-import BorderTool from '@/components/tools/BorderTool';
-import MemeTool from '@/components/tools/MemeTool';
-import CollageTool from '@/components/tools/CollageTool';
-import MergeTool from '@/components/tools/MergeTool';
-import MetadataRemover from '@/components/tools/MetadataRemover';
-import ImageToPdf from '@/components/tools/ImageToPdf';
-import OcrTool from '@/components/tools/OcrTool';
-import HeicConverter from '@/components/tools/HeicConverter';
-import BulkCompressTool from '@/components/tools/BulkCompressTool';
-import BatchResizeTool from '@/components/tools/BatchResizeTool';
+import dynamic from 'next/dynamic';
 
 const COMPONENT_MAP = {
-  FormatConverter,
-  CompressTool,
-  ResizeTool,
-  CropTool,
-  TransformTool,
-  FilterTool,
-  WatermarkTool,
-  TextTool,
-  BorderTool,
-  MemeTool,
-  CollageTool,
-  MergeTool,
-  MetadataRemover,
-  ImageToPdf,
-  OcrTool,
-  HeicConverter,
-  BulkCompressTool,
-  BatchResizeTool,
+  // dynamic import keeps browser-only libs from breaking prerender/build
+  FormatConverter: dynamic(() => import('@/components/tools/FormatConverter'), { ssr: false }),
+  CompressTool: dynamic(() => import('@/components/tools/CompressTool'), { ssr: false }),
+  ResizeTool: dynamic(() => import('@/components/tools/ResizeTool'), { ssr: false }),
+  TransformTool: dynamic(() => import('@/components/tools/TransformTool'), { ssr: false }),
+  CollageTool: dynamic(() => import('@/components/tools/CollageTool'), { ssr: false }),
+  MergeTool: dynamic(() => import('@/components/tools/MergeTool'), { ssr: false }),
+  MetadataRemover: dynamic(() => import('@/components/tools/MetadataRemover'), { ssr: false }),
+  ImageToPdf: dynamic(() => import('@/components/tools/ImageToPdf'), { ssr: false }),
+  HeicConverter: dynamic(() => import('@/components/tools/HeicConverter'), { ssr: false }),
+  BulkCompressTool: dynamic(() => import('@/components/tools/BulkCompressTool'), { ssr: false }),
+  BatchResizeTool: dynamic(() => import('@/components/tools/BatchResizeTool'), { ssr: false }),
+  CropPdfTool: dynamic(() => import('@/components/tools/CropPdfTool'), { ssr: false }),
+  MergePdfTool: dynamic(() => import('@/components/tools/MergePdfTool'), { ssr: false }),
+  SplitPdfTool: dynamic(() => import('@/components/tools/SplitPdfTool'), { ssr: false }),
+  CompressPdfTool: dynamic(() => import('@/components/tools/CompressPdfTool'), { ssr: false }),
+  RotatePdfTool: dynamic(() => import('@/components/tools/RotatePdfTool'), { ssr: false }),
+  WatermarkPdfTool: dynamic(() => import('@/components/tools/WatermarkPdfTool'), { ssr: false }),
+  SignPdfTool: dynamic(() => import('@/components/tools/SignPdfTool'), { ssr: false }),
+  RemoveBackgroundTool: dynamic(() => import('@/components/tools/RemoveBackgroundTool'), { ssr: false }),
+  UpscaleTool: dynamic(() => import('@/components/tools/UpscaleTool'), { ssr: false }),
+  BulkFormatConvertTool: dynamic(() => import('@/components/tools/BulkFormatConvertTool'), { ssr: false }),
+  PassportPhotoTool: dynamic(() => import('@/components/tools/PassportPhotoTool'), { ssr: false }),
 };
 
 export default function ToolPageClient({ slug }) {

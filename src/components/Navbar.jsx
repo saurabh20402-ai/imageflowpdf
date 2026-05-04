@@ -116,7 +116,11 @@ export default function Navbar() {
                 padding: 20, zIndex: 200,
               }}>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 6 }}>
-                  {TOOLS.filter(t => t.popular).slice(0, 12).map(t => {
+                  {TOOLS
+                    .filter(t => t.popular)
+                    .sort((a, b) => (a.category === 'pdf' ? -1 : 0) - (b.category === 'pdf' ? -1 : 0))
+                    .slice(0, 12)
+                    .map(t => {
                     const Icon = Icons[t.icon] || Icons.FileImage;
                     return (
                       <Link key={t.slug} href={`/tools/${t.slug}/`}

@@ -2,8 +2,141 @@
 
 import Link from 'next/link';
 import * as Icons from 'lucide-react';
+import { TOOLS } from '@/lib/tools-registry';
 
 const TUTORIALS = [
+  {
+    slug: 'merge-pdf',
+    name: 'Merge PDF',
+    icon: 'Files',
+    color: '#ef4444',
+    emoji: '🧩',
+    shortDesc: 'Combine multiple PDFs into one',
+    whatItDoes: 'Merge two or more PDF files into a single document while preserving page quality and order.',
+    steps: ['Upload multiple PDFs', 'Reorder using Up/Down buttons', 'Click Merge PDFs', 'Download merged file'],
+    tips: ['Place the final cover document first', 'Rotate pages before merge if needed'],
+    useCases: ['Invoices', 'Multi-part applications', 'Scanning bundles'],
+  },
+  {
+    slug: 'split-pdf',
+    name: 'Split PDF',
+    icon: 'Scissors',
+    color: '#f97316',
+    emoji: '✂️',
+    shortDesc: 'Extract specific pages',
+    whatItDoes: 'Create a new PDF from selected pages using ranges like 1-3,5,7.',
+    steps: ['Upload PDF', 'Enter pages/ranges', 'Click Extract pages', 'Download split PDF'],
+    tips: ['Use commas for multiple ranges', 'Invalid page numbers are ignored'],
+    useCases: ['Share selected sections', 'Archive key pages'],
+  },
+  {
+    slug: 'compress-pdf',
+    name: 'Compress PDF',
+    icon: 'Zap',
+    color: '#eab308',
+    emoji: '🗜️',
+    shortDesc: 'Reduce PDF size',
+    whatItDoes: 'Compress scanned/image-heavy PDFs with adjustable quality and render scale.',
+    steps: ['Upload PDF', 'Set quality and scale', 'Click Compress PDF', 'Download result'],
+    tips: ['Lower quality = smaller file', 'Higher scale preserves readability'],
+    useCases: ['Email attachments', 'Portal upload limits'],
+  },
+  {
+    slug: 'rotate-pdf',
+    name: 'Rotate PDF',
+    icon: 'RotateCw',
+    color: '#fb7185',
+    emoji: '🔁',
+    shortDesc: 'Rotate all or one page',
+    whatItDoes: 'Rotate PDF pages by 90°, 180°, or 270°.',
+    steps: ['Upload PDF', 'Choose All pages or Current page', 'Pick angle', 'Rotate and download'],
+    tips: ['Use Current page for one bad scan'],
+    useCases: ['Fix sideways scans', 'Prepare print-ready docs'],
+  },
+  {
+    slug: 'crop-pdf',
+    name: 'Crop PDF',
+    icon: 'Crop',
+    color: '#0e7490',
+    emoji: '📐',
+    shortDesc: 'Crop with draggable selector',
+    whatItDoes: 'Trim margins with an interactive, resizable selection box and apply to all/current pages.',
+    steps: ['Upload PDF', 'Drag/resize crop area', 'Choose apply mode', 'Crop and download'],
+    tips: ['Reset selection to start over quickly'],
+    useCases: ['Remove borders', 'Focus on content blocks'],
+  },
+  {
+    slug: 'watermark-pdf',
+    name: 'Watermark PDF',
+    icon: 'Stamp',
+    color: '#8b5cf6',
+    emoji: '💧',
+    shortDesc: 'Add text watermark',
+    whatItDoes: 'Apply watermark text with size, opacity, and rotation controls.',
+    steps: ['Upload PDF', 'Enter text', 'Adjust controls', 'Apply and download'],
+    tips: ['Use 20–35% opacity for subtle marks'],
+    useCases: ['Draft mark', 'Confidential docs', 'Branding'],
+  },
+  {
+    slug: 'sign-pdf',
+    name: 'Sign PDF',
+    icon: 'PenTool',
+    color: '#22c55e',
+    emoji: '✍️',
+    shortDesc: 'Draw and place signature',
+    whatItDoes: 'Draw your signature and place it on current/all pages.',
+    steps: ['Upload PDF', 'Draw signature', 'Choose page mode and position', 'Apply and download'],
+    tips: ['Use current page for standard approvals'],
+    useCases: ['Agreements', 'Forms', 'Approvals'],
+  },
+  {
+    slug: 'remove-background',
+    name: 'Remove Background',
+    icon: 'Eraser',
+    color: '#3b82f6',
+    emoji: '🧼',
+    shortDesc: 'Solid background remover',
+    whatItDoes: 'Remove flat-color backgrounds using color + tolerance.',
+    steps: ['Upload image', 'Pick background color', 'Adjust tolerance', 'Export PNG'],
+    tips: ['Works best for studio or plain backgrounds'],
+    useCases: ['Product photos', 'Profile cutouts'],
+  },
+  {
+    slug: 'image-upscaler',
+    name: 'Image Upscaler',
+    icon: 'Maximize2',
+    color: '#14b8a6',
+    emoji: '🔍',
+    shortDesc: 'Upscale 2x/4x',
+    whatItDoes: 'Increase image dimensions using high-quality in-browser resampling.',
+    steps: ['Upload image', 'Choose 2x or 4x', 'Upscale', 'Download PNG'],
+    tips: ['4x can create large files'],
+    useCases: ['Banners', 'Print drafts'],
+  },
+  {
+    slug: 'bulk-format-convert',
+    name: 'Bulk Format Convert',
+    icon: 'Package',
+    color: '#ea580c',
+    emoji: '📦',
+    shortDesc: 'Batch convert with ZIP output',
+    whatItDoes: 'Convert many images to WebP/JPG/PNG in one run.',
+    steps: ['Upload multiple files', 'Choose output format', 'Convert', 'Download ZIP'],
+    tips: ['Use WebP for smaller web assets'],
+    useCases: ['Ecommerce assets', 'Blog image pipelines'],
+  },
+  {
+    slug: 'passport-photo-maker',
+    name: 'Passport Photo Maker',
+    icon: 'IdCard',
+    color: '#0ea5e9',
+    emoji: '🪪',
+    shortDesc: 'Country preset passport photos',
+    whatItDoes: 'Generate passport-size photos using fixed country presets.',
+    steps: ['Upload face photo', 'Choose preset', 'Adjust zoom/position', 'Generate and download'],
+    tips: ['Plain backgrounds give best output'],
+    useCases: ['Passport', 'Visa', 'ID forms'],
+  },
   {
     slug: 'compress-image',
     name: 'Compress Image',
@@ -226,6 +359,8 @@ const TUTORIALS = [
 ];
 
 export default function TutorialsPage() {
+  const visibleTutorials = TUTORIALS.filter(t => TOOLS.some(tool => tool.slug === t.slug));
+
   return (
     <main style={{ padding: '60px 0 80px' }}>
       <div className="container" style={{ maxWidth: 940 }}>
@@ -249,7 +384,7 @@ export default function TutorialsPage() {
           background: 'var(--surface)', border: '1px solid var(--hairline)',
         }}>
           <p style={{ gridColumn: '1 / -1', fontSize: 13, fontWeight: 700, color: 'var(--muted)', marginBottom: 4 }}>JUMP TO TUTORIAL</p>
-          {TUTORIALS.map(t => (
+          {visibleTutorials.map(t => (
             <a key={t.slug} href={`#tut-${t.slug}`} style={{
               display: 'flex', alignItems: 'center', gap: 8,
               padding: '8px 10px', borderRadius: 8, textDecoration: 'none',
@@ -264,7 +399,7 @@ export default function TutorialsPage() {
 
         {/* Tutorials */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: 48 }}>
-          {TUTORIALS.map((tut) => (
+          {visibleTutorials.map((tut) => (
             <div key={tut.slug} id={`tut-${tut.slug}`} style={{
               borderRadius: 20, overflow: 'hidden',
               border: '1px solid rgba(0,0,0,0.06)',
