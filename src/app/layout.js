@@ -17,16 +17,16 @@ const GA_MEASUREMENT_ID = 'G-XH02BRCHFC';
 export const metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: 'ImageFlow — Free Online Image Tools',
+    default: 'ImageFlow: Free Online PDF and Image Tools (No Signup)',
     template: '%s — ImageFlow',
   },
-  description: 'Free online image tools: compress, convert, resize, crop, add text, remove background and more. 100% private — all processing in your browser. No signup required.',
+  description: 'Use free online PDF and image tools to merge, split, compress, convert, resize, rotate, watermark, and sign files in your browser with no signup.',
   keywords: [
-    'image compressor', 'image converter', 'resize image online', 'crop image free',
-    'jpg to png', 'png to jpg', 'webp converter', 'image tools', 'free online image editor',
-    'compress image without losing quality', 'image to pdf', 'ocr text extractor',
-    'bulk image compressor', 'watermark image', 'add text to image', 'meme generator',
-    'heic converter', 'svg to png', 'image filters online', 'batch resize images',
+    'pdf tools', 'image tools', 'merge pdf', 'split pdf', 'compress pdf', 'rotate pdf',
+    'watermark pdf', 'sign pdf', 'crop pdf', 'image compressor', 'image converter',
+    'jpg to png', 'png to jpg', 'webp to png', 'webp to jpg', 'remove background',
+    'image upscaler', 'passport photo maker', 'bulk format convert', 'image to pdf',
+    'heic converter', 'resize image online', 'batch resize images',
   ],
   authors: [{ name: 'ImageFlow' }],
   creator: 'ImageFlow',
@@ -46,8 +46,8 @@ export const metadata = {
     locale: 'en_US',
     url: BASE_URL,
     siteName: 'ImageFlow',
-    title: 'ImageFlow — Free Online Image Tools',
-    description: 'Compress, convert, resize, crop, and edit images instantly. 100% free, 100% private. All processing in your browser — no uploads, no signup.',
+    title: 'ImageFlow: Free Online PDF and Image Tools (No Signup)',
+    description: 'Merge, split, compress, rotate, watermark, sign, and convert PDF and image files instantly in your browser.',
     images: [
       {
         url: `${BASE_URL}/og-image.png`,
@@ -59,8 +59,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ImageFlow — Free Online Image Tools',
-    description: 'Compress, convert, resize, crop, and edit images instantly. 100% free & private.',
+    title: 'ImageFlow: Free Online PDF and Image Tools (No Signup)',
+    description: 'Merge, split, compress, rotate, watermark, sign, and convert PDF and image files online for free.',
     images: [`${BASE_URL}/og-image.png`],
   },
   verification: {
@@ -77,7 +77,7 @@ const websiteSchema = {
   '@type': 'WebSite',
   name: 'ImageFlow',
   url: BASE_URL,
-  description: 'Free online image tools — compress, convert, resize, crop, and edit images in your browser.',
+  description: 'Free online PDF and image tools for convert, compress, resize, merge, split, rotate, watermark, and sign workflows.',
   potentialAction: {
     '@type': 'SearchAction',
     target: {
@@ -93,7 +93,7 @@ const organizationSchema = {
   '@type': 'Organization',
   name: 'ImageFlow',
   url: BASE_URL,
-  description: 'Free, privacy-first online image processing tools.',
+  description: 'Free, privacy-first online PDF and image processing tools.',
   sameAs: [
     `https://github.com/saurabh20402-ai/imageflowpdf`,
   ],

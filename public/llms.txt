@@ -1,0 +1,43 @@
+# ImageFlow
+
+ImageFlow provides free online PDF and image tools with privacy-first browser processing.
+
+## Core tools
+- Merge PDF
+- Split PDF
+- Compress PDF
+- Rotate PDF
+- Crop PDF
+- Watermark PDF
+- Sign PDF
+- JPG to PNG
+- PNG to JPG
+- WebP Converter
+- WebP to PNG
+- WebP to JPG
+- SVG to PNG
+- HEIC Converter
+- Image to PDF
+- Convert Format
+- Resize Image
+- Rotate Image
+- Remove Background
+- Image Upscaler
+- Passport Photo Maker
+- Thumbnail Creator
+- Compress Image
+- Bulk Compressor
+- Metadata Remover
+- Batch Resize
+- Collage Maker
+- Bulk Format Convert
+- Merge Images
+
+## Policies
+- Privacy Policy: https://imageflow.in/privacy-policy/
+- Terms: https://imageflow.in/terms/
+- Security: https://imageflow.in/security/
+
+## Website
+- Home: https://imageflow.in/
+- Tutorials: https://imageflow.in/tutorials/

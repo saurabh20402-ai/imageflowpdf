@@ -39,6 +39,21 @@ export default function HomePage() {
     <main>
       <Hero />
 
+      {/* SEO + LLM-readable content */}
+      <section style={{ padding: '36px 0 8px' }}>
+        <div className="container" style={{ maxWidth: 960 }}>
+          <h1 style={{ fontSize: 'clamp(24px, 3vw, 34px)', fontWeight: 800, color: 'var(--ink)', marginBottom: 12, letterSpacing: '-0.02em' }}>
+            Free Online PDF and Image Tools for Everyday Work
+          </h1>
+          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--muted)', marginBottom: 10 }}>
+            ImageFlow helps you merge PDF, split PDF, compress PDF, rotate PDF, crop PDF, watermark PDF, and sign PDF in your browser. You can also convert image formats like JPG to PNG, PNG to JPG, WebP to PNG, and WebP to JPG, plus resize and compress images.
+          </p>
+          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--muted)' }}>
+            All tools are designed for fast results, mobile-friendly usage, and no-signup workflows. Browse the categories below to pick the exact tool you need.
+          </p>
+        </div>
+      </section>
+
       {/* Popular Tools */}
       <section style={{ padding: '64px 0', borderTop: '1px solid var(--hairline-soft)' }}>
         <div className="container">

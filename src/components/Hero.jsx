@@ -57,7 +57,7 @@ export default function Hero() {
             lineHeight: 1.7
           }}
         >
-          Compress, convert, resize, crop, and edit images instantly.
+          Merge, split, compress, and convert PDF and image files instantly.
           All processing happens in your browser — your files never leave your device.
         </motion.p>
 
