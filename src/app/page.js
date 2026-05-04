@@ -7,7 +7,11 @@ import Hero from '@/components/Hero';
 import ToolCard from '@/components/ToolCard';
 import Features from '@/components/Features';
 import FAQ from '@/components/FAQ';
+<<<<<<< HEAD
 import { TOOLS } from '@/lib/tools-registry';
+=======
+import { TOOLS, TOOL_CATEGORIES, getToolsByCategory } from '@/lib/tools-registry';
+>>>>>>> d5c392a19ccb7a34433e5e59da42299d0e85add9
 
 const ALL_CATS = [
   { id: 'all', name: 'All Tools' },
@@ -15,6 +19,10 @@ const ALL_CATS = [
   { id: 'convert', name: 'Convert' },
   { id: 'transform', name: 'Transform' },
   { id: 'optimize', name: 'Optimize' },
+<<<<<<< HEAD
+=======
+  { id: 'pdf', name: 'PDF Tools' },
+>>>>>>> d5c392a19ccb7a34433e5e59da42299d0e85add9
   { id: 'create', name: 'Create' },
 ];
 
@@ -50,7 +58,7 @@ export default function HomePage() {
               Start with our top tools
             </h2>
             <p style={{ fontSize: 15, color: 'var(--muted)', marginTop: 10 }}>
-              The most-used image tools by creators worldwide
+              The most-used image and PDF tools by creators worldwide
             </p>
           </div>
           <div className="tools-responsive-grid">
@@ -76,10 +84,17 @@ export default function HomePage() {
               Complete Toolkit
             </p>
             <h2 style={{ fontSize: 'clamp(26px, 3vw, 36px)', fontWeight: 800, color: 'var(--ink)', marginBottom: '12px', letterSpacing: '-0.02em' }}>
+<<<<<<< HEAD
               All {TOOLS.length} online tools
             </h2>
             <p style={{ fontSize: '15px', color: 'var(--muted)', maxWidth: '500px', margin: '0 auto' }}>
               Everything you need for PDFs and images — merge, split, compress, convert, and create. 100% free, no signup.
+=======
+              All {TOOLS.length} tools
+            </h2>
+            <p style={{ fontSize: '15px', color: 'var(--muted)', maxWidth: '500px', margin: '0 auto' }}>
+              Everything you need — compress, convert, resize, and manage PDFs. 100% free, no signup.
+>>>>>>> d5c392a19ccb7a34433e5e59da42299d0e85add9
             </p>
           </div>
 
@@ -96,7 +111,7 @@ export default function HomePage() {
             />
           </div>
 
-          {/* Category Tabs — proper labels, not dots */}
+          {/* Category Tabs */}
           <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', justifyContent: 'center', marginBottom: '36px' }}>
             {ALL_CATS.map(cat => (
               <motion.button
@@ -110,7 +125,7 @@ export default function HomePage() {
             ))}
           </div>
 
-          {/* Tools Grid — wider cards */}
+          {/* Tools Grid */}
           <AnimatePresence mode="wait">
             <motion.div
               key={activeCategory + search}
