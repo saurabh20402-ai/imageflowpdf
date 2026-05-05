@@ -32,6 +32,9 @@ export const metadata = {
     icon: '/favicon.ico',
     shortcut: '/favicon.ico',
     apple: '/favicon.ico',
+    other: [
+      { rel: 'icon', url: '/favicon.ico' },
+    ],
   },
   authors: [{ name: 'ImageFlow' }],
   creator: 'ImageFlow',
