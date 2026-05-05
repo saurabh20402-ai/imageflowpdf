@@ -28,6 +28,11 @@ export const metadata = {
     'image upscaler', 'passport photo maker', 'bulk format convert', 'image to pdf',
     'heic converter', 'resize image online', 'batch resize images',
   ],
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/favicon.ico',
+  },
   authors: [{ name: 'ImageFlow' }],
   creator: 'ImageFlow',
   publisher: 'ImageFlow',
