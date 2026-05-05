@@ -1,9 +1,12 @@
+import { TOOLS } from '@/lib/tools-registry';
+
 const BASE_URL = 'https://imageflow.in';
 
 export default function sitemap() {
   const now = new Date();
 
-  return [
+  // Static pages
+  const staticPages = [
     {
       url: `${BASE_URL}/`,
       lastModified: now,
@@ -35,4 +38,14 @@ export default function sitemap() {
       priority: 0.5,
     },
   ];
+
+  // Tool pages
+  const toolPages = TOOLS.map((tool) => ({
+    url: `${BASE_URL}/tools/${tool.slug}/`,
+    lastModified: now,
+    changeFrequency: 'monthly',
+    priority: 0.7,
+  }));
+
+  return [...staticPages, ...toolPages];
 }
