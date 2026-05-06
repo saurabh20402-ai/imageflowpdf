@@ -13,6 +13,15 @@ const POSTS = [
     readTime: '6 min',
     emoji: '⚡',
   },
+  {
+    slug: 'jpg-to-png-converter-online-free',
+    title: 'JPG to PNG Converter Online Free (Fast, Secure & No Quality Loss)',
+    excerpt: 'Convert JPG to PNG online free without losing quality. Fast, secure, and easy image conversion with no signup required.',
+    category: 'Guide',
+    date: 'May 6, 2026',
+    readTime: '5 min',
+    emoji: '🖼️',
+  },
 ];
 
 const CATEGORIES = ['All', 'Guide', 'Deep Dive', 'Privacy', 'Tips', 'Productivity'];
