@@ -42,7 +42,7 @@ export default function Hero() {
             color: 'var(--ink)', marginBottom: '20px'
           }}
         >
-          Every image tool you need,{' '}
+          Every PDF and image tool you need,{' '}
           <span style={{ color: 'var(--primary)' }}>in one place</span>
         </motion.h1>
 
