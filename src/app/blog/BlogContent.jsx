@@ -3,62 +3,8 @@
 import Link from 'next/link';
 import { useState } from 'react';
 
-const POSTS = [
-  {
-    slug: 'how-to-compress-images-for-web',
-    title: 'How to Compress Images for the Web Without Losing Quality',
-    excerpt: 'Learn the best strategies for reducing image file sizes while keeping them crisp and clear for your website or app.',
-    category: 'Guide',
-    date: 'Apr 28, 2025',
-    readTime: '5 min',
-    emoji: '🗜️',
-  },
-  {
-    slug: 'webp-vs-jpeg-vs-png',
-    title: 'WebP vs JPEG vs PNG: Which Format Should You Use in 2025?',
-    excerpt: 'A comprehensive comparison of the three most popular image formats, covering file size, quality, browser support, and use cases.',
-    category: 'Deep Dive',
-    date: 'Apr 22, 2025',
-    readTime: '7 min',
-    emoji: '📊',
-  },
-  {
-    slug: 'image-metadata-privacy',
-    title: 'Your Photos Are Leaking Your Location — Here\'s How to Stop It',
-    excerpt: 'EXIF data embedded in your photos can reveal GPS coordinates, camera model, and timestamps. Learn how to remove it before sharing.',
-    category: 'Privacy',
-    date: 'Apr 15, 2025',
-    readTime: '4 min',
-    emoji: '🔒',
-  },
-  {
-    slug: 'perfect-social-media-image-sizes',
-    title: 'The Perfect Image Sizes for Every Social Media Platform in 2025',
-    excerpt: 'Instagram, Twitter, Facebook, LinkedIn, YouTube thumbnails — get the exact pixel dimensions right every time.',
-    category: 'Guide',
-    date: 'Apr 8, 2025',
-    readTime: '6 min',
-    emoji: '📱',
-  },
-  {
-    slug: 'ocr-use-cases',
-    title: '10 Creative Ways to Use OCR Text Extraction on Your Images',
-    excerpt: 'From digitizing receipts to extracting text from screenshots, optical character recognition has more uses than you think.',
-    category: 'Tips',
-    date: 'Mar 31, 2025',
-    readTime: '5 min',
-    emoji: '🔍',
-  },
-  {
-    slug: 'batch-processing-images',
-    title: 'Batch Processing Images: Save Hours with Bulk Tools',
-    excerpt: 'Why resize or compress images one by one? We show you how to process dozens of images at once and download them as a ZIP.',
-    category: 'Productivity',
-    date: 'Mar 24, 2025',
-    readTime: '4 min',
-    emoji: '⚡',
-  },
-];
+const POSTS = [];
+
 
 const CATEGORIES = ['All', 'Guide', 'Deep Dive', 'Privacy', 'Tips', 'Productivity'];
 
@@ -98,7 +44,7 @@ export default function BlogContent() {
         </div>
 
         {/* Featured Post */}
-        {activeCategory === 'All' && (
+        {activeCategory === 'All' && POSTS.length > 0 && (
           <div style={{
             padding: '32px', borderRadius: 20, marginBottom: 32,
             background: 'linear-gradient(135deg, var(--primary-light), var(--surface-card))',
@@ -120,30 +66,36 @@ export default function BlogContent() {
 
         {/* Post grid */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: 20 }}>
-          {(activeCategory === 'All' ? filtered.slice(1) : filtered).map(post => (
-            <div key={post.slug} style={{
-              padding: '24px', borderRadius: 16,
-              background: 'var(--surface-card)',
-              border: '1px solid rgba(0,0,0,0.06)',
-              boxShadow: '0 1px 4px rgba(0,0,0,0.04)',
-              display: 'flex', flexDirection: 'column', gap: 12,
-              cursor: 'pointer', transition: 'all 200ms',
-            }}
-              onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 6px 20px rgba(0,0,0,0.08)'; }}
-              onMouseLeave={e => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.boxShadow = '0 1px 4px rgba(0,0,0,0.04)'; }}>
-              <div style={{ fontSize: 28 }}>{post.emoji}</div>
-              <div>
-                <span style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--primary)' }}>{post.category}</span>
-                <h3 style={{ fontSize: 15, fontWeight: 700, color: 'var(--ink)', marginTop: 6, lineHeight: 1.4 }}>{post.title}</h3>
-              </div>
-              <p style={{ fontSize: 13, color: 'var(--muted)', lineHeight: 1.6, flex: 1 }}>{post.excerpt}</p>
-              <div style={{ display: 'flex', gap: 10, fontSize: 12, color: 'var(--muted-soft)' }}>
-                <span>{post.date}</span>
-                <span>·</span>
-                <span>{post.readTime} read</span>
-              </div>
+          {filtered.length === 0 ? (
+            <div style={{ gridColumn: '1 / -1', padding: '32px', borderRadius: 20, background: 'var(--surface-card)', textAlign: 'center', color: 'var(--muted)' }}>
+              No blog posts are available yet. Add your first post when ready.
             </div>
-          ))}
+          ) : (
+            (activeCategory === 'All' ? filtered.slice(1) : filtered).map(post => (
+              <div key={post.slug} style={{
+                padding: '24px', borderRadius: 16,
+                background: 'var(--surface-card)',
+                border: '1px solid rgba(0,0,0,0.06)',
+                boxShadow: '0 1px 4px rgba(0,0,0,0.04)',
+                display: 'flex', flexDirection: 'column', gap: 12,
+                cursor: 'pointer', transition: 'all 200ms',
+              }}
+                onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 6px 20px rgba(0,0,0,0.08)'; }}
+                onMouseLeave={e => { e.currentTarget.style.transform = 'none'; e.currentTarget.style.boxShadow = '0 1px 4px rgba(0,0,0,0.04)'; }}>
+                <div style={{ fontSize: 28 }}>{post.emoji}</div>
+                <div>
+                  <span style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--primary)' }}>{post.category}</span>
+                  <h3 style={{ fontSize: 15, fontWeight: 700, color: 'var(--ink)', marginTop: 6, lineHeight: 1.4 }}>{post.title}</h3>
+                </div>
+                <p style={{ fontSize: 13, color: 'var(--muted)', lineHeight: 1.6, flex: 1 }}>{post.excerpt}</p>
+                <div style={{ display: 'flex', gap: 10, fontSize: 12, color: 'var(--muted-soft)' }}>
+                  <span>{post.date}</span>
+                  <span>·</span>
+                  <span>{post.readTime} read</span>
+                </div>
+              </div>
+            ))
+          )}
         </div>
 
         {/* CTA */}

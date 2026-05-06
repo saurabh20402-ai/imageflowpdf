@@ -19,7 +19,6 @@ const FOOTER_LINKS = {
   ],
   Learn: [
     { label: 'Tutorials', href: '/tutorials/' },
-    { label: 'Blog', href: '/blog/' },
     { label: 'JPG to PNG Guide', href: '/tutorials/#tut-jpg-to-png' },
     { label: 'Image Compression 101', href: '/tutorials/#tut-compress-image' },
     { label: 'OCR Guide', href: '/tutorials/#tut-ocr-extract-text' },
