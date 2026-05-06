@@ -27,7 +27,7 @@ export default function CompressPdfOnlineFreePage() {
               </p>
             </div>
             <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', justifyContent: 'center' }}>
-              <a href="https://imageflow.in/compress-pdf" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', minWidth: 180, padding: '16px 24px', borderRadius: 14, border: 'none', background: '#4338ca', color: '#fff', fontSize: 16, fontWeight: 700, textDecoration: 'none' }}>
+              <a href="/tools/compress-pdf/" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', minWidth: 180, padding: '16px 24px', borderRadius: 14, border: 'none', background: '#4338ca', color: '#fff', fontSize: 16, fontWeight: 700, textDecoration: 'none' }}>
                 Compress PDF Now
               </a>
               <a href="#pro-tips" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', minWidth: 180, padding: '16px 24px', borderRadius: 14, border: '1px solid #c7d2fe', background: '#fff', color: '#4338ca', fontSize: 16, fontWeight: 700, textDecoration: 'none' }}>
@@ -169,7 +169,7 @@ export default function CompressPdfOnlineFreePage() {
             <p style={{ margin: 0, fontSize: 17, lineHeight: 1.8, color: '#334155', maxWidth: 760, marginInline: 'auto' }}>
               Use ImageFlow for reliable PDF compression that keeps quality intact, moves fast, and works on desktop and mobile. No signup, no extra apps, just a cleaner PDF experience.
             </p>
-            <a href="https://imageflow.in/compress-pdf" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', padding: '16px 28px', borderRadius: 14, background: '#4338ca', color: '#fff', fontSize: 16, fontWeight: 700, textDecoration: 'none' }}>
+            <a href="/tools/compress-pdf/" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', padding: '16px 28px', borderRadius: 14, background: '#4338ca', color: '#fff', fontSize: 16, fontWeight: 700, textDecoration: 'none' }}>
               Try Compress PDF Now
             </a>
           </div>
