@@ -40,6 +40,15 @@ const POSTS = [
     readTime: '5 min',
     emoji: '🔥',
   },
+  {
+    slug: 'image-to-pdf-converter-free-online-convert-jpg-png-instantly',
+    title: 'Image to PDF Converter Free Online (Convert JPG & PNG Instantly)',
+    excerpt: 'Use our free image to PDF converter online to convert JPG and PNG files instantly. Create PDFs under 100KB or 200KB without losing quality.',
+    category: 'Guide',
+    date: 'May 7, 2026',
+    readTime: '5 min',
+    emoji: '🔥',
+  },
 ];
 
 const CATEGORIES = ['All', 'Guide', 'Deep Dive', 'Privacy', 'Tips', 'Productivity'];

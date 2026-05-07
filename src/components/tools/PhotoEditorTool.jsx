@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Image, Crop, Maximize2, FileDown, RotateCw } from 'lucide-react';
+import { Image, Maximize2, FileDown, RotateCw } from 'lucide-react';
 
 export default function PhotoEditorTool({ tool }) {
   const actions = [
@@ -16,12 +16,6 @@ export default function PhotoEditorTool({ tool }) {
       description: 'Reduce file size while keeping quality sharp.',
       href: '/tools/compress-image',
       icon: FileDown,
-    },
-    {
-      title: 'Crop Image',
-      description: 'Trim unwanted areas and control aspect ratio.',
-      href: '/tools/crop-image',
-      icon: Crop,
     },
     {
       title: 'Rotate Image',
