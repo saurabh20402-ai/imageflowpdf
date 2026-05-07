@@ -11,7 +11,7 @@ const inter = Inter({
   display: 'swap',
 });
 
-const BASE_URL = 'https://imageflow.in';
+const BASE_URL = 'https://imageflow.in/';
 const GA_MEASUREMENT_ID = 'G-XH02BRCHFC';
 
 export const metadata = {

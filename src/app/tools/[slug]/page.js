@@ -1,7 +1,7 @@
 import { TOOLS } from '@/lib/tools-registry';
 import ToolPageClient from '@/components/ToolPageClient';
 
-const BASE_URL = 'https://imageflow.in';
+const BASE_URL = 'https://imageflow.in/';
 
 // Unique, keyword-rich meta descriptions per tool
 const TOOL_META = {
@@ -127,7 +127,7 @@ export async function generateMetadata({ params }) {
   const title = custom?.title || `${tool.name} — Free Online Tool | ImageFlow`;
   const description = custom?.description || tool.description;
   const keywords = custom?.keywords || `${tool.name}, image tool, free online, ImageFlow`;
-  const toolUrl = `${BASE_URL}/tools/${slug}/`;
+  const toolUrl = `${BASE_URL}tools/${slug}/`;
 
   // JSON-LD for each tool page
   const toolSchema = {

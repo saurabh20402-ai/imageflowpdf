@@ -22,6 +22,24 @@ const POSTS = [
     readTime: '5 min',
     emoji: '🖼️',
   },
+  {
+    slug: 'resize-image-online-free-without-losing-quality',
+    title: 'Resize Image Online Free Without Losing Quality (20KB, 50KB, 100KB & More)',
+    excerpt: 'Resize image online free without losing quality. Easily resize image to 20KB, 50KB, 100KB, or 200KB with our fast and secure image resizer tool.',
+    category: 'Guide',
+    date: 'May 7, 2026',
+    readTime: '5 min',
+    emoji: '🔥',
+  },
+  {
+    slug: 'photo-editor-online-free-hd-image-editing-without-download',
+    title: 'Photo Editor Online Free (HD Image Editing Without Download)',
+    excerpt: 'Use the best free photo editor online to edit images in HD quality. Fast, secure, and easy-to-use image editor with no download required.',
+    category: 'Guide',
+    date: 'May 7, 2026',
+    readTime: '5 min',
+    emoji: '🔥',
+  },
 ];
 
 const CATEGORIES = ['All', 'Guide', 'Deep Dive', 'Privacy', 'Tips', 'Productivity'];
