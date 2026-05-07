@@ -30,6 +30,11 @@ const TOOL_META = {
     description: 'Resize images to exact pixel dimensions, percentage, or social media presets. Free, instant, no signup. Works in your browser.',
     keywords: 'resize image online, change image size, image resizer free, resize photo online',
   },
+  'photo-editor': {
+    title: 'Photo Editor Online Free — HD Image Editing Without Download',
+    description: 'Edit photos online with quick access to crop, resize, compress, rotate, and convert tools. Free, HD, no download required.',
+    keywords: 'photo editor online free, hd image editing, edit photos online, online photo editor',
+  },
   'crop-image': {
     title: 'Crop Image Online Free — Custom & Preset Ratios',
     description: 'Crop images online with custom or preset aspect ratios (1:1, 16:9, 4:3). Free, instant, no signup. Interactive drag-to-crop tool.',

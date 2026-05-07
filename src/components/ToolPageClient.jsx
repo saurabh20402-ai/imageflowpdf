@@ -11,6 +11,7 @@ const COMPONENT_MAP = {
   CompressTool: dynamic(() => import('@/components/tools/CompressTool'), { ssr: false }),
   ResizeTool: dynamic(() => import('@/components/tools/ResizeTool'), { ssr: false }),
   TransformTool: dynamic(() => import('@/components/tools/TransformTool'), { ssr: false }),
+  PhotoEditorTool: dynamic(() => import('@/components/tools/PhotoEditorTool'), { ssr: false }),
   CollageTool: dynamic(() => import('@/components/tools/CollageTool'), { ssr: false }),
   MergeTool: dynamic(() => import('@/components/tools/MergeTool'), { ssr: false }),
   MetadataRemover: dynamic(() => import('@/components/tools/MetadataRemover'), { ssr: false }),

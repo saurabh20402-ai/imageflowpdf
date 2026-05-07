@@ -198,6 +198,17 @@ export const TOOLS = [
     popular: true,
   },
   {
+    slug: 'photo-editor',
+    name: 'Photo Editor',
+    description: 'Edit photos online with quick access to crop, resize, compress, rotate, and convert tools.',
+    category: 'transform',
+    color: '#7c3aed',
+    icon: 'Image',
+    component: 'PhotoEditorTool',
+    config: {},
+    popular: true,
+  },
+  {
     slug: 'rotate-image',
     name: 'Rotate Image',
     description: 'Rotate images by 90°, 180°, 270°, or any custom angle.',

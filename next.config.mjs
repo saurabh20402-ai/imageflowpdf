@@ -19,17 +19,6 @@ const nextConfig = {
         destination: 'https://imageflow.in/:path*',
         permanent: true,
       },
-      {
-        source: '/:path*',
-        has: [
-          {
-            type: 'host',
-            value: 'imageflow.in',
-          },
-        ],
-        destination: 'https://imageflow.in/:path*',
-        permanent: true,
-      },
     ];
   },
 };
