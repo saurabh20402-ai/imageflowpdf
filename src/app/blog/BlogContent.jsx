@@ -49,6 +49,15 @@ const POSTS = [
     readTime: '5 min',
     emoji: '🔥',
   },
+  {
+    slug: 'merge-pdf-online-free',
+    title: 'Merge PDF Online Free (Fast, Secure & Easy)',
+    excerpt: 'Learn how to merge PDF files online for free with ImageFlow. Fast, secure, and no signup required.',
+    category: 'Guide',
+    date: 'May 11, 2026',
+    readTime: '6 min',
+    emoji: '📄',
+  },
 ];
 
 const CATEGORIES = ['All', 'Guide', 'Deep Dive', 'Privacy', 'Tips', 'Productivity'];
