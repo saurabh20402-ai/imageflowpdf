@@ -1,9 +1,9 @@
-﻿export const metadata = {
-  title: 'Merge PDF Online Free (Fast, Secure & Easy)',
-  description: 'Merge PDF online free and combine multiple PDF files instantly without losing quality. Fast, secure, and easy-to-use PDF merger tool with no signup required.',
+export const metadata = {
+  title: 'Split PDF Online Free (Extract PDF Pages Instantly)',
+  description: 'Split PDF online free and extract PDF pages into separate files instantly. Fast, secure, and easy-to-use PDF splitter tool with no signup required.',
 };
 
-export default function MergePdfOnlineFreePage() {
+export default function SplitPdfOnlineFreePage() {
   return (
     <main style={{ padding: '60px 20px', maxWidth: 980, margin: '0 auto', fontFamily: 'system-ui, sans-serif', color: '#0f172a' }}>
       <article>
@@ -20,17 +20,17 @@ export default function MergePdfOnlineFreePage() {
             </span>
             <div>
               <h1 style={{ fontSize: 'clamp(38px, 5vw, 56px)', lineHeight: 1.05, margin: '0 0 18px' }}>
-                Merge PDF Online Free Without Losing Quality
+                Split PDF Online Free Without Losing Quality
               </h1>
               <p style={{ margin: 0, fontSize: 18, lineHeight: 1.8, maxWidth: 760, color: '#475569' }}>
-                Combine multiple PDF files into a single document instantly with a fast and secure browser tool. No downloads, no signup, and no hidden steps — just reliable merging.
+                Extract specific pages from your PDF instantly with a fast and secure browser tool. No downloads, no signup, and no hidden steps — just split PDFs exactly how you need them.
               </p>
             </div>
             <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', justifyContent: 'center' }}>
-              <a href="/tools/merge-pdf/" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', minWidth: 180, padding: '16px 24px', borderRadius: 14, border: 'none', background: '#4338ca', color: '#fff', fontSize: 16, fontWeight: 700, textDecoration: 'none' }}>
-                Merge PDF Now
+              <a href="/tools/split-pdf/" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', minWidth: 180, padding: '16px 24px', borderRadius: 14, border: 'none', background: '#4338ca', color: '#fff', fontSize: 16, fontWeight: 700, textDecoration: 'none' }}>
+                Split PDF Now
               </a>
-              <a href="#how-to-merge" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', minWidth: 180, padding: '16px 24px', borderRadius: 14, border: '1px solid #c7d2fe', background: '#fff', color: '#4338ca', fontSize: 16, fontWeight: 700, textDecoration: 'none' }}>
+              <a href="#how-to-split" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', minWidth: 180, padding: '16px 24px', borderRadius: 14, border: '1px solid #c7d2fe', background: '#fff', color: '#4338ca', fontSize: 16, fontWeight: 700, textDecoration: 'none' }}>
                 Learn How
               </a>
             </div>
@@ -38,8 +38,8 @@ export default function MergePdfOnlineFreePage() {
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 18, marginTop: 36 }}>
             {[
-              { title: 'Fast merging', text: 'Combine PDFs in seconds with smart batch processing.', accent: '#eef2ff' },
-              { title: 'Quality preserved', text: 'Keep all text, images, and formatting perfectly intact.', accent: '#f5f3ff' },
+              { title: 'Instant extraction', text: 'Split PDFs in seconds with smart page selection.', accent: '#eef2ff' },
+              { title: 'Quality preserved', text: 'Keep all text, images, and formatting intact.', accent: '#f5f3ff' },
               { title: 'No signup', text: 'Use the tool immediately on any browser or device.', accent: '#ecfdf5' },
             ].map((item) => (
               <div key={item.title} style={{ background: item.accent, borderRadius: 24, padding: '22px' }}>
@@ -53,32 +53,32 @@ export default function MergePdfOnlineFreePage() {
         <section style={{ marginBottom: 40 }}>
           <div style={{ display: 'grid', gap: 24, gridTemplateColumns: '1.4fr 0.6fr' }}>
             <div>
-              <h2 style={{ fontSize: 30, marginBottom: 18 }}>Why merge PDF files?</h2>
+              <h2 style={{ fontSize: 30, marginBottom: 18 }}>Why split PDF files?</h2>
               <p style={{ color: '#475569', fontSize: 17, lineHeight: 1.9, marginBottom: 24 }}>
-                Managing multiple PDF files separately wastes time and makes document organization difficult. Merging them into one file simplifies everything.
+                Large PDF files are hard to manage, share, and organize. Splitting them into individual pages or page ranges makes document handling simpler and more efficient.
               </p>
               <ul style={{ color: '#334155', fontSize: 16, lineHeight: 1.9, paddingLeft: 20, margin: 0 }}>
-                <li style={{ marginBottom: 12 }}>Combine multiple documents into one organized file.</li>
-                <li style={{ marginBottom: 12 }}>Simplify file management and storage.</li>
-                <li style={{ marginBottom: 12 }}>Share complete documents with a single link.</li>
-                <li style={{ marginBottom: 12 }}>Create professional portfolios and reports.</li>
+                <li style={{ marginBottom: 12 }}>Extract specific pages without downloading the full document.</li>
+                <li style={{ marginBottom: 12 }}>Share only the pages people actually need.</li>
+                <li style={{ marginBottom: 12 }}>Organize long documents into smaller, focused files.</li>
+                <li style={{ marginBottom: 12 }}>Reduce file size for easier storage and faster sharing.</li>
               </ul>
             </div>
             <div style={{ background: '#ffffff', border: '1px solid #e2e8f0', borderRadius: 24, padding: '28px', boxShadow: '0 18px 45px rgba(15, 23, 42, 0.06)' }}>
               <p style={{ fontSize: 14, fontWeight: 700, color: '#4338ca', marginBottom: 14 }}>What you get</p>
-              <p style={{ margin: 0, fontSize: 16, color: '#334155', lineHeight: 1.8 }}>A fast PDF merger that lets you combine files exactly as you need them, with perfect quality and zero complexity.</p>
+              <p style={{ margin: 0, fontSize: 16, color: '#334155', lineHeight: 1.8 }}>A fast PDF splitter that lets you extract pages exactly as you need them, with perfect quality and zero complexity.</p>
             </div>
           </div>
         </section>
 
         <section style={{ marginBottom: 40 }}>
-          <h2 style={{ fontSize: 30, marginBottom: 18 }}>Who needs to merge PDFs?</h2>
+          <h2 style={{ fontSize: 30, marginBottom: 18 }}>Who needs to split PDFs?</h2>
           <div style={{ display: 'grid', gap: 18, gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))' }}>
             {[
-              { title: '📚 Students', detail: 'Combine course notes, assignments, and research into one document.' },
-              { title: '💼 Office workers', detail: 'Merge reports, proposals, and supporting documents.' },
-              { title: '📋 Freelancers', detail: 'Create complete portfolios by merging project samples.' },
-              { title: '🎨 Designers', detail: 'Combine design mockups and case studies for client presentations.' },
+              { title: '📚 Students', detail: 'Extract specific chapters from textbooks and notes.' },
+              { title: '💼 Office workers', detail: 'Pull individual pages from reports and proposals.' },
+              { title: '📋 Forms & documents', detail: 'Split multi-page forms into single-page PDFs.' },
+              { title: '📑 Archive management', detail: 'Organize large documents into smaller, searchable files.' },
             ].map((item) => (
               <div key={item.title} style={{ padding: '24px', borderRadius: 24, background: '#fff', border: '1px solid #e2e8f0' }}>
                 <p style={{ margin: 0, fontSize: 15, fontWeight: 700, color: '#0f172a' }}>{item.title}</p>
@@ -88,15 +88,15 @@ export default function MergePdfOnlineFreePage() {
           </div>
         </section>
 
-        <section id="how-to-merge" style={{ marginBottom: 40 }}>
-          <h2 style={{ fontSize: 30, marginBottom: 18 }}>How to merge PDF online in 5 easy steps</h2>
+        <section id="how-to-split" style={{ marginBottom: 40 }}>
+          <h2 style={{ fontSize: 30, marginBottom: 18 }}>How to split PDF online in 5 easy steps</h2>
           <div style={{ display: 'grid', gap: 18 }}>
             {[
-              'Open the PDF merger tool and upload your first file.',
-              'Add more PDF files one by one or upload multiple files at once.',
-              'Arrange the PDFs in the order you want them combined.',
-              'Click merge and wait a few seconds for processing.',
-              'Download your merged PDF file — ready to use!',
+              'Open the PDF splitter tool and upload your file.',
+              'Select the page range or individual pages you want to extract.',
+              'Choose whether to split into separate files or keep as ranges.',
+              'Click split and wait a few seconds for processing.',
+              'Download your split PDF files — ready to use!',
             ].map((step, index) => (
               <div key={step} style={{ display: 'flex', gap: 18, alignItems: 'flex-start', padding: '22px 24px', borderRadius: 20, background: '#f8fafc', border: '1px solid #e2e8f0' }}>
                 <div style={{ width: 34, height: 34, borderRadius: 14, background: '#4338ca', color: '#fff', display: 'grid', placeItems: 'center', fontWeight: 700, fontSize: 15 }}>{index + 1}</div>
@@ -107,12 +107,12 @@ export default function MergePdfOnlineFreePage() {
         </section>
 
         <section style={{ marginBottom: 40, background: '#f8fafc', borderRadius: 28, padding: '32px 30px' }}>
-          <h2 style={{ fontSize: 30, marginBottom: 18 }}>Merge PDF without losing quality</h2>
+          <h2 style={{ fontSize: 30, marginBottom: 18 }}>Split PDF without losing quality</h2>
           <div style={{ display: 'grid', gap: 18, gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))' }}>
             {[
-              { title: 'Perfect text quality', detail: 'Every word stays sharp and readable after merging.' },
+              { title: 'Perfect text quality', detail: 'Every word stays sharp and readable after splitting.' },
               { title: 'Images stay intact', detail: 'All embedded images and graphics remain at full quality.' },
-              { title: 'Page order control', detail: 'Arrange pages exactly as you need them in the final document.' },
+              { title: 'Formatting preserved', detail: 'Page layouts, fonts, and styling are never compromised.' },
             ].map((item) => (
               <div key={item.title} style={{ padding: '24px', borderRadius: 24, background: '#fff', border: '1px solid #e2e8f0' }}>
                 <p style={{ margin: 0, fontSize: 15, fontWeight: 700, color: '#0f172a' }}>{item.title}</p>
@@ -123,23 +123,23 @@ export default function MergePdfOnlineFreePage() {
         </section>
 
         <section style={{ marginBottom: 40 }}>
-          <h2 style={{ fontSize: 30, marginBottom: 18 }}>Common PDF merging use cases</h2>
+          <h2 style={{ fontSize: 30, marginBottom: 18 }}>Common PDF splitting use cases</h2>
           <div style={{ display: 'grid', gap: 18, gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))' }}>
             {[
-              'Combine multiple chapters into a single book or guide.',
-              'Merge contracts and supporting legal documents.',
-              'Consolidate invoices and receipts into one file.',
-              'Create a complete portfolio from individual project PDFs.',
+              'Extract a single chapter from a book or course material.',
+              'Pull specific pages from a multi-page contract or invoice.',
+              'Separate employee records or student transcripts.',
+              'Create individual PDF files for each form section.',
             ].map((useCase) => (
               <div key={useCase} style={{ padding: '22px', borderRadius: 20, background: '#ffffff', border: '1px solid #e2e8f0' }}>
-                <p style={{ margin: 0, fontSize: 16, lineHeight: 1.8, color: '#334155' }}>📑 {useCase}</p>
+                <p style={{ margin: 0, fontSize: 16, lineHeight: 1.8, color: '#334155' }}>✂️ {useCase}</p>
               </div>
             ))}
           </div>
         </section>
 
         <section style={{ marginBottom: 40 }}>
-          <h2 style={{ fontSize: 30, marginBottom: 18 }}>Merge PDF vs. other tools</h2>
+          <h2 style={{ fontSize: 30, marginBottom: 18 }}>Split PDF vs. other tools</h2>
           <div style={{ borderRadius: 24, overflow: 'hidden', border: '1px solid #e2e8f0' }}>
             <div style={{ overflowX: 'auto' }}>
               <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 15 }}>
@@ -173,13 +173,13 @@ export default function MergePdfOnlineFreePage() {
         </section>
 
         <section style={{ marginBottom: 40 }}>
-          <h2 style={{ fontSize: 30, marginBottom: 18 }}>Pro tips for merging PDFs</h2>
+          <h2 style={{ fontSize: 30, marginBottom: 18 }}>Pro tips for splitting PDFs</h2>
           <div style={{ display: 'grid', gap: 18, gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))' }}>
             {[
-              'Save the original PDFs before merging to keep backups.',
-              'Arrange files in a logical order for better readability.',
-              'Remove unnecessary pages before merging to reduce file size.',
-              'Name your merged PDF clearly to identify its contents.',
+              'Save the original PDF before splitting to keep a backup.',
+              'Label split files clearly with page numbers or content type.',
+              'Use batch splitting if you need to split multiple PDFs.',
+              'Keep related pages together when possible for better organization.',
             ].map((tip) => (
               <div key={tip} style={{ padding: '22px', borderRadius: 20, background: '#ffffff', border: '1px solid #e2e8f0' }}>
                 <p style={{ margin: 0, fontSize: 16, lineHeight: 1.8, color: '#334155' }}>{tip}</p>
@@ -192,9 +192,9 @@ export default function MergePdfOnlineFreePage() {
           <h2 style={{ fontSize: 30, marginBottom: 18 }}>Related tools you can use</h2>
           <div style={{ display: 'grid', gap: 18, gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))' }}>
             {[
-              { title: 'Split PDF', description: 'Extract specific pages from your merged PDFs.', href: '/tools/split-pdf/' },
-              { title: 'Compress PDF', description: 'Reduce file size after merging large documents.', href: '/tools/compress-pdf/' },
-              { title: 'Image to PDF', description: 'Convert images to PDF before merging.', href: '/tools/image-to-pdf/' },
+              { title: 'Merge PDF', description: 'Combine multiple PDFs into a single document.', href: '/tools/merge-pdf/' },
+              { title: 'Compress PDF', description: 'Reduce file size while keeping quality intact.', href: '/tools/compress-pdf/' },
+              { title: 'Image to PDF', description: 'Convert images into a single PDF file.', href: '/tools/image-to-pdf/' },
             ].map((tool) => (
               <a key={tool.title} href={tool.href} style={{ display: 'block', padding: '24px', borderRadius: 24, background: '#fff', border: '1px solid #e2e8f0', textDecoration: 'none', color: '#0f172a', transition: 'transform 150ms, boxShadow 150ms' }}>
                 <h3 style={{ margin: 0, fontSize: 20 }}>{tool.title}</h3>
@@ -209,12 +209,12 @@ export default function MergePdfOnlineFreePage() {
           <h2 style={{ fontSize: 30, marginBottom: 18 }}>Frequently Asked Questions</h2>
           <div style={{ display: 'grid', gap: 20 }}>
             {[
-              { question: 'Is it safe to merge PDF online?', answer: 'Yes. Our tool processes files in your browser and deletes them immediately after merging. We never store your data on servers.' },
-              { question: 'Is this tool free?', answer: 'Yes. ImageFlow lets you merge PDF online free with no signup, no limits, and no hidden fees.' },
-              { question: 'Can I merge more than 2 PDFs?', answer: 'Yes. You can merge unlimited PDF files at once. Just upload all the files and arrange them in order.' },
-              { question: 'Does merging reduce quality?', answer: 'No. Merging preserves the original quality of text, images, and formatting perfectly.' },
-              { question: 'How large can the files be?', answer: 'You can merge PDFs of any size. Larger files may take a bit longer, but the tool handles them reliably.' },
+              { question: 'Is it safe to split PDF online?', answer: 'Yes. Our tool processes files in your browser and deletes them immediately after splitting. We never store your data on servers.' },
+              { question: 'Is this tool free?', answer: 'Yes. ImageFlow lets you split PDF online free with no signup, no limits, and no hidden fees.' },
+              { question: 'Can I split PDF pages into separate files?', answer: 'Yes. You can extract individual pages or page ranges, and each can be downloaded as a separate PDF file.' },
               { question: 'What file formats are supported?', answer: 'Our tool supports standard PDF files. For more about PDF formats, check ', link: { href: 'https://en.wikipedia.org/wiki/PDF', text: 'Wikipedia' } },
+              { question: 'Does splitting reduce quality?', answer: 'No. Splitting preserves the original quality of text, images, and formatting perfectly.' },
+              { question: 'How many pages can I split at once?', answer: 'You can split PDFs of any size. Larger files may take a bit longer, but the tool handles them reliably.' },
             ].map((item, index) => (
               <div key={item.question} style={{ padding: '24px', borderRadius: 24, background: '#f8fafc', border: '1px solid #e2e8f0' }}>
                 <p style={{ margin: '0 0 12px 0', fontSize: 16, fontWeight: 700, color: '#0f172a' }}>{item.question}</p>
@@ -232,12 +232,12 @@ export default function MergePdfOnlineFreePage() {
         </section>
 
         <section style={{ marginBottom: 40, background: 'linear-gradient(135deg, #4338ca 0%, #6366f1 100%)', borderRadius: 32, padding: '48px 32px', color: '#ffffff', textAlign: 'center' }}>
-          <h2 style={{ fontSize: 32, margin: '0 0 16px 0', fontWeight: 800 }}>Ready to merge your PDFs?</h2>
+          <h2 style={{ fontSize: 32, margin: '0 0 16px 0', fontWeight: 800 }}>Ready to split your PDF?</h2>
           <p style={{ margin: '0 0 28px 0', fontSize: 17, lineHeight: 1.8, maxWidth: 600, marginLeft: 'auto', marginRight: 'auto' }}>
-            Start merging PDFs instantly with our fast, free, and secure tool. No signup, no downloads, no complications.
+            Start splitting PDFs instantly with our fast, free, and secure tool. No signup, no downloads, no complications.
           </p>
-          <a href="/tools/merge-pdf/" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', padding: '16px 32px', borderRadius: 14, background: '#ffffff', color: '#4338ca', fontSize: 16, fontWeight: 700, textDecoration: 'none', transition: 'transform 150ms' }}>
-            Merge PDF Now →
+          <a href="/tools/split-pdf/" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', padding: '16px 32px', borderRadius: 14, background: '#ffffff', color: '#4338ca', fontSize: 16, fontWeight: 700, textDecoration: 'none', transition: 'transform 150ms' }}>
+            Split PDF Now →
           </a>
         </section>
       </article>

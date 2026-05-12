@@ -58,6 +58,15 @@ const POSTS = [
     readTime: '6 min',
     emoji: '📄',
   },
+  {
+    slug: 'split-pdf-online-free',
+    title: 'Split PDF Online Free (Extract PDF Pages Instantly)',
+    excerpt: 'Split PDF online free and extract PDF pages into separate files instantly. Fast, secure, and easy-to-use PDF splitter tool with no signup required.',
+    category: 'Guide',
+    date: 'May 12, 2026',
+    readTime: '6 min',
+    emoji: '✂️',
+  },
 ];
 
 const CATEGORIES = ['All', 'Guide', 'Deep Dive', 'Privacy', 'Tips', 'Productivity'];
