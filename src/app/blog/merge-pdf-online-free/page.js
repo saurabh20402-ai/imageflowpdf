@@ -1,244 +1,242 @@
-﻿export const metadata = {
+﻿import '../blog-post.css';
+
+export const metadata = {
   title: 'Merge PDF Online Free (Fast, Secure & Easy)',
-  description: 'Merge PDF online free and combine multiple PDF files instantly without losing quality. Fast, secure, and easy-to-use PDF merger tool with no signup required.',
+  description: 'Merge PDF online free and combine multiple PDF files into one instantly. Fast, secure, and easy-to-use PDF merger tool with no signup required.',
 };
+
+const FEATURES = [
+  { title: 'Instant merging', text: 'Combine multiple PDFs in seconds with perfect ordering.', bg: '#eef2ff' },
+  { title: 'Quality preserved', text: 'All text, images, and formatting remain perfectly intact.', bg: '#f5f3ff' },
+  { title: 'No signup', text: 'Use the tool immediately on any browser or device.', bg: '#ecfdf5' },
+];
+
+const WHO_NEEDS = [
+  { title: '📚 Students', detail: 'Combine chapters, assignments, and research into one document.' },
+  { title: '💼 Office workers', detail: 'Merge reports, proposals, and meeting notes effortlessly.' },
+  { title: '📋 Forms & documents', detail: 'Combine multi-part forms and applications into single PDFs.' },
+  { title: '📑 Archive management', detail: 'Consolidate scattered documents into organized collections.' },
+];
+
+const STEPS = [
+  'Open the PDF merger tool and upload your files.',
+  'Arrange the PDFs in the order you want them combined.',
+  'Preview the merged result to ensure correct arrangement.',
+  'Click merge and wait a few seconds for processing.',
+  'Download your merged PDF — ready to share and use!',
+];
+
+const QUALITY_POINTS = [
+  { title: 'Perfect text quality', detail: 'Every word stays sharp and readable after merging.' },
+  { title: 'Images stay intact', detail: 'All embedded images and graphics remain at full quality.' },
+  { title: 'Formatting preserved', detail: 'Page layouts, fonts, and styling are never compromised.' },
+];
+
+const USE_CASES = [
+  'Combine multiple chapters into one complete book or guide.',
+  'Merge invoices and receipts into a single payment document.',
+  'Combine employee records or student transcripts into one file.',
+  'Consolidate multi-part applications into a single submission.',
+];
+
+const COMPARISON = [
+  { feature: 'Free to use', our: '✓', adobe: '✗', ilove: '✓' },
+  { feature: 'No signup needed', our: '✓', adobe: '✗', ilove: '✗' },
+  { feature: 'Fast processing', our: '✓', adobe: '✓', ilove: '✓' },
+  { feature: 'Secure browser-based', our: '✓', adobe: '✗', ilove: '✓' },
+  { feature: 'Mobile-friendly', our: '✓', adobe: '✓', ilove: '✓' },
+];
+
+const PRO_TIPS = [
+  'Arrange files in logical order before merging for better flow.',
+  'Keep file sizes reasonable by merging similar document types together.',
+  'Name merged files clearly with content descriptions.',
+  'Save individual files separately as backups before merging.',
+];
+
+const RELATED_TOOLS = [
+  { title: 'Split PDF', description: 'Extract specific pages from a PDF document.', href: '/tools/split-pdf/' },
+  { title: 'Compress PDF', description: 'Reduce file size while keeping quality intact.', href: '/tools/compress-pdf/' },
+  { title: 'Image to PDF', description: 'Convert images into a single PDF file.', href: '/tools/image-to-pdf/' },
+];
+
+const FAQs = [
+  { q: 'Is it safe to merge PDF online?', a: 'Yes. Our tool processes files in your browser and deletes them immediately after merging. We never store your data on servers.' },
+  { q: 'Is this tool free?', a: 'Yes. ImageFlow lets you merge PDF online free with no signup, no limits, and no hidden fees.' },
+  { q: 'Can I reorder PDFs before merging?', a: 'Yes. You can drag and drop files to arrange them in any order before merging.' },
+  { q: 'Does merging reduce quality?', a: 'No. Merging preserves the original quality of text, images, and formatting perfectly.' },
+  { q: 'How many PDFs can I merge at once?', a: 'You can merge multiple PDFs of any size. Larger files may take a bit longer, but the tool handles them reliably.' },
+];
 
 export default function MergePdfOnlineFreePage() {
   return (
-    <main style={{ padding: '60px 20px', maxWidth: 980, margin: '0 auto', fontFamily: 'system-ui, sans-serif', color: '#0f172a' }}>
-      <article>
-        <section style={{
-          padding: '48px 32px',
-          borderRadius: 32,
-          background: 'linear-gradient(180deg, #eef2ff 0%, #ffffff 100%)',
-          boxShadow: '0 28px 80px rgba(15, 23, 42, 0.08)',
-          marginBottom: 40,
-        }}>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 24, alignItems: 'center', textAlign: 'center' }}>
-            <span style={{ display: 'inline-flex', alignItems: 'center', gap: 10, padding: '10px 18px', borderRadius: 999, background: '#e0e7ff', color: '#4338ca', fontSize: 13, fontWeight: 700 }}>
-              🚀 100% Free · No Signup Required
-            </span>
+    <main className="blog-main">
+      <article className="blog-article">
+        {/* Hero Section */}
+        <section className="blog-hero">
+          <div className="blog-hero-content">
+            <span className="blog-badge">🚀 100% Free · No Signup Required</span>
             <div>
-              <h1 style={{ fontSize: 'clamp(38px, 5vw, 56px)', lineHeight: 1.05, margin: '0 0 18px' }}>
-                Merge PDF Online Free Without Losing Quality
-              </h1>
-              <p style={{ margin: 0, fontSize: 18, lineHeight: 1.8, maxWidth: 760, color: '#475569' }}>
-                Combine multiple PDF files into a single document instantly with a fast and secure browser tool. No downloads, no signup, and no hidden steps — just reliable merging.
-              </p>
+              <h1>Merge PDF Online Free Without Losing Quality</h1>
+              <p>Combine multiple PDF files into one instantly with a fast and secure browser tool. No downloads, no signup, and no hidden steps — just merge PDFs exactly how you need them.</p>
             </div>
-            <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', justifyContent: 'center' }}>
-              <a href="/tools/merge-pdf/" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', minWidth: 180, padding: '16px 24px', borderRadius: 14, border: 'none', background: '#4338ca', color: '#fff', fontSize: 16, fontWeight: 700, textDecoration: 'none' }}>
-                Merge PDF Now
-              </a>
-              <a href="#how-to-merge" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', minWidth: 180, padding: '16px 24px', borderRadius: 14, border: '1px solid #c7d2fe', background: '#fff', color: '#4338ca', fontSize: 16, fontWeight: 700, textDecoration: 'none' }}>
-                Learn How
-              </a>
+            <div className="blog-cta-buttons">
+              <a href="/tools/merge-pdf/" className="btn-primary">Merge PDF Now</a>
+              <a href="#how-to-merge" className="btn-secondary">Learn How</a>
             </div>
           </div>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 18, marginTop: 36 }}>
-            {[
-              { title: 'Fast merging', text: 'Combine PDFs in seconds with smart batch processing.', accent: '#eef2ff' },
-              { title: 'Quality preserved', text: 'Keep all text, images, and formatting perfectly intact.', accent: '#f5f3ff' },
-              { title: 'No signup', text: 'Use the tool immediately on any browser or device.', accent: '#ecfdf5' },
-            ].map((item) => (
-              <div key={item.title} style={{ background: item.accent, borderRadius: 24, padding: '22px' }}>
-                <p style={{ fontSize: 14, fontWeight: 700, marginBottom: 10, color: '#4338ca' }}>{item.title}</p>
-                <p style={{ margin: 0, fontSize: 15, lineHeight: 1.75, color: '#334155' }}>{item.text}</p>
+          <div className="blog-features">
+            {FEATURES.map((item) => (
+              <div key={item.title} className="feature-item" style={{ backgroundColor: item.bg }}>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
               </div>
             ))}
           </div>
         </section>
 
-        <section style={{ marginBottom: 40 }}>
-          <div style={{ display: 'grid', gap: 24, gridTemplateColumns: '1.4fr 0.6fr' }}>
-            <div>
-              <h2 style={{ fontSize: 30, marginBottom: 18 }}>Why merge PDF files?</h2>
-              <p style={{ color: '#475569', fontSize: 17, lineHeight: 1.9, marginBottom: 24 }}>
-                Managing multiple PDF files separately wastes time and makes document organization difficult. Merging them into one file simplifies everything.
-              </p>
-              <ul style={{ color: '#334155', fontSize: 16, lineHeight: 1.9, paddingLeft: 20, margin: 0 }}>
-                <li style={{ marginBottom: 12 }}>Combine multiple documents into one organized file.</li>
-                <li style={{ marginBottom: 12 }}>Simplify file management and storage.</li>
-                <li style={{ marginBottom: 12 }}>Share complete documents with a single link.</li>
-                <li style={{ marginBottom: 12 }}>Create professional portfolios and reports.</li>
+        {/* Why Section */}
+        <section className="blog-section">
+          <div className="two-column">
+            <div className="column-text">
+              <h2>Why merge PDF files?</h2>
+              <p>Managing multiple PDF files is cumbersome and inefficient. Merging them into one unified document makes sharing, storing, and organizing much simpler and more professional.</p>
+              <ul>
+                <li>Combine related documents into a single, organized file.</li>
+                <li>Share one file instead of multiple attachments.</li>
+                <li>Create comprehensive documents from separate parts.</li>
+                <li>Improve document management and archival efficiency.</li>
               </ul>
             </div>
-            <div style={{ background: '#ffffff', border: '1px solid #e2e8f0', borderRadius: 24, padding: '28px', boxShadow: '0 18px 45px rgba(15, 23, 42, 0.06)' }}>
-              <p style={{ fontSize: 14, fontWeight: 700, color: '#4338ca', marginBottom: 14 }}>What you get</p>
-              <p style={{ margin: 0, fontSize: 16, color: '#334155', lineHeight: 1.8 }}>A fast PDF merger that lets you combine files exactly as you need them, with perfect quality and zero complexity.</p>
+            <div className="info-box">
+              <p>What you get</p>
+              <p>A fast PDF merger that lets you combine files exactly as you need them, with perfect quality and zero complexity.</p>
             </div>
           </div>
         </section>
 
-        <section style={{ marginBottom: 40 }}>
-          <h2 style={{ fontSize: 30, marginBottom: 18 }}>Who needs to merge PDFs?</h2>
-          <div style={{ display: 'grid', gap: 18, gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))' }}>
-            {[
-              { title: '📚 Students', detail: 'Combine course notes, assignments, and research into one document.' },
-              { title: '💼 Office workers', detail: 'Merge reports, proposals, and supporting documents.' },
-              { title: '📋 Freelancers', detail: 'Create complete portfolios by merging project samples.' },
-              { title: '🎨 Designers', detail: 'Combine design mockups and case studies for client presentations.' },
-            ].map((item) => (
-              <div key={item.title} style={{ padding: '24px', borderRadius: 24, background: '#fff', border: '1px solid #e2e8f0' }}>
-                <p style={{ margin: 0, fontSize: 15, fontWeight: 700, color: '#0f172a' }}>{item.title}</p>
-                <p style={{ marginTop: 12, fontSize: 15, lineHeight: 1.8, color: '#475569' }}>{item.detail}</p>
+        {/* Who Needs Section */}
+        <section className="blog-section">
+          <h2>Who needs to merge PDFs?</h2>
+          <div className="grid-auto">
+            {WHO_NEEDS.map((item) => (
+              <div key={item.title} className="grid-card">
+                <h3>{item.title}</h3>
+                <p>{item.detail}</p>
               </div>
             ))}
           </div>
         </section>
 
-        <section id="how-to-merge" style={{ marginBottom: 40 }}>
-          <h2 style={{ fontSize: 30, marginBottom: 18 }}>How to merge PDF online in 5 easy steps</h2>
-          <div style={{ display: 'grid', gap: 18 }}>
-            {[
-              'Open the PDF merger tool and upload your first file.',
-              'Add more PDF files one by one or upload multiple files at once.',
-              'Arrange the PDFs in the order you want them combined.',
-              'Click merge and wait a few seconds for processing.',
-              'Download your merged PDF file — ready to use!',
-            ].map((step, index) => (
-              <div key={step} style={{ display: 'flex', gap: 18, alignItems: 'flex-start', padding: '22px 24px', borderRadius: 20, background: '#f8fafc', border: '1px solid #e2e8f0' }}>
-                <div style={{ width: 34, height: 34, borderRadius: 14, background: '#4338ca', color: '#fff', display: 'grid', placeItems: 'center', fontWeight: 700, fontSize: 15 }}>{index + 1}</div>
-                <p style={{ margin: 0, fontSize: 16, lineHeight: 1.8, color: '#334155' }}>{step}</p>
+        {/* How To Section */}
+        <section id="how-to-merge" className="blog-section">
+          <h2>How to merge PDF online in 5 easy steps</h2>
+          <div className="steps-grid">
+            {STEPS.map((step, idx) => (
+              <div key={idx} className="step-item">
+                <div className="step-number">{idx + 1}</div>
+                <p>{step}</p>
               </div>
             ))}
           </div>
         </section>
 
-        <section style={{ marginBottom: 40, background: '#f8fafc', borderRadius: 28, padding: '32px 30px' }}>
-          <h2 style={{ fontSize: 30, marginBottom: 18 }}>Merge PDF without losing quality</h2>
-          <div style={{ display: 'grid', gap: 18, gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))' }}>
-            {[
-              { title: 'Perfect text quality', detail: 'Every word stays sharp and readable after merging.' },
-              { title: 'Images stay intact', detail: 'All embedded images and graphics remain at full quality.' },
-              { title: 'Page order control', detail: 'Arrange pages exactly as you need them in the final document.' },
-            ].map((item) => (
-              <div key={item.title} style={{ padding: '24px', borderRadius: 24, background: '#fff', border: '1px solid #e2e8f0' }}>
-                <p style={{ margin: 0, fontSize: 15, fontWeight: 700, color: '#0f172a' }}>{item.title}</p>
-                <p style={{ marginTop: 12, fontSize: 15, lineHeight: 1.8, color: '#475569' }}>{item.detail}</p>
+        {/* Quality Section */}
+        <section className="quality-section blog-section">
+          <h2>Merge PDF without losing quality</h2>
+          <div className="grid-auto">
+            {QUALITY_POINTS.map((item) => (
+              <div key={item.title} className="grid-card">
+                <h3>{item.title}</h3>
+                <p>{item.detail}</p>
               </div>
             ))}
           </div>
         </section>
 
-        <section style={{ marginBottom: 40 }}>
-          <h2 style={{ fontSize: 30, marginBottom: 18 }}>Common PDF merging use cases</h2>
-          <div style={{ display: 'grid', gap: 18, gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))' }}>
-            {[
-              'Combine multiple chapters into a single book or guide.',
-              'Merge contracts and supporting legal documents.',
-              'Consolidate invoices and receipts into one file.',
-              'Create a complete portfolio from individual project PDFs.',
-            ].map((useCase) => (
-              <div key={useCase} style={{ padding: '22px', borderRadius: 20, background: '#ffffff', border: '1px solid #e2e8f0' }}>
-                <p style={{ margin: 0, fontSize: 16, lineHeight: 1.8, color: '#334155' }}>📑 {useCase}</p>
+        {/* Use Cases */}
+        <section className="blog-section">
+          <h2>Common PDF merging use cases</h2>
+          <div className="tips-grid">
+            {USE_CASES.map((useCase) => (
+              <div key={useCase} className="use-case-item">
+                <p>🔗 {useCase}</p>
               </div>
             ))}
           </div>
         </section>
 
-        <section style={{ marginBottom: 40 }}>
-          <h2 style={{ fontSize: 30, marginBottom: 18 }}>Merge PDF vs. other tools</h2>
-          <div style={{ borderRadius: 24, overflow: 'hidden', border: '1px solid #e2e8f0' }}>
-            <div style={{ overflowX: 'auto' }}>
-              <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 15 }}>
-                <thead>
-                  <tr style={{ background: '#f8fafc', borderBottom: '1px solid #e2e8f0' }}>
-                    <th style={{ padding: '16px 20px', textAlign: 'left', fontWeight: 700, color: '#0f172a' }}>Feature</th>
-                    <th style={{ padding: '16px 20px', textAlign: 'center', fontWeight: 700, color: '#0f172a' }}>Our tool</th>
-                    <th style={{ padding: '16px 20px', textAlign: 'center', fontWeight: 700, color: '#0f172a' }}>Adobe</th>
-                    <th style={{ padding: '16px 20px', textAlign: 'center', fontWeight: 700, color: '#0f172a' }}>iLovePDF</th>
+        {/* Comparison Table */}
+        <section className="blog-section">
+          <h2>Merge PDF vs. other tools</h2>
+          <div className="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Feature</th>
+                  <th>Our tool</th>
+                  <th>Adobe</th>
+                  <th>iLovePDF</th>
+                </tr>
+              </thead>
+              <tbody>
+                {COMPARISON.map((row) => (
+                  <tr key={row.feature}>
+                    <td>{row.feature}</td>
+                    <td className="check">✓</td>
+                    <td>{row.adobe === '✓' ? <span className="check">✓</span> : <span className="cross">✗</span>}</td>
+                    <td>{row.ilove === '✓' ? <span className="check">✓</span> : <span className="cross">✗</span>}</td>
                   </tr>
-                </thead>
-                <tbody>
-                  {[
-                    { feature: 'Free to use', our: '✓', adobe: '✗', ilove: '✓' },
-                    { feature: 'No signup needed', our: '✓', adobe: '✗', ilove: '✗' },
-                    { feature: 'Fast processing', our: '✓', adobe: '✓', ilove: '✓' },
-                    { feature: 'Secure browser-based', our: '✓', adobe: '✗', ilove: '✓' },
-                    { feature: 'Mobile-friendly', our: '✓', adobe: '✓', ilove: '✓' },
-                  ].map((row) => (
-                    <tr key={row.feature} style={{ borderBottom: '1px solid #e2e8f0' }}>
-                      <td style={{ padding: '16px 20px', color: '#334155' }}>{row.feature}</td>
-                      <td style={{ padding: '16px 20px', textAlign: 'center', color: '#16a34a' }}>{row.our}</td>
-                      <td style={{ padding: '16px 20px', textAlign: 'center', color: '#334155' }}>{row.adobe}</td>
-                      <td style={{ padding: '16px 20px', textAlign: 'center', color: '#334155' }}>{row.ilove}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+                ))}
+              </tbody>
+            </table>
           </div>
         </section>
 
-        <section style={{ marginBottom: 40 }}>
-          <h2 style={{ fontSize: 30, marginBottom: 18 }}>Pro tips for merging PDFs</h2>
-          <div style={{ display: 'grid', gap: 18, gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))' }}>
-            {[
-              'Save the original PDFs before merging to keep backups.',
-              'Arrange files in a logical order for better readability.',
-              'Remove unnecessary pages before merging to reduce file size.',
-              'Name your merged PDF clearly to identify its contents.',
-            ].map((tip) => (
-              <div key={tip} style={{ padding: '22px', borderRadius: 20, background: '#ffffff', border: '1px solid #e2e8f0' }}>
-                <p style={{ margin: 0, fontSize: 16, lineHeight: 1.8, color: '#334155' }}>{tip}</p>
+        {/* Pro Tips */}
+        <section className="blog-section">
+          <h2>Pro tips for merging PDFs</h2>
+          <div className="tips-grid">
+            {PRO_TIPS.map((tip) => (
+              <div key={tip} className="tip-item">
+                <p>{tip}</p>
               </div>
             ))}
           </div>
         </section>
 
-        <section style={{ marginBottom: 40 }}>
-          <h2 style={{ fontSize: 30, marginBottom: 18 }}>Related tools you can use</h2>
-          <div style={{ display: 'grid', gap: 18, gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))' }}>
-            {[
-              { title: 'Split PDF', description: 'Extract specific pages from your merged PDFs.', href: '/tools/split-pdf/' },
-              { title: 'Compress PDF', description: 'Reduce file size after merging large documents.', href: '/tools/compress-pdf/' },
-              { title: 'Image to PDF', description: 'Convert images to PDF before merging.', href: '/tools/image-to-pdf/' },
-            ].map((tool) => (
-              <a key={tool.title} href={tool.href} style={{ display: 'block', padding: '24px', borderRadius: 24, background: '#fff', border: '1px solid #e2e8f0', textDecoration: 'none', color: '#0f172a', transition: 'transform 150ms, boxShadow 150ms' }}>
-                <h3 style={{ margin: 0, fontSize: 20 }}>{tool.title}</h3>
-                <p style={{ marginTop: 10, fontSize: 15, lineHeight: 1.75, color: '#475569' }}>{tool.description}</p>
-                <p style={{ marginTop: 18, fontSize: 14, fontWeight: 700, color: '#4338ca' }}>Use tool →</p>
+        {/* Related Tools */}
+        <section className="blog-section">
+          <h2>Related tools you can use</h2>
+          <div className="tools-grid">
+            {RELATED_TOOLS.map((tool) => (
+              <a key={tool.title} href={tool.href} className="tool-card">
+                <h3>{tool.title}</h3>
+                <p>{tool.description}</p>
+                <span className="arrow">Use tool →</span>
               </a>
             ))}
           </div>
         </section>
 
-        <section style={{ marginBottom: 40 }}>
-          <h2 style={{ fontSize: 30, marginBottom: 18 }}>Frequently Asked Questions</h2>
-          <div style={{ display: 'grid', gap: 20 }}>
-            {[
-              { question: 'Is it safe to merge PDF online?', answer: 'Yes. Our tool processes files in your browser and deletes them immediately after merging. We never store your data on servers.' },
-              { question: 'Is this tool free?', answer: 'Yes. ImageFlow lets you merge PDF online free with no signup, no limits, and no hidden fees.' },
-              { question: 'Can I merge more than 2 PDFs?', answer: 'Yes. You can merge unlimited PDF files at once. Just upload all the files and arrange them in order.' },
-              { question: 'Does merging reduce quality?', answer: 'No. Merging preserves the original quality of text, images, and formatting perfectly.' },
-              { question: 'How large can the files be?', answer: 'You can merge PDFs of any size. Larger files may take a bit longer, but the tool handles them reliably.' },
-              { question: 'What file formats are supported?', answer: 'Our tool supports standard PDF files. For more about PDF formats, check ', link: { href: 'https://en.wikipedia.org/wiki/PDF', text: 'Wikipedia' } },
-            ].map((item, index) => (
-              <div key={item.question} style={{ padding: '24px', borderRadius: 24, background: '#f8fafc', border: '1px solid #e2e8f0' }}>
-                <p style={{ margin: '0 0 12px 0', fontSize: 16, fontWeight: 700, color: '#0f172a' }}>{item.question}</p>
-                <p style={{ margin: 0, fontSize: 15, lineHeight: 1.75, color: '#475569' }}>
-                  {item.answer}
-                  {item.link && (
-                    <a href={item.link.href} target="_blank" rel="noopener noreferrer" style={{ color: '#4338ca', fontWeight: 600, textDecoration: 'none' }}>
-                      {item.link.text}
-                    </a>
-                  )}
-                </p>
+        {/* FAQ */}
+        <section className="blog-section">
+          <h2>Frequently Asked Questions</h2>
+          <div className="faq-grid">
+            {FAQs.map((faq) => (
+              <div key={faq.q} className="faq-item">
+                <h3>{faq.q}</h3>
+                <p>{faq.a}</p>
               </div>
             ))}
           </div>
         </section>
 
-        <section style={{ marginBottom: 40, background: 'linear-gradient(135deg, #4338ca 0%, #6366f1 100%)', borderRadius: 32, padding: '48px 32px', color: '#ffffff', textAlign: 'center' }}>
-          <h2 style={{ fontSize: 32, margin: '0 0 16px 0', fontWeight: 800 }}>Ready to merge your PDFs?</h2>
-          <p style={{ margin: '0 0 28px 0', fontSize: 17, lineHeight: 1.8, maxWidth: 600, marginLeft: 'auto', marginRight: 'auto' }}>
-            Start merging PDFs instantly with our fast, free, and secure tool. No signup, no downloads, no complications.
-          </p>
-          <a href="/tools/merge-pdf/" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', padding: '16px 32px', borderRadius: 14, background: '#ffffff', color: '#4338ca', fontSize: 16, fontWeight: 700, textDecoration: 'none', transition: 'transform 150ms' }}>
-            Merge PDF Now →
-          </a>
+        {/* CTA */}
+        <section className="cta-section">
+          <h2>Ready to merge your PDFs?</h2>
+          <p>Start merging PDFs instantly with our fast, free, and secure tool. No signup, no downloads, no complications.</p>
+          <a href="/tools/merge-pdf/" className="btn-primary">Merge PDF Now →</a>
         </section>
       </article>
     </main>
