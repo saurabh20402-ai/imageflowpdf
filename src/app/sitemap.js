@@ -39,6 +39,52 @@ export default function sitemap() {
     },
   ];
 
+  // Blog pages
+  const blogPages = [
+    {
+      url: `${BASE_URL}/blog/merge-pdf-online-free/`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/blog/split-pdf-online-free/`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/blog/compress-pdf-online-free/`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/blog/image-to-pdf-converter-free-online-convert-jpg-png-instantly/`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/blog/jpg-to-png-converter-online-free/`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/blog/resize-image-online-free-without-losing-quality/`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/blog/photo-editor-online-free-hd-image-editing-without-download/`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+  ];
+
   // Tool pages
   const toolPages = TOOLS.map((tool) => ({
     url: `${BASE_URL}/tools/${tool.slug}/`,
@@ -47,5 +93,5 @@ export default function sitemap() {
     priority: 0.7,
   }));
 
-  return [...staticPages, ...toolPages];
+  return [...staticPages, ...blogPages, ...toolPages];
 }
