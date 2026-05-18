@@ -64,7 +64,7 @@ export default function CompressPdfOnlineFreePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <main>
-      <article>
+        <article>
         <section style={{
           padding: '48px 32px',
           borderRadius: 32,

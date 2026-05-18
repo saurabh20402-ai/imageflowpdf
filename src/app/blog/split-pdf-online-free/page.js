@@ -146,7 +146,7 @@ export default function SplitPdfOnlineFreePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <main>
-      <article className="blog-article">
+        <article className="blog-article">
         {/* Hero Section */}
         <section className="blog-hero">
           <div className="blog-hero-content">
