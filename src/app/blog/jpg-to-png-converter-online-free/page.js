@@ -63,6 +63,7 @@ export default function JpgToPngConverterPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
+      <main>
       <article>
         <section style={{
           padding: '48px 32px',
