@@ -249,5 +249,6 @@ export default function JpgToPngConverterPage() {
         </section>
       </article>
     </main>
+    </>
   );
 }

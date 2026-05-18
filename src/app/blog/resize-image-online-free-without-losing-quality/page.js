@@ -283,5 +283,6 @@ export default function ResizeImageOnlineFreeWithoutLosingQualityPage() {
         </section>
       </article>
     </main>
+    </>
   );
 }

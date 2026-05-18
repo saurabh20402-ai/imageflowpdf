@@ -312,5 +312,6 @@ export default function PhotoEditorOnlineFreeHdImageEditingWithoutDownloadPage()
         </section>
       </article>
     </main>
+    </>
   );
 }

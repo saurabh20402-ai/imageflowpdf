@@ -315,5 +315,6 @@ export default function SplitPdfOnlineFreePage() {
         </section>
       </article>
     </main>
+    </>
   );
 }

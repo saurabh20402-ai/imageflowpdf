@@ -234,5 +234,6 @@ export default function CompressPdfOnlineFreePage() {
         </section>
       </article>
     </main>
+    </>
   );
 }
