@@ -1,11 +1,8 @@
+'use client';
+
 import Link from 'next/link';
 import * as Icons from 'lucide-react';
 import { TOOLS } from '@/lib/tools-registry';
-
-export const metadata = {
-  title: 'Tutorials — ImageFlow',
-  description: 'Step-by-step tutorials for every ImageFlow tool. Learn what each tool does, how to use it, and best practices from our team.',
-};
 
 const TUTORIALS = [
   {
