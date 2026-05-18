@@ -68,9 +68,83 @@ const FAQs = [
   { q: 'How many pages can I split at once?', a: 'You can split PDFs of any size. Larger files may take a bit longer, but the tool handles them reliably.' },
 ];
 
+const schemaMarkup = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Split PDF Online Free (Extract PDF Pages Instantly)',
+  description: 'Learn how to split PDF files online for free using ImageFlow. Extract specific pages from PDFs in seconds with no signup required.',
+  image: 'https://imageflow.in/og-image.png',
+  author: {
+    '@type': 'Organization',
+    name: 'ImageFlow',
+    url: 'https://imageflow.in',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'ImageFlow',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://imageflow.in/favicon.ico',
+    },
+  },
+  datePublished: '2024-01-01',
+  dateModified: new Date().toISOString().split('T')[0],
+  articleBody: 'Split PDF online free with ImageFlow. Extract specific pages from your PDF files instantly.',
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: FAQs.map(faq => ({
+    '@type': 'Question',
+    name: faq.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.a,
+    },
+  })),
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: 'https://imageflow.in/',
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Blog',
+      item: 'https://imageflow.in/blog/',
+    },
+    {
+      '@type': 'ListItem',
+      position: 3,
+      name: 'Split PDF Online Free',
+      item: 'https://imageflow.in/blog/split-pdf-online-free/',
+    },
+  ],
+};
+
 export default function SplitPdfOnlineFreePage() {
   return (
-    <main className="blog-main">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <article className="blog-article">
         {/* Hero Section */}
         <section className="blog-hero">

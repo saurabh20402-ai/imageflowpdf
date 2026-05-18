@@ -3,9 +3,66 @@
   description: 'Compress PDF online free without losing quality. Reduce file size instantly with a fast, secure, and easy-to-use tool. No signup required.',
 };
 
+const schemaMarkup = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Compress PDF Online Free Without Losing Quality (Fast, Secure & Easy)',
+  description: 'Learn how to compress PDF files online for free using ImageFlow. Reduce file size while maintaining quality.',
+  image: 'https://imageflow.in/og-image.png',
+  author: {
+    '@type': 'Organization',
+    name: 'ImageFlow',
+    url: 'https://imageflow.in',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'ImageFlow',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://imageflow.in/favicon.ico',
+    },
+  },
+  datePublished: '2024-01-01',
+  dateModified: new Date().toISOString().split('T')[0],
+  articleBody: 'Compress PDF online free with ImageFlow. Reduce file size while keeping quality intact.',
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: 'https://imageflow.in/',
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Blog',
+      item: 'https://imageflow.in/blog/',
+    },
+    {
+      '@type': 'ListItem',
+      position: 3,
+      name: 'Compress PDF Online Free',
+      item: 'https://imageflow.in/blog/compress-pdf-online-free/',
+    },
+  ],
+};
+
 export default function CompressPdfOnlineFreePage() {
   return (
-    <main style={{ padding: '60px 20px', maxWidth: 980, margin: '0 auto', fontFamily: 'system-ui, sans-serif', color: '#0f172a' }}>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <article>
         <section style={{
           padding: '48px 32px',

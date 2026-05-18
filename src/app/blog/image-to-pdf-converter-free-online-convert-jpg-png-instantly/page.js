@@ -3,9 +3,66 @@ export const metadata = {
   description: 'Use our free image to PDF converter online to convert JPG and PNG files instantly. Create PDFs under 100KB or 200KB without losing quality.',
 };
 
+const schemaMarkup = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Image to PDF Converter Free Online (Convert JPG & PNG Instantly)',
+  description: 'Learn how to convert images to PDF online for free using ImageFlow. Convert JPG and PNG files instantly.',
+  image: 'https://imageflow.in/og-image.png',
+  author: {
+    '@type': 'Organization',
+    name: 'ImageFlow',
+    url: 'https://imageflow.in',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'ImageFlow',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://imageflow.in/favicon.ico',
+    },
+  },
+  datePublished: '2024-01-01',
+  dateModified: new Date().toISOString().split('T')[0],
+  articleBody: 'Convert images to PDF online free with ImageFlow. Convert JPG and PNG to PDF instantly.',
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: 'https://imageflow.in/',
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Blog',
+      item: 'https://imageflow.in/blog/',
+    },
+    {
+      '@type': 'ListItem',
+      position: 3,
+      name: 'Image to PDF Converter Free Online',
+      item: 'https://imageflow.in/blog/image-to-pdf-converter-free-online-convert-jpg-png-instantly/',
+    },
+  ],
+};
+
 export default function ImageToPdfConverterFreeOnlineConvertJpgPngInstantlyPage() {
   return (
-    <main style={{ padding: '60px 20px', maxWidth: 980, margin: '0 auto', fontFamily: 'system-ui, sans-serif', color: '#0f172a' }}>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <article>
         <section style={{
           padding: '48px 32px',

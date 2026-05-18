@@ -3,9 +3,66 @@ export const metadata = {
   description: 'Resize image online free without losing quality. Easily resize image to 20KB, 50KB, 100KB, or 200KB with our fast and secure image resizer tool.',
 };
 
+const schemaMarkup = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Resize Image Online Free Without Losing Quality (20KB, 50KB, 100KB & More)',
+  description: 'Learn how to resize images online for free using ImageFlow. Resize without losing quality.',
+  image: 'https://imageflow.in/og-image.png',
+  author: {
+    '@type': 'Organization',
+    name: 'ImageFlow',
+    url: 'https://imageflow.in',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'ImageFlow',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://imageflow.in/favicon.ico',
+    },
+  },
+  datePublished: '2024-01-01',
+  dateModified: new Date().toISOString().split('T')[0],
+  articleBody: 'Free image resizer online with ImageFlow. Resize images without losing quality.',
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: 'https://imageflow.in/',
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Blog',
+      item: 'https://imageflow.in/blog/',
+    },
+    {
+      '@type': 'ListItem',
+      position: 3,
+      name: 'Resize Image Online Free',
+      item: 'https://imageflow.in/blog/resize-image-online-free-without-losing-quality/',
+    },
+  ],
+};
+
 export default function ResizeImageOnlineFreeWithoutLosingQualityPage() {
   return (
-    <main style={{ padding: '60px 20px', maxWidth: 980, margin: '0 auto', fontFamily: 'system-ui, sans-serif', color: '#0f172a' }}>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <article>
         <section style={{
           padding: '48px 32px',

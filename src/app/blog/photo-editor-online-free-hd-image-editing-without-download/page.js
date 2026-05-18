@@ -3,9 +3,66 @@ export const metadata = {
   description: 'Use the best free photo editor online to edit images in HD quality. Fast, secure, and easy-to-use image editor with no download required.',
 };
 
+const schemaMarkup = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Photo Editor Online Free (HD Image Editing Without Download)',
+  description: 'Learn how to edit photos online for free using ImageFlow. Edit images in HD quality without downloading software.',
+  image: 'https://imageflow.in/og-image.png',
+  author: {
+    '@type': 'Organization',
+    name: 'ImageFlow',
+    url: 'https://imageflow.in',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'ImageFlow',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://imageflow.in/favicon.ico',
+    },
+  },
+  datePublished: '2024-01-01',
+  dateModified: new Date().toISOString().split('T')[0],
+  articleBody: 'Free photo editor online with ImageFlow. Edit images in HD quality without downloading software.',
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: 'https://imageflow.in/',
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Blog',
+      item: 'https://imageflow.in/blog/',
+    },
+    {
+      '@type': 'ListItem',
+      position: 3,
+      name: 'Photo Editor Online Free',
+      item: 'https://imageflow.in/blog/photo-editor-online-free-hd-image-editing-without-download/',
+    },
+  ],
+};
+
 export default function PhotoEditorOnlineFreeHdImageEditingWithoutDownloadPage() {
   return (
-    <main style={{ padding: '60px 20px', maxWidth: 980, margin: '0 auto', fontFamily: 'system-ui, sans-serif', color: '#0f172a' }}>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <article>
         <section style={{
           padding: '48px 32px',

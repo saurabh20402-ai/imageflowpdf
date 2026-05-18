@@ -3,9 +3,66 @@ export const metadata = {
   description: 'Convert JPG to PNG online free without losing quality. Fast, secure, and easy-to-use image converter. No signup required.',
 };
 
+const schemaMarkup = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'JPG to PNG Converter Online Free (Fast, Secure & No Quality Loss)',
+  description: 'Learn how to convert JPG to PNG online for free using ImageFlow. Add transparency and improve image quality.',
+  image: 'https://imageflow.in/og-image.png',
+  author: {
+    '@type': 'Organization',
+    name: 'ImageFlow',
+    url: 'https://imageflow.in',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'ImageFlow',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://imageflow.in/favicon.ico',
+    },
+  },
+  datePublished: '2024-01-01',
+  dateModified: new Date().toISOString().split('T')[0],
+  articleBody: 'Convert JPG to PNG online free with ImageFlow. Add transparency and improve image quality instantly.',
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: 'https://imageflow.in/',
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Blog',
+      item: 'https://imageflow.in/blog/',
+    },
+    {
+      '@type': 'ListItem',
+      position: 3,
+      name: 'JPG to PNG Converter Online Free',
+      item: 'https://imageflow.in/blog/jpg-to-png-converter-online-free/',
+    },
+  ],
+};
+
 export default function JpgToPngConverterPage() {
   return (
-    <main style={{ padding: '60px 20px', maxWidth: 980, margin: '0 auto', fontFamily: 'system-ui, sans-serif', color: '#0f172a' }}>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <article>
         <section style={{
           padding: '48px 32px',
