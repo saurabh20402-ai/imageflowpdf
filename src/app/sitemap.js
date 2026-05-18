@@ -14,6 +14,12 @@ export default function sitemap() {
       priority: 1,
     },
     {
+      url: `${BASE_URL}/blog/`,
+      lastModified: now,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
       url: `${BASE_URL}/tutorials/`,
       lastModified: now,
       changeFrequency: 'weekly',
@@ -36,6 +42,30 @@ export default function sitemap() {
       lastModified: now,
       changeFrequency: 'monthly',
       priority: 0.5,
+    },
+    {
+      url: `${BASE_URL}/terms/`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.5,
+    },
+    {
+      url: `${BASE_URL}/security/`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.5,
+    },
+    {
+      url: `${BASE_URL}/cookies/`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.4,
+    },
+    {
+      url: `${BASE_URL}/donate/`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.4,
     },
   ];
 

@@ -1,8 +1,12 @@
 User-agent: *
 Allow: /
 
+# Explicitly allow all paths for GoogleBot
+User-agent: Googlebot
+Allow: /
+
 # Sitemap
 Sitemap: https://imageflow.in/sitemap.xml
 
-# Crawl-delay
-Crawl-delay: 1
+# No crawl delay - let Google crawl freely
+# Removed: Crawl-delay: 1
