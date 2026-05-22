@@ -99,14 +99,29 @@ export default function CropPdfTool() {
     };
   }, [pageNumber, file, initBox]);
 
+  useEffect(() => {
+    const handleMove = (e) => onMove(e);
+    const handleUp = (e) => stopDrag(e);
+    document.addEventListener('pointermove', handleMove, true);
+    document.addEventListener('pointerup', handleUp, true);
+    document.addEventListener('pointercancel', handleUp, true);
+    return () => {
+      document.removeEventListener('pointermove', handleMove, true);
+      document.removeEventListener('pointerup', handleUp, true);
+      document.removeEventListener('pointercancel', handleUp, true);
+    };
+  }, [onMove, stopDrag]);
+
   const startDrag = (e, type) => {
     e.preventDefault();
     e.stopPropagation();
-    e.currentTarget.setPointerCapture(e.pointerId);
-    dragRef.current = { type, startX: e.clientX, startY: e.clientY, startBox: { ...box } };
+    if (e.currentTarget?.setPointerCapture) {
+      e.currentTarget.setPointerCapture(e.pointerId);
+    }
+    dragRef.current = { type, startX: e.clientX, startY: e.clientY, startBox: { ...box }, pointerId: e.pointerId };
   };
 
-  const onMove = (e) => {
+  const onMove = useCallback((e) => {
     if (!dragRef.current) return;
     const { type, startX, startY, startBox } = dragRef.current;
     const dx = e.clientX - startX;
@@ -145,12 +160,14 @@ export default function CropPdfTool() {
       w = x + w - nx; x = nx;
     }
     setBox({ x, y, w, h });
-  };
+  }, [pageSize.w, pageSize.h]);
 
-  const stopDrag = (e) => {
-    if (e?.target?.hasPointerCapture?.(e.pointerId)) e.target.releasePointerCapture(e.pointerId);
+  const stopDrag = useCallback((e) => {
+    if (dragRef.current?.pointerId && e.currentTarget?.hasPointerCapture?.(dragRef.current.pointerId)) {
+      e.currentTarget.releasePointerCapture(dragRef.current.pointerId);
+    }
     dragRef.current = null;
-  };
+  }, []);
 
   const processCrop = useCallback(async () => {
     if (!pdfBytes) return;
@@ -212,7 +229,7 @@ export default function CropPdfTool() {
                   )}
                 </div>
                 <div ref={wrapRef} style={{ width: '100%' }}>
-                  <div ref={containerRef} style={{ position: 'relative', width: 'fit-content', maxWidth: '100%', margin: '0 auto', borderRadius: 10, overflow: 'hidden', boxShadow: 'var(--shadow-md)' }}>
+                  <div ref={containerRef} style={{ position: 'relative', width: 'fit-content', maxWidth: '100%', margin: '0 auto', borderRadius: 10, overflow: 'hidden', boxShadow: 'var(--shadow-md)', touchAction: 'none', userSelect: 'none' }}>
                     <Document file={file} onLoadSuccess={({ numPages: n }) => setNumPages(n)} loading={<div style={{ padding: 30 }}><Loader2 className="animate-spin" /></div>}>
                       <Page pageNumber={pageNumber} width={renderWidth} renderAnnotationLayer={false} renderTextLayer={false} />
                     </Document>
@@ -225,11 +242,8 @@ export default function CropPdfTool() {
                           <div style={{ position: 'absolute', right: 0, top: box.y, left: box.x + box.w, height: box.h, background: 'rgba(0,0,0,0.55)' }} />
                         </div>
                         <div
-                          style={{ position: 'absolute', left: box.x, top: box.y, width: box.w, height: box.h, border: '2px solid var(--primary)', borderRadius: 8, cursor: 'move', background: 'rgba(99,102,241,0.06)' }}
+                          style={{ position: 'absolute', left: box.x, top: box.y, width: box.w, height: box.h, border: '2px solid var(--primary)', borderRadius: 8, cursor: 'move', background: 'rgba(99,102,241,0.06)', touchAction: 'none', userSelect: 'none' }}
                           onPointerDown={(e) => startDrag(e, 'move')}
-                          onPointerMove={onMove}
-                          onPointerUp={stopDrag}
-                          onPointerCancel={stopDrag}
                         >
                           {[
                             ['nw', { top: -9, left: -9, cursor: 'nw-resize' }],
@@ -243,15 +257,12 @@ export default function CropPdfTool() {
                           ].map(([type, style]) => (
                             <div
                               key={type}
-                              style={{ position: 'absolute', width: 22, height: 22, borderRadius: 999, background: '#fff', border: '2px solid var(--primary)', ...style }}
+                              style={{ position: 'absolute', width: 22, height: 22, borderRadius: 999, background: '#fff', border: '2px solid var(--primary)', touchAction: 'none', userSelect: 'none', ...style }}
                               onPointerDown={(e) => startDrag(e, type)}
                               onPointerMove={onMove}
                               onPointerUp={stopDrag}
                               onPointerCancel={stopDrag}
-                            />
-                          ))}
-                        </div>
-                      </div>
+                            
                     )}
                   </div>
                 </div>
