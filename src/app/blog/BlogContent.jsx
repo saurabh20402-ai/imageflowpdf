@@ -67,6 +67,42 @@ const POSTS = [
     readTime: '6 min',
     emoji: '✂️',
   },
+  {
+    slug: 'rotate-pdf-online-free',
+    title: 'Rotate PDF Online Free (Rotate PDF Pages Instantly)',
+    excerpt: 'Rotate PDF online free and rotate PDF pages instantly without losing quality. Fast, secure, and easy-to-use PDF rotation tool.',
+    category: 'Guide',
+    date: 'May 22, 2026',
+    readTime: '6 min',
+    emoji: '🔄',
+  },
+  {
+    slug: 'crop-pdf-online-free',
+    title: 'Crop PDF Online Free (Remove Margins & Crop PDF Pages Easily)',
+    excerpt: 'Crop PDF online free and remove unwanted margins instantly. Auto crop PDF pages and trim documents without losing quality.',
+    category: 'Guide',
+    date: 'May 22, 2026',
+    readTime: '6 min',
+    emoji: '✂️',
+  },
+  {
+    slug: 'sign-pdf-online-free',
+    title: 'Sign PDF Online Free (Add Digital Signatures Instantly)',
+    excerpt: 'Sign PDF online free without creating an account. Add digital signatures to PDF files instantly with secure browser-based processing.',
+    category: 'Guide',
+    date: 'May 22, 2026',
+    readTime: '6 min',
+    emoji: '✍️',
+  },
+  {
+    slug: 'watermark-pdf-online-free',
+    title: 'Watermark PDF Online Free (Add Text & Image Watermarks Instantly)',
+    excerpt: 'Add watermarks to PDF online free. Watermark PDF documents with text or images instantly. Secure browser-based PDF watermarking tool.',
+    category: 'Guide',
+    date: 'May 22, 2026',
+    readTime: '6 min',
+    emoji: '🔒',
+  },
 ];
 
 const CATEGORIES = ['All', 'Guide', 'Deep Dive', 'Privacy', 'Tips', 'Productivity'];

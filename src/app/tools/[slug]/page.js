@@ -110,6 +110,26 @@ const TOOL_META = {
     description: 'Combine multiple images side by side or stacked vertically. Merge photos easily. Free, instant, no signup required.',
     keywords: 'merge images online, combine photos free, join images, merge pictures online free',
   },
+  'rotate-pdf': {
+    title: 'Rotate PDF Online Free (Rotate PDF Pages Instantly)',
+    description: 'Rotate PDF online free and rotate PDF pages instantly without losing quality. Fast, secure, and easy-to-use PDF rotation tool.',
+    keywords: 'rotate pdf online, rotate pdf pages, rotate pdf free, pdf rotator, rotate pdf without losing quality',
+  },
+  'crop-pdf': {
+    title: 'Crop PDF Online Free (Remove Margins & Crop PDF Pages Easily)',
+    description: 'Crop PDF online free and remove unwanted margins instantly. Auto crop PDF pages and trim documents without losing quality.',
+    keywords: 'crop pdf online, crop pdf free, remove pdf margins, auto crop pdf, trim pdf pages',
+  },
+  'sign-pdf': {
+    title: 'Sign PDF Online Free (Add Digital Signatures Instantly)',
+    description: 'Sign PDF online free without creating an account. Add digital signatures to PDF files instantly with secure browser-based processing.',
+    keywords: 'sign pdf online, digital signature pdf, sign pdf free, fill and sign pdf, esign pdf',
+  },
+  'watermark-pdf': {
+    title: 'Watermark PDF Online Free (Add Text & Image Watermarks Instantly)',
+    description: 'Add watermarks to PDF online free. Watermark PDF documents with text or images instantly. Secure browser-based PDF watermarking tool.',
+    keywords: 'watermark pdf online, watermark pdf free, add watermark to pdf, draft watermark pdf, watermark pdf adobe',
+  },
 };
 
 // Generate static paths for all tools
