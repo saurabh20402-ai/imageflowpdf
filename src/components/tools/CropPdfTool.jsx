@@ -259,10 +259,10 @@ export default function CropPdfTool() {
                               key={type}
                               style={{ position: 'absolute', width: 22, height: 22, borderRadius: 999, background: '#fff', border: '2px solid var(--primary)', touchAction: 'none', userSelect: 'none', ...style }}
                               onPointerDown={(e) => startDrag(e, type)}
-                              onPointerMove={onMove}
-                              onPointerUp={stopDrag}
-                              onPointerCancel={stopDrag}
-                            
+                            />
+                          ))}
+                        </div>
+                      </div>
                     )}
                   </div>
                 </div>
