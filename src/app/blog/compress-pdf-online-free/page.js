@@ -111,30 +111,6 @@ const schemaMarkup = {
   },
   datePublished: '2024-01-01',
   dateModified: new Date().toISOString().split('T')[0],
-  articleBody: 'Compress PDF online free with ImageFlow. Reduce file size while keeping quality intact.',
-};
-
-const schemaMarkup = {
-  '@context': 'https://schema.org',
-  '@type': 'Article',
-  headline: 'Compress PDF Online Free Without Losing Quality (Fast, Secure & Easy)',
-  description: 'Learn how to compress PDF files online for free using ImageFlow. Reduce file size while maintaining quality.',
-  image: 'https://imageflow.in/og-image.png',
-  author: {
-    '@type': 'Organization',
-    name: 'ImageFlow',
-    url: 'https://imageflow.in',
-  },
-  publisher: {
-    '@type': 'Organization',
-    name: 'ImageFlow',
-    logo: {
-      '@type': 'ImageObject',
-      url: 'https://imageflow.in/favicon.ico',
-    },
-  },
-  datePublished: '2024-01-01',
-  dateModified: new Date().toISOString().split('T')[0],
   articleBody: `Compress PDF online free with ImageFlow. Reduce file size while keeping quality intact. Fast, secure, browser-based PDF compression.`,
 };
 
