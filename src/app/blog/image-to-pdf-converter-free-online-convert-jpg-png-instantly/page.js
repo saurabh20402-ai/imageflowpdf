@@ -1,6 +1,9 @@
 export const metadata = {
   title: 'Image to PDF Converter Free Online (Convert JPG & PNG Instantly)',
   description: 'Use our free image to PDF converter online to convert JPG and PNG files instantly. Create PDFs under 100KB or 200KB without losing quality.',
+  alternates: {
+    canonical: 'https://imageflow.in/blog/image-to-pdf-converter-free-online-convert-jpg-png-instantly/',
+  },
 };
 
 const schemaMarkup = {

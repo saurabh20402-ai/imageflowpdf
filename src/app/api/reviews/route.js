@@ -20,15 +20,15 @@ function upstashToken() {
   return process.env.UPSTASH_REDIS_REST_TOKEN?.trim() || '';
 }
 function kvUrl() {
-  return process.env.KV_REST_API_URL?.trim() || '';
+  return '';
 }
 function kvToken() {
-  return process.env.KV_REST_API_TOKEN?.trim() || '';
+  return '';
 }
 
 function hasPersistentStore() {
   return Boolean(
-    (upstashUrl() && upstashToken()) || (kvUrl() && kvToken()),
+    (upstashUrl() && upstashToken()),
   );
 }
 
@@ -68,17 +68,6 @@ async function readRemoteList() {
       return [];
     }
   }
-
-  if (kvUrl() && kvToken()) {
-    try {
-      const { kv } = await import('@vercel/kv');
-      const v = await kv.get(STORE_KEY);
-      return Array.isArray(v) ? v : [];
-    } catch {
-      return [];
-    }
-  }
-
   return [];
 }
 
@@ -86,11 +75,6 @@ async function writeRemoteList(list) {
   const redis = getRedis();
   if (redis) {
     await redis.set(STORE_KEY, list);
-    return true;
-  }
-  if (kvUrl() && kvToken()) {
-    const { kv } = await import('@vercel/kv');
-    await kv.set(STORE_KEY, list);
     return true;
   }
   return false;

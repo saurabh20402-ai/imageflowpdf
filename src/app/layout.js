@@ -28,6 +28,9 @@ export const metadata = {
     'image upscaler', 'passport photo maker', 'bulk format convert', 'image to pdf',
     'heic converter', 'resize image online', 'batch resize images',
   ],
+  alternates: {
+    canonical: 'https://imageflow.in/',
+  },
   icons: {
     icon: '/favicon.ico',
     shortcut: '/favicon.ico',
@@ -74,8 +77,6 @@ export const metadata = {
   verification: {
     google: 'eGTKl5-SMFU8xaqm_y1NXf0Iz5Y7oANPjHMV2QXan-I',
   },
-  // Remove hardcoded canonical - let Next.js generate canonical based on actual page URL
-  // Each page will automatically get its own canonical URL
 };
 
 // JSON-LD Schema for the website

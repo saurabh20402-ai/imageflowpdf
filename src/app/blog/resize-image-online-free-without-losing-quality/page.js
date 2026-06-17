@@ -1,6 +1,9 @@
 export const metadata = {
   title: 'Resize Image Online Free Without Losing Quality (20KB, 50KB, 100KB & More)',
   description: 'Resize image online free without losing quality. Easily resize image to 20KB, 50KB, 100KB, or 200KB with our fast and secure image resizer tool.',
+  alternates: {
+    canonical: 'https://imageflow.in/blog/resize-image-online-free-without-losing-quality/',
+  },
 };
 
 const schemaMarkup = {

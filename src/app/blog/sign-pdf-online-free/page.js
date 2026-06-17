@@ -3,6 +3,9 @@ import '../blog-post.css';
 export const metadata = {
   title: 'Sign PDF Online Free (Add Digital Signatures Instantly)',
   description: 'Sign PDF online free without creating an account. Add digital signatures to PDF files instantly with secure browser-based processing.',
+  alternates: {
+    canonical: 'https://imageflow.in/blog/sign-pdf-online-free/',
+  },
 };
 
 const FEATURES = [

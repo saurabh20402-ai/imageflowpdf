@@ -3,6 +3,9 @@
 export const metadata = {
   title: 'Merge PDF Online Free (Fast, Secure & Easy)',
   description: 'Merge PDF online free and combine multiple PDF files into one instantly. Fast, secure, and easy-to-use PDF merger tool with no signup required.',
+  alternates: {
+    canonical: 'https://imageflow.in/blog/merge-pdf-online-free/',
+  },
 };
 
 const FEATURES = [

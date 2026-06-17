@@ -1,6 +1,9 @@
 export const metadata = {
   title: 'Cookie Policy — ImageFlow',
   description: 'How ImageFlow uses cookies and browser storage.',
+  alternates: {
+    canonical: 'https://imageflow.in/cookies/',
+  },
 };
 
 export default function CookiesPage() {

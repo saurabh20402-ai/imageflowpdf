@@ -3,6 +3,9 @@ import Link from 'next/link';
 export const metadata = {
   title: 'Support — ImageFlow',
   description: 'Get help with ImageFlow tools. Contact The Webrise Company by email.',
+  alternates: {
+    canonical: 'https://imageflow.in/support/',
+  },
 };
 
 const EMAIL = 'thewebrisecompany@gmail.com';

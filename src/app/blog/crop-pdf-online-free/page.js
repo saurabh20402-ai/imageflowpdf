@@ -3,6 +3,9 @@ import '../blog-post.css';
 export const metadata = {
   title: 'Crop PDF Online Free (Remove Margins & Crop PDF Pages Easily)',
   description: 'Crop PDF online free and remove unwanted margins instantly. Auto crop PDF pages and trim documents without losing quality.',
+  alternates: {
+    canonical: 'https://imageflow.in/blog/crop-pdf-online-free/',
+  },
 };
 
 const FEATURES = [

@@ -1,6 +1,9 @@
 export const metadata = {
   title: 'Photo Editor Online Free (HD Image Editing Without Download)',
   description: 'Use the best free photo editor online to edit images in HD quality. Fast, secure, and easy-to-use image editor with no download required.',
+  alternates: {
+    canonical: 'https://imageflow.in/blog/photo-editor-online-free-hd-image-editing-without-download/',
+  },
 };
 
 const schemaMarkup = {

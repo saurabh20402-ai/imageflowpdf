@@ -1,6 +1,9 @@
 export const metadata = {
   title: 'Security — ImageFlow',
   description: 'How ImageFlow keeps your images and data secure.',
+  alternates: {
+    canonical: 'https://imageflow.in/security/',
+  },
 };
 
 export default function SecurityPage() {

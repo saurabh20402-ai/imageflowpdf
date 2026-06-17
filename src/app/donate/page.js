@@ -7,6 +7,9 @@ export const metadata = {
   title: 'Donate — Support ImageFlow',
   description:
     'Support The Webrise Company and ImageFlow via UPI. Simple, private donations.',
+  alternates: {
+    canonical: 'https://imageflow.in/donate/',
+  },
 };
 
 const INSTAGRAM_URL = 'https://www.instagram.com/thewebrise/';

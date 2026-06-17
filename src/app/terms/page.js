@@ -1,6 +1,9 @@
 export const metadata = {
   title: 'Terms & Conditions — ImageFlow',
   description: 'Terms and conditions for using ImageFlow image tools.',
+  alternates: {
+    canonical: 'https://imageflow.in/terms/',
+  },
 };
 
 export default function TermsPage() {

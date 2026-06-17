@@ -3,6 +3,9 @@ import '../blog-post.css';
 export const metadata = {
   title: 'Rotate PDF Online Free (Rotate PDF Pages Instantly)',
   description: 'Rotate PDF online free and rotate PDF pages instantly without losing quality. Fast, secure, and easy-to-use PDF rotation tool.',
+  alternates: {
+    canonical: 'https://imageflow.in/blog/rotate-pdf-online-free/',
+  },
 };
 
 const FEATURES = [

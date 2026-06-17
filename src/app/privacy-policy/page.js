@@ -3,6 +3,9 @@ import Link from 'next/link';
 export const metadata = {
   title: 'Privacy Policy — ImageFlow',
   description: 'Latest ImageFlow privacy policy with updated data handling, security, and contact details.',
+  alternates: {
+    canonical: 'https://imageflow.in/privacy-policy/',
+  },
 };
 
 const tocItems = [

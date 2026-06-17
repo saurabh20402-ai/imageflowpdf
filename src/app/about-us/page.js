@@ -4,6 +4,9 @@ export const metadata = {
   title: 'About Us — ImageFlow',
   description:
     'Learn about The Webrise Company, the team behind ImageFlow, and our mission to simplify life with software.',
+  alternates: {
+    canonical: 'https://imageflow.in/about-us/',
+  },
 };
 
 export default function AboutUsPage() {

@@ -3,6 +3,9 @@
 export const metadata = {
   title: 'Split PDF Online Free (Extract PDF Pages Instantly)',
   description: 'Split PDF online free and extract PDF pages into separate files instantly. Fast, secure, and easy-to-use PDF splitter tool with no signup required.',
+  alternates: {
+    canonical: 'https://imageflow.in/blog/split-pdf-online-free/',
+  },
 };
 
 const FEATURES = [
