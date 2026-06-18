@@ -178,8 +178,8 @@ export default function BlogContent() {
                 <div style={{
                   padding: '24px', borderRadius: 16,
                   background: 'var(--surface-card)',
-                  border: '1px solid rgba(0,0,0,0.06)',
-                  boxShadow: '0 1px 4px rgba(0,0,0,0.04)',
+                  border: '1px solid var(--hairline)',
+                  boxShadow: 'var(--shadow-sm)',
                   display: 'flex', flexDirection: 'column', gap: 12,
                   cursor: 'pointer', transition: 'all 200ms',
                 }}
