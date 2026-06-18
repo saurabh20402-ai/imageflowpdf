@@ -4,20 +4,21 @@ import { useState, useCallback, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import {
   Download, RotateCcw, Loader2, Type, Layers, ImageIcon, LayoutTemplate,
-  Plus, Trash2, Undo2, Redo2, ArrowUp, ArrowDown, Sparkles, Shapes,
+  Plus, Trash2, Undo2, Redo2, ArrowUp, ArrowDown, Sparkles, Shapes, Eraser, Save,
 } from 'lucide-react';
 import FileUploader from '@/components/FileUploader';
-import { loadImage, canvasToBlob } from '@/lib/image-processor';
+import { loadImage, canvasToBlob, removeSolidBackground, loadImageFromDataUrl } from '@/lib/image-processor';
 import { downloadBlob } from '@/lib/download';
 import { formatBytes } from '@/lib/utils';
 import { toast } from 'sonner';
 import { THUMBNAIL_FONTS, loadGoogleFont, preloadThumbnailFonts } from '@/lib/thumbnail-fonts';
-import { renderThumbnail, hitTestElement, fitImageToCanvas, measureTextElement } from '@/lib/thumbnail-renderer';
+import { renderThumbnail, hitTestElement, fitImageToCanvas, fitSubjectLayer, measureTextElement } from '@/lib/thumbnail-renderer';
 import {
-  PLATFORMS, BG_GRADIENTS, STICKERS, BADGES, TEMPLATES,
-  createTextLayer, createSticker, createBadge, createShape,
+  PLATFORMS, BG_GRADIENTS, STICKERS, BADGES, TEMPLATES, TEXT_PRESETS,
+  createTextLayer, createSticker, createBadge, createShape, createImageLayer,
   scaleTemplateElements,
 } from '@/lib/thumbnail-templates';
+import { buildDraftPayload, saveDraft, loadDraftRaw, clearDraft } from '@/lib/thumbnail-project-storage';
 
 const TABS = [
   { id: 'templates', label: 'Templates', icon: LayoutTemplate },
@@ -44,6 +45,12 @@ export default function ThumbnailCreatorTool() {
   const [bgBrightness, setBgBrightness] = useState(100);
   const [bgContrast, setBgContrast] = useState(100);
   const [bgOverlayOpacity, setBgOverlayOpacity] = useState(35);
+  const [bgFit, setBgFit] = useState('cover');
+  const [removeBgColor, setRemoveBgColor] = useState('#ffffff');
+  const [removeBgTolerance, setRemoveBgTolerance] = useState(35);
+  const [processingSubject, setProcessingSubject] = useState(false);
+  const [subjectSource, setSubjectSource] = useState(null);
+  const [draftRestored, setDraftRestored] = useState(false);
 
   const [elements, setElements] = useState([]);
   const [selectedId, setSelectedId] = useState(null);
@@ -98,6 +105,71 @@ export default function ThumbnailCreatorTool() {
     preloadThumbnailFonts();
   }, []);
 
+  useEffect(() => {
+    if (draftRestored) return;
+    const raw = loadDraftRaw();
+    if (!raw?.elements?.length) return;
+    (async () => {
+      try {
+        const elements = await Promise.all(
+          raw.elements.map(async (el) => {
+            if (el.type === 'image' && el.imageDataUrl) {
+              const image = await loadImageFromDataUrl(el.imageDataUrl);
+              const { imageDataUrl, ...rest } = el;
+              return { ...rest, image };
+            }
+            return el;
+          })
+        );
+        let restoredBg = null;
+        if (raw.bgImageDataUrl) {
+          restoredBg = await loadImageFromDataUrl(raw.bgImageDataUrl);
+        }
+        setPlatformId(raw.platformId || 'youtube');
+        setCanvasW(raw.canvasW || 1280);
+        setCanvasH(raw.canvasH || 720);
+        setBgType(raw.bgType || 'gradient');
+        setBgColor(raw.bgColor || '#1a1a2e');
+        setBgGradient(raw.bgGradient || BG_GRADIENTS[2].colors);
+        setBgScale(raw.bgScale ?? 1);
+        setBgX(raw.bgX ?? 0);
+        setBgY(raw.bgY ?? 0);
+        setBgBrightness(raw.bgBrightness ?? 100);
+        setBgContrast(raw.bgContrast ?? 100);
+        setBgOverlayOpacity(raw.bgOverlayOpacity ?? 35);
+        setBgFit(raw.bgFit || 'cover');
+        if (restoredBg) {
+          setBgImage(restoredBg);
+          setBgType('image');
+        }
+        setElements(elements);
+        setHistory([JSON.parse(JSON.stringify(elements))]);
+        setHistoryIndex(0);
+        setStarted(true);
+        setDraftRestored(true);
+        toast.success('Restored your last thumbnail draft');
+      } catch {
+        /* ignore corrupt draft */
+      }
+    })();
+  }, [draftRestored]);
+
+  useEffect(() => {
+    if (!started) return;
+    const timer = setTimeout(async () => {
+      const payload = await buildDraftPayload(
+        {
+          platformId, canvasW, canvasH, bgType, bgColor, bgGradient,
+          bgScale, bgX, bgY, bgBrightness, bgContrast, bgOverlayOpacity, bgFit,
+        },
+        elements,
+        bgImage
+      );
+      saveDraft(payload);
+    }, 800);
+    return () => clearTimeout(timer);
+  }, [started, platformId, canvasW, canvasH, bgType, bgColor, bgGradient, bgScale, bgX, bgY, bgBrightness, bgContrast, bgOverlayOpacity, bgFit, elements, bgImage]);
+
   const getBackground = useCallback(() => {
     if (bgType === 'image' && bgImage) {
       return {
@@ -109,13 +181,14 @@ export default function ThumbnailCreatorTool() {
         brightness: bgBrightness,
         contrast: bgContrast,
         overlay: bgOverlayOpacity > 0 ? `rgba(0,0,0,${bgOverlayOpacity / 100})` : null,
+        fit: bgFit,
       };
     }
     if (bgType === 'gradient') {
       return { type: 'gradient', colors: bgGradient };
     }
     return { type: 'color', color: bgColor };
-  }, [bgType, bgImage, bgScale, bgX, bgY, bgBrightness, bgContrast, bgOverlayOpacity, bgGradient, bgColor]);
+  }, [bgType, bgImage, bgScale, bgX, bgY, bgBrightness, bgContrast, bgOverlayOpacity, bgGradient, bgColor, bgFit]);
 
   const paintCanvas = useCallback(async () => {
     const canvas = canvasRef.current;
@@ -153,6 +226,10 @@ export default function ThumbnailCreatorTool() {
           ctx.strokeRect(left - 4, sel.y - 4, width + 8, height + 8);
         } else if (sel.type === 'shape') {
           ctx.strokeRect(sel.x - 2, sel.y - 2, sel.w + 4, sel.h + 4);
+        } else if (sel.type === 'image' && sel.image) {
+          const w = sel.image.naturalWidth * (sel.scale ?? 1);
+          const h = sel.image.naturalHeight * (sel.scale ?? 1);
+          ctx.strokeRect(sel.x - 2, sel.y - 2, w + 4, h + 4);
         } else {
           const size = sel.badge ? sel.fontSize * 2 : (sel.size || 48);
           ctx.strokeRect(sel.x - 2, sel.y - 2, size + 4, size + 4);
@@ -212,6 +289,7 @@ export default function ThumbnailCreatorTool() {
       setBgFile(f);
       setBgImage(img);
       setBgType('image');
+      setBgFit('cover');
       setBgScale(fit.scale);
       setBgX(fit.x);
       setBgY(fit.y);
@@ -227,6 +305,39 @@ export default function ThumbnailCreatorTool() {
       toast.error('Failed to load image');
     }
   }, [canvasW, canvasH, elements.length]);
+
+  const onSubjectSelected = useCallback(async (files) => {
+    const f = files[0];
+    try {
+      const img = await loadImage(f);
+      setSubjectSource(img);
+      toast.success('Subject loaded — remove background or add as layer');
+    } catch {
+      toast.error('Failed to load subject');
+    }
+  }, []);
+
+  const addSubjectLayer = useCallback(async (cutout = false) => {
+    if (!subjectSource) return;
+    setProcessingSubject(true);
+    try {
+      let img = subjectSource;
+      if (cutout) {
+        const cutCanvas = removeSolidBackground(subjectSource, removeBgColor, removeBgTolerance);
+        img = await loadImageFromDataUrl(cutCanvas.toDataURL('image/png'));
+      }
+      const pos = fitSubjectLayer(img, canvasW, canvasH);
+      const el = createImageLayer(img, { ...pos, zIndex: 25 });
+      setElementsWithHistory((prev) => [...prev, el]);
+      setSelectedId(el.id);
+      setStarted(true);
+      toast.success(cutout ? 'Cutout added as layer' : 'Photo added as layer');
+    } catch (err) {
+      toast.error('Failed: ' + err.message);
+    } finally {
+      setProcessingSubject(false);
+    }
+  }, [subjectSource, removeBgColor, removeBgTolerance, canvasW, canvasH, setElementsWithHistory]);
 
   const changePlatform = (p) => {
     setPlatformId(p.id);
@@ -354,10 +465,29 @@ export default function ThumbnailCreatorTool() {
     setSelectedId(null);
     setBgImage(null);
     setBgFile(null);
+    setSubjectSource(null);
     setHistory([]);
     setHistoryIndex(-1);
     setBgType('gradient');
     setBgGradient(BG_GRADIENTS[2].colors);
+    setBgFit('cover');
+    clearDraft();
+  };
+
+  const applyTextPreset = (preset) => {
+    if (selected?.type === 'text') {
+      updateElement(selected.id, preset.patch);
+      loadGoogleFont(preset.patch.fontFamily || selected.fontFamily);
+    } else {
+      const el = createTextLayer({
+        y: Math.round(canvasH * 0.35),
+        x: preset.patch.align === 'center' ? Math.round(canvasW / 2) : 80,
+        ...preset.patch,
+      });
+      setElementsWithHistory((prev) => [...prev, el]);
+      setSelectedId(el.id);
+      if (preset.patch.fontFamily) loadGoogleFont(preset.patch.fontFamily);
+    }
   };
 
   if (!started) {
@@ -450,9 +580,12 @@ export default function ThumbnailCreatorTool() {
           {exporting ? <Loader2 size={16} style={{ animation: 'spin 0.6s linear infinite' }} /> : <Download size={16} />}
           Export
         </button>
-        <button type="button" onClick={reset} className="btn-secondary" style={{ padding: '10px 14px' }}>
+        <button type="button" onClick={reset} className="btn-secondary" style={{ padding: '10px 14px' }} title="Start over">
           <RotateCcw size={16} />
         </button>
+        <span style={{ fontSize: 11, color: 'var(--muted)', display: 'flex', alignItems: 'center', gap: 4 }}>
+          <Save size={12} /> Auto-saved
+        </span>
       </div>
 
       <div className="thumbnail-editor-grid" style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) 320px', gap: 20, alignItems: 'start' }}>
@@ -596,6 +729,18 @@ export default function ThumbnailCreatorTool() {
                         <label style={{ fontSize: 12, color: 'var(--muted)' }}>Dark overlay (readability)</label>
                         <input type="range" min="0" max="80" value={bgOverlayOpacity}
                           onChange={(e) => setBgOverlayOpacity(Number(e.target.value))} />
+                        <p style={{ fontSize: 12, color: 'var(--muted)', marginTop: 4 }}>Fit mode</p>
+                        <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
+                          {[
+                            { id: 'cover', label: 'Cover' },
+                            { id: 'blur-fill', label: 'Blur fill' },
+                          ].map((f) => (
+                            <button key={f.id} type="button" onClick={() => setBgFit(f.id)}
+                              className={`pill ${bgFit === f.id ? 'pill-active' : ''}`} style={{ fontSize: 11 }}>
+                              {f.label}
+                            </button>
+                          ))}
+                        </div>
                         <button type="button" className="btn-secondary" style={{ fontSize: 12 }}
                           onClick={() => { setBgImage(null); setBgFile(null); setBgType('gradient'); }}>
                           Remove image
@@ -604,6 +749,39 @@ export default function ThumbnailCreatorTool() {
                     )}
                   </>
                 )}
+
+                <div style={{ borderTop: '1px solid var(--hairline)', paddingTop: 14, marginTop: 6 }}>
+                  <p style={{ fontSize: 13, fontWeight: 600, color: 'var(--ink)', marginBottom: 8 }}>Subject photo (person / product)</p>
+                  <p style={{ fontSize: 11, color: 'var(--muted)', marginBottom: 10, lineHeight: 1.5 }}>
+                    Add a cutout on top of your background — great for reaction thumbnails.
+                  </p>
+                  {!subjectSource ? (
+                    <FileUploader onFilesSelected={onSubjectSelected} label="Upload subject photo" />
+                  ) : (
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                        <span style={{ fontSize: 12, color: 'var(--muted)' }}>Remove bg color</span>
+                        <input type="color" value={removeBgColor} onChange={(e) => setRemoveBgColor(e.target.value)} />
+                      </div>
+                      <label style={{ fontSize: 12, color: 'var(--muted)' }}>Tolerance {removeBgTolerance}</label>
+                      <input type="range" min="5" max="120" value={removeBgTolerance}
+                        onChange={(e) => setRemoveBgTolerance(Number(e.target.value))} />
+                      <button type="button" className="btn-primary" style={{ fontSize: 12 }}
+                        disabled={processingSubject} onClick={() => addSubjectLayer(true)}>
+                        {processingSubject ? <Loader2 size={14} style={{ animation: 'spin 0.6s linear infinite' }} /> : <Eraser size={14} />}
+                        Add cutout layer
+                      </button>
+                      <button type="button" className="btn-secondary" style={{ fontSize: 12 }}
+                        disabled={processingSubject} onClick={() => addSubjectLayer(false)}>
+                        Add without cutout
+                      </button>
+                      <button type="button" className="btn-secondary" style={{ fontSize: 11 }}
+                        onClick={() => setSubjectSource(null)}>
+                        Clear subject
+                      </button>
+                    </div>
+                  )}
+                </div>
               </div>
             )}
 
@@ -621,6 +799,18 @@ export default function ThumbnailCreatorTool() {
                 >
                   <Plus size={14} /> Add text layer
                 </button>
+
+                <div>
+                  <p style={{ fontSize: 12, color: 'var(--muted)', marginBottom: 8 }}>Quick styles</p>
+                  <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
+                    {TEXT_PRESETS.map((p) => (
+                      <button key={p.id} type="button" className="pill" style={{ fontSize: 11 }}
+                        onClick={() => applyTextPreset(p)}>
+                        {p.name}
+                      </button>
+                    ))}
+                  </div>
+                </div>
 
                 {selected?.type === 'text' ? (
                   <>
@@ -667,8 +857,20 @@ export default function ThumbnailCreatorTool() {
                       <button type="button" className="btn-secondary" style={{ flex: 1, fontSize: 11, color: 'var(--error)' }} onClick={deleteSelected}><Trash2 size={14} /></button>
                     </div>
                   </>
+                ) : selected?.type === 'image' ? (
+                  <>
+                    <p style={{ fontSize: 12, color: 'var(--muted)' }}>Subject / photo layer</p>
+                    <label style={{ fontSize: 12, color: 'var(--muted)' }}>Scale {Math.round((selected.scale ?? 1) * 100)}%</label>
+                    <input type="range" min="0.1" max="2" step="0.05" value={selected.scale ?? 1}
+                      onChange={(e) => updateElement(selected.id, { scale: Number(e.target.value) })} />
+                    <div style={{ display: 'flex', gap: 6 }}>
+                      <button type="button" className="btn-secondary" style={{ flex: 1, fontSize: 11 }} onClick={() => moveLayer('up')}><ArrowUp size={14} /></button>
+                      <button type="button" className="btn-secondary" style={{ flex: 1, fontSize: 11 }} onClick={() => moveLayer('down')}><ArrowDown size={14} /></button>
+                      <button type="button" className="btn-secondary" style={{ flex: 1, fontSize: 11, color: 'var(--error)' }} onClick={deleteSelected}><Trash2 size={14} /></button>
+                    </div>
+                  </>
                 ) : (
-                  <p style={{ fontSize: 12, color: 'var(--muted)' }}>Select a text layer on the canvas or add one above.</p>
+                  <p style={{ fontSize: 12, color: 'var(--muted)' }}>Select a layer on the canvas or add one above.</p>
                 )}
               </div>
             )}
@@ -772,7 +974,10 @@ export default function ThumbnailCreatorTool() {
                     color: 'var(--ink)', cursor: 'pointer',
                   }}
                 >
-                  {el.type === 'text' ? `T: ${(el.text || '').slice(0, 24)}` : el.type === 'sticker' ? (el.badge ? `Badge: ${el.text}` : el.emoji) : `Shape: ${el.shape}`}
+                  {el.type === 'text' ? `T: ${(el.text || '').slice(0, 24)}`
+                    : el.type === 'image' ? '📷 Subject photo'
+                    : el.type === 'sticker' ? (el.badge ? `Badge: ${el.text}` : el.emoji)
+                    : `Shape: ${el.shape}`}
                 </button>
               ))}
             </div>

@@ -1,22 +1,62 @@
 import { createCanvas } from '@/lib/image-processor';
 import { getFontStack } from '@/lib/thumbnail-fonts';
 
+function drawImageCover(ctx, img, w, h) {
+  const ir = img.naturalWidth / img.naturalHeight;
+  const cr = w / h;
+  let dw, dh, dx, dy;
+  if (ir > cr) {
+    dh = h;
+    dw = h * ir;
+    dx = (w - dw) / 2;
+    dy = 0;
+  } else {
+    dw = w;
+    dh = w / ir;
+    dx = 0;
+    dy = (h - dh) / 2;
+  }
+  ctx.drawImage(img, dx, dy, dw, dh);
+}
+
 function drawBackground(ctx, w, h, bg) {
   if (bg.type === 'image' && bg.image) {
     const img = bg.image;
-    const scale = bg.scale ?? 1;
-    const iw = img.naturalWidth * scale;
-    const ih = img.naturalHeight * scale;
-    const cx = bg.x ?? 0;
-    const cy = bg.y ?? 0;
+    const fit = bg.fit || 'cover';
 
-    if (bg.brightness !== 100 || bg.contrast !== 100) {
-      const filter = `brightness(${bg.brightness ?? 100}%) contrast(${bg.contrast ?? 100}%)`;
-      ctx.filter = filter;
-      ctx.drawImage(img, cx, cy, iw, ih);
-      ctx.filter = 'none';
+    if (fit === 'blur-fill') {
+      ctx.save();
+      ctx.filter = 'blur(28px) brightness(0.85) saturate(1.2)';
+      drawImageCover(ctx, img, w, h);
+      ctx.restore();
+      ctx.fillStyle = 'rgba(0,0,0,0.25)';
+      ctx.fillRect(0, 0, w, h);
+      const scale = bg.scale ?? 1;
+      const iw = img.naturalWidth * scale;
+      const ih = img.naturalHeight * scale;
+      const cx = bg.x ?? (w - iw) / 2;
+      const cy = bg.y ?? (h - ih) / 2;
+      if (bg.brightness !== 100 || bg.contrast !== 100) {
+        ctx.filter = `brightness(${bg.brightness ?? 100}%) contrast(${bg.contrast ?? 100}%)`;
+        ctx.drawImage(img, cx, cy, iw, ih);
+        ctx.filter = 'none';
+      } else {
+        ctx.drawImage(img, cx, cy, iw, ih);
+      }
     } else {
-      ctx.drawImage(img, cx, cy, iw, ih);
+      const scale = bg.scale ?? 1;
+      const iw = img.naturalWidth * scale;
+      const ih = img.naturalHeight * scale;
+      const cx = bg.x ?? 0;
+      const cy = bg.y ?? 0;
+
+      if (bg.brightness !== 100 || bg.contrast !== 100) {
+        ctx.filter = `brightness(${bg.brightness ?? 100}%) contrast(${bg.contrast ?? 100}%)`;
+        ctx.drawImage(img, cx, cy, iw, ih);
+        ctx.filter = 'none';
+      } else {
+        ctx.drawImage(img, cx, cy, iw, ih);
+      }
     }
 
     if (bg.overlay) {
@@ -38,6 +78,13 @@ function drawBackground(ctx, w, h, bg) {
   ctx.fillRect(0, 0, w, h);
 }
 
+function drawImageLayer(ctx, el) {
+  if (!el.image) return;
+  const w = el.image.naturalWidth * (el.scale ?? 1);
+  const h = el.image.naturalHeight * (el.scale ?? 1);
+  ctx.drawImage(el.image, el.x, el.y, w, h);
+}
+
 function drawText(ctx, el) {
   const weight = el.bold ? 'bold' : 'normal';
   const stack = getFontStack(el.fontFamily || 'Oswald');
@@ -54,8 +101,6 @@ function drawText(ctx, el) {
   const totalHeight = lines.length * lineHeight;
 
   let drawX = el.x;
-  if (el.align === 'center') drawX = el.x;
-  else if (el.align === 'right') drawX = el.x;
 
   if (el.bgBox) {
     const pad = el.fontSize * 0.25;
@@ -165,7 +210,20 @@ export function measureTextElement(ctx, el) {
   return { width: maxWidth, height: lines.length * lineHeight };
 }
 
+function imageLayerBounds(el) {
+  if (!el.image) return { width: 0, height: 0 };
+  const scale = el.scale ?? 1;
+  return {
+    width: el.image.naturalWidth * scale,
+    height: el.image.naturalHeight * scale,
+  };
+}
+
 export function hitTestElement(ctx, el, x, y) {
+  if (el.type === 'image') {
+    const { width, height } = imageLayerBounds(el);
+    return x >= el.x && x <= el.x + width && y >= el.y && y <= el.y + height;
+  }
   if (el.type === 'text') {
     const { width, height } = measureTextElement(ctx, el);
     let left = el.x;
@@ -196,7 +254,8 @@ export function renderThumbnail({ width, height, background, elements }) {
 
   const sorted = [...elements].sort((a, b) => (a.zIndex ?? 0) - (b.zIndex ?? 0));
   sorted.forEach((el) => {
-    if (el.type === 'text') drawText(ctx, el);
+    if (el.type === 'image') drawImageLayer(ctx, el);
+    else if (el.type === 'text') drawText(ctx, el);
     else if (el.type === 'sticker') drawSticker(ctx, el);
     else if (el.type === 'shape') drawShape(ctx, el);
   });
@@ -219,5 +278,17 @@ export function fitImageToCanvas(img, canvasW, canvasH, mode = 'cover') {
     scale,
     x: (canvasW - iw) / 2,
     y: (canvasH - ih) / 2,
+  };
+}
+
+export function fitSubjectLayer(img, canvasW, canvasH) {
+  const maxH = canvasH * 0.85;
+  const scale = Math.min(maxH / img.naturalHeight, (canvasW * 0.45) / img.naturalWidth);
+  const w = img.naturalWidth * scale;
+  const h = img.naturalHeight * scale;
+  return {
+    scale,
+    x: canvasW - w - 40,
+    y: (canvasH - h) / 2,
   };
 }

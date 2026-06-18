@@ -99,6 +99,73 @@ export function createShape(shape, overrides = {}) {
   };
 }
 
+export function createImageLayer(image, overrides = {}) {
+  return {
+    id: uid(),
+    type: 'image',
+    image,
+    x: 100,
+    y: 100,
+    scale: 0.5,
+    zIndex: 15,
+    ...overrides,
+  };
+}
+
+export const TEXT_PRESETS = [
+  {
+    id: 'youtube-title',
+    name: 'YouTube Title',
+    patch: {
+      fontSize: 88,
+      fontFamily: 'Oswald',
+      strokeWidth: 5,
+      color: '#ffffff',
+      strokeColor: '#000000',
+      bold: true,
+      shadow: true,
+      align: 'left',
+    },
+  },
+  {
+    id: 'subtitle',
+    name: 'Subtitle',
+    patch: {
+      fontSize: 36,
+      fontFamily: 'Roboto',
+      strokeWidth: 0,
+      color: '#ffffff',
+      shadow: true,
+      bold: false,
+    },
+  },
+  {
+    id: 'shock',
+    name: 'Shock / Highlight',
+    patch: {
+      fontSize: 100,
+      fontFamily: 'Anton',
+      color: '#fbbf24',
+      strokeColor: '#000000',
+      strokeWidth: 6,
+      bold: true,
+      shadow: false,
+    },
+  },
+  {
+    id: 'minimal-dark',
+    name: 'Minimal Dark',
+    patch: {
+      fontSize: 64,
+      fontFamily: 'Montserrat',
+      color: '#0f172a',
+      strokeWidth: 0,
+      shadow: false,
+      bold: true,
+    },
+  },
+];
+
 /** Templates are applied relative to 1280×720; positions scale with canvas */
 export const TEMPLATES = [
   {
@@ -267,6 +334,74 @@ export const TEMPLATES = [
       createBadge('NEW', '#8b5cf6', 80, 50),
     ],
   },
+  {
+    id: 'tech-review',
+    name: 'Tech Review',
+    background: { type: 'gradient', colors: ['#0f2027', '#203a43', '#2c5364'] },
+    elements: [
+      createTextLayer({
+        text: 'HONEST\nREVIEW',
+        x: 80,
+        y: 200,
+        fontSize: 82,
+        fontFamily: 'Bebas Neue',
+        strokeWidth: 3,
+      }),
+      createBadge('NEW', '#3b82f6', 80, 50),
+      createShape('rect', { x: 80, y: 400, w: 280, h: 4, color: '#3b82f6' }),
+    ],
+  },
+  {
+    id: 'fitness',
+    name: 'Fitness / Workout',
+    background: { type: 'gradient', colors: ['#11998e', '#38ef7d'] },
+    elements: [
+      createTextLayer({
+        text: '30 DAY\nCHALLENGE',
+        x: 80,
+        y: 220,
+        fontSize: 78,
+        color: '#fff',
+        strokeWidth: 4,
+      }),
+      createSticker('💪', 1000, 500, 64),
+      createBadge('FREE', '#22c55e', 80, 50),
+    ],
+  },
+  {
+    id: 'reaction',
+    name: 'Reaction Face',
+    background: { type: 'gradient', colors: ['#f12711', '#f5af19'] },
+    elements: [
+      createTextLayer({
+        text: 'YOU WON\'T\nBELIEVE THIS',
+        x: 80,
+        y: 180,
+        fontSize: 72,
+        strokeWidth: 5,
+      }),
+      createSticker('😱', 980, 480, 72),
+      createShape('arrow', { x: 750, y: 350, w: 160, h: 90, color: '#fff' }),
+    ],
+  },
+  {
+    id: 'food',
+    name: 'Food / Recipe',
+    background: { type: 'gradient', colors: ['#ff6a00', '#ee0979'] },
+    elements: [
+      createTextLayer({
+        text: 'EASY RECIPE',
+        x: 80,
+        y: 260,
+        fontSize: 76,
+        fontFamily: 'Lobster',
+        strokeWidth: 2,
+        color: '#fff',
+      }),
+      createSticker('🍕', 1020, 60, 52),
+      createBadge('HOT', '#f97316', 80, 50),
+    ],
+  },
 ];
 
 export function scaleTemplateElements(elements, fromW, fromH, toW, toH) {
@@ -288,6 +423,9 @@ export function scaleTemplateElements(elements, fromW, fromH, toW, toH) {
     if (el.type === 'shape') {
       scaled.w = Math.round(el.w * sx);
       scaled.h = Math.round(el.h * sy);
+    }
+    if (el.type === 'image') {
+      scaled.scale = (el.scale ?? 1) * Math.min(sx, sy);
     }
     return scaled;
   });

@@ -225,3 +225,32 @@ export function addMemeText(img, topText, bottomText, options = {}) {
 
   return { canvas, ctx };
 }
+
+/** Remove solid-color background (tolerance in 0–120). Returns canvas with transparency. */
+export function removeSolidBackground(img, bgColor = '#ffffff', tolerance = 30) {
+  const n = parseInt(bgColor.replace('#', ''), 16);
+  const c = { r: (n >> 16) & 255, g: (n >> 8) & 255, b: n & 255 };
+  const { canvas, ctx } = createCanvas(img.naturalWidth, img.naturalHeight);
+  ctx.drawImage(img, 0, 0);
+  const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+  const d = imageData.data;
+  for (let i = 0; i < d.length; i += 4) {
+    const dr = d[i] - c.r;
+    const dg = d[i + 1] - c.g;
+    const db = d[i + 2] - c.b;
+    const dist = Math.sqrt(dr * dr + dg * dg + db * db);
+    if (dist <= tolerance) d[i + 3] = 0;
+  }
+  ctx.putImageData(imageData, 0, 0);
+  return canvas;
+}
+
+/** Load an HTMLImageElement from a data URL */
+export function loadImageFromDataUrl(dataUrl) {
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    img.onload = () => resolve(img);
+    img.onerror = () => reject(new Error('Failed to load image'));
+    img.src = dataUrl;
+  });
+}

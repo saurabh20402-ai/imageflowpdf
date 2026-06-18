@@ -253,7 +253,7 @@ export const TOOLS = [
   {
     slug: 'thumbnail-creator',
     name: 'Thumbnail Creator',
-    description: 'Design YouTube and social thumbnails with text, templates, stickers, and shapes — free in your browser.',
+    description: 'Design YouTube thumbnails with templates, text, cutouts, blur backgrounds, and stickers — free in your browser.',
     category: 'transform',
     color: '#0284c7',
     icon: 'LayoutGrid',
