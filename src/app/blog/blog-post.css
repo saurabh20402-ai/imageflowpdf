@@ -24,9 +24,17 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+  align-items: flex-start !important;
+  text-align: left !important;
+  margin-bottom: 24px;
+}
+
+.blog-hero-content > div {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
   align-items: flex-start;
   text-align: left;
-  margin-bottom: 24px;
 }
 
 .blog-badge {
