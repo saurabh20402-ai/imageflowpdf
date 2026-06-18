@@ -14,6 +14,15 @@ const POSTS = [
     emoji: '⚡',
   },
   {
+    slug: 'webp-converter-online-free',
+    title: 'WebP Converter Online Free | Convert JPG PNG to WebP Instantly',
+    excerpt: 'Convert images to WebP online free with ImageFlow. Fast, secure, high-quality WebP conversion. No signup required. Reduce file size by 70-80% while maintaining quality.',
+    category: 'Guide',
+    date: 'June 18, 2026',
+    readTime: '10 min',
+    emoji: '🌐',
+  },
+  {
     slug: 'png-to-jpg-converter-online-free',
     title: 'PNG to JPG Converter Online Free | Convert PNG Images to JPG Instantly',
     excerpt: 'Convert PNG to JPG online free with ImageFlow. Fast, secure, high-quality PNG to JPG conversion. No signup required. Reduce file size while maintaining quality.',
