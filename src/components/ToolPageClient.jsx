@@ -30,6 +30,7 @@ const COMPONENT_MAP = {
   UpscaleTool: dynamic(() => import('@/components/tools/UpscaleTool'), { ssr: false }),
   BulkFormatConvertTool: dynamic(() => import('@/components/tools/BulkFormatConvertTool'), { ssr: false }),
   PassportPhotoTool: dynamic(() => import('@/components/tools/PassportPhotoTool'), { ssr: false }),
+  ThumbnailCreatorTool: dynamic(() => import('@/components/tools/ThumbnailCreatorTool'), { ssr: false }),
 };
 
 export default function ToolPageClient({ slug }) {
@@ -81,7 +82,7 @@ export default function ToolPageClient({ slug }) {
 
       {/* Tool Component */}
       <section className="py-8 md:py-12">
-        <div className="container max-w-4xl">
+        <div className={`container ${slug === 'thumbnail-creator' ? 'max-w-6xl' : 'max-w-4xl'}`}>
           {ToolComponent ? (
             <ToolComponent tool={tool} config={tool.config} />
           ) : (

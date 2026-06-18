@@ -253,12 +253,12 @@ export const TOOLS = [
   {
     slug: 'thumbnail-creator',
     name: 'Thumbnail Creator',
-    description: 'Create perfectly sized thumbnails for YouTube, social media, and web.',
+    description: 'Design YouTube and social thumbnails with text, templates, stickers, and shapes — free in your browser.',
     category: 'transform',
     color: '#0284c7',
     icon: 'LayoutGrid',
-    component: 'ResizeTool',
-    config: { presetMode: true },
+    component: 'ThumbnailCreatorTool',
+    config: {},
   },
 
   // === OPTIMIZE ===
