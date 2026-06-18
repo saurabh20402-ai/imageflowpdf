@@ -297,34 +297,6 @@ export default function PngToJpgConverterPage() {
             </div>
           </section>
 
-          {/* Visual Demo Section */}
-          <section className="blog-section">
-            <h2>See PNG to JPG Conversion in Action</h2>
-            <p>Watch how easy it is to convert PNG to JPG online free with ImageFlow:</p>
-            <div style={{ 
-              marginTop: '20px', 
-              borderRadius: '12px', 
-              overflow: 'hidden', 
-              backgroundColor: '#f8fafc',
-              aspectRatio: '16/9',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              minHeight: '400px'
-            }}>
-              <iframe 
-                width="100%" 
-                height="100%" 
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
-                title="PNG to JPG Converter Tutorial"
-                frameBorder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowFullScreen
-                style={{ borderRadius: '12px' }}
-              ></iframe>
-            </div>
-          </section>
-
           {/* Image with alt text */}
           <section className="blog-section">
             <h2>PNG to JPG Conversion Quality Comparison</h2>
