@@ -11,25 +11,22 @@
 
 .blog-article { display:block }
 
-/* Hero: use two-column layout on wide screens */
+/* Hero: single column, left-aligned */
 .blog-hero {
-  padding: 48px 36px;
+  padding: 48px;
   border-radius: 24px;
   background: linear-gradient(180deg, #eef2ff 0%, #ffffff 100%);
   box-shadow: 0 20px 60px rgba(15, 23, 42, 0.06);
   margin-bottom: 40px;
-  display: grid;
-  grid-template-columns: 1fr 360px;
-  gap: 28px;
-  align-items: center;
 }
 
 .blog-hero-content {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 16px;
   align-items: flex-start;
   text-align: left;
+  margin-bottom: 24px;
 }
 
 .blog-badge {
@@ -39,24 +36,24 @@
 }
 
 .blog-hero h1 {
-  font-size: clamp(28px, 4.5vw, 44px);
-  line-height: 1.06; margin: 4px 0 8px; color:var(--ink);
+  font-size: clamp(32px, 5vw, 48px);
+  line-height: 1.08; margin: 0; color:var(--ink); font-weight:800;
 }
 
-.blog-hero p { margin:0; font-size:17px; line-height:1.8; color:var(--muted); max-width:720px }
+.blog-hero p { margin:0; font-size:17px; line-height:1.7; color:var(--muted); max-width:720px }
 
-.blog-cta-buttons { display:flex; gap:12px; flex-wrap:wrap; justify-content:flex-start }
+.blog-cta-buttons { display:flex; gap:12px; flex-wrap:wrap; justify-content:flex-start; margin-top:4px }
 
-.btn-primary { display:inline-flex; align-items:center; justify-content:center; padding:12px 20px; border-radius:12px; border:none; background:var(--primary); color:#fff; font-size:15px; font-weight:700; text-decoration:none }
+.btn-primary { display:inline-flex; align-items:center; justify-content:center; padding:14px 28px; border-radius:12px; border:none; background:var(--primary); color:#fff; font-size:15px; font-weight:700; text-decoration:none; cursor:pointer }
 .btn-primary:hover{ background:var(--primary-600); transform:translateY(-2px) }
-.btn-secondary{ display:inline-flex; align-items:center; justify-content:center; padding:12px 20px; border-radius:12px; border:1px solid rgba(67,56,202,0.14); background:#fff; color:var(--primary); font-weight:700; text-decoration:none }
-.btn-secondary:hover{ background:#f5f3ff }
+.btn-secondary{ display:inline-flex; align-items:center; justify-content:center; padding:14px 28px; border-radius:12px; border:1px solid rgba(67,56,202,0.14); background:#fff; color:var(--primary); font-weight:700; text-decoration:none; cursor:pointer }
+.btn-secondary:hover{ background:#f5f3ff; border-color:var(--primary) }
 
-/* Right column features (compact cards) */
-.blog-features{ display:flex; flex-direction:column; gap:12px }
+/* Features grid below hero */
+.blog-features{ display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:16px }
 .feature-item{ border-radius:16px; padding:18px; background:#fff; border:1px solid #eef2ff }
 .feature-item h3{ margin:0 0 8px 0; font-size:14px; color:var(--primary); font-weight:800 }
-.feature-item p{ margin:0; color:var(--muted); font-size:14px }
+.feature-item p{ margin:0; color:var(--muted); font-size:14px; line-height:1.6 }
 
 /* Content Sections */
 .blog-section{ margin-bottom:40px }
@@ -106,8 +103,8 @@
 
 /* Responsive */
 @media (max-width: 880px){
-  .blog-hero{ grid-template-columns: 1fr; padding:28px }
-  .blog-hero-content{ align-items:center; text-align:center }
-  .blog-features{ flex-direction:row; flex-wrap:wrap; gap:10px; justify-content:center }
+  .blog-hero{ padding:32px }
+  .blog-hero h1{ font-size: clamp(26px, 4vw, 36px) }
   .two-column{ grid-template-columns: 1fr }
+  .blog-features{ grid-template-columns: 1fr }
 }
