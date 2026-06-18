@@ -2,11 +2,88 @@ import '../blog-post.css';
 
 export const metadata = {
   title: 'Image to PDF Converter Free Online (Convert JPG & PNG Instantly)',
-  description: 'Use our free image to PDF converter online to convert JPG and PNG files instantly. Create PDFs under 100KB or 200KB without losing quality.',
+  description: 'Use our free image to PDF converter online to convert JPG and PNG files instantly. Create PDFs without losing quality.',
   alternates: {
     canonical: 'https://imageflow.in/blog/image-to-pdf-converter-free-online-convert-jpg-png-instantly/',
   },
 };
+
+const FEATURES = [
+  { title: 'Fast conversion', text: 'Turn images to PDF in seconds with instant processing.', bg: '#eef2ff' },
+  { title: 'Quality-first', text: 'Keep images sharp and clear in the final PDF.', bg: '#f5f3ff' },
+  { title: 'No signup', text: 'Use the tool immediately on any browser or device.', bg: '#ecfdf5' },
+];
+
+const WHO_NEEDS = [
+  { title: '📸 Photographers', detail: 'Combine multiple photos into a single PDF document.' },
+  { title: '📚 Students', detail: 'Convert assignment images and scans into PDF format.' },
+  { title: '💼 Professionals', detail: 'Create PDFs from business cards, receipts, and documents.' },
+  { title: '🏢 Businesses', detail: 'Convert product images and catalogs into PDF presentations.' },
+];
+
+const STEPS = [
+  'Upload your JPG or PNG images to the converter.',
+  'Arrange the images in your preferred order.',
+  'Click the convert button to create your PDF.',
+  'Download your new PDF file instantly.',
+];
+
+const QUALITY_POINTS = [
+  { title: 'Preserve image clarity', detail: 'Keep all image detail and color accuracy in your PDF.' },
+  { title: 'Maintain resolution', detail: 'Convert without reducing image quality or sharpness.' },
+  { title: 'Support multiple formats', detail: 'Handle JPG, PNG, and other common image formats easily.' },
+];
+
+const USE_CASES = [
+  'Combine multiple photos into a single PDF document.',
+  'Create image galleries as PDFs for easy sharing.',
+  'Convert scanned documents and receipts to PDF format.',
+  'Build PDF presentations from individual image files.',
+];
+
+const COMPARISON = [
+  { feature: 'Free to use', our: '✓', adobe: '✗', ilove: '✓' },
+  { feature: 'No signup needed', our: '✓', adobe: '✗', ilove: '✗' },
+  { feature: 'Batch conversion', our: '✓', adobe: '✓', ilove: '✓' },
+  { feature: 'Secure browser-based', our: '✓', adobe: '✗', ilove: '✓' },
+  { feature: 'Mobile-friendly', our: '✓', adobe: '✓', ilove: '✓' },
+];
+
+const PRO_TIPS = [
+  'Compress large images before conversion for smaller PDFs.',
+  'Arrange images in the order you want them to appear.',
+  'Use the same image dimensions for consistent PDF layout.',
+  'Keep original image files as backup before converting.',
+];
+
+const RELATED_TOOLS = [
+  { title: 'Compress PDF', description: 'Reduce PDF file size after creation.', href: '/tools/compress-pdf/' },
+  { title: 'Resize Image', description: 'Resize images before converting to PDF.', href: '/tools/resize-image/' },
+  { title: 'Merge PDF', description: 'Combine multiple PDFs into one document.', href: '/tools/merge-pdf/' },
+];
+
+const FAQs = [
+  {
+    q: 'Is this image to PDF converter completely free?',
+    a: 'Yes, it is 100% free with no hidden charges or premium upgrades required.',
+  },
+  {
+    q: 'Can I convert multiple images at once?',
+    a: 'Yes, you can upload multiple images and arrange them before converting to a single PDF.',
+  },
+  {
+    q: 'Will conversion reduce image quality?',
+    a: 'No, our converter maintains full image quality and resolution during the conversion process.',
+  },
+  {
+    q: 'What image formats are supported?',
+    a: 'We support JPG, PNG, and other common image formats for conversion to PDF.',
+  },
+  {
+    q: 'Is my data secure?',
+    a: 'Yes, all processing happens in your browser. Your images are never uploaded to any server.',
+  },
+];
 
 const schemaMarkup = {
   '@context': 'https://schema.org',
@@ -32,6 +109,19 @@ const schemaMarkup = {
   articleBody: 'Convert images to PDF online free with ImageFlow. Convert JPG and PNG to PDF instantly.',
 };
 
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: FAQs.map(faq => ({
+    '@type': 'Question',
+    name: faq.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.a,
+    },
+  })),
+};
+
 const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
@@ -51,13 +141,13 @@ const breadcrumbSchema = {
     {
       '@type': 'ListItem',
       position: 3,
-      name: 'Image to PDF Converter Free Online',
+      name: 'Image to PDF Converter',
       item: 'https://imageflow.in/blog/image-to-pdf-converter-free-online-convert-jpg-png-instantly/',
     },
   ],
 };
 
-export default function ImageToPdfConverterFreeOnlineConvertJpgPngInstantlyPage() {
+export default function ImageToPdfConverterPage() {
   return (
     <>
       <script
@@ -66,258 +156,175 @@ export default function ImageToPdfConverterFreeOnlineConvertJpgPngInstantlyPage(
       />
       <script
         type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <main className="blog-main">
         <article className="blog-article">
-        <section className="blog-inline-hero-section">
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 24, alignItems: 'center', textAlign: 'center' }}>
-            <span style={{ display: 'inline-flex', alignItems: 'center', gap: 10, padding: '10px 18px', borderRadius: 999, background: 'var(--primary-light)', color: 'var(--primary)', fontSize: 13, fontWeight: 700 }}>
-              🔥 100% Free · No Signup Required
-            </span>
-            <div>
-              <h1 style={{ fontSize: 'clamp(38px, 5vw, 56px)', lineHeight: 1.05, margin: '0 0 18px' }}>
-                Image to PDF Converter Free Online
-              </h1>
-              <p style={{ margin: 0, fontSize: 18, lineHeight: 1.8, maxWidth: 760, color: 'var(--body)' }}>
-                Sharing multiple images separately can become frustrating. That’s why many users prefer converting images into a single PDF document. With an image to PDF converter free, you can quickly turn JPG and PNG images into professional PDF files in seconds.
-              </p>
-            </div>
-            <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', justifyContent: 'center' }}>
-              <a href="/tools/image-to-pdf" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', minWidth: 180, padding: '16px 24px', borderRadius: 14, border: 'none', background: 'var(--primary)', color: '#fff', fontSize: 16, fontWeight: 700, textDecoration: 'none' }}>
-                Convert to PDF Now
-              </a>
-              <a href="#why-convert" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', minWidth: 180, padding: '16px 24px', borderRadius: 14, border: '1px solid var(--hairline)', background: 'var(--surface-card)', color: 'var(--primary)', fontSize: 16, fontWeight: 700, textDecoration: 'none' }}>
-                Learn Why
-              </a>
-            </div>
-          </div>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 18, marginTop: 36 }}>
-            {[
-              { title: 'Fast conversion', text: 'Turn images to PDF in seconds with instant processing.', accent: '#eef2ff' },
-              { title: 'Quality-first', text: 'Keep images sharp and clear in the final PDF.', accent: '#f5f3ff' },
-              { title: 'No signup', text: 'Use the tool immediately on any browser or device.', accent: '#ecfdf5' },
-            ].map((item) => (
-              <div key={item.title} className="blog-inline-card">
-                <p style={{ fontSize: 14, fontWeight: 700, marginBottom: 10, color: 'var(--primary)' }}>{item.title}</p>
-                <p style={{ margin: 0, fontSize: 15, lineHeight: 1.75, color: 'var(--body)' }}>{item.text}</p>
+          <section className="blog-hero">
+            <div className="blog-hero-content">
+              <span className="blog-badge">📸 Convert Images to PDF Free</span>
+              <div>
+                <h1>Image to PDF Converter Free Online (Convert JPG & PNG Instantly)</h1>
+                <p>Convert JPG, PNG, and other images to PDF instantly with a free online tool. No signup, no downloads — just combine your images into professional PDF documents in seconds.</p>
               </div>
-            ))}
-          </div>
-        </section>
+              <div className="blog-cta-buttons">
+                <a href="/tools/image-to-pdf/" className="btn-primary">Convert to PDF Now</a>
+                <a href="#how-to-convert" className="btn-secondary">See How</a>
+              </div>
+            </div>
+            <div className="blog-features">
+              {FEATURES.map((item) => (
+                <div key={item.title} className="feature-item" style={{ backgroundColor: item.bg }}>
+                  <h3>{item.title}</h3>
+                  <p>{item.text}</p>
+                </div>
+              ))}
+            </div>
+          </section>
 
-        <section id="why-convert" style={{ marginBottom: 40 }}>
-          <h2 style={{ fontSize: 28, fontWeight: 800, marginBottom: 16, color: 'var(--ink)' }}>📌 Why Convert Image to PDF?</h2>
-          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)', marginBottom: 20 }}>
-            PDF files are easier to manage, share, and print.
-          </p>
-          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)', marginBottom: 20 }}>
-            Main benefits:
-          </p>
-          <ul style={{ paddingLeft: 20, marginBottom: 20 }}>
-            <li style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>Combine multiple images into one document</li>
-            <li style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>Easy file sharing</li>
-            <li style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>Better compatibility across devices</li>
-            <li style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>Professional document format</li>
-            <li style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>Organized file management</li>
-          </ul>
-          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>
-            PDFs are widely accepted for education, office work, and online forms.
-          </p>
-        </section>
+          <section className="blog-section">
+            <div className="two-column">
+              <div className="column-text">
+                <h2>Why convert images to PDF?</h2>
+                <p>PDF is the universal document format trusted for sharing, printing, and archiving. Converting images to PDF makes them easier to manage, distribute, and organize.</p>
+                <ul>
+                  <li>Combine multiple images into one document.</li>
+                  <li>Easy file sharing across devices and platforms.</li>
+                  <li>Better compatibility for printing and distribution.</li>
+                  <li>Professional document format for business use.</li>
+                </ul>
+              </div>
+              <div className="info-box">
+                <p>What you get</p>
+                <p>A fast image to PDF converter that lets you combine images into professional PDFs with perfect quality and zero complexity.</p>
+              </div>
+            </div>
+          </section>
 
-        <section style={{ marginBottom: 40 }}>
-          <h2 style={{ fontSize: 28, fontWeight: 800, marginBottom: 16, color: 'var(--ink)' }}>⚡ How to Convert Image to PDF Online</h2>
-          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)', marginBottom: 20 }}>
-            Follow these easy steps:
-          </p>
-          <ol style={{ paddingLeft: 20, marginBottom: 20 }}>
-            <li style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>Upload your images</li>
-            <li style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>Arrange image order</li>
-            <li style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>Click the convert button</li>
-            <li style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>Download the final PDF file</li>
-          </ol>
-          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>
-            👉 Try the tool here: <a href="/tools/image-to-pdf" style={{ color: 'var(--primary)', textDecoration: 'underline' }}>Image to PDF Tool</a>
-          </p>
-        </section>
+          <section className="blog-section">
+            <h2>Who needs an image to PDF converter?</h2>
+            <div className="grid-auto">
+              {WHO_NEEDS.map((item) => (
+                <div key={item.title} className="grid-card">
+                  <h3>{item.title}</h3>
+                  <p>{item.detail}</p>
+                </div>
+              ))}
+            </div>
+          </section>
 
-        <section style={{ marginBottom: 40 }}>
-          <h2 style={{ fontSize: 28, fontWeight: 800, marginBottom: 16, color: 'var(--ink)' }}>🚀 Image to PDF Converter Online Free Without Quality Loss</h2>
-          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)', marginBottom: 20 }}>
-            Many tools reduce image quality during conversion.
-          </p>
-          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)', marginBottom: 20 }}>
-            A good image to PDF converter online should:
-          </p>
-          <ul style={{ paddingLeft: 20, marginBottom: 20 }}>
-            <li style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>Preserve image clarity</li>
-            <li style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>Support multiple formats</li>
-            <li style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>Process files quickly</li>
-            <li style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>Maintain original resolution</li>
-          </ul>
-          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>
-            👉 Our tool is optimized for fast and high-quality conversion.
-          </p>
-        </section>
+          <section id="how-to-convert" className="blog-section">
+            <h2>How to convert images to PDF in 4 easy steps</h2>
+            <div className="steps-grid">
+              {STEPS.map((step, idx) => (
+                <div key={idx} className="step-item">
+                  <div className="step-number">{idx + 1}</div>
+                  <p>{step}</p>
+                </div>
+              ))}
+            </div>
+          </section>
 
-        <section style={{ marginBottom: 40 }}>
-          <h2 style={{ fontSize: 28, fontWeight: 800, marginBottom: 16, color: 'var(--ink)' }}>📂 Create Image to PDF 100KB or 200KB</h2>
-          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)', marginBottom: 20 }}>
-            Many websites and forms require PDF files under a specific size.
-          </p>
-          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)', marginBottom: 20 }}>
-            Our tool helps you:
-          </p>
-          <ul style={{ paddingLeft: 20, marginBottom: 20 }}>
-            <li style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>Create image to PDF 100KB</li>
-            <li style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>Create image to PDF 200KB</li>
-            <li style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>Compress large images before conversion</li>
-          </ul>
-          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>
-            This makes uploads faster and easier.
-          </p>
-        </section>
+          <section className="quality-section blog-section">
+            <h2>Convert without losing quality</h2>
+            <div className="grid-auto">
+              {QUALITY_POINTS.map((item) => (
+                <div key={item.title} className="grid-card">
+                  <h3>{item.title}</h3>
+                  <p>{item.detail}</p>
+                </div>
+              ))}
+            </div>
+          </section>
 
-        <section style={{ marginBottom: 40 }}>
-          <h2 style={{ fontSize: 28, fontWeight: 800, marginBottom: 16, color: 'var(--ink)' }}>🔍 Merge PDF Files Easily</h2>
-          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)', marginBottom: 20 }}>
-            Besides image conversion, users often need to merge PDF documents into one file.
-          </p>
-          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)', marginBottom: 20 }}>
-            Combining files helps:
-          </p>
-          <ul style={{ paddingLeft: 20, marginBottom: 20 }}>
-            <li style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>Organize documents</li>
-            <li style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>Simplify sharing</li>
-            <li style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>Reduce clutter</li>
-          </ul>
-          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>
-            👉 You can also use our PDF tools for better document management.
-          </p>
-        </section>
+          <section className="blog-section">
+            <h2>Image to PDF converter comparison</h2>
+            <p>When comparing image to PDF converters, users evaluate options like Adobe, iLovePDF, and Sejda. Our tool provides the same quality conversion as premium options but completely free with no signup required.</p>
+            <div className="table-container">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Feature</th>
+                    <th>Our tool</th>
+                    <th>Adobe</th>
+                    <th>iLovePDF</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {COMPARISON.map((row) => (
+                    <tr key={row.feature}>
+                      <td>{row.feature}</td>
+                      <td className="check">✓</td>
+                      <td>{row.adobe === '✓' ? <span className="check">✓</span> : <span className="cross">✗</span>}</td>
+                      <td>{row.ilove === '✓' ? <span className="check">✓</span> : <span className="cross">✗</span>}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </section>
 
-        <section style={{ marginBottom: 40 }}>
-          <h2 style={{ fontSize: 28, fontWeight: 800, marginBottom: 16, color: 'var(--ink)' }}>🖼️ PDF to JPG Conversion Support</h2>
-          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)', marginBottom: 20 }}>
-            Sometimes users need the opposite process.
-          </p>
-          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)', marginBottom: 20 }}>
-            That’s why many people also search for:
-          </p>
-          <ul style={{ paddingLeft: 20, marginBottom: 20 }}>
-            <li style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>PDF to JPG converter</li>
-            <li style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>Extract images from PDF</li>
-          </ul>
-          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>
-            Using the right tools helps maintain image quality during conversion.
-          </p>
-        </section>
+          <section className="blog-section">
+            <h2>Common image to PDF use cases</h2>
+            <div className="tips-grid">
+              {USE_CASES.map((useCase) => (
+                <div key={useCase} className="use-case-item">
+                  <p>📌 {useCase}</p>
+                </div>
+              ))}
+            </div>
+          </section>
 
-        <section style={{ marginBottom: 40 }}>
-          <h2 style={{ fontSize: 28, fontWeight: 800, marginBottom: 16, color: 'var(--ink)' }}>🤔 Image to PDF 11zon vs iLovePDF</h2>
-          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)', marginBottom: 20 }}>
-            Users often compare tools like:
-          </p>
-          <ul style={{ paddingLeft: 20, marginBottom: 20 }}>
-            <li style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>Image to PDF 11zon</li>
-            <li style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>Image to PDF iLovePDF</li>
-          </ul>
-          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)', marginBottom: 20 }}>
-            While these tools are popular, users also look for:
-          </p>
-          <ul style={{ paddingLeft: 20, marginBottom: 20 }}>
-            <li style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>Faster speed</li>
-            <li style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>Better privacy</li>
-            <li style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>Simple interface</li>
-            <li style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>Mobile-friendly experience</li>
-          </ul>
-          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>
-            👉 Our tool focuses on simplicity, speed, and secure processing.
-          </p>
-        </section>
+          <section className="blog-section">
+            <h2>Pro tips for better image to PDF conversion</h2>
+            <div className="tips-grid">
+              {PRO_TIPS.map((tip) => (
+                <div key={tip} className="tip-item">
+                  <p>{tip}</p>
+                </div>
+              ))}
+            </div>
+          </section>
 
-        <section style={{ marginBottom: 40 }}>
-          <h2 style={{ fontSize: 28, fontWeight: 800, marginBottom: 16, color: 'var(--ink)' }}>💡 Tips for Better PDF Conversion</h2>
-          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)', marginBottom: 20 }}>
-            Use these tips for best results:
-          </p>
-          <ul style={{ paddingLeft: 20, marginBottom: 20 }}>
-            <li style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>Compress large images first</li>
-            <li style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>Arrange pages properly</li>
-            <li style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>Use clear images</li>
-            <li style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>Resize oversized images before conversion</li>
-          </ul>
-          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>
-            These small steps improve final PDF quality.
-          </p>
-        </section>
+          <section className="blog-section">
+            <h2>Related tools</h2>
+            <div className="grid-auto">
+              {RELATED_TOOLS.map((tool) => (
+                <a key={tool.title} href={tool.href} className="tool-card">
+                  <h3>{tool.title}</h3>
+                  <p>{tool.description}</p>
+                  <span className="arrow">Use tool →</span>
+                </a>
+              ))}
+            </div>
+          </section>
 
-        <section className="blog-highlight-section">
-          <h2 style={{ fontSize: 28, fontWeight: 800, marginBottom: 16, color: 'var(--ink)', textAlign: 'center' }}>🎯 Use Our Free Image to PDF Converter</h2>
-          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)', marginBottom: 20, textAlign: 'center' }}>
-            👉 Convert your images instantly here: <a href="/tools/image-to-pdf" style={{ color: 'var(--primary)', textDecoration: 'underline' }}>Image to PDF Tool</a>
-          </p>
-          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)', marginBottom: 20, textAlign: 'center' }}>
-            Why choose our tool:
-          </p>
-          <ul style={{ paddingLeft: 20, marginBottom: 20 }}>
-            <li style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>Free forever</li>
-            <li style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>Fast conversion</li>
-            <li style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>Mobile-friendly</li>
-            <li style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>No signup required</li>
-            <li style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>Secure processing</li>
-          </ul>
-        </section>
+          <section className="blog-section">
+            <h2>Frequently Asked Questions</h2>
+            <div className="faq-grid">
+              {FAQs.map((faq) => (
+                <div key={faq.q} className="faq-item">
+                  <h3>{faq.q}</h3>
+                  <p>{faq.a}</p>
+                </div>
+              ))}
+            </div>
+          </section>
 
-        <section style={{ marginBottom: 40 }}>
-          <h2 style={{ fontSize: 28, fontWeight: 800, marginBottom: 16, color: 'var(--ink)' }}>🌐 Learn More About PDF Files</h2>
-          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>
-            Read more here: <a href="https://en.wikipedia.org/wiki/PDF" style={{ color: 'var(--primary)', textDecoration: 'underline' }}>Wikipedia - PDF</a>
-          </p>
-        </section>
-
-        <section style={{ marginBottom: 40 }}>
-          <h2 style={{ fontSize: 28, fontWeight: 800, marginBottom: 16, color: 'var(--ink)' }}>❓ FAQs</h2>
-          <div style={{ marginBottom: 20 }}>
-            <h3 style={{ fontSize: 18, fontWeight: 700, marginBottom: 8, color: 'var(--ink)' }}>Is this image to PDF converter free?</h3>
-            <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>Yes, the tool is completely free.</p>
-          </div>
-          <div style={{ marginBottom: 20 }}>
-            <h3 style={{ fontSize: 18, fontWeight: 700, marginBottom: 8, color: 'var(--ink)' }}>Can I create image to PDF 100KB?</h3>
-            <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>Yes, image compression helps reduce PDF size.</p>
-          </div>
-          <div style={{ marginBottom: 20 }}>
-            <h3 style={{ fontSize: 18, fontWeight: 700, marginBottom: 8, color: 'var(--ink)' }}>Can I merge PDF files?</h3>
-            <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>Yes, multiple files can be combined easily.</p>
-          </div>
-          <div>
-            <h3 style={{ fontSize: 18, fontWeight: 700, marginBottom: 8, color: 'var(--ink)' }}>Does conversion reduce image quality?</h3>
-            <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>No, the tool maintains image clarity during processing.</p>
-          </div>
-        </section>
-
-        <section style={{ marginBottom: 40 }}>
-          <h2 style={{ fontSize: 28, fontWeight: 800, marginBottom: 16, color: 'var(--ink)' }}>🔗 Related Tools</h2>
-          <ul style={{ paddingLeft: 20 }}>
-            <li style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)', marginBottom: 8 }}><a href="/tools/compress-pdf" style={{ color: 'var(--primary)', textDecoration: 'underline' }}>Compress PDF Tool</a></li>
-            <li style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)', marginBottom: 8 }}><a href="/tools/resize-image" style={{ color: 'var(--primary)', textDecoration: 'underline' }}>Resize Image Tool</a></li>
-            <li style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}><a href="/tools/jpg-to-png" style={{ color: 'var(--primary)', textDecoration: 'underline' }}>JPG to PNG Converter</a></li>
-          </ul>
-        </section>
-
-        <section>
-          <h2 style={{ fontSize: 28, fontWeight: 800, marginBottom: 16, color: 'var(--ink)' }}>🎯 Final Thoughts</h2>
-          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)', marginBottom: 20 }}>
-            Converting images into PDFs helps organize and share files more efficiently. With the right tool, you can convert JPG and PNG images into professional PDF documents instantly while maintaining quality.
-          </p>
-          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>
-            👉 Try it now and create PDF files in seconds.
-          </p>
-        </section>
-      </article>
-    </main>
+          <section className="blog-section blog-cta">
+            <div>
+              <p className="cta-label">Ready to convert?</p>
+              <h2>Convert images to PDF online free without the guesswork.</h2>
+            </div>
+            <p>Use ImageFlow for instant image to PDF conversion that keeps quality intact, works fast, and supports all common image formats.</p>
+            <a href="/tools/image-to-pdf/" className="btn-primary">Start Converting Now →</a>
+          </section>
+        </article>
+      </main>
     </>
   );
 }

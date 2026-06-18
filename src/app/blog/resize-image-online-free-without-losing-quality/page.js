@@ -8,6 +8,83 @@ export const metadata = {
   },
 };
 
+const FEATURES = [
+  { title: 'Smart resizing', text: 'Shrink images while keeping quality sharp and clear.', bg: '#eef2ff' },
+  { title: 'Size targets', text: 'Resize to specific dimensions or file sizes easily.', bg: '#f5f3ff' },
+  { title: 'No signup', text: 'Use the tool immediately on any browser or device.', bg: '#ecfdf5' },
+];
+
+const WHO_NEEDS = [
+  { title: '🌐 Web developers', detail: 'Optimize images for faster website loading.' },
+  { title: '📧 Email users', detail: 'Reduce image sizes for email attachments.' },
+  { title: '📱 Social media', detail: 'Resize photos for perfect platform dimensions.' },
+  { title: '☁️ Cloud storage', detail: 'Shrink images to save cloud storage space.' },
+];
+
+const STEPS = [
+  'Upload your image or drag it into the resizer.',
+  'Choose your target size or dimensions.',
+  'Preview the result before downloading.',
+  'Download your resized image instantly.',
+];
+
+const QUALITY_POINTS = [
+  { title: 'Maintain image clarity', detail: 'Keep details sharp while reducing file size effectively.' },
+  { title: 'Smart compression', detail: 'Automatically optimize dimensions and quality balance.' },
+  { title: 'Flexible sizing', detail: 'Resize by dimensions, percentage, or target file size.' },
+];
+
+const USE_CASES = [
+  'Optimize images for website performance and speed.',
+  'Resize photos to specific dimensions for web layouts.',
+  'Reduce image file sizes for email attachments.',
+  'Prepare images for social media posting.',
+];
+
+const COMPARISON = [
+  { feature: 'Free to use', our: '✓', adobe: '✗', ilove: '✓' },
+  { feature: 'No account required', our: '✓', adobe: '✗', ilove: '✗' },
+  { feature: 'Quality preservation', our: '✓', adobe: '✓', ilove: '✓' },
+  { feature: 'No downloads needed', our: '✓', adobe: '✗', ilove: '✓' },
+  { feature: 'Mobile-friendly', our: '✓', adobe: '✓', ilove: '✓' },
+];
+
+const PRO_TIPS = [
+  'Always keep a backup of your original image.',
+  'Test different quality settings for your use case.',
+  'Resize images before uploading to save bandwidth.',
+  'Use appropriate dimensions for your target platform.',
+];
+
+const RELATED_TOOLS = [
+  { title: 'Compress Image', description: 'Reduce image file size without resizing.', href: '/tools/compress-image/' },
+  { title: 'Crop Image', description: 'Crop images to perfect aspect ratios.', href: '/tools/crop-image/' },
+  { title: 'Image to PDF', description: 'Convert resized images to PDF format.', href: '/tools/image-to-pdf/' },
+];
+
+const FAQs = [
+  {
+    q: 'Can I resize images without losing quality?',
+    a: 'Yes, our smart resizing maintains quality while reducing dimensions and file size effectively.',
+  },
+  {
+    q: 'Can I resize to specific file sizes like 100KB?',
+    a: 'Yes, you can target specific file sizes like 20KB, 50KB, 100KB, or 200KB during resizing.',
+  },
+  {
+    q: 'Is this tool free?',
+    a: 'Yes, completely free with no signup or hidden fees required.',
+  },
+  {
+    q: 'What image formats are supported?',
+    a: 'We support JPG, PNG, and other common image formats for resizing.',
+  },
+  {
+    q: 'Is my image secure?',
+    a: 'Yes, all processing happens in your browser. Your images are never uploaded to any server.',
+  },
+];
+
 const schemaMarkup = {
   '@context': 'https://schema.org',
   '@type': 'Article',
@@ -30,6 +107,19 @@ const schemaMarkup = {
   datePublished: '2024-01-01',
   dateModified: new Date().toISOString().split('T')[0],
   articleBody: 'Free image resizer online with ImageFlow. Resize images without losing quality.',
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: FAQs.map(faq => ({
+    '@type': 'Question',
+    name: faq.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.a,
+    },
+  })),
 };
 
 const breadcrumbSchema = {
@@ -57,7 +147,7 @@ const breadcrumbSchema = {
   ],
 };
 
-export default function ResizeImageOnlineFreeWithoutLosingQualityPage() {
+export default function ResizeImageOnlineFreePage() {
   return (
     <>
       <script
@@ -66,217 +156,175 @@ export default function ResizeImageOnlineFreeWithoutLosingQualityPage() {
       />
       <script
         type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <main className="blog-main">
         <article className="blog-article">
-        <section className="blog-inline-hero-section">
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 24, alignItems: 'center', textAlign: 'center' }}>
-            <span style={{ display: 'inline-flex', alignItems: 'center', gap: 10, padding: '10px 18px', borderRadius: 999, background: 'var(--primary-light)', color: 'var(--primary)', fontSize: 13, fontWeight: 700 }}>
-              🔥 100% Free · No Signup Required
-            </span>
-            <div>
-              <h1 style={{ fontSize: 'clamp(38px, 5vw, 56px)', lineHeight: 1.05, margin: '0 0 18px' }}>
-                Resize Image Online Free Without Losing Quality
-              </h1>
-              <p style={{ margin: 0, fontSize: 18, lineHeight: 1.8, maxWidth: 760, color: 'var(--body)' }}>
-                Large images can slow down websites, increase loading time, and make uploading difficult. That’s why many users look for a fast way to resize image online free without reducing image quality. With the right tool, you can quickly resize images for websites, social media, forms, and documents in just a few clicks.
-              </p>
-            </div>
-            <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', justifyContent: 'center' }}>
-              <a href="/tools/resize-image" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', minWidth: 180, padding: '16px 24px', borderRadius: 14, border: 'none', background: 'var(--primary)', color: '#fff', fontSize: 16, fontWeight: 700, textDecoration: 'none' }}>
-                Resize Image Now
-              </a>
-              <a href="#why-resize" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', minWidth: 180, padding: '16px 24px', borderRadius: 14, border: '1px solid var(--hairline)', background: 'var(--surface-card)', color: 'var(--primary)', fontSize: 16, fontWeight: 700, textDecoration: 'none' }}>
-                Learn Why
-              </a>
-            </div>
-          </div>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 18, marginTop: 36 }}>
-            {[
-              { title: 'Fast resizing', text: 'Shrink images in seconds with smart optimization.', accent: '#eef2ff' },
-              { title: 'Quality-first', text: 'Keep images sharp and clear after resizing.', accent: '#f5f3ff' },
-              { title: 'No signup', text: 'Use the tool immediately on any browser or device.', accent: '#ecfdf5' },
-            ].map((item) => (
-              <div key={item.title} className="blog-inline-card">
-                <p style={{ fontSize: 14, fontWeight: 700, marginBottom: 10, color: 'var(--primary)' }}>{item.title}</p>
-                <p style={{ margin: 0, fontSize: 15, lineHeight: 1.75, color: 'var(--body)' }}>{item.text}</p>
+          <section className="blog-hero">
+            <div className="blog-hero-content">
+              <span className="blog-badge">⚡ Resize Images Free</span>
+              <div>
+                <h1>Resize Image Online Free Without Losing Quality</h1>
+                <p>Resize images fast and free with a tool that keeps quality intact. Shrink to specific dimensions, file sizes (20KB, 50KB, 100KB, 200KB), or percentages instantly.</p>
               </div>
-            ))}
-          </div>
-        </section>
+              <div className="blog-cta-buttons">
+                <a href="/tools/resize-image/" className="btn-primary">Resize Image Now</a>
+                <a href="#why-resize" className="btn-secondary">Learn Why</a>
+              </div>
+            </div>
+            <div className="blog-features">
+              {FEATURES.map((item) => (
+                <div key={item.title} className="feature-item" style={{ backgroundColor: item.bg }}>
+                  <h3>{item.title}</h3>
+                  <p>{item.text}</p>
+                </div>
+              ))}
+            </div>
+          </section>
 
-        <section id="why-resize" style={{ marginBottom: 40 }}>
-          <h2 style={{ fontSize: 28, fontWeight: 800, marginBottom: 16, color: 'var(--ink)' }}>📌 Why You Should Resize Images</h2>
-          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)', marginBottom: 20 }}>
-            Image resizing improves both performance and usability.
-          </p>
-          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)', marginBottom: 20 }}>
-            Main benefits:
-          </p>
-          <ul style={{ paddingLeft: 20, marginBottom: 20 }}>
-            <li style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>Faster website speed</li>
-            <li style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>Easy file uploads</li>
-            <li style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>Better SEO performance</li>
-            <li style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>Reduced storage usage</li>
-            <li style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>Improved social media compatibility</li>
-          </ul>
-          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>
-            Optimized images create a smoother user experience.
-          </p>
-        </section>
+          <section id="why-resize" className="blog-section">
+            <div className="two-column">
+              <div className="column-text">
+                <h2>Why resize images?</h2>
+                <p>Large images slow down websites, waste storage space, and complicate sharing. Resizing lets you optimize images for any purpose while keeping them sharp and clear.</p>
+                <ul>
+                  <li>Faster website loading and better performance.</li>
+                  <li>Save storage space on devices and cloud storage.</li>
+                  <li>Prepare images for specific platforms and purposes.</li>
+                  <li>Reduce email attachment sizes for easier sharing.</li>
+                </ul>
+              </div>
+              <div className="info-box">
+                <p>What you get</p>
+                <p>A fast image resizer that lets you shrink images with perfect quality and precise control over dimensions and file size.</p>
+              </div>
+            </div>
+          </section>
 
-        <section style={{ marginBottom: 40 }}>
-          <h2 style={{ fontSize: 28, fontWeight: 800, marginBottom: 16, color: 'var(--ink)' }}>⚡ Resize Image to 20KB, 50KB, 100KB, or 200KB</h2>
-          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)', marginBottom: 20 }}>
-            Sometimes websites and online forms require images under a specific size.
-          </p>
-          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)', marginBottom: 20 }}>
-            Our tool allows you to:
-          </p>
-          <ul style={{ paddingLeft: 20, marginBottom: 20 }}>
-            <li style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>Resize image to 20KB</li>
-            <li style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>Resize image to 50KB</li>
-            <li style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>Resize image to 100KB</li>
-            <li style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>Resize image to 200KB</li>
-          </ul>
-          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>
-            👉 You can adjust image dimensions and compression level easily.
-          </p>
-        </section>
+          <section className="blog-section">
+            <h2>Who needs to resize images?</h2>
+            <div className="grid-auto">
+              {WHO_NEEDS.map((item) => (
+                <div key={item.title} className="grid-card">
+                  <h3>{item.title}</h3>
+                  <p>{item.detail}</p>
+                </div>
+              ))}
+            </div>
+          </section>
 
-        <section style={{ marginBottom: 40 }}>
-          <h2 style={{ fontSize: 28, fontWeight: 800, marginBottom: 16, color: 'var(--ink)' }}>🚀 How to Resize Image Online (Step-by-Step)</h2>
-          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)', marginBottom: 20 }}>
-            Follow these simple steps:
-          </p>
-          <ol style={{ paddingLeft: 20, marginBottom: 20 }}>
-            <li style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>Upload your image</li>
-            <li style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>Select custom dimensions or target size</li>
-            <li style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>Click the resize button</li>
-            <li style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>Download the optimized image</li>
-          </ol>
-          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>
-            👉 Try the tool here: <a href="/tools/resize-image" style={{ color: 'var(--primary)', textDecoration: 'underline' }}>Resize Image Tool</a>
-          </p>
-        </section>
+          <section className="blog-section">
+            <h2>How to resize images in 4 easy steps</h2>
+            <div className="steps-grid">
+              {STEPS.map((step, idx) => (
+                <div key={idx} className="step-item">
+                  <div className="step-number">{idx + 1}</div>
+                  <p>{step}</p>
+                </div>
+              ))}
+            </div>
+          </section>
 
-        <section style={{ marginBottom: 40 }}>
-          <h2 style={{ fontSize: 28, fontWeight: 800, marginBottom: 16, color: 'var(--ink)' }}>🔍 Resize Image in KB Without Losing Quality</h2>
-          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)', marginBottom: 20 }}>
-            Many tools reduce image quality too much during compression.
-          </p>
-          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)', marginBottom: 20 }}>
-            A good image resizer should:
-          </p>
-          <ul style={{ paddingLeft: 20, marginBottom: 20 }}>
-            <li style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>Maintain sharpness</li>
-            <li style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>Preserve colors</li>
-            <li style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>Reduce size efficiently</li>
-          </ul>
-          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>
-            👉 Our tool uses smart optimization to resize image in KB while keeping the image clear and professional.
-          </p>
-        </section>
+          <section className="quality-section blog-section">
+            <h2>Resize while keeping quality sharp</h2>
+            <div className="grid-auto">
+              {QUALITY_POINTS.map((item) => (
+                <div key={item.title} className="grid-card">
+                  <h3>{item.title}</h3>
+                  <p>{item.detail}</p>
+                </div>
+              ))}
+            </div>
+          </section>
 
-        <section style={{ marginBottom: 40 }}>
-          <h2 style={{ fontSize: 28, fontWeight: 800, marginBottom: 16, color: 'var(--ink)' }}>🤖 Resize Image AI Technology</h2>
-          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)', marginBottom: 20 }}>
-            Modern image optimization uses AI-based processing to improve results.
-          </p>
-          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)', marginBottom: 20 }}>
-            AI image resizing helps:
-          </p>
-          <ul style={{ paddingLeft: 20, marginBottom: 20 }}>
-            <li style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>Maintain image clarity</li>
-            <li style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>Reduce unnecessary data</li>
-            <li style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>Improve compression efficiency</li>
-          </ul>
-          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>
-            This allows better quality even at smaller file sizes.
-          </p>
-        </section>
+          <section className="blog-section">
+            <h2>Image resizer comparison</h2>
+            <p>When comparing image resizers, users evaluate options like Adobe, ImageMagick, and online services. Our resizer provides professional-quality results comparable to premium tools but completely free with better privacy.</p>
+            <div className="table-container">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Feature</th>
+                    <th>Our tool</th>
+                    <th>Adobe</th>
+                    <th>iLovePDF</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {COMPARISON.map((row) => (
+                    <tr key={row.feature}>
+                      <td>{row.feature}</td>
+                      <td className="check">✓</td>
+                      <td>{row.adobe === '✓' ? <span className="check">✓</span> : <span className="cross">✗</span>}</td>
+                      <td>{row.ilove === '✓' ? <span className="check">✓</span> : <span className="cross">✗</span>}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </section>
 
-        <section style={{ marginBottom: 40 }}>
-          <h2 style={{ fontSize: 28, fontWeight: 800, marginBottom: 16, color: 'var(--ink)' }}>💡 Best Practices for Image Resizing</h2>
-          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)', marginBottom: 20 }}>
-            Use these tips for better results:
-          </p>
-          <ul style={{ paddingLeft: 20, marginBottom: 20 }}>
-            <li style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>Keep aspect ratio locked</li>
-            <li style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>Avoid resizing images multiple times</li>
-            <li style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>Compress images after resizing</li>
-            <li style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>Use JPG for photos and PNG for graphics</li>
-          </ul>
-          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>
-            These simple steps help maintain image quality.
-          </p>
-        </section>
+          <section className="blog-section">
+            <h2>Common image resizing use cases</h2>
+            <div className="tips-grid">
+              {USE_CASES.map((useCase) => (
+                <div key={useCase} className="use-case-item">
+                  <p>📌 {useCase}</p>
+                </div>
+              ))}
+            </div>
+          </section>
 
-        <section className="blog-highlight-section">
-          <h2 style={{ fontSize: 28, fontWeight: 800, marginBottom: 16, color: 'var(--ink)', textAlign: 'center' }}>🎯 Resize Images Instantly with Our Free Tool</h2>
-          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)', marginBottom: 20, textAlign: 'center' }}>
-            👉 Start here: <a href="/tools/resize-image" style={{ color: 'var(--primary)', textDecoration: 'underline' }}>Resize Image Tool</a>
-          </p>
-          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)', marginBottom: 20, textAlign: 'center' }}>
-            Why choose our tool:
-          </p>
-          <ul style={{ paddingLeft: 20, marginBottom: 20 }}>
-            <li style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>Fast processing</li>
-            <li style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>Easy to use</li>
-            <li style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>Free forever</li>
-            <li style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>Works on desktop and mobile</li>
-          </ul>
-        </section>
+          <section className="blog-section">
+            <h2>Pro tips for better image resizing</h2>
+            <div className="tips-grid">
+              {PRO_TIPS.map((tip) => (
+                <div key={tip} className="tip-item">
+                  <p>💡 {tip}</p>
+                </div>
+              ))}
+            </div>
+          </section>
 
-        <section style={{ marginBottom: 40 }}>
-          <h2 style={{ fontSize: 28, fontWeight: 800, marginBottom: 16, color: 'var(--ink)' }}>🌐 Learn More About Digital Images</h2>
-          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>
-            Learn more here: <a href="https://en.wikipedia.org/wiki/Digital_image" style={{ color: 'var(--primary)', textDecoration: 'underline' }}>Wikipedia - Digital Image</a>
-          </p>
-        </section>
+          <section className="blog-section">
+            <h2>Related tools</h2>
+            <div className="grid-auto">
+              {RELATED_TOOLS.map((tool) => (
+                <a key={tool.title} href={tool.href} className="tool-card">
+                  <h3>{tool.title}</h3>
+                  <p>{tool.description}</p>
+                  <span className="arrow">Use tool →</span>
+                </a>
+              ))}
+            </div>
+          </section>
 
-        <section style={{ marginBottom: 40 }}>
-          <h2 style={{ fontSize: 28, fontWeight: 800, marginBottom: 16, color: 'var(--ink)' }}>❓ FAQs</h2>
-          <div style={{ marginBottom: 20 }}>
-            <h3 style={{ fontSize: 18, fontWeight: 700, marginBottom: 8, color: 'var(--ink)' }}>Can I resize image to 20KB online?</h3>
-            <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>Yes, our tool allows custom image resizing and compression.</p>
-          </div>
-          <div style={{ marginBottom: 20 }}>
-            <h3 style={{ fontSize: 18, fontWeight: 700, marginBottom: 8, color: 'var(--ink)' }}>Can I resize image to 50KB or 100KB?</h3>
-            <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>Yes, you can optimize images for different file size requirements.</p>
-          </div>
-          <div style={{ marginBottom: 20 }}>
-            <h3 style={{ fontSize: 18, fontWeight: 700, marginBottom: 8, color: 'var(--ink)' }}>Does resizing reduce quality?</h3>
-            <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>Not always. Proper optimization maintains most image details.</p>
-          </div>
-          <div>
-            <h3 style={{ fontSize: 18, fontWeight: 700, marginBottom: 8, color: 'var(--ink)' }}>Is this tool free?</h3>
-            <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>Yes, it is completely free to use.</p>
-          </div>
-        </section>
+          <section className="blog-section">
+            <h2>Frequently Asked Questions</h2>
+            <div className="faq-grid">
+              {FAQs.map((faq) => (
+                <div key={faq.q} className="faq-item">
+                  <h3>{faq.q}</h3>
+                  <p>{faq.a}</p>
+                </div>
+              ))}
+            </div>
+          </section>
 
-        <section style={{ marginBottom: 40 }}>
-          <h2 style={{ fontSize: 28, fontWeight: 800, marginBottom: 16, color: 'var(--ink)' }}>🔗 Related Tools</h2>
-          <ul style={{ paddingLeft: 20 }}>
-            <li style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)', marginBottom: 8 }}><a href="/tools/compress-image" style={{ color: 'var(--primary)', textDecoration: 'underline' }}>Compress Image Tool</a></li>
-            <li style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)', marginBottom: 8 }}><a href="/tools/jpg-to-png" style={{ color: 'var(--primary)', textDecoration: 'underline' }}>JPG to PNG Converter</a></li>
-            <li style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}><a href="/tools/image-to-pdf" style={{ color: 'var(--primary)', textDecoration: 'underline' }}>Image to PDF Converter</a></li>
-          </ul>
-        </section>
-
-        <section>
-          <h2 style={{ fontSize: 28, fontWeight: 800, marginBottom: 16, color: 'var(--ink)' }}>🎯 Final Thoughts</h2>
-          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)', marginBottom: 20 }}>
-            Image resizing is important for faster uploads, better performance, and reduced storage usage. With the right tool, you can resize image online free and optimize images for 20KB, 50KB, 100KB, or even 200KB without losing quality.
-          </p>
-          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--body)' }}>
-            👉 Try it now and optimize your images instantly.
-          </p>
-        </section>
-      </article>
-    </main>
+          <section className="blog-section blog-cta">
+            <div>
+              <p className="cta-label">Start resizing</p>
+              <h2>Resize images online free without losing quality.</h2>
+            </div>
+            <p>Use ImageFlow for fast image resizing that keeps quality intact, works instantly, and requires no signup.</p>
+            <a href="/tools/resize-image/" className="btn-primary">Start Resizing Now →</a>
+          </section>
+        </article>
+      </main>
     </>
   );
 }
