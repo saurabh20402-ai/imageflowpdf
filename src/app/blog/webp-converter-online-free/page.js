@@ -189,8 +189,8 @@ export default function WebPConverterBlog() {
                 If you need a fast and reliable <strong>WebP Converter</strong>, ImageFlow makes the process simple. Convert JPG, PNG, and WebP images instantly with high-quality output and no signup required.
               </p>
               <div className="blog-ctas">
-                <a href="https://imageflow.in/tools/webp-converter" className="cta-primary">Convert to WebP Now →</a>
-                <a href="#how-to-convert" className="cta-secondary">Learn How to Convert</a>
+                <a href="https://imageflow.in/tools/webp-converter" className="btn-primary">Convert to WebP Now →</a>
+                <a href="#how-to-convert" className="btn-secondary">Learn How to Convert</a>
               </div>
             </div>
           </div>
@@ -198,7 +198,7 @@ export default function WebPConverterBlog() {
 
         {/* Features Grid */}
         <section className="blog-section">
-          <div className="features-grid">
+          <div className="grid-auto">
             {FEATURES.map((feature, idx) => (
               <div key={idx} className="feature-card" style={{ backgroundColor: feature.bg }}>
                 <h3>{feature.title}</h3>
@@ -483,32 +483,22 @@ export default function WebPConverterBlog() {
 
         {/* Related Tools Section */}
         <section className="blog-section">
-          <h2>Related ImageFlow Tools</h2>
-          <p>If you're working with different image formats, you may also find these tools useful:</p>
-          <div className="tools-grid">
-            <a href="https://imageflow.in/tools/png-to-jpg" className="tool-link">
-              <span>🖼️</span>
-              <span><strong>PNG to JPG Converter</strong> - Convert PNG images to JPG format</span>
+          <h2>Related tools you can use</h2>
+          <div className="grid-auto">
+            <a href="https://imageflow.in/tools/png-to-jpg" className="tool-card">
+              <h3>PNG to JPG Converter</h3>
+              <p>Convert PNG images to JPG format for smaller file sizes and better compatibility.</p>
+              <span className="arrow">Use tool →</span>
             </a>
-            <a href="https://imageflow.in/tools/jpg-to-png" className="tool-link">
-              <span>🖼️</span>
-              <span><strong>JPG to PNG Converter</strong> - Convert JPG images to PNG format</span>
+            <a href="https://imageflow.in/tools/jpg-to-png" className="tool-card">
+              <h3>JPG to PNG Converter</h3>
+              <p>Convert JPG images to PNG format with transparency support.</p>
+              <span className="arrow">Use tool →</span>
             </a>
-            <a href="https://imageflow.in/tools/image-to-pdf" className="tool-link">
-              <span>📄</span>
-              <span><strong>Image to PDF Converter</strong> - Convert images to PDF files</span>
-            </a>
-            <a href="https://imageflow.in/tools/compress-image" className="tool-link">
-              <span>🗜️</span>
-              <span><strong>Compress Image</strong> - Reduce image file sizes</span>
-            </a>
-            <a href="https://imageflow.in/tools/resize-image" className="tool-link">
-              <span>📐</span>
-              <span><strong>Resize Image</strong> - Change image dimensions</span>
-            </a>
-            <a href="https://imageflow.in/tools/photo-editor" className="tool-link">
-              <span>🎨</span>
-              <span><strong>Photo Editor</strong> - Edit images online</span>
+            <a href="https://imageflow.in/tools/image-to-pdf" className="tool-card">
+              <h3>Image to PDF Converter</h3>
+              <p>Turn your converted WebP images into PDF documents easily.</p>
+              <span className="arrow">Use tool →</span>
             </a>
           </div>
         </section>
@@ -527,22 +517,22 @@ export default function WebPConverterBlog() {
         </section>
 
         {/* Trust Section */}
-        <section className="blog-section" style={{ backgroundColor: 'var(--surface)', padding: '32px', borderRadius: '16px' }}>
+        <section className="blog-section">
           <h2>Why Trust ImageFlow?</h2>
           <div className="grid-auto">
-            <div className="grid-card" style={{ backgroundColor: 'transparent' }}>
+            <div className="grid-card">
               <h3>✓ Fast & Reliable</h3>
               <p>Process thousands of conversions daily with consistent, high-quality results. Our infrastructure is optimized for speed.</p>
             </div>
-            <div className="grid-card" style={{ backgroundColor: 'transparent' }}>
+            <div className="grid-card">
               <h3>✓ User Privacy First</h3>
               <p>Your images are never stored on our servers. All processing happens in your browser, keeping your files completely private.</p>
             </div>
-            <div className="grid-card" style={{ backgroundColor: 'transparent' }}>
+            <div className="grid-card">
               <h3>✓ Zero Cost</h3>
               <p>ImageFlow is completely free, with no hidden charges, subscriptions, or limits. Convert as many images as you need.</p>
             </div>
-            <div className="grid-card" style={{ backgroundColor: 'transparent' }}>
+            <div className="grid-card">
               <h3>✓ Industry Standard</h3>
               <p>Built by developers, for developers. We understand image optimization and modern web performance standards.</p>
             </div>
@@ -550,15 +540,15 @@ export default function WebPConverterBlog() {
         </section>
 
         {/* Final CTA Section */}
-        <section className="blog-section" style={{ textAlign: 'center', padding: '40px', backgroundColor: 'var(--primary-light)', borderRadius: '16px' }}>
+        <section className="cta-section">
           <h2>Convert Your Images to WebP Today</h2>
-          <p style={{ fontSize: '16px', color: 'var(--ink)', marginBottom: '24px' }}>
+          <p style={{ fontSize: '16px', marginBottom: '24px' }}>
             A reliable <strong>WebP Converter</strong> can save storage space, improve website performance, and simplify image management. Whether you're converting JPG to WebP, PNG to WebP, or changing WebP files back into standard formats, ImageFlow provides a fast, free, and user-friendly solution.
           </p>
-          <a href="https://imageflow.in/tools/webp-converter" className="cta-primary" style={{ display: 'inline-block' }}>
+          <a href="https://imageflow.in/tools/webp-converter" className="btn-primary" style={{ display: 'inline-block', backgroundColor: '#fff', color: 'var(--primary)' }}>
             Start Converting to WebP Now →
           </a>
-          <p style={{ fontSize: '14px', color: 'var(--muted)', marginTop: '16px' }}>
+          <p style={{ fontSize: '14px', marginTop: '16px', color: '#e9eefc' }}>
             <strong>Try ImageFlow's WebP Converter today and convert your images in just a few clicks while keeping quality high and file sizes low.</strong> No signup required. Completely free.
           </p>
         </section>
