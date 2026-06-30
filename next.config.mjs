@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Vercel handles Next.js natively — no static export needed
+  // Ensure URLs use trailing slashes to match sitemap and canonical URLs.
+  // Without this, Next.js 308-redirects /path/ → /path, causing
+  // "Page with redirect" failures in Google Search Console.
+  trailingSlash: true,
 
   // Disable image optimization (keep consistent behavior)
   images: {
