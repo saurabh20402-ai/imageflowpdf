@@ -1,5 +1,6 @@
 import { TOOLS } from '@/lib/tools-registry';
 import ToolPageClient from '@/components/ToolPageClient';
+import { TOOL_SEO_CONTENT } from '@/data/tool-seo-content';
 
 const BASE_URL = 'https://imageflow.in/';
 
@@ -189,13 +190,97 @@ export async function generateMetadata({ params }) {
       title,
       description,
     },
-    other: {
-      'script:ld+json': JSON.stringify(toolSchema),
-    },
   };
 }
 
 export default async function ToolPage({ params }) {
   const { slug } = await params;
-  return <ToolPageClient slug={slug} />;
+  const tool = TOOLS.find(t => t.slug === slug);
+
+  if (!tool) {
+    return <ToolPageClient slug={slug} />;
+  }
+
+  const custom = TOOL_META[slug];
+  const description = custom?.description || tool.description;
+  const toolUrl = `${BASE_URL}tools/${slug}/`;
+
+  // 1. WebApplication Schema
+  const toolSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebApplication',
+    name: tool.name,
+    url: toolUrl,
+    description: description,
+    applicationCategory: 'MultimediaApplication',
+    operatingSystem: 'Any',
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'USD',
+    },
+    featureList: description,
+    browserRequirements: 'Requires JavaScript. Works in all modern browsers.',
+  };
+
+  // 2. BreadcrumbList Schema
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://imageflow.in/',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Tools',
+        item: 'https://imageflow.in/#all-tools',
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: tool.name,
+        item: toolUrl,
+      },
+    ],
+  };
+
+  // 3. FAQPage Schema (if SEO content exists for this tool)
+  const seoContent = TOOL_SEO_CONTENT[slug];
+  const faqSchema = seoContent?.faqs ? {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: seoContent.faqs.map(faq => ({
+      '@type': 'Question',
+      name: faq.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.a,
+      },
+    })),
+  } : null;
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(toolSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
+      <ToolPageClient slug={slug} />
+    </>
+  );
 }

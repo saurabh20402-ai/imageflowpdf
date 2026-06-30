@@ -72,6 +72,36 @@ export default function sitemap() {
   // Blog pages
   const blogPages = [
     {
+      url: `${BASE_URL}/blog/compress-pdf-email-attachment-limit/`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/blog/ssc-upsc-photo-size-compress-guide/`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/blog/aadhaar-card-photo-size-requirements/`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/blog/convert-heic-to-jpg-iphone-free/`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/blog/whatsapp-dp-size-resizer-guide/`,
+      lastModified: now,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
       url: `${BASE_URL}/blog/merge-pdf-online-free/`,
       lastModified: now,
       changeFrequency: 'monthly',
