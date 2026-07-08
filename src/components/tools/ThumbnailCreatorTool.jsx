@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import {
   Download, RotateCcw, Loader2, Type, Layers, ImageIcon, LayoutTemplate,
   Plus, Trash2, Undo2, Redo2, ArrowUp, ArrowDown, Sparkles, Shapes, Eraser, Save,
+  Wand2, Settings, Key
 } from 'lucide-react';
 import FileUploader from '@/components/FileUploader';
 import { loadImage, canvasToBlob, removeSolidBackground, loadImageFromDataUrl } from '@/lib/image-processor';
@@ -22,6 +23,7 @@ import { buildDraftPayload, saveDraft, loadDraftRaw, clearDraft } from '@/lib/th
 
 const TABS = [
   { id: 'templates', label: 'Templates', icon: LayoutTemplate },
+  { id: 'ai', label: 'AI Generator', icon: Wand2 },
   { id: 'background', label: 'Background', icon: ImageIcon },
   { id: 'text', label: 'Text', icon: Type },
   { id: 'stickers', label: 'Stickers', icon: Sparkles },
@@ -61,6 +63,145 @@ export default function ThumbnailCreatorTool() {
 
   const [history, setHistory] = useState([]);
   const [historyIndex, setHistoryIndex] = useState(-1);
+
+  const [aiKey, setAiKey] = useState('');
+  const [showAiSettings, setShowAiSettings] = useState(false);
+  const [aiBgPrompt, setAiBgPrompt] = useState('');
+  const [aiBgStyle, setAiBgStyle] = useState('Cyberpunk / Neon');
+  const [aiTopic, setAiTopic] = useState('');
+  const [aiStep, setAiStep] = useState(0); // 0 = idle, 1 = analyzing, 2 = generating bg, 3 = composing
+  const [aiError, setAiError] = useState(null);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const stored = localStorage.getItem('imageflow_gemini_api_key');
+      if (stored) setAiKey(stored);
+    }
+  }, []);
+
+  const saveAiKey = (key) => {
+    setAiKey(key);
+    if (key) localStorage.setItem('imageflow_gemini_api_key', key);
+    else localStorage.removeItem('imageflow_gemini_api_key');
+  };
+
+  const fetchImageAsDataUrl = async (url) => {
+    const res = await fetch(url);
+    if (!res.ok) throw new Error('Failed to fetch image');
+    const blob = await res.blob();
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onloadend = () => resolve(reader.result);
+      reader.onerror = reject;
+      reader.readAsDataURL(blob);
+    });
+  };
+
+  const generateAiBackground = async (retryCount = 0) => {
+    if (!aiBgPrompt) return;
+    setAiStep(2);
+    setAiError(null);
+    try {
+      const fullPrompt = `${aiBgPrompt}, ${aiBgStyle} style, high quality, highly detailed`;
+      const seed = Math.floor(Math.random() * 1000000);
+      const url = `/api/proxy-image?prompt=${encodeURIComponent(fullPrompt)}&width=${canvasW}&height=${canvasH}&seed=${seed}`;
+      
+      const dataUrl = await fetchImageAsDataUrl(url);
+      const img = await loadImageFromDataUrl(dataUrl);
+      
+      const fit = fitImageToCanvas(img, canvasW, canvasH, 'cover');
+      setBgImage(img);
+      setBgType('image');
+      setBgFit('cover');
+      setBgScale(fit.scale);
+      setBgX(fit.x);
+      setBgY(fit.y);
+      setStarted(true);
+      if (elements.length === 0) {
+        startBlank();
+      }
+      toast.success('AI Background generated!');
+    } catch (err) {
+      if (retryCount < 1) {
+        return generateAiBackground(retryCount + 1);
+      }
+      setAiError({ type: 'bg', message: "Couldn't generate image — try again" });
+    } finally {
+      setAiStep(0);
+    }
+  };
+
+  const generateFullThumbnail = async () => {
+    if (!aiTopic) return;
+    setAiStep(1);
+    setAiError(null);
+    try {
+      const res = await fetch('/api/generate-thumbnail', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          ...(aiKey ? { 'x-gemini-key': aiKey } : {})
+        },
+        body: JSON.stringify({ prompt: aiTopic, width: canvasW, height: canvasH })
+      });
+
+      if (!res.ok) {
+        const errorData = await res.json().catch(() => ({}));
+        throw new Error(errorData.message || `Error ${res.status}`);
+      }
+
+      const data = await res.json();
+      
+      setAiStep(2);
+      const seed2 = Math.floor(Math.random() * 1000000);
+      const url = `/api/proxy-image?prompt=${encodeURIComponent(data.backgroundImagePrompt + ', high quality background')}&width=${canvasW}&height=${canvasH}&seed=${seed2}`;
+      
+      let img;
+      try {
+        const dataUrl = await fetchImageAsDataUrl(url);
+        img = await loadImageFromDataUrl(dataUrl);
+      } catch (err) {
+        // retry once
+        const dataUrl2 = await fetchImageAsDataUrl(url + '&retry=1');
+        img = await loadImageFromDataUrl(dataUrl2);
+      }
+
+      setAiStep(3);
+      
+      const fontsToLoad = new Set(data.elements.filter(e => e.type === 'text' && e.fontFamily).map(e => e.fontFamily));
+      await Promise.all([...fontsToLoad].map(loadGoogleFont));
+      
+      await new Promise(r => setTimeout(r, 100)); // wait for fonts to render
+
+      const fit = fitImageToCanvas(img, canvasW, canvasH, 'cover');
+      setBgImage(img);
+      setBgType('image');
+      setBgFit('cover');
+      setBgScale(fit.scale);
+      setBgX(fit.x);
+      setBgY(fit.y);
+      
+      const newElements = data.elements.map(el => {
+        if (el.type === 'text') return createTextLayer({ ...el, id: undefined });
+        if (el.type === 'sticker' && el.badge) return createBadge(el.text, el.color, el.x, el.y);
+        if (el.type === 'sticker') return createSticker(el.emoji, el.x, el.y, el.size);
+        if (el.type === 'shape') return createShape(el.shape, { ...el, id: undefined });
+        return el;
+      });
+
+      setElements(newElements);
+      setHistory([JSON.parse(JSON.stringify(newElements))]);
+      setHistoryIndex(0);
+      setStarted(true);
+      setSelectedId(newElements[0]?.id || null);
+      
+      toast.success('AI Thumbnail generated successfully!');
+    } catch (err) {
+      setAiError({ type: 'full', message: err.message });
+    } finally {
+      setAiStep(0);
+    }
+  };
 
   const canvasRef = useRef(null);
   const wrapRef = useRef(null);
@@ -643,6 +784,101 @@ export default function ThumbnailCreatorTool() {
           </div>
 
           <div className="card" style={{ padding: 16, maxHeight: 520, overflowY: 'auto' }}>
+            {activeTab === 'ai' && (
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+                <div style={{ background: 'var(--surface-hover)', padding: 12, borderRadius: 8 }}>
+                  <button 
+                    type="button" 
+                    onClick={() => setShowAiSettings(!showAiSettings)}
+                    style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 13, fontWeight: 600, color: 'var(--ink)', background: 'none', border: 'none', cursor: 'pointer', width: '100%', textAlign: 'left' }}
+                  >
+                    <Settings size={14} /> AI Settings {showAiSettings ? '▼' : '▶'}
+                  </button>
+                  {showAiSettings && (
+                    <div style={{ marginTop: 10, display: 'flex', flexDirection: 'column', gap: 6 }}>
+                      <label style={{ fontSize: 12, color: 'var(--muted)' }}>Your Gemini API Key (optional)</label>
+                      <input 
+                        type="password" 
+                        className="input" 
+                        placeholder="AIzaSy..." 
+                        value={aiKey}
+                        onChange={(e) => saveAiKey(e.target.value)}
+                        style={{ fontSize: 12 }}
+                      />
+                      <p style={{ fontSize: 11, color: 'var(--muted)', lineHeight: 1.4 }}>
+                        Your key is stored only in your browser and sent only with your own requests — never stored on our servers. Get a free key at <a href="https://aistudio.google.com/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--primary)' }}>Google AI Studio</a>.
+                      </p>
+                    </div>
+                  )}
+                </div>
+
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+                  <p style={{ fontSize: 13, fontWeight: 600, color: 'var(--ink)' }}>Generate Background</p>
+                  <textarea 
+                    className="input" 
+                    placeholder="e.g. futuristic digital circuit board..." 
+                    rows={2}
+                    value={aiBgPrompt}
+                    onChange={(e) => setAiBgPrompt(e.target.value)}
+                    style={{ fontSize: 12, resize: 'vertical' }}
+                  />
+                  <select className="input" style={{ fontSize: 12 }} value={aiBgStyle} onChange={(e) => setAiBgStyle(e.target.value)}>
+                    <option value="None (Raw Prompt)">None (Raw Prompt)</option>
+                    <option value="Cyberpunk / Neon">Cyberpunk / Neon</option>
+                    <option value="Gaming / Dark">Gaming / Dark</option>
+                    <option value="Anime / Cartoon">Anime / Cartoon</option>
+                    <option value="3D Render">3D Render</option>
+                    <option value="Vibrant Sunset">Vibrant Sunset</option>
+                    <option value="Professional Studio">Professional Studio</option>
+                    <option value="Retro Synthwave">Retro Synthwave</option>
+                  </select>
+                  {aiError?.type === 'bg' && (
+                    <p style={{ fontSize: 12, color: 'var(--error)' }}>{aiError.message}</p>
+                  )}
+                  <button 
+                    type="button" 
+                    className="btn-primary" 
+                    style={{ fontSize: 12, padding: '8px' }}
+                    onClick={() => generateAiBackground()}
+                    disabled={aiStep !== 0 || !aiBgPrompt.trim()}
+                  >
+                    {aiStep === 2 ? <Loader2 size={14} style={{ animation: 'spin 0.6s linear infinite' }} /> : <ImageIcon size={14} />}
+                    {aiStep === 2 ? 'Generating background...' : 'Generate Background'}
+                  </button>
+                </div>
+
+                <div style={{ borderTop: '1px solid var(--hairline)', paddingTop: 14 }}>
+                  <p style={{ fontSize: 13, fontWeight: 600, color: 'var(--ink)' }}>Full AI Thumbnail Designer</p>
+                  <p style={{ fontSize: 11, color: 'var(--muted)', marginBottom: 10 }}>
+                    Write what your video/post is about. AI will generate the background, text, and layout for you!
+                  </p>
+                  <textarea 
+                    className="input" 
+                    placeholder="e.g. How to learn React in 5 minutes" 
+                    rows={3}
+                    value={aiTopic}
+                    onChange={(e) => setAiTopic(e.target.value)}
+                    style={{ fontSize: 12, resize: 'vertical', marginBottom: 10 }}
+                  />
+                  {aiError?.type === 'full' && (
+                    <p style={{ fontSize: 12, color: 'var(--error)', marginBottom: 10 }}>{aiError.message}</p>
+                  )}
+                  <button 
+                    type="button" 
+                    className="btn-primary" 
+                    style={{ fontSize: 12, padding: '8px', width: '100%' }}
+                    onClick={generateFullThumbnail}
+                    disabled={aiStep !== 0 || !aiTopic.trim()}
+                  >
+                    {aiStep !== 0 ? <Loader2 size={14} style={{ animation: 'spin 0.6s linear infinite' }} /> : <Wand2 size={14} />}
+                    {aiStep === 0 ? 'Generate Full Thumbnail' : 
+                     aiStep === 1 ? 'Analyzing prompt with AI...' : 
+                     aiStep === 2 ? 'Generating custom background...' : 'Composing text & typography...'}
+                  </button>
+                </div>
+              </div>
+            )}
+
 
             {activeTab === 'templates' && (
               <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
