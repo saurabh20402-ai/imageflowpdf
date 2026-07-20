@@ -194,7 +194,7 @@ function parseBoldText(text) {
   const parts = text.split(/(\*\*[^*]+\*\*)/g);
   return parts.map((part, i) => {
     if (part.startsWith('**') && part.endsWith('**')) {
-      return <strong key={i} className="font-bold text-[var(--ink)]">{part.slice(2, -2)}</strong>;
+      return <strong key={i} className="font-extrabold text-[var(--ink)]">{part.slice(2, -2)}</strong>;
     }
     return part;
   });
@@ -212,10 +212,12 @@ function renderBlockContent(content) {
     if (currentList.length === 0) return;
     if (currentListType === 'bullet') {
       elements.push(
-        <ul key={key} className="space-y-3 my-4 pl-1">
+        <ul key={key} className="space-y-4 my-6 pl-1">
           {currentList.map((item, idx) => (
-            <li key={idx} className="flex items-start gap-2.5 text-sm md:text-base text-[var(--muted)] leading-relaxed">
-              <span className="w-1.5 h-1.5 rounded-full bg-[var(--primary)] mt-2.5 flex-shrink-0" />
+            <li key={idx} className="flex items-start gap-3.5 text-sm md:text-base text-[var(--body)] leading-relaxed">
+              <span className="flex-shrink-0 w-5 h-5 rounded-full bg-[var(--success-bg)] text-[var(--success)] flex items-center justify-center mt-1">
+                <Icons.Check size={12} className="stroke-[3]" />
+              </span>
               <span>{item}</span>
             </li>
           ))}
@@ -223,15 +225,17 @@ function renderBlockContent(content) {
       );
     } else if (currentListType === 'number') {
       elements.push(
-        <div key={key} className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-5">
+        <div key={key} className="grid grid-cols-1 sm:grid-cols-2 gap-6 my-6">
           {currentList.map((item, idx) => (
-            <div key={idx} className="p-5 rounded-xl bg-[var(--surface-card)] border border-[var(--hairline-soft)] shadow-sm hover:border-[var(--primary-soft)] transition-colors duration-200 flex flex-col gap-2">
-              <div className="flex items-center gap-2">
-                <span className="w-6 h-6 rounded-full bg-[var(--primary-light)] text-[var(--primary)] text-xs font-bold flex items-center justify-center flex-shrink-0">
+            <div key={idx} className="relative p-6 rounded-2xl bg-[var(--canvas)] border border-[var(--hairline)] shadow-sm hover:shadow-md hover:border-[var(--primary-muted)] transition-all duration-300 flex flex-col gap-3 group overflow-hidden">
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[var(--primary)] to-[var(--primary-hover)] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-bold text-[var(--primary)] tracking-wider uppercase">Step {item.num}</span>
+                <span className="w-8 h-8 rounded-full bg-[var(--primary-light)] text-[var(--primary)] text-sm font-extrabold flex items-center justify-center shadow-xs">
                   {item.num}
                 </span>
               </div>
-              <span className="text-sm md:text-base text-[var(--muted)] leading-relaxed">{item.text}</span>
+              <span className="text-sm md:text-base text-[var(--body)] leading-relaxed mt-1">{item.text}</span>
             </div>
           ))}
         </div>
@@ -268,7 +272,7 @@ function renderBlockContent(content) {
     else {
       flushList(key + '-pre');
       elements.push(
-        <p key={key} className="text-sm md:text-base text-[var(--muted)] leading-relaxed mb-4">
+        <p key={key} className="text-sm md:text-base text-[var(--body)] leading-relaxed mb-5">
           {parseBoldText(line)}
         </p>
       );
@@ -286,36 +290,36 @@ function SeoContentSection({ slug }) {
   if (!content) return null;
 
   return (
-    <section className="py-16 border-t border-[var(--hairline-soft)] bg-gradient-to-b from-[var(--surface-card)] to-[var(--surface-soft)]">
+    <section className="py-20 border-t border-[var(--hairline-soft)] bg-gradient-to-b from-[var(--surface-card)] to-[var(--surface-soft)]">
       <div className="container max-w-4xl mx-auto px-4">
         {/* Header */}
-        <div className="mb-10 text-center md:text-left">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[var(--primary-light)] text-[var(--primary)] text-xs font-semibold mb-4 tracking-wider uppercase">
-            <Icons.Sparkles size={12} className="text-[var(--primary)]" />
-            <span>Guide & FAQ</span>
+        <div className="mb-12 text-center max-w-3xl mx-auto">
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[var(--primary-light)] text-[var(--primary)] text-xs font-bold mb-4 tracking-wider uppercase shadow-xs">
+            <Icons.Sparkles size={14} className="text-[var(--primary)] animate-pulse" />
+            <span>Product Guide & Help</span>
           </div>
-          <h2 className="text-2xl md:text-3xl font-extrabold text-[var(--ink)] tracking-tight mb-4">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-[var(--ink)] tracking-tight mb-4 leading-tight">
             {content.title}
           </h2>
-          <p className="text-base md:text-lg text-[var(--muted)] leading-relaxed font-medium">
+          <p className="text-base md:text-lg text-[var(--muted)] leading-relaxed max-w-2xl mx-auto font-normal">
             {content.subtitle}
           </p>
         </div>
 
         {/* Introduction */}
-        <div className="prose max-w-none text-[var(--muted)] text-sm md:text-base leading-relaxed mb-10 border-l-2 border-[var(--primary)] pl-4 italic bg-[var(--surface-soft)]/40 py-2 rounded-r-xl">
-          <p>{parseBoldText(content.introduction)}</p>
+        <div className="max-w-none text-base md:text-lg leading-relaxed text-[var(--body)] mb-12 border-l-4 border-[var(--primary)] p-6 bg-[var(--primary-light)]/20 rounded-r-2xl shadow-xs">
+          <p className="font-medium text-[var(--ink)] opacity-95">{parseBoldText(content.introduction)}</p>
         </div>
 
         {/* Sections */}
-        <div className="grid grid-cols-1 gap-8 mb-12">
+        <div className="grid grid-cols-1 gap-10 mb-16">
           {content.sections.map((sec, idx) => (
-            <div key={idx} className="p-6 md:p-8 bg-[var(--surface-card)] rounded-2xl border border-[var(--hairline-soft)] shadow-sm hover:shadow-md hover:border-[var(--primary-soft)] transition-all duration-300">
-              <h3 className="text-lg md:text-xl font-bold text-[var(--ink)] mb-5 flex items-center gap-2.5">
-                <span className="w-1.5 h-6 bg-[var(--primary)] rounded-full inline-block"></span>
+            <div key={idx} className="p-6 md:p-8 bg-[var(--surface-card)] rounded-2xl border border-[var(--hairline)] shadow-sm hover:shadow-md hover:border-[var(--primary-muted)] transition-all duration-300">
+              <h3 className="text-lg md:text-xl font-bold text-[var(--ink)] mb-6 flex items-center gap-2.5">
+                <span className="w-1.5 h-6 bg-gradient-to-b from-[var(--primary)] to-[var(--primary-muted)] rounded-full inline-block"></span>
                 {sec.heading}
               </h3>
-              <div className="text-sm md:text-base text-[var(--muted)] leading-relaxed">
+              <div className="text-sm md:text-base text-[var(--body)] leading-relaxed">
                 {renderBlockContent(sec.content)}
               </div>
             </div>
@@ -324,22 +328,22 @@ function SeoContentSection({ slug }) {
 
         {/* FAQs */}
         {content.faqs && content.faqs.length > 0 && (
-          <div className="mt-16 border-t border-[var(--hairline-soft)] pt-12">
-            <h3 className="text-xl md:text-2xl font-extrabold text-[var(--ink)] mb-8 text-center">
+          <div className="mt-20 border-t border-[var(--hairline-soft)] pt-16">
+            <h3 className="text-2xl md:text-3xl font-extrabold text-[var(--ink)] mb-10 text-center tracking-tight">
               Frequently Asked Questions
             </h3>
-            <div className="flex flex-col gap-4 max-w-3xl mx-auto">
+            <div className="flex flex-col gap-5 max-w-3xl mx-auto">
               {content.faqs.map((faq, idx) => {
                 const isOpen = openFaq === idx;
                 return (
-                  <div key={idx} className="border border-[var(--hairline-soft)] rounded-xl overflow-hidden bg-[var(--surface-card)] hover:border-[var(--primary-soft)]/40 transition-colors duration-200">
+                  <div key={idx} className="border border-[var(--hairline)] rounded-2xl overflow-hidden bg-[var(--surface-card)] hover:border-[var(--primary-muted)]/60 shadow-sm transition-all duration-200">
                     <button
                       onClick={() => setOpenFaq(isOpen ? null : idx)}
-                      className="w-full flex items-center justify-between p-5 text-left font-semibold text-sm md:text-base text-[var(--ink)] hover:bg-[var(--surface-soft)] transition-colors duration-150"
+                      className="w-full flex items-center justify-between p-6 text-left font-bold text-base md:text-lg text-[var(--ink)] hover:bg-[var(--surface)] transition-colors duration-150"
                     >
                       <span>{faq.q}</span>
-                      <div className={`w-6 h-6 rounded-md flex items-center justify-center transition-all duration-200 ${isOpen ? 'bg-[var(--primary-light)] text-[var(--primary)]' : 'bg-[var(--surface-soft)] text-[var(--muted)]'}`}>
-                        {isOpen ? <Icons.Minus size={14} /> : <Icons.Plus size={14} />}
+                      <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 shadow-xs ${isOpen ? 'bg-[var(--primary)] text-white rotate-180' : 'bg-[var(--surface)] text-[var(--muted)] hover:bg-[var(--primary-light)] hover:text-[var(--primary)]'}`}>
+                        {isOpen ? <Icons.ChevronUp size={16} /> : <Icons.ChevronDown size={16} />}
                       </div>
                     </button>
                     <AnimatePresence initial={false}>
@@ -348,9 +352,9 @@ function SeoContentSection({ slug }) {
                           initial={{ height: 0, opacity: 0 }}
                           animate={{ height: 'auto', opacity: 1 }}
                           exit={{ height: 0, opacity: 0 }}
-                          transition={{ duration: 0.2 }}
+                          transition={{ duration: 0.25, ease: 'easeInOut' }}
                         >
-                          <div className="p-5 pt-0 text-xs md:text-sm text-[var(--muted)] leading-relaxed border-t border-[var(--hairline-soft)] bg-[var(--surface-soft)]/30">
+                          <div className="p-6 pt-0 text-sm md:text-base text-[var(--body)] leading-relaxed border-t border-[var(--hairline-soft)] bg-[var(--surface)]/30">
                             {parseBoldText(faq.a)}
                           </div>
                         </motion.div>
