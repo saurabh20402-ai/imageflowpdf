@@ -189,6 +189,96 @@ const NEXT_STEP_MAP = {
   },
 };
 
+function parseBoldText(text) {
+  if (typeof text !== 'string') return text;
+  const parts = text.split(/(\*\*[^*]+\*\*)/g);
+  return parts.map((part, i) => {
+    if (part.startsWith('**') && part.endsWith('**')) {
+      return <strong key={i} className="font-bold text-[var(--ink)]">{part.slice(2, -2)}</strong>;
+    }
+    return part;
+  });
+}
+
+function renderBlockContent(content) {
+  if (!content) return null;
+  
+  const lines = content.split('\n').map(line => line.trim()).filter(line => line.length > 0);
+  const elements = [];
+  let currentList = [];
+  let currentListType = null; // 'bullet' or 'number'
+
+  const flushList = (key) => {
+    if (currentList.length === 0) return;
+    if (currentListType === 'bullet') {
+      elements.push(
+        <ul key={key} className="space-y-3 my-4 pl-1">
+          {currentList.map((item, idx) => (
+            <li key={idx} className="flex items-start gap-2.5 text-sm md:text-base text-[var(--muted)] leading-relaxed">
+              <span className="w-1.5 h-1.5 rounded-full bg-[var(--primary)] mt-2.5 flex-shrink-0" />
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      );
+    } else if (currentListType === 'number') {
+      elements.push(
+        <div key={key} className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-5">
+          {currentList.map((item, idx) => (
+            <div key={idx} className="p-5 rounded-xl bg-[var(--surface-card)] border border-[var(--hairline-soft)] shadow-sm hover:border-[var(--primary-soft)] transition-colors duration-200 flex flex-col gap-2">
+              <div className="flex items-center gap-2">
+                <span className="w-6 h-6 rounded-full bg-[var(--primary-light)] text-[var(--primary)] text-xs font-bold flex items-center justify-center flex-shrink-0">
+                  {item.num}
+                </span>
+              </div>
+              <span className="text-sm md:text-base text-[var(--muted)] leading-relaxed">{item.text}</span>
+            </div>
+          ))}
+        </div>
+      );
+    }
+    currentList = [];
+    currentListType = null;
+  };
+
+  lines.forEach((line, index) => {
+    const key = `line-${index}`;
+    
+    // Check if bullet point
+    if (line.startsWith('•') || line.startsWith('-') || line.startsWith('*')) {
+      if (currentListType !== 'bullet') {
+        flushList(key + '-pre');
+        currentListType = 'bullet';
+      }
+      const textOnly = line.replace(/^[•\-*]\s*/, '');
+      currentList.push(parseBoldText(textOnly));
+    }
+    // Check if numbered list (e.g. "1. ")
+    else if (/^\d+\.\s/.test(line)) {
+      if (currentListType !== 'number') {
+        flushList(key + '-pre');
+        currentListType = 'number';
+      }
+      const match = line.match(/^(\d+)\.\s*(.*)/);
+      const num = match[1];
+      const textOnly = match[2];
+      currentList.push({ num, text: parseBoldText(textOnly) });
+    }
+    // Otherwise, normal paragraph
+    else {
+      flushList(key + '-pre');
+      elements.push(
+        <p key={key} className="text-sm md:text-base text-[var(--muted)] leading-relaxed mb-4">
+          {parseBoldText(line)}
+        </p>
+      );
+    }
+  });
+
+  flushList('final');
+  return elements;
+}
+
 function SeoContentSection({ slug }) {
   const content = TOOL_SEO_CONTENT[slug];
   const [openFaq, setOpenFaq] = useState(null);
@@ -196,10 +286,14 @@ function SeoContentSection({ slug }) {
   if (!content) return null;
 
   return (
-    <section className="py-16 border-t border-[var(--hairline-soft)] bg-[var(--surface-card)]">
+    <section className="py-16 border-t border-[var(--hairline-soft)] bg-gradient-to-b from-[var(--surface-card)] to-[var(--surface-soft)]">
       <div className="container max-w-4xl mx-auto px-4">
         {/* Header */}
         <div className="mb-10 text-center md:text-left">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[var(--primary-light)] text-[var(--primary)] text-xs font-semibold mb-4 tracking-wider uppercase">
+            <Icons.Sparkles size={12} className="text-[var(--primary)]" />
+            <span>Guide & FAQ</span>
+          </div>
           <h2 className="text-2xl md:text-3xl font-extrabold text-[var(--ink)] tracking-tight mb-4">
             {content.title}
           </h2>
@@ -209,20 +303,20 @@ function SeoContentSection({ slug }) {
         </div>
 
         {/* Introduction */}
-        <div className="prose max-w-none text-[var(--muted)] text-sm md:text-base leading-relaxed mb-10">
-          <p>{content.introduction}</p>
+        <div className="prose max-w-none text-[var(--muted)] text-sm md:text-base leading-relaxed mb-10 border-l-2 border-[var(--primary)] pl-4 italic bg-[var(--surface-soft)]/40 py-2 rounded-r-xl">
+          <p>{parseBoldText(content.introduction)}</p>
         </div>
 
         {/* Sections */}
         <div className="grid grid-cols-1 gap-8 mb-12">
           {content.sections.map((sec, idx) => (
-            <div key={idx} className="p-6 md:p-8 bg-[var(--surface-soft)] rounded-2xl border border-[var(--hairline-soft)] hover:shadow-sm transition-shadow duration-300">
-              <h3 className="text-lg md:text-xl font-bold text-[var(--ink)] mb-4 flex items-center gap-2">
+            <div key={idx} className="p-6 md:p-8 bg-[var(--surface-card)] rounded-2xl border border-[var(--hairline-soft)] shadow-sm hover:shadow-md hover:border-[var(--primary-soft)] transition-all duration-300">
+              <h3 className="text-lg md:text-xl font-bold text-[var(--ink)] mb-5 flex items-center gap-2.5">
                 <span className="w-1.5 h-6 bg-[var(--primary)] rounded-full inline-block"></span>
                 {sec.heading}
               </h3>
-              <div className="text-sm md:text-base text-[var(--muted)] leading-relaxed whitespace-pre-line">
-                {sec.content}
+              <div className="text-sm md:text-base text-[var(--muted)] leading-relaxed">
+                {renderBlockContent(sec.content)}
               </div>
             </div>
           ))}
@@ -238,7 +332,7 @@ function SeoContentSection({ slug }) {
               {content.faqs.map((faq, idx) => {
                 const isOpen = openFaq === idx;
                 return (
-                  <div key={idx} className="border border-[var(--hairline-soft)] rounded-xl overflow-hidden bg-[var(--surface-card)] transition-colors duration-200">
+                  <div key={idx} className="border border-[var(--hairline-soft)] rounded-xl overflow-hidden bg-[var(--surface-card)] hover:border-[var(--primary-soft)]/40 transition-colors duration-200">
                     <button
                       onClick={() => setOpenFaq(isOpen ? null : idx)}
                       className="w-full flex items-center justify-between p-5 text-left font-semibold text-sm md:text-base text-[var(--ink)] hover:bg-[var(--surface-soft)] transition-colors duration-150"
@@ -257,7 +351,7 @@ function SeoContentSection({ slug }) {
                           transition={{ duration: 0.2 }}
                         >
                           <div className="p-5 pt-0 text-xs md:text-sm text-[var(--muted)] leading-relaxed border-t border-[var(--hairline-soft)] bg-[var(--surface-soft)]/30">
-                            {faq.a}
+                            {parseBoldText(faq.a)}
                           </div>
                         </motion.div>
                       )}
@@ -272,6 +366,7 @@ function SeoContentSection({ slug }) {
     </section>
   );
 }
+
 
 export default function ToolPageClient({ slug }) {
   const tool = getToolBySlug(slug);
