@@ -99,18 +99,6 @@ export default function CropPdfTool() {
     };
   }, [pageNumber, file, initBox]);
 
-  useEffect(() => {
-    const handleMove = (e) => onMove(e);
-    const handleUp = (e) => stopDrag(e);
-    document.addEventListener('pointermove', handleMove, true);
-    document.addEventListener('pointerup', handleUp, true);
-    document.addEventListener('pointercancel', handleUp, true);
-    return () => {
-      document.removeEventListener('pointermove', handleMove, true);
-      document.removeEventListener('pointerup', handleUp, true);
-      document.removeEventListener('pointercancel', handleUp, true);
-    };
-  }, [onMove, stopDrag]);
 
   const startDrag = (e, type) => {
     e.preventDefault();
@@ -168,6 +156,19 @@ export default function CropPdfTool() {
     }
     dragRef.current = null;
   }, []);
+
+  useEffect(() => {
+    const handleMove = (e) => onMove(e);
+    const handleUp = (e) => stopDrag(e);
+    document.addEventListener('pointermove', handleMove, true);
+    document.addEventListener('pointerup', handleUp, true);
+    document.addEventListener('pointercancel', handleUp, true);
+    return () => {
+      document.removeEventListener('pointermove', handleMove, true);
+      document.removeEventListener('pointerup', handleUp, true);
+      document.removeEventListener('pointercancel', handleUp, true);
+    };
+  }, [onMove, stopDrag]);
 
   const processCrop = useCallback(async () => {
     if (!pdfBytes) return;

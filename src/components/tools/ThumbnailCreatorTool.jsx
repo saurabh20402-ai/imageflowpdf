@@ -101,9 +101,17 @@ export default function ThumbnailCreatorTool() {
     if (!aiBgPrompt) return;
     setAiStep(2);
     setAiError(null);
+    // Snapshot current bg state so we can restore on failure
+    const prevBgImage = bgImage;
+    const prevBgType = bgType;
+    const prevBgFit = bgFit;
+    const prevBgScale = bgScale;
+    const prevBgX = bgX;
+    const prevBgY = bgY;
     try {
-      const fullPrompt = `${aiBgPrompt}, ${aiBgStyle} style, high quality, highly detailed`;
-      const seed = Math.floor(Math.random() * 1000000);
+      const styleClause = aiBgStyle === 'None (Raw Prompt)' ? '' : `, ${aiBgStyle} style`;
+      const fullPrompt = `${aiBgPrompt}${styleClause}, high quality, highly detailed`;
+      const seed = Math.floor(Math.random() * 1000000) + retryCount * 777;
       const url = `/api/proxy-image?prompt=${encodeURIComponent(fullPrompt)}&width=${canvasW}&height=${canvasH}&seed=${seed}`;
       
       const dataUrl = await fetchImageAsDataUrl(url);
@@ -122,14 +130,23 @@ export default function ThumbnailCreatorTool() {
       }
       toast.success('AI Background generated!');
     } catch (err) {
-      if (retryCount < 1) {
+      if (retryCount < 2) {
         return generateAiBackground(retryCount + 1);
       }
-      setAiError({ type: 'bg', message: "Couldn't generate image — try again" });
+      // Restore previous background state on failure
+      setBgImage(prevBgImage);
+      setBgType(prevBgType);
+      setBgFit(prevBgFit);
+      setBgScale(prevBgScale);
+      setBgX(prevBgX);
+      setBgY(prevBgY);
+      setAiError({ type: 'bg', message: "Couldn't generate image after 3 attempts — please try a different prompt or try again later" });
+      toast.error('Background generation failed');
     } finally {
       setAiStep(0);
     }
   };
+
 
   const generateFullThumbnail = async () => {
     if (!aiTopic) return;
@@ -161,8 +178,9 @@ export default function ThumbnailCreatorTool() {
         const dataUrl = await fetchImageAsDataUrl(url);
         img = await loadImageFromDataUrl(dataUrl);
       } catch (err) {
-        // retry once
-        const dataUrl2 = await fetchImageAsDataUrl(url + '&retry=1');
+        // retry with different seed
+        const retryUrl = `/api/proxy-image?prompt=${encodeURIComponent(data.backgroundImagePrompt + ', high quality background')}&width=${canvasW}&height=${canvasH}&seed=${seed2 + 999}`;
+        const dataUrl2 = await fetchImageAsDataUrl(retryUrl);
         img = await loadImageFromDataUrl(dataUrl2);
       }
 
@@ -198,6 +216,7 @@ export default function ThumbnailCreatorTool() {
       toast.success('AI Thumbnail generated successfully!');
     } catch (err) {
       setAiError({ type: 'full', message: err.message });
+      toast.error('Thumbnail generation failed');
     } finally {
       setAiStep(0);
     }

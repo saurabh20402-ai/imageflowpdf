@@ -89,7 +89,7 @@ Ensure layout coordinates fit within the canvas size provided by the user. ${str
 
   const payload = {
     systemInstruction: { parts: [{ text: systemInstruction }] },
-    contents: [{ parts: [{ text: promptText }] }],
+    contents: [{ role: 'user', parts: [{ text: promptText }] }],
     generationConfig: {
       responseMimeType: "application/json",
       temperature: 0.7,
@@ -110,8 +110,16 @@ Ensure layout coordinates fit within the canvas size provided by the user. ${str
 
     if (!res.ok) {
       const errText = await res.text();
-      if (res.status === 429) throw new Error('API Rate Limit Exceeded');
-      throw new Error(`Gemini API error: ${res.status}`);
+      // Log full error server-side for debugging (visible in Vercel Function Logs)
+      console.error(`[Gemini] HTTP ${res.status} error:`, errText);
+      let friendlyMsg = `Gemini API error: ${res.status}`;
+      try {
+        const errJson = JSON.parse(errText);
+        if (errJson?.error?.message) friendlyMsg = errJson.error.message;
+        else if (errJson?.error?.status) friendlyMsg = `${errJson.error.status}: ${errJson.error.code}`;
+      } catch (_) { /* raw text not JSON */ }
+      if (res.status === 429) throw new Error('Gemini API rate limit exceeded — try again in a moment');
+      throw new Error(friendlyMsg);
     }
 
     const data = await res.json();
