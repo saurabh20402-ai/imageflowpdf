@@ -216,9 +216,9 @@ export default function PrivacyPolicyPage() {
         ))}
 
         <div style={{ display: 'grid', gap: 16, gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', marginTop: 16 }}>
-          <Link href="/terms" style={{ padding: 18, borderRadius: 20, background: 'var(--primary)', color: '#fff', textAlign: 'center', textDecoration: 'none', fontWeight: 700 }}>Terms & Conditions</Link>
-          <Link href="/security" style={{ padding: 18, borderRadius: 20, background: 'var(--surface)', border: '1px solid var(--hairline-soft)', color: 'var(--ink)', textAlign: 'center', textDecoration: 'none', fontWeight: 700 }}>Security</Link>
-          <Link href="/cookies" style={{ padding: 18, borderRadius: 20, background: 'var(--surface)', border: '1px solid var(--hairline-soft)', color: 'var(--ink)', textAlign: 'center', textDecoration: 'none', fontWeight: 700 }}>Cookies</Link>
+          <Link href="/terms/" style={{ padding: 18, borderRadius: 20, background: 'var(--primary)', color: '#fff', textAlign: 'center', textDecoration: 'none', fontWeight: 700 }}>Terms & Conditions</Link>
+          <Link href="/security/" style={{ padding: 18, borderRadius: 20, background: 'var(--surface)', border: '1px solid var(--hairline-soft)', color: 'var(--ink)', textAlign: 'center', textDecoration: 'none', fontWeight: 700 }}>Security</Link>
+          <Link href="/cookies/" style={{ padding: 18, borderRadius: 20, background: 'var(--surface)', border: '1px solid var(--hairline-soft)', color: 'var(--ink)', textAlign: 'center', textDecoration: 'none', fontWeight: 700 }}>Cookies</Link>
         </div>
       </div>
     </main>

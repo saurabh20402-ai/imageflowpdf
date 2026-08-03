@@ -162,7 +162,7 @@ export default function BlogContent() {
 
         {/* Featured Post */}
         {activeCategory === 'All' && POSTS.length > 0 && (
-          <Link href={`/blog/${POSTS[0].slug}`} style={{ textDecoration: 'none' }}>
+          <Link href={`/blog/${POSTS[0].slug}/`} style={{ textDecoration: 'none' }}>
             <div style={{
               padding: '32px', borderRadius: 20, marginBottom: 32,
               background: 'linear-gradient(135deg, var(--primary-light), var(--surface-card))',
@@ -192,7 +192,7 @@ export default function BlogContent() {
             </div>
           ) : (
             (activeCategory === 'All' ? filtered.slice(1) : filtered).map(post => (
-              <Link key={post.slug} href={`/blog/${post.slug}`} style={{ textDecoration: 'none' }}>
+              <Link key={post.slug} href={`/blog/${post.slug}/`} style={{ textDecoration: 'none' }}>
                 <div style={{
                   padding: '24px', borderRadius: 16,
                   background: 'var(--surface-card)',

@@ -8,19 +8,19 @@ export default function PhotoEditorTool({ tool }) {
     {
       title: 'Resize Image',
       description: 'Change image dimensions for social media, web, or forms.',
-      href: '/tools/resize-image',
+      href: '/tools/resize-image/',
       icon: Maximize2,
     },
     {
       title: 'Compress Image',
       description: 'Reduce file size while keeping quality sharp.',
-      href: '/tools/compress-image',
+      href: '/tools/compress-image/',
       icon: FileDown,
     },
     {
       title: 'Rotate Image',
       description: 'Rotate photos by 90°, 180°, or any custom angle.',
-      href: '/tools/rotate-image',
+      href: '/tools/rotate-image/',
       icon: RotateCw,
     },
   ];
@@ -42,10 +42,10 @@ export default function PhotoEditorTool({ tool }) {
           </div>
 
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12 }}>
-            <Link href="/tools/resize-image" style={{ display: 'inline-flex', alignItems: 'center', gap: 10, padding: '14px 22px', borderRadius: 16, background: '#4338ca', color: '#fff', textDecoration: 'none', fontWeight: 700 }}>
+            <Link href="/tools/resize-image/" style={{ display: 'inline-flex', alignItems: 'center', gap: 10, padding: '14px 22px', borderRadius: 16, background: '#4338ca', color: '#fff', textDecoration: 'none', fontWeight: 700 }}>
               <Maximize2 size={18} /> Resize Image
             </Link>
-            <Link href="/tools/compress-image" style={{ display: 'inline-flex', alignItems: 'center', gap: 10, padding: '14px 22px', borderRadius: 16, background: '#0f766e', color: '#fff', textDecoration: 'none', fontWeight: 700 }}>
+            <Link href="/tools/compress-image/" style={{ display: 'inline-flex', alignItems: 'center', gap: 10, padding: '14px 22px', borderRadius: 16, background: '#0f766e', color: '#fff', textDecoration: 'none', fontWeight: 700 }}>
               <FileDown size={18} /> Compress Image
             </Link>
           </div>

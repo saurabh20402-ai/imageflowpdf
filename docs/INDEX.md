@@ -12,7 +12,7 @@ This index acts as a quick navigation page for all documentation in the ImageFlo
 
 1.  **Product Vision** — [01-Product-Vision.md](./01-Product-Vision.md) (Status: Stable)
     *   *Why ImageFlow exists, who it serves, and our long-term product strategy.*
-2.  **Design System** — [02-Design-System.md](./02-Design-System.md) (Status: Stable)
+2.  **Design System** — [02-Design-System.md](./02-Design-System.md) (Status: Draft)
     *   *Visual language: color tokens, typography, spacing scale, elevation, and motion.*
 3.  **Component Library** — [03-Component-Library.md](./03-Component-Library.md) (Status: Stable)
     *   *Canonical UI components — what exists, how to consume them, and reuse criteria.*

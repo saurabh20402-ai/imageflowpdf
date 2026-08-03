@@ -147,9 +147,9 @@ export default function WebPConverterBlog() {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://imageflow.in' },
-      { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://imageflow.in/blog' },
-      { '@type': 'ListItem', position: 3, name: 'WebP Converter', item: 'https://imageflow.in/blog/webp-converter-online-free' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://imageflow.in/' },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://imageflow.in/blog/' },
+      { '@type': 'ListItem', position: 3, name: 'WebP Converter', item: 'https://imageflow.in/blog/webp-converter-online-free/' },
     ],
   };
 
@@ -158,7 +158,7 @@ export default function WebPConverterBlog() {
     '@type': 'SoftwareApplication',
     name: 'ImageFlow WebP Converter',
     description: 'Free online WebP converter tool for converting images to WebP format',
-    url: 'https://imageflow.in/tools/webp-converter',
+    url: 'https://imageflow.in/tools/webp-converter/',
     applicationCategory: 'Utility',
     offers: {
       '@type': 'Offer',
@@ -189,7 +189,7 @@ export default function WebPConverterBlog() {
                 If you need a fast and reliable <strong>WebP Converter</strong>, ImageFlow makes the process simple. Convert JPG, PNG, and WebP images instantly with high-quality output and no signup required.
               </p>
               <div className="blog-ctas">
-                <a href="https://imageflow.in/tools/webp-converter" className="btn-primary">Convert to WebP Now →</a>
+                <a href="https://imageflow.in/tools/webp-converter/" className="btn-primary">Convert to WebP Now →</a>
                 <a href="#how-to-convert" className="btn-secondary">Learn How to Convert</a>
               </div>
             </div>
@@ -485,17 +485,17 @@ export default function WebPConverterBlog() {
         <section className="blog-section">
           <h2>Related tools you can use</h2>
           <div className="grid-auto">
-            <a href="https://imageflow.in/tools/png-to-jpg" className="tool-card">
+            <a href="https://imageflow.in/tools/png-to-jpg/" className="tool-card">
               <h3>PNG to JPG Converter</h3>
               <p>Convert PNG images to JPG format for smaller file sizes and better compatibility.</p>
               <span className="arrow">Use tool →</span>
             </a>
-            <a href="https://imageflow.in/tools/jpg-to-png" className="tool-card">
+            <a href="https://imageflow.in/tools/jpg-to-png/" className="tool-card">
               <h3>JPG to PNG Converter</h3>
               <p>Convert JPG images to PNG format with transparency support.</p>
               <span className="arrow">Use tool →</span>
             </a>
-            <a href="https://imageflow.in/tools/image-to-pdf" className="tool-card">
+            <a href="https://imageflow.in/tools/image-to-pdf/" className="tool-card">
               <h3>Image to PDF Converter</h3>
               <p>Turn your converted WebP images into PDF documents easily.</p>
               <span className="arrow">Use tool →</span>
@@ -545,7 +545,7 @@ export default function WebPConverterBlog() {
           <p style={{ fontSize: '16px', marginBottom: '24px' }}>
             A reliable <strong>WebP Converter</strong> can save storage space, improve website performance, and simplify image management. Whether you're converting JPG to WebP, PNG to WebP, or changing WebP files back into standard formats, ImageFlow provides a fast, free, and user-friendly solution.
           </p>
-          <a href="https://imageflow.in/tools/webp-converter" className="btn-primary" style={{ display: 'inline-block', backgroundColor: '#fff', color: 'var(--primary)' }}>
+          <a href="https://imageflow.in/tools/webp-converter/" className="btn-primary" style={{ display: 'inline-block', backgroundColor: '#fff', color: 'var(--primary)' }}>
             Start Converting to WebP Now →
           </a>
           <p style={{ fontSize: '14px', marginTop: '16px', color: '#e9eefc' }}>
