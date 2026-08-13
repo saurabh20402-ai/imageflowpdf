@@ -41,13 +41,13 @@ export default function Navbar() {
   return (
     <header className="glass navbar-header">
       <div className="navbar-container">
-        <Link href="/" onClick={closeMobile} className="navbar-logo-link">
+        <Link href="/" onClick={closeMobile} className="navbar-logo-link" title="ImageFlow — Free Online Image & PDF Tools">
           <ImageFlowLogoImg height={40} />
         </Link>
 
         {/* Desktop/tablet — hidden <768px; centered between logo and actions */}
         <nav className="navbar-desktop-nav">
-          <Link href="/" className="nav-link" onClick={closeMobile}>
+          <Link href="/" className="nav-link" onClick={closeMobile} title="ImageFlow Home — Free Image & PDF Tools">
             Home
           </Link>
 
@@ -71,6 +71,7 @@ export default function Navbar() {
                     return (
                       <Link key={t.slug} href={`/tools/${t.slug}/`}
                         className="nav-dropdown-item"
+                        title={`${t.name} — Free Online Tool`}
                         onClick={() => setDropdownOpen(false)}>
                         <div className="nav-dropdown-icon-box" style={{ background: `${t.color}12`, color: t.color }}>
                           <Icon size={16} />
@@ -82,6 +83,7 @@ export default function Navbar() {
                 </div>
                 <div className="nav-dropdown-footer">
                   <Link href="/#all-tools" className="nav-dropdown-view-all"
+                    title="View all ImageFlow tools"
                     onClick={() => setDropdownOpen(false)}>
                     View all tools →
                   </Link>
@@ -90,7 +92,7 @@ export default function Navbar() {
             )}
           </div>
 
-          <Link href="/#features" className="nav-link" onClick={closeMobile}>
+          <Link href="/#features" className="nav-link" onClick={closeMobile} title="ImageFlow Features — What makes us different">
             Features
           </Link>
         </nav>
@@ -137,13 +139,13 @@ export default function Navbar() {
               <p className="navbar-section-label">
                 Menu
               </p>
-              <Link href="/" className="navbar-mobile-link" onClick={closeMobile}>Home</Link>
-              <Link href="/#features" className="navbar-mobile-link" onClick={closeMobile}>Features</Link>
-              <Link href="/#all-tools" className="navbar-mobile-link" onClick={closeMobile}>All tools on homepage</Link>
-              <Link href="/tutorials/" className="navbar-mobile-link" onClick={closeMobile}>Tutorials</Link>
-              <Link href="/donate/" className="navbar-mobile-link" onClick={closeMobile}>Donate</Link>
-              <Link href="/about-us/" className="navbar-mobile-link" onClick={closeMobile}>About Us</Link>
-              <Link href="/support/" className="navbar-mobile-link" onClick={closeMobile}>Support</Link>
+              <Link href="/" className="navbar-mobile-link" onClick={closeMobile} title="ImageFlow Home — Free Image & PDF Tools">Home</Link>
+              <Link href="/#features" className="navbar-mobile-link" onClick={closeMobile} title="ImageFlow Features">Features</Link>
+              <Link href="/#all-tools" className="navbar-mobile-link" onClick={closeMobile} title="All ImageFlow Online Tools">All tools on homepage</Link>
+              <Link href="/tutorials/" className="navbar-mobile-link" onClick={closeMobile} title="ImageFlow Tutorials — Learn how to use image tools">Tutorials</Link>
+              <Link href="/donate/" className="navbar-mobile-link" onClick={closeMobile} title="Donate to support ImageFlow">Donate</Link>
+              <Link href="/about-us/" className="navbar-mobile-link" onClick={closeMobile} title="About ImageFlow — Who we are">About Us</Link>
+              <Link href="/support/" className="navbar-mobile-link" onClick={closeMobile} title="ImageFlow Support — Get help">Support</Link>
 
               <p className="navbar-section-label" style={{ marginTop: 22 }}>
                 Tools
@@ -165,6 +167,7 @@ export default function Navbar() {
                             key={t.slug}
                             href={`/tools/${t.slug}/`}
                             className="navbar-tool-row"
+                            title={`${t.name} — Free Online Tool`}
                             onClick={closeMobile}>
                             <div className="navbar-tool-icon" style={{ background: `${t.color}14`, color: t.color }}>
                               <Icon size={17} />

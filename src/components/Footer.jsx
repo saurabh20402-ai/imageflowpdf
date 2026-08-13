@@ -49,7 +49,7 @@ export default function Footer() {
 
           {/* Brand column */}
           <div className="footer-brand">
-            <Link href="/" className="footer-brand-logo">
+            <Link href="/" className="footer-brand-logo" title="ImageFlow — Free Online Image & PDF Tools">
               <ImageFlowLogoImg height={38} />
             </Link>
             <p className="footer-brand-text">
@@ -71,6 +71,7 @@ export default function Footer() {
                   <li key={link.label}>
                     <Link
                       href={link.href}
+                      title={link.label}
                       className="footer-link">
                       {link.label}
                     </Link>
@@ -90,6 +91,7 @@ export default function Footer() {
             href={INSTAGRAM_WEBRISE}
             target="_blank"
             rel="noopener noreferrer"
+            title="Follow The Webrise Company on Instagram"
             className="footer-instagram-link">
             <span className="footer-instagram-icon">
               <InstagramGlyph size={20} />
@@ -108,7 +110,7 @@ export default function Footer() {
           </p>
           <div className="footer-bottom-links">
             {[['Privacy', '/privacy-policy/'], ['Terms', '/terms/'], ['Cookies', '/cookies/']].map(([label, href]) => (
-              <Link key={label} href={href} className="footer-bottom-link">
+              <Link key={label} href={href} title={`${label} Policy`} className="footer-bottom-link">
                 {label}
               </Link>
             ))}

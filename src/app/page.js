@@ -40,31 +40,31 @@ export default function HomePage() {
       <Hero />
 
       {/* SEO + LLM-readable content */}
-      <section style={{ padding: '36px 0 8px' }}>
-        <div className="container" style={{ maxWidth: 960 }}>
-          <h1 style={{ fontSize: 'clamp(24px, 3vw, 34px)', fontWeight: 800, color: 'var(--ink)', marginBottom: 12, letterSpacing: '-0.02em' }}>
+      <section className="home-hero-section">
+        <div className="container home-hero-container">
+          <h1 className="home-hero-title">
             Free Online PDF and Image Tools for Everyday Work
           </h1>
-          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--muted)', marginBottom: 10 }}>
+          <p className="home-hero-desc">
             ImageFlow helps you merge PDF, split PDF, compress PDF, rotate PDF, crop PDF, watermark PDF, and sign PDF in your browser. You can also convert image formats like JPG to PNG, PNG to JPG, WebP to PNG, and WebP to JPG, plus resize and compress images.
           </p>
-          <p style={{ fontSize: 16, lineHeight: 1.7, color: 'var(--muted)' }}>
+          <p className="home-hero-desc">
             All tools are designed for fast results, mobile-friendly usage, and no-signup workflows. Browse the categories below to pick the exact tool you need.
           </p>
         </div>
       </section>
 
       {/* Popular Tools */}
-      <section style={{ padding: '64px 0', borderTop: '1px solid var(--hairline-soft)' }}>
+      <section className="home-section-padding home-section-border">
         <div className="container">
-          <div style={{ textAlign: 'center', marginBottom: '40px' }}>
-            <p style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', color: 'var(--primary)', marginBottom: '10px' }}>
+          <div className="home-section-header">
+            <p className="home-section-label">
               Most Popular
             </p>
-            <h2 style={{ fontSize: 'clamp(26px, 3vw, 36px)', fontWeight: 800, color: 'var(--ink)', letterSpacing: '-0.02em', lineHeight: 1.2 }}>
+            <h2 className="home-section-title">
               Start with our top tools
             </h2>
-            <p style={{ fontSize: 15, color: 'var(--muted)', marginTop: 10 }}>
+            <p className="home-section-subtitle">
               The most-used image and PDF tools by creators worldwide
             </p>
           </div>
@@ -84,42 +84,40 @@ export default function HomePage() {
       </section>
 
       {/* All Tools with Category Tabs */}
-      <section id="all-tools" style={{ padding: '64px 0', background: 'var(--surface)' }}>
+      <section id="all-tools" className="home-section-padding home-section-bg">
         <div className="container">
-          <div style={{ textAlign: 'center', marginBottom: '36px' }}>
-            <p style={{ fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', color: 'var(--primary)', marginBottom: '10px' }}>
+          <div className="home-section-header" style={{ marginBottom: '36px' }}>
+            <p className="home-section-label">
               Complete Toolkit
             </p>
-            <h2 style={{ fontSize: 'clamp(26px, 3vw, 36px)', fontWeight: 800, color: 'var(--ink)', marginBottom: '12px', letterSpacing: '-0.02em' }}>
+            <h2 className="home-section-title home-section-title-mb">
               All {TOOLS.length} online tools
             </h2>
-            <p style={{ fontSize: '15px', color: 'var(--muted)', maxWidth: '500px', margin: '0 auto' }}>
+            <p className="home-section-subtitle home-section-subtitle-mx">
               Everything you need for PDFs and images — merge, split, compress, convert, and create. 100% free, no signup.
             </p>
           </div>
 
           {/* Search */}
-          <div style={{ maxWidth: '440px', margin: '0 auto 24px', position: 'relative' }}>
-            <Search size={16} style={{ position: 'absolute', left: 14, top: '50%', transform: 'translateY(-50%)', color: 'var(--muted-soft)' }} />
+          <div className="home-search-container">
+            <Search size={16} className="home-search-icon" />
             <input
               type="text"
               placeholder="Search tools..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="input"
-              style={{ paddingLeft: 38 }}
+              className="input home-search-input"
             />
           </div>
 
           {/* Category Tabs */}
-          <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', justifyContent: 'center', marginBottom: '36px' }}>
+          <div className="home-tabs-container">
             {ALL_CATS.map(cat => (
               <motion.button
                 key={cat.id}
                 onClick={() => setActiveCategory(cat.id)}
                 whileTap={{ scale: 0.96 }}
-                className={`pill ${activeCategory === cat.id ? 'pill-active' : ''}`}
-                style={{ fontSize: 13, padding: '7px 16px' }}>
+                className={`pill home-tab-btn ${activeCategory === cat.id ? 'pill-active' : ''}`}>
                 {cat.name}
               </motion.button>
             ))}
@@ -147,9 +145,9 @@ export default function HomePage() {
           </AnimatePresence>
 
           {filteredTools.length === 0 && (
-            <div style={{ textAlign: 'center', padding: '60px 0', color: 'var(--muted)' }}>
-              <p style={{ fontSize: '16px', fontWeight: 500 }}>No tools found for &quot;{search}&quot;</p>
-              <p style={{ fontSize: '14px', marginTop: '4px' }}>Try a different search term</p>
+            <div className="home-empty-state">
+              <p className="home-empty-title">No tools found for &quot;{search}&quot;</p>
+              <p className="home-empty-desc">Try a different search term</p>
             </div>
           )}
         </div>

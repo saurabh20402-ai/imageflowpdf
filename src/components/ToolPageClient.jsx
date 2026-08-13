@@ -381,7 +381,7 @@ export default function ToolPageClient({ slug }) {
         <Icons.AlertCircle size={48} className="text-[var(--muted)] mb-4" />
         <h1 className="text-2xl font-bold text-[var(--ink)] mb-2">Tool Not Found</h1>
         <p className="text-[var(--muted)] mb-6">The tool you&apos;re looking for doesn&apos;t exist.</p>
-        <Link href="/" className="px-6 py-2.5 bg-[var(--primary)] text-white rounded-xl font-medium hover:bg-[var(--primary-hover)] transition-colors">
+        <Link href="/" title="ImageFlow Home" className="px-6 py-2.5 bg-[var(--primary)] text-white rounded-xl font-medium hover:bg-[var(--primary-hover)] transition-colors">
           Back to Home
         </Link>
       </div>
@@ -399,9 +399,9 @@ export default function ToolPageClient({ slug }) {
       <section className="pt-8 pb-6 border-b border-[var(--hairline-soft)]">
         <div className="container mx-auto px-4">
           <div className="flex items-center gap-2 text-xs text-[var(--muted)] mb-4">
-            <Link href="/" className="hover:text-[var(--primary)] transition-colors">Home</Link>
+            <Link href="/" title="ImageFlow Home" className="hover:text-[var(--primary)] transition-colors">Home</Link>
             <span>/</span>
-            <Link href="/#all-tools" className="hover:text-[var(--primary)] transition-colors">Tools</Link>
+            <Link href="/#all-tools" title="All ImageFlow Tools" className="hover:text-[var(--primary)] transition-colors">Tools</Link>
             <span>/</span>
             <span className="text-[var(--ink)] font-medium">{tool.name}</span>
           </div>
@@ -448,6 +448,7 @@ export default function ToolPageClient({ slug }) {
               </div>
               <Link
                 href={`/tools/${nextStep.toolSlug}/`}
+                title={`${nextStep.actionText} — Free Online Tool`}
                 className="px-5 py-2 bg-[var(--primary)] text-white text-xs font-bold rounded-lg hover:bg-[var(--primary-hover)] transition-all duration-200 shadow-sm hover:shadow-md whitespace-nowrap"
               >
                 {nextStep.actionText} →
@@ -470,6 +471,7 @@ export default function ToolPageClient({ slug }) {
                 const RtIcon = Icons[rt.icon] || Icons.FileImage;
                 return (
                   <Link key={rt.slug} href={`/tools/${rt.slug}/`}
+                    title={`${rt.name} — Free Online Tool`}
                     className="flex items-center gap-3 p-4 bg-[var(--surface-card)] border border-[var(--hairline-soft)] rounded-xl hover:shadow-md hover:border-transparent transition-all">
                     <div className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"
                       style={{ backgroundColor: `${rt.color}12`, color: rt.color }}>

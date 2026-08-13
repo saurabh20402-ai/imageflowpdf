@@ -14,7 +14,9 @@ export default function ToolCard({ tool }) {
       transition={{ duration: 0.18, ease: 'easeOut' }}>
       <Link
         href={`/tools/${tool.slug}/`}
+        title={`${tool.name} — Free Online Tool`}
         style={{ display: 'block', textDecoration: 'none' }}>
+
         <div style={{
           padding: '20px',
           borderRadius: 'var(--radius-lg)',
