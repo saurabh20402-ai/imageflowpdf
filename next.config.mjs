@@ -11,6 +11,13 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      // /tools/ has no index page — redirect to homepage tools section
+      {
+        source: '/tools/',
+        destination: '/#all-tools',
+        permanent: true,
+      },
+      // Redirect www → non-www (requires www.imageflow.in domain in Vercel for SSL)
       {
         source: '/:path*',
         has: [

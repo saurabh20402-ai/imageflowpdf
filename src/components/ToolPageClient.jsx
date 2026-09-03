@@ -283,89 +283,224 @@ function renderBlockContent(content) {
   return elements;
 }
 
-function SeoContentSection({ slug }) {
+function SeoContentSection({ slug, relatedTools }) {
   const content = TOOL_SEO_CONTENT[slug];
+  const tool = getToolBySlug(slug);
   const [openFaq, setOpenFaq] = useState(null);
 
   if (!content) return null;
+  const ToolIcon = Icons[tool?.icon] || Icons.FileImage;
+  const toolColor = tool?.color || '#3b82f6';
+
+  const STEP_FALLBACK_ICONS = [
+    Icons.UploadCloud || Icons.Upload,
+    Icons.ListOrdered || Icons.Sliders,
+    Icons.Zap || Icons.Play,
+    Icons.Download || Icons.CheckCircle,
+  ];
+
+  const UC_COLORS = [
+    { bg: 'bg-blue-50 dark:bg-blue-950/40', text: 'text-blue-600 dark:text-blue-400', border: 'border-blue-100 dark:border-blue-900/40' },
+    { bg: 'bg-emerald-50 dark:bg-emerald-950/40', text: 'text-emerald-600 dark:text-emerald-400', border: 'border-emerald-100 dark:border-emerald-900/40' },
+    { bg: 'bg-amber-50 dark:bg-amber-950/40', text: 'text-amber-600 dark:text-amber-400', border: 'border-amber-100 dark:border-amber-900/40' },
+  ];
 
   return (
-    <section className="py-20 border-t border-[var(--hairline-soft)] bg-gradient-to-b from-[var(--surface-card)] to-[var(--surface-soft)]">
-      <div className="container max-w-4xl mx-auto px-4">
-        {/* Header */}
-        <div className="mb-12 text-center max-w-3xl mx-auto">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[var(--primary-light)] text-[var(--primary)] text-xs font-bold mb-4 tracking-wider uppercase shadow-xs">
-            <Icons.Sparkles size={14} className="text-[var(--primary)] animate-pulse" />
-            <span>Product Guide & Help</span>
+    <section className="py-8 md:py-12">
+      <div className="container max-w-5xl mx-auto px-4">
+        {/* Main Unified SEO Card Container */}
+        <div className="p-6 md:p-8 rounded-3xl bg-[var(--surface)] border border-[var(--hairline)] shadow-sm space-y-8">
+          
+          {/* 1. Header / Intro Block */}
+          <div className="flex flex-col md:flex-row gap-6 items-start">
+            <div
+              className="w-20 h-20 md:w-24 md:h-24 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-sm"
+              style={{
+                background: `linear-gradient(135deg, ${toolColor}18 0%, ${toolColor}08 100%)`,
+                color: toolColor,
+                border: `1px solid ${toolColor}25`,
+              }}
+            >
+              <ToolIcon size={44} strokeWidth={1.75} />
+            </div>
+            <div className="flex-1">
+              <h2 className="text-xl md:text-2xl font-bold text-[var(--ink)] tracking-tight mb-1.5">
+                {content.title}
+              </h2>
+              <p className="text-sm font-medium text-[var(--muted)] mb-3 leading-relaxed">
+                {parseBoldText(content.subtitle)}
+              </p>
+              <p className="text-sm text-[var(--body)] leading-relaxed">
+                {parseBoldText(content.introduction)}
+              </p>
+            </div>
           </div>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-[var(--ink)] tracking-tight mb-4 leading-tight">
-            {content.title}
-          </h2>
-          <p className="text-base md:text-lg text-[var(--muted)] leading-relaxed max-w-2xl mx-auto font-normal">
-            {content.subtitle}
-          </p>
-        </div>
 
-        {/* Introduction */}
-        <div className="max-w-none text-base md:text-lg leading-relaxed text-[var(--body)] mb-12 border-l-4 border-[var(--primary)] p-6 bg-[var(--primary-light)]/20 rounded-r-2xl shadow-xs">
-          <p className="font-medium text-[var(--ink)] opacity-95">{parseBoldText(content.introduction)}</p>
-        </div>
-
-        {/* Sections */}
-        <div className="grid grid-cols-1 gap-10 mb-16">
-          {content.sections.map((sec, idx) => (
-            <div key={idx} className="p-6 md:p-8 bg-[var(--surface-card)] rounded-2xl border border-[var(--hairline)] shadow-sm hover:shadow-md hover:border-[var(--primary-muted)] transition-all duration-300">
-              <h3 className="text-lg md:text-xl font-bold text-[var(--ink)] mb-6 flex items-center gap-2.5">
-                <span className="w-1.5 h-6 bg-gradient-to-b from-[var(--primary)] to-[var(--primary-muted)] rounded-full inline-block"></span>
-                {sec.heading}
+          {/* 2. Common Use Cases */}
+          {content.useCases && (
+            <div className="p-6 bg-[var(--surface-card)] border border-[var(--hairline)] rounded-2xl shadow-2xs">
+              <h3 className="text-sm md:text-base font-bold text-[var(--ink)] mb-4 tracking-tight">
+                {content.useCases.title}
               </h3>
-              <div className="text-sm md:text-base text-[var(--body)] leading-relaxed">
-                {renderBlockContent(sec.content)}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {content.useCases.items.map((uc, i) => {
+                  const UcIcon = Icons[uc.icon] || Icons.CheckCircle;
+                  const colorTheme = UC_COLORS[i % UC_COLORS.length];
+                  return (
+                    <div key={i} className="flex items-start gap-3.5">
+                      <div className={`w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 ${colorTheme.bg} ${colorTheme.text} border ${colorTheme.border}`}>
+                        <UcIcon size={20} />
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-sm text-[var(--ink)] mb-1">{uc.title}</h4>
+                        <p className="text-xs text-[var(--muted)] leading-relaxed">{uc.description}</p>
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
             </div>
-          ))}
-        </div>
+          )}
 
-        {/* FAQs */}
-        {content.faqs && content.faqs.length > 0 && (
-          <div className="mt-20 border-t border-[var(--hairline-soft)] pt-16">
-            <h3 className="text-2xl md:text-3xl font-extrabold text-[var(--ink)] mb-10 text-center tracking-tight">
-              Frequently Asked Questions
-            </h3>
-            <div className="flex flex-col gap-5 max-w-3xl mx-auto">
-              {content.faqs.map((faq, idx) => {
-                const isOpen = openFaq === idx;
-                return (
-                  <div key={idx} className="border border-[var(--hairline)] rounded-2xl overflow-hidden bg-[var(--surface-card)] hover:border-[var(--primary-muted)]/60 shadow-sm transition-all duration-200">
-                    <button
-                      onClick={() => setOpenFaq(isOpen ? null : idx)}
-                      className="w-full flex items-center justify-between p-6 text-left font-bold text-base md:text-lg text-[var(--ink)] hover:bg-[var(--surface)] transition-colors duration-150"
-                    >
-                      <span>{faq.q}</span>
-                      <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 shadow-xs ${isOpen ? 'bg-[var(--primary)] text-white rotate-180' : 'bg-[var(--surface)] text-[var(--muted)] hover:bg-[var(--primary-light)] hover:text-[var(--primary)]'}`}>
-                        {isOpen ? <Icons.ChevronUp size={16} /> : <Icons.ChevronDown size={16} />}
-                      </div>
-                    </button>
-                    <AnimatePresence initial={false}>
-                      {isOpen && (
-                        <motion.div
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: 'auto', opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
-                          transition={{ duration: 0.25, ease: 'easeInOut' }}
-                        >
-                          <div className="p-6 pt-0 text-sm md:text-base text-[var(--body)] leading-relaxed border-t border-[var(--hairline-soft)] bg-[var(--surface)]/30">
-                            {parseBoldText(faq.a)}
+          {/* 3. How-to Steps */}
+          {content.steps && (
+            <div>
+              <h3 className="text-sm md:text-base font-bold text-[var(--ink)] mb-4 tracking-tight">
+                {content.steps.title}
+              </h3>
+              <div className="flex flex-col md:flex-row items-center gap-2.5 md:gap-3">
+                {content.steps.items.map((step, i) => {
+                  const StepIcon = STEP_FALLBACK_ICONS[i % STEP_FALLBACK_ICONS.length];
+                  return (
+                    <div key={i} className="flex-1 w-full flex items-center gap-2.5 md:gap-3">
+                      <div className="flex-1 p-4 rounded-xl bg-[var(--surface-card)] border border-[var(--hairline)] flex flex-col justify-between min-h-[105px] shadow-2xs hover:border-[var(--primary-muted)] transition-colors">
+                        <div className="flex items-center justify-between mb-2">
+                          <div className="flex items-center gap-2">
+                            <span className="w-5 h-5 rounded-full bg-[var(--primary)] text-white text-[11px] font-bold flex items-center justify-center">
+                              {i + 1}
+                            </span>
+                            <span className="font-bold text-xs md:text-sm text-[var(--ink)]">
+                              {step.title}
+                            </span>
                           </div>
-                        </motion.div>
+                          <div className="w-7 h-7 rounded-lg bg-[var(--primary-light)]/40 text-[var(--primary)] flex items-center justify-center flex-shrink-0">
+                            <StepIcon size={14} />
+                          </div>
+                        </div>
+                        <p className="text-xs text-[var(--muted)] leading-relaxed">
+                          {step.description}
+                        </p>
+                      </div>
+                      {i < content.steps.items.length - 1 && (
+                        <div className="hidden md:flex text-[var(--muted-soft)] flex-shrink-0">
+                          <Icons.ArrowRight size={16} />
+                        </div>
                       )}
-                    </AnimatePresence>
-                  </div>
-                );
-              })}
+                    </div>
+                  );
+                })}
+              </div>
             </div>
-          </div>
-        )}
+          )}
+
+          {/* Fallback for legacy sections if any */}
+          {content.sections && !content.useCases && !content.steps && (
+            <div className="grid grid-cols-1 gap-6">
+              {content.sections.map((sec, idx) => (
+                <div key={idx} className="p-6 bg-[var(--surface-card)] rounded-2xl border border-[var(--hairline)] shadow-2xs">
+                  <h3 className="text-base font-bold text-[var(--ink)] mb-4">{sec.heading}</h3>
+                  <div className="text-sm text-[var(--body)] leading-relaxed">
+                    {renderBlockContent(sec.content)}
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {/* 4. Frequently Asked Questions */}
+          {content.faqs && content.faqs.length > 0 && (
+            <div>
+              <h3 className="text-sm md:text-base font-bold text-[var(--ink)] mb-3.5 tracking-tight">
+                Frequently Asked Questions
+              </h3>
+              <div className="space-y-2">
+                {content.faqs.map((faq, idx) => {
+                  const isOpen = openFaq === idx;
+                  return (
+                    <div
+                      key={idx}
+                      className="border border-[var(--hairline)] rounded-xl overflow-hidden bg-[var(--surface-card)] transition-colors"
+                    >
+                      <button
+                        type="button"
+                        onClick={() => setOpenFaq(isOpen ? null : idx)}
+                        className="w-full flex items-center justify-between p-3.5 md:p-4 text-left text-xs md:text-sm font-semibold text-[var(--ink)] hover:bg-[var(--surface)]/50 transition-colors"
+                      >
+                        <div className="flex items-center gap-3">
+                          <div className="w-5 h-5 rounded-full bg-[var(--primary-light)]/40 text-[var(--primary)] text-xs font-bold flex items-center justify-center flex-shrink-0">
+                            ?
+                          </div>
+                          <span>{faq.q}</span>
+                        </div>
+                        <Icons.ChevronDown
+                          size={16}
+                          className={`text-[var(--muted)] flex-shrink-0 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
+                        />
+                      </button>
+                      <AnimatePresence initial={false}>
+                        {isOpen && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: 'auto', opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.2, ease: 'easeInOut' }}
+                          >
+                            <div className="px-4 pb-3.5 pt-0 pl-11 text-xs md:text-sm text-[var(--muted)] leading-relaxed border-t border-[var(--hairline-soft)]/50 bg-[var(--surface)]/20">
+                              {parseBoldText(faq.a)}
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+
+          {/* 5. Related Tools (Integrated into Card) */}
+          {relatedTools && relatedTools.length > 0 && (
+            <div className="pt-2">
+              <h3 className="text-sm md:text-base font-bold text-[var(--ink)] mb-3.5 tracking-tight">
+                Related Tools
+              </h3>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
+                {relatedTools.map((rt) => {
+                  const RtIcon = Icons[rt.icon] || Icons.FileImage;
+                  return (
+                    <Link
+                      key={rt.slug}
+                      href={`/tools/${rt.slug}/`}
+                      title={`${rt.name} — Free Online Tool`}
+                      className="flex items-center gap-2.5 p-3 bg-[var(--surface-card)] border border-[var(--hairline)] rounded-xl hover:border-[var(--primary-muted)] hover:shadow-xs transition-all group"
+                    >
+                      <div
+                        className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 transition-transform group-hover:scale-105"
+                        style={{ backgroundColor: `${rt.color}14`, color: rt.color }}
+                      >
+                        <RtIcon size={16} />
+                      </div>
+                      <span className="text-xs font-semibold text-[var(--ink)] truncate">
+                        {rt.name}
+                      </span>
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+
+        </div>
       </div>
     </section>
   );
@@ -390,7 +525,7 @@ export default function ToolPageClient({ slug }) {
 
   const ToolComponent = COMPONENT_MAP[tool.component];
   const IconComponent = Icons[tool.icon] || Icons.FileImage;
-  const relatedTools = TOOLS.filter(t => t.category === tool.category && t.slug !== tool.slug).slice(0, 4);
+  const relatedTools = TOOLS.filter(t => t.category === tool.category && t.slug !== tool.slug).slice(0, 5);
   const nextStep = NEXT_STEP_MAP[slug];
 
   return (
@@ -435,21 +570,21 @@ export default function ToolPageClient({ slug }) {
 
       {/* Recommended Next Step Callout */}
       {nextStep && (
-        <section className="py-6 bg-[var(--surface-soft)] border-t border-b border-[var(--hairline-soft)]">
-          <div className="container max-w-4xl mx-auto px-4">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-4 p-4 bg-[var(--surface-card)] rounded-xl border border-[var(--hairline-soft)] shadow-sm">
+        <section className="py-4 bg-[var(--surface-soft)]/50 border-t border-b border-[var(--hairline-soft)]">
+          <div className="container max-w-5xl mx-auto px-4">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-4 p-4 bg-[var(--surface-card)] rounded-2xl border border-[var(--hairline-soft)] shadow-2xs">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-[var(--primary-light)] text-[var(--primary)] flex items-center justify-center flex-shrink-0">
-                  <Icons.ArrowRight size={18} />
+                <div className="w-9 h-9 rounded-full bg-[var(--primary-light)] text-[var(--primary)] flex items-center justify-center flex-shrink-0">
+                  <Icons.ArrowRight size={16} />
                 </div>
-                <p className="text-sm text-[var(--ink)] font-medium text-center md:text-left leading-relaxed">
+                <p className="text-xs md:text-sm text-[var(--ink)] font-medium text-center md:text-left leading-relaxed">
                   {nextStep.text}
                 </p>
               </div>
               <Link
                 href={`/tools/${nextStep.toolSlug}/`}
                 title={`${nextStep.actionText} — Free Online Tool`}
-                className="px-5 py-2 bg-[var(--primary)] text-white text-xs font-bold rounded-lg hover:bg-[var(--primary-hover)] transition-all duration-200 shadow-sm hover:shadow-md whitespace-nowrap"
+                className="px-4 py-2 bg-[var(--primary)] text-white text-xs font-bold rounded-xl hover:bg-[var(--primary-hover)] transition-all duration-200 shadow-2xs whitespace-nowrap"
               >
                 {nextStep.actionText} →
               </Link>
@@ -458,33 +593,9 @@ export default function ToolPageClient({ slug }) {
         </section>
       )}
 
-      {/* Rich SEO Content & FAQs Section */}
-      <SeoContentSection slug={slug} />
-
-      {/* Related Tools */}
-      {relatedTools.length > 0 && (
-        <section className="py-12 bg-[var(--surface-soft)] border-t border-[var(--hairline-soft)]">
-          <div className="container mx-auto px-4">
-            <h3 className="text-lg font-semibold text-[var(--ink)] mb-6">Related Tools</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {relatedTools.map(rt => {
-                const RtIcon = Icons[rt.icon] || Icons.FileImage;
-                return (
-                  <Link key={rt.slug} href={`/tools/${rt.slug}/`}
-                    title={`${rt.name} — Free Online Tool`}
-                    className="flex items-center gap-3 p-4 bg-[var(--surface-card)] border border-[var(--hairline-soft)] rounded-xl hover:shadow-md hover:border-transparent transition-all">
-                    <div className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"
-                      style={{ backgroundColor: `${rt.color}12`, color: rt.color }}>
-                      <RtIcon size={18} />
-                    </div>
-                    <span className="text-sm font-medium text-[var(--ink)] truncate">{rt.name}</span>
-                  </Link>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-      )}
+      {/* Rich SEO Content, FAQs, and Related Tools Card */}
+      <SeoContentSection slug={slug} relatedTools={relatedTools} />
     </div>
   );
 }
+

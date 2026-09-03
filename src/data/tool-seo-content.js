@@ -1,476 +1,1769 @@
 // Rich SEO content database for all tools
-// Designed to target long-tail, low-competition keywords (especially India-specific use cases)
+// Designed to target long-tail, low-competition keywords
 
 export const TOOL_SEO_CONTENT = {
-  // === PHASE 1 TOOLS ===
-  'passport-photo-maker': {
-    title: 'Online Passport Photo Maker — Free India & Global Presets',
-    subtitle: 'Create perfectly sized passport, visa, and ID photos in your browser. 100% free, private, and instant.',
-    introduction: 'Getting the right photo size for official documents can be incredibly frustrating. Government portals and embassy guidelines are extremely strict, and uploading the wrong dimensions, file size, or background color can lead to immediate rejection of your application. Our free Online Passport Photo Maker makes this process simple. It runs entirely in your browser, meaning your personal photos are processed 100% privately and never uploaded to any server. You can generate, crop, and download print-ready passport or visa photos in seconds.',
-    sections: [
+  "jpg-to-png": {
+    "title": "Convert JPG to PNG Instantly — Secure & Free",
+    "subtitle": "Transform your JPEG images to transparent PNG files locally. **100% secure.**",
+    "introduction": "Are you looking for a fast, reliable, and entirely secure way to convert your JPG images to the PNG format? The ImageFlow JPG to PNG converter is meticulously designed to provide seamless, high-quality image transformations directly within your web browser. Unlike traditional online converters that force you to upload your sensitive and private files to a remote server, our advanced tool processes absolutely everything locally on your own device. This means there are absolutely no file uploads, no downloads of compressed server files, and zero risk of your private data being exposed, intercepted, or stored anywhere. Your files remain entirely on your computer, ensuring complete privacy and maximum processing speed. Whether you are a professional web developer optimizing visual assets, a graphic designer preparing files for client delivery, or simply a casual user needing to change an image format for a social media upload, this free in-browser converter delivers pixel-perfect results instantly. With support for rapid batch processing and intuitive drag-and-drop functionality, converting your graphics has never been easier or safer. Experience blazing-fast conversions with zero quality loss, and enjoy the ultimate peace of mind that comes with a privacy-first, serverless architecture tailored for modern digital workflows.",
+    "useCases": {
+      "title": "Common Use Cases for JPG to PNG Conversion",
+      "items": [
+        {
+          "icon": "Image",
+          "title": "Web Graphics",
+          "description": "Convert flat photos into graphics ready for transparency layers."
+        },
+        {
+          "icon": "Briefcase",
+          "title": "Professional Logos",
+          "description": "Prepare images for branding kits without losing sharp edges."
+        },
+        {
+          "icon": "Monitor",
+          "title": "Digital Art",
+          "description": "Ensure your illustrations remain lossless for future editing."
+        }
+      ]
+    },
+    "steps": {
+      "title": "How to Convert JPG to PNG in 3 Steps",
+      "items": [
+        {
+          "title": "Upload",
+          "description": "Drag and drop your JPG files into the browser window."
+        },
+        {
+          "title": "Process",
+          "description": "Wait a moment as the files are converted instantly on your device."
+        },
+        {
+          "title": "Download",
+          "description": "Save your new PNG files individually or in a batch ZIP."
+        }
+      ]
+    },
+    "faqs": [
       {
-        heading: 'Indian Passport & Document Photo Specifications',
-        content: `If you are applying for an Indian Passport, Visa, OCI Card, Aadhaar Card, or PAN Card, you must adhere to the official guidelines set by the Government of India:
-        
-• **Indian Passport Photo Size**: The official size is **2x2 inches (51x51 mm)**. The face must cover 70% to 80% of the photo area.
-• **Aadhaar Card Photo**: While your photo is captured live at the enrollment center, any updates or online self-service forms require a passport-sized photo with a white background.
-• **PAN Card Photo**: Requires two passport-size photographs of **3.5x2.5 cm (35x25 mm)**.
-• **Background Color**: Must be **solid white** or very light off-white. Dark, patterned, or colorful backgrounds will be rejected.
-• **Expression & Lighting**: Look directly at the camera with a neutral expression. Ensure there are no shadows on your face or in the background.`
+        "q": "Are my files uploaded to a server?",
+        "a": "No, all conversions happen locally in your web browser. Your files are 100% secure and never leave your device."
       },
       {
-        heading: 'How to Create Your Passport Photo Online',
-        content: `Follow these simple steps to make your passport photo:
-
-1. **Take a Photo**: Stand 3–4 feet away from a plain white or light-colored wall. Ensure good, even lighting from the front to avoid shadows.
-2. **Upload**: Click the upload button above to select your photo.
-3. **Select Country Preset**: Choose "India - Passport (2x2 in)" or your specific country preset from the dropdown list.
-4. **Adjust & Align**: Use the interactive zoom and position sliders to align your face within the guided circular overlay.
-5. **Download**: Click "Generate Passport Photo" and download your high-resolution, cropped image instantly.`
-      }
-    ],
-    faqs: [
-      {
-        q: 'What is the official passport photo size for India?',
-        a: 'The official size for Indian passport and visa applications is 2x2 inches (51x51 mm) with a white background.'
+        "q": "Does converting JPG to PNG improve quality?",
+        "a": "Converting to PNG will not magically improve the original JPG's quality, but it will prevent any further compression loss."
       },
       {
-        q: 'Can I use a phone selfie for my passport photo?',
-        a: 'Yes, as long as it is taken from the front, has good lighting, a solid white background, and your shoulders are visible. Selfies taken at an angle or with filters will be rejected.'
-      },
-      {
-        q: 'What background color is required for Indian passport photos?',
-        a: 'A solid, plain white background is strictly required. Off-white or light grey is sometimes accepted, but white is the safest option to avoid rejection.'
-      },
-      {
-        q: 'Is my photo uploaded to a server?',
-        a: 'No. ImageFlow is a client-side tool. Your image is processed entirely within your web browser. No data is sent to our servers, ensuring absolute privacy.'
+        "q": "Can I convert multiple JPGs at once?",
+        "a": "Yes! You can drag and drop dozens of files for lightning-fast batch processing."
       }
     ]
   },
-
-  'compress-image': {
-    title: 'Compress Photo to 20KB, 50KB, 100KB for Govt & Exam Forms',
-    subtitle: 'Reduce image file size in KB instantly without losing quality. Perfect for SSC, UPSC, IBPS, and state board applications.',
-    introduction: 'Most Indian government job portals, university admissions, and competitive exam websites (like SSC, UPSC, NTA, Railway, and Banking exams) require you to upload your photograph and signature within extremely strict file size limits. Typically, your photograph must be between **20KB and 50KB**, while your signature must be between **10KB and 20KB**. Uploading a larger file is impossible due to portal restrictions, while compressing too much can make the image blurry and cause your application to be rejected. Our browser-native image compressor solves this by giving you precise control over quality and size.',
-    sections: [
+  "png-to-jpg": {
+    "title": "Convert PNG to JPG for Free — Fast & Secure",
+    "subtitle": "Compress and convert your PNG files to JPGformat locally. **100% secure.**",
+    "introduction": "Need a highly efficient, reliable, and completely secure method to convert your PNG files to the standard JPG format? The ImageFlow PNG to JPG converter is explicitly built to deliver exceptional image conversions right in your active web browser. A major advantage of our solution over traditional online converters is that it never requires you to upload your personal files to external servers. Instead, our robust web application handles the entire conversion process locally on your hardware. This translates to zero network uploads, no waiting in server queues, and absolutely no risk of your sensitive data being compromised. Because the files stay on your machine, you get unparalleled privacy and blazing conversion speeds. Whether you are a photographer looking to reduce file sizes for a portfolio, a content creator aiming to speed up website load times, or a student formatting images for a presentation, this tool provides flawless outputs. Batch process multiple files effortlessly with our drag-and-drop interface, and enjoy top-tier quality retention without sacrificing security or workflow efficiency.",
+    "useCases": {
+      "title": "Common Use Cases for PNG to JPG Conversion",
+      "items": [
+        {
+          "icon": "HardDrive",
+          "title": "Save Storage Space",
+          "description": "Significantly reduce image file sizes to save precious disk space."
+        },
+        {
+          "icon": "Globe",
+          "title": "Web Optimization",
+          "description": "Accelerate webpage loading times by using compressed JPGs."
+        },
+        {
+          "icon": "Share2",
+          "title": "Easier Sharing",
+          "description": "Quickly send lightweight image files over email and chat apps."
+        }
+      ]
+    },
+    "steps": {
+      "title": "How to Convert PNG to JPG in 4 Steps",
+      "items": [
+        {
+          "title": "Upload",
+          "description": "Drop your PNG files directly into the secure browser interface."
+        },
+        {
+          "title": "Adjust",
+          "description": "Optionally select your preferred JPG quality and compression level."
+        },
+        {
+          "title": "Convert",
+          "description": "Click the convert button to process your images locally."
+        },
+        {
+          "title": "Save",
+          "description": "Download your compressed JPG images immediately to your device."
+        }
+      ]
+    },
+    "faqs": [
       {
-        heading: 'Typical Photo & Signature Size Limits for Indian Portals',
-        content: `Here is a quick reference guide for popular Indian recruitment and admission portals:
-
-• **SSC (Staff Selection Commission)**: Photograph must be **20KB to 50KB** (JPEG/JPG), and Signature must be **10KB to 20KB**.
-• **UPSC (Union Public Service Commission)**: Both photo and signature must be between **20KB and 300KB** each.
-• **IBPS / Banking Exams**: Photograph: **20KB to 50KB**, Signature: **10KB to 20KB**.
-• **NTA / NEET / JEE**: Photograph: **10KB to 200KB**, Signature: **4KB to 30KB**.
-• **Passport Seva Portal**: Photo and signature must be under **100KB** each.`
+        "q": "Will I lose the transparent background?",
+        "a": "Yes, JPG does not support transparency. Any transparent areas will be filled with a solid color, usually white."
       },
       {
-        heading: 'How to Compress an Image to a Specific KB Size',
-        content: `To shrink your photo or signature to the exact size required:
-
-1. **Upload**: Drag and drop your JPEG or PNG file into the uploader above.
-2. **Adjust Quality**: Use the quality slider. For a 50KB target, start around **70%–80%** quality. For a 20KB signature, you may need to drop the quality to **50%–60%** or resize the dimensions.
-3. **Format**: Select **JPEG** as the output format, as almost all government portals only accept \`.jpg\` or \`.jpeg\` extensions.
-4. **Compress & Download**: Click "Compress" and check the resulting file size shown in the preview. If it is still too large, slide the quality down slightly and compress again. Once it falls within the required range, download it.`
-      }
-    ],
-    faqs: [
-      {
-        q: 'How do I compress a photo to exactly 20KB or 50KB?',
-        a: 'Upload your photo, set the output format to JPEG, and adjust the quality slider down (usually to 70-80% for 50KB, or 50-60% for 20KB). You can also use our Resize tool first if the original image has extremely large dimensions.'
+        "q": "Is the PNG to JPG tool completely free?",
+        "a": "Absolutely. You can convert as many images as you need without any hidden fees."
       },
       {
-        q: 'Why does the portal say my signature is invalid?',
-        a: 'Portals reject signatures if they exceed the file size limit (often 20KB), if the dimensions are incorrect, or if the signature is blurry. Make sure you crop the signature closely and compress it to around 15KB with high contrast.'
-      },
-      {
-        q: 'Will compressing my photo make it blurry?',
-        a: 'Our compressor uses advanced canvas-based resampling. Even at 60% quality, the text and face remain highly legible and sharp, ensuring it easily passes portal validation.'
+        "q": "How does local processing work?",
+        "a": "Our application utilizes modern web technologies to process the image data using your device's CPU, eliminating the need for cloud servers."
       }
     ]
   },
-
-  'heic-converter': {
-    title: 'Convert HEIC to JPG Online Free — 100% Private & Offline',
-    subtitle: 'Convert iPhone HEIC photos to standard JPG/JPEG format instantly in your browser. No uploads, no limits.',
-    introduction: 'If you use an iPhone, your photos are saved in the **HEIC (High Efficiency Image Container)** format by default. While HEIC is excellent for saving space on your phone, it is not widely supported on the web. Most Indian government websites, school portals, job applications, and online forms will reject \`.heic\` files, showing "Unsupported File Format" errors. Our HEIC Converter lets you convert these photos to standard, universally accepted JPEGs instantly, without uploading your private images to any external server.',
-    sections: [
+  "webp-converter": {
+    "title": "Next-Gen WebP Converter — Local & Secure",
+    "subtitle": "Convert images to and from the WebP format seamlessly. **100% secure.**",
+    "introduction": "Embrace the future of web graphics with the incredibly fast and 100% secure ImageFlow WebP Converter. WebP is a modern image format that provides superior lossless and lossy compression for images on the web, and our tool allows you to utilize it effortlessly. Operating entirely within your internet browser, this converter guarantees that your personal files are never uploaded to any remote data center. By performing all complex image processing locally on your computer or smartphone, we eliminate the privacy risks associated with traditional cloud-based solutions. This means zero uploads, instantaneous conversion speeds, and absolute data confidentiality. Web developers, digital marketers, and SEO specialists consistently rely on WebP to drastically reduce page load times and boost website performance metrics. With our intuitive drag-and-drop functionality, you can easily convert bulk standard formats like JPG or PNG into WebP, or vice versa, without breaking a sweat. Enjoy a completely free, serverless utility that empowers your daily workflow while strictly adhering to the highest privacy standards.",
+    "useCases": {
+      "title": "Common Use Cases for WebP Conversion",
+      "items": [
+        {
+          "icon": "Search",
+          "title": "SEO Enhancements",
+          "description": "Boost Core Web Vitals by deploying next-generation image formats."
+        },
+        {
+          "icon": "Smartphone",
+          "title": "Mobile Optimization",
+          "description": "Serve high-quality, low-bandwidth images to mobile users."
+        },
+        {
+          "icon": "RefreshCw",
+          "title": "Format Updating",
+          "description": "Modernize legacy image archives into the highly efficient WebP format."
+        }
+      ]
+    },
+    "steps": {
+      "title": "How to Use the WebP Converter in 3 Steps",
+      "items": [
+        {
+          "title": "Select Files",
+          "description": "Drag and drop your images into the conversion zone."
+        },
+        {
+          "title": "Set Output",
+          "description": "Choose whether you want to convert to or from WebP."
+        },
+        {
+          "title": "Convert & Download",
+          "description": "Process the files instantly and save them securely to your device."
+        }
+      ]
+    },
+    "faqs": [
       {
-        heading: 'Why Do Web Portals Reject HEIC Files?',
-        content: `HEIC is a relatively new image format introduced by Apple. While it offers superior compression compared to JPEG, many older web servers and legacy database systems used by schools, universities, and government agencies (such as SSC, UPSC, and state portals) do not have the software required to process or display HEIC images. Converting your files to JPG or PNG is the only way to ensure your uploads are successful.`
+        "q": "What is WebP?",
+        "a": "WebP is a modern image format developed by Google that provides superior compression for images, making them smaller and faster to load."
       },
       {
-        heading: 'How to Convert HEIC to JPG on Windows or Android',
-        content: `You do not need to buy expensive software or upload your files to untrusted websites. Simply use our free tool:
-
-1. **Select Files**: Click "Choose Files" and select one or more \`.heic\` or \`.heif\` images from your device.
-2. **Convert**: The converter runs locally in your browser using JavaScript. Your files are converted immediately.
-3. **Download**: Click "Download" to save the converted \`.jpg\` file to your device, ready for any online submission.`
-      }
-    ],
-    faqs: [
-      {
-        q: 'Will converting HEIC to JPG reduce my photo quality?',
-        a: 'No. Our converter maintains the original resolution and visual clarity of your iPhone photos, simply repackaging them into the standard JPEG format.'
+        "q": "Is it safe to convert private photos here?",
+        "a": "Yes. Since all processing is done locally in your browser, your files are never transmitted over the internet."
       },
       {
-        q: 'Can I convert multiple HEIC photos at once?',
-        a: 'Yes! Our tool supports batch conversion. You can upload multiple HEIC files and download them all in a single click.'
-      },
-      {
-        q: 'Is it safe to convert private photos here?',
-        a: 'Absolutely. Unlike other online converters, all processing is done locally inside your web browser. Your private photos never leave your computer or phone.'
+        "q": "Does WebP support transparency?",
+        "a": "Yes! WebP supports both transparency (like PNG) and animation (like GIF), all at a fraction of the file size."
       }
     ]
   },
-
-  'resize-image': {
-    title: 'WhatsApp DP Size Resizer — Get the Perfect Profile Picture',
-    subtitle: 'Resize any image to fit WhatsApp DP without cropping. Free, instant, and secure.',
-    introduction: 'Have you ever tried to set a beautiful photo as your WhatsApp profile picture (DP), only to find that WhatsApp forces you to crop out the sides or top? WhatsApp profile pictures are strictly square. If you upload a portrait or landscape photo, it will not fit unless you resize it first. Our WhatsApp DP Resizer lets you easily resize or fit any photo into a perfect square, adding custom background colors or blur effects so you can show the entire picture without cropping.',
-    sections: [
+  "webp-to-png": {
+    "title": "Convert WebP to PNG — Fast & Private",
+    "subtitle": "Change your WebP images to standard PNGs directly in your browser. **100% secure.**",
+    "introduction": "Are you struggling to open or edit a WebP file in older software? The ImageFlow WebP to PNG converter is the perfect, 100% secure solution to transform next-generation WebP images into universally recognized PNG files. Unlike other online services that demand you to upload your files to their servers, our advanced web application performs all image processing locally within your browser. This innovative approach ensures that your sensitive files never leave your device. There are no risky uploads, no data retention policies to worry about, and absolutely no waiting in server queues. Your conversion happens instantly on your own machine. Graphic designers, content managers, and everyday users often need PNG files for full compatibility with legacy editing software, presentation tools, or specific social media platforms. With our user-friendly interface, you can effortlessly drag and drop multiple WebP files and watch them seamlessly convert to high-quality PNGs, preserving all intricate details and transparency. Enjoy a totally free, high-speed, and profoundly private conversion experience tailored for your exact needs.",
+    "useCases": {
+      "title": "Common Use Cases for WebP to PNG Conversion",
+      "items": [
+        {
+          "icon": "Layers",
+          "title": "Software Compatibility",
+          "description": "Open images in older design software that lacks WebP support."
+        },
+        {
+          "icon": "Image",
+          "title": "Preserve Transparency",
+          "description": "Maintain original transparent backgrounds during format shifts."
+        },
+        {
+          "icon": "Printer",
+          "title": "Print Preparation",
+          "description": "Convert web-optimized files into formats suitable for basic printing."
+        }
+      ]
+    },
+    "steps": {
+      "title": "How to Convert WebP to PNG in 3 Steps",
+      "items": [
+        {
+          "title": "Add Images",
+          "description": "Upload your WebP files directly into the browser tool."
+        },
+        {
+          "title": "Convert Locally",
+          "description": "The tool instantly reads and converts the WebP data to PNG format."
+        },
+        {
+          "title": "Download",
+          "description": "Save the universally compatible PNG files to your computer."
+        }
+      ]
+    },
+    "faqs": [
       {
-        heading: 'What is the Best Size for WhatsApp DP?',
-        content: `To ensure your profile picture looks crisp and does not get blurry, you should use the following dimensions:
-
-• **Recommended Size**: **640x640 pixels** or higher (e.g., **1080x1080 pixels** for HD quality).
-• **Aspect Ratio**: Must be a perfect **1:1 (Square)**.
-• **File Format**: JPEG or PNG are highly recommended.`
+        "q": "Why convert WebP to PNG?",
+        "a": "While WebP is great for web use, PNG is universally supported by almost all image viewers and editing programs."
       },
       {
-        heading: 'How to Resize a Photo for WhatsApp DP Without Cropping',
-        content: `Follow these steps to make your full photo fit:
-
-1. **Upload**: Select the photo you want to use for your profile.
-2. **Select Preset**: Choose the **WhatsApp DP (1:1)** preset from our social media dimensions dropdown.
-3. **Adjust Fit**: Choose whether to stretch, crop, or fit with borders. Choosing "Fit with borders" will place your full image inside a square and let you choose a matching background color.
-4. **Resize & Download**: Click "Resize" and download your new square profile picture.`
-      }
-    ],
-    faqs: [
-      {
-        q: 'How do I put a full picture on WhatsApp DP without cropping?',
-        a: 'Upload your image to our Resizer, select the "1:1 Square" aspect ratio, and choose "Fit" instead of "Crop". This adds borders to the sides of your landscape or portrait photo, making it a perfect square so the entire image is visible.'
+        "q": "Do I lose quality during the conversion?",
+        "a": "No, because PNG is a lossless format, the conversion from WebP will retain all the visual quality of the original file."
       },
       {
-        q: 'What is the pixel size of a WhatsApp profile picture?',
-        a: 'The minimum recommended size is 192x192 pixels, but for high-resolution displays, it is best to use 640x640 pixels or 1080x1080 pixels.'
+        "q": "Is there a file size limit?",
+        "a": "Since everything runs on your device, the only limit is the memory capacity of your computer or browser."
       }
     ]
   },
-
-  'compress-pdf': {
-    title: 'Compress PDF Online Free — Reduce Size for Email & Portals',
-    subtitle: 'Shrink large PDF files to under 25MB for Gmail, Outlook, and official portal uploads.',
-    introduction: 'PDF files containing scanned documents, certificates, and images can easily grow to 50MB or more. However, most email clients and official submission portals have strict file size limits. For example, **Gmail and Outlook have a 25MB attachment limit**, and government portals often require PDFs to be under **2MB or 5MB**. Our PDF Compressor runs entirely in your browser, shrinking your files using smart optimization without making the text blurry or unreadable.',
-    sections: [
+  "webp-to-jpg": {
+    "title": "Convert WebP to JPG Safely & Instantly",
+    "subtitle": "Turn your WebP graphics into universal JPEGs without uploading. **100% secure.**",
+    "introduction": "When you need maximum compatibility across all devices and platforms, converting your files is essential. The ImageFlow WebP to JPG converter offers a lightning-fast, 100% secure way to change modern WebP images into the universally accepted standard JPG format. Operating exclusively in your local web browser, this tool guarantees that your files are never transmitted to external servers. This zero-upload architecture means your data remains strictly confidential, and you avoid the typical delays associated with cloud-based conversion platforms. Everything happens right on your device, delivering instant results and unparalleled privacy. From marketing professionals compiling standard format media kits to everyday users wanting to share photos on platforms that don't yet support WebP, this converter bridges the compatibility gap flawlessly. Our platform supports robust batch processing, allowing you to drag and drop numerous files at once. Experience seamless, high-quality conversions that protect your digital privacy and streamline your workflow without any hidden costs or complicated software installations.",
+    "useCases": {
+      "title": "Common Use Cases for WebP to JPG Conversion",
+      "items": [
+        {
+          "icon": "Share",
+          "title": "Social Sharing",
+          "description": "Ensure your images upload flawlessly to older social platforms."
+        },
+        {
+          "icon": "Mail",
+          "title": "Email Attachments",
+          "description": "Attach universal JPEGs that any email client can preview immediately."
+        },
+        {
+          "icon": "Camera",
+          "title": "Photo Libraries",
+          "description": "Standardize your personal photo collection into a single, reliable format."
+        }
+      ]
+    },
+    "steps": {
+      "title": "How to Convert WebP to JPG in 3 Steps",
+      "items": [
+        {
+          "title": "Upload WebP",
+          "description": "Simply drag and drop your files into the secured workspace."
+        },
+        {
+          "title": "Process",
+          "description": "Wait milliseconds as the files are converted natively in your browser."
+        },
+        {
+          "title": "Save JPG",
+          "description": "Click download to save your new JPG files instantly."
+        }
+      ]
+    },
+    "faqs": [
       {
-        heading: 'Official PDF Upload Limits for Common Portals',
-        content: `Before sending or uploading your documents, check these common limits:
-
-• **Gmail / Outlook**: Maximum attachment size is **25MB**. Anything larger is uploaded to Google Drive/OneDrive as a link instead of a file.
-• **Income Tax Portal (India)**: Most PDF uploads must be under **5MB**.
-• **EPFO Portal**: Document uploads are usually restricted to **2MB** or less.
-• **Visa & Immigration Portals**: Often restrict document uploads to **2MB** per PDF.`
+        "q": "Does this tool work entirely offline?",
+        "a": "Once the page is loaded in your browser, the actual conversion process works entirely offline without sending any data."
       },
       {
-        heading: 'How to Compress a PDF to Fit Email Limits',
-        content: `To reduce your PDF file size:
-
-1. **Upload**: Select the PDF file from your device.
-2. **Set Compression**: Choose a compression level. "Recommended Compression" offers the best balance of size reduction and legibility.
-3. **Process**: Click "Compress PDF". The tool will optimize fonts, compress images, and remove unused metadata.
-4. **Download**: Preview the new file size and download your compressed PDF.`
-      }
-    ],
-    faqs: [
-      {
-        q: 'Will compressing my PDF make the text unreadable?',
-        a: 'No. Our tool uses vector-safe compression which keeps text sharp and readable, only compressing embedded images and removing unnecessary file overhead.'
+        "q": "What happens to the transparent parts of my WebP?",
+        "a": "Because JPG does not support transparency, any transparent areas will automatically be converted to a solid white background."
       },
       {
-        q: 'How do I send a PDF larger than 25MB via Gmail?',
-        a: 'You can compress it using our tool to bring it under the 25MB limit so it can be attached directly as a file. If it remains larger, you can split the PDF or send it as a cloud link.'
+        "q": "Can I use this on my mobile phone?",
+        "a": "Yes! Our browser-based tool is fully responsive and works perfectly on smartphones and tablets."
+      }
+    ]
+  },
+  "svg-to-png": {
+    "title": "Convert SVG to PNG — Crisp, Local, Secure",
+    "subtitle": "Rasterize your vector graphics to PNGs directly in your browser. **100% secure.**",
+    "introduction": "Transforming scalable vector graphics into standard raster images has never been more secure or straightforward. The ImageFlow SVG to PNG converter is a premium, free-to-use utility designed to render your SVG files into crisp, high-quality PNGs right within your web browser. Setting ourselves apart from standard internet tools, our converter operates entirely locally on your machine. This means you do not have to upload your proprietary designs, logos, or illustrations to a remote server. You benefit from zero data interception risks, absolute privacy, and instantaneous conversion speeds. Designers and developers frequently need to convert SVG vectors into PNG formats to ensure compatibility with applications that do not support vectors, or to generate precise social media assets. By processing everything on your hardware, we provide pixel-perfect rasterization while respecting your intellectual property. Effortlessly handle single graphics or batch process entire icon sets with our intuitive drag-and-drop interface. Secure, fast, and remarkably easy to use, our tool perfectly bridges the gap between vector flexibility and raster compatibility.",
+    "useCases": {
+      "title": "Common Use Cases for SVG to PNG Conversion",
+      "items": [
+        {
+          "icon": "PenTool",
+          "title": "App Development",
+          "description": "Generate raster fallbacks for mobile app icon sets."
+        },
+        {
+          "icon": "Layout",
+          "title": "Web Design",
+          "description": "Convert complex vector illustrations for use in older email clients."
+        },
+        {
+          "icon": "Instagram",
+          "title": "Social Media",
+          "description": "Prepare your vector logos for profile pictures and post graphics."
+        }
+      ]
+    },
+    "steps": {
+      "title": "How to Convert SVG to PNG in 4 Steps",
+      "items": [
+        {
+          "title": "Upload",
+          "description": "Drag your SVG files directly into the browser tool area."
+        },
+        {
+          "title": "Configure",
+          "description": "Adjust the desired output resolution and dimensions if needed."
+        },
+        {
+          "title": "Rasterize",
+          "description": "Allow the local engine to beautifully render the vector to pixels."
+        },
+        {
+          "title": "Download",
+          "description": "Save your new, high-quality PNG files to your local drive."
+        }
+      ]
+    },
+    "faqs": [
+      {
+        "q": "Will my designs be uploaded to your servers?",
+        "a": "Absolutely not. The SVG rendering is done entirely by your web browser, ensuring your designs remain private."
       },
       {
-        q: 'Is my confidential PDF document safe?',
-        a: 'Yes. The compression is performed entirely on your device using client-side WebAssembly. Your document is never uploaded to any server, making it 100% secure.'
-      }
-    ]
-  },
-
-  // === PHASE 2 HIGH-PRIORITY TOOLS ===
-  'merge-pdf': {
-    title: 'Merge PDF Online Free — Combine PDF Files in Seconds',
-    subtitle: 'Combine two or more PDF documents into one single file. No signup, no limits, 100% secure.',
-    introduction: 'Whether you are submitting university assignments, compiling monthly business invoices, or organizing tax documents, keeping your PDFs together is essential. Our free Online PDF Merger runs entirely inside your browser. Your private documents are never uploaded to any external server, ensuring complete confidentiality and rapid processing speeds.',
-    sections: [
-      {
-        heading: 'Common Use Cases for Merging PDFs',
-        content: `• **Job Applications**: Combine your resume, cover letter, and certificates into a single PDF.
-• **Academic Submissions**: Merge multiple chapters or assignment sheets into one file.
-• **Financial Records**: Group all monthly receipts, invoices, or statements together for your accountant.`
+        "q": "Can I scale the SVG before converting to PNG?",
+        "a": "Yes, vectors are infinitely scalable, meaning you can render them at large resolutions without losing sharpness."
       },
       {
-        heading: 'How to Merge PDF Files in 4 Steps',
-        content: `1. **Upload**: Click "Choose Files" or drag-and-drop your PDFs into the tool.
-2. **Reorder**: Drag the file cards to arrange them in the correct sequence.
-3. **Merge**: Click the "Merge PDFs" button. The tool merges them locally.
-4. **Download**: Save your combined PDF instantly.`
+        "q": "Are batch conversions supported?",
+        "a": "Yes, you can drop multiple SVG files at once and download them all as beautifully rendered PNGs."
       }
-    ],
-    faqs: [
+    ]
+  },
+  "heic-converter": {
+    "title": "HEIC Converter — Private & Lightning Fast",
+    "subtitle": "Convert Apple HEIC photos to JPG or PNG formats locally. **100% secure.**",
+    "introduction": "Unlocking your iPhone photos for use on Windows and Android devices is now effortless and entirely private with the ImageFlow HEIC Converter. The High-Efficiency Image Container (HEIC) format used by modern Apple devices is fantastic for saving space, but it often struggles with cross-platform compatibility. Our cutting-edge converter allows you to seamlessly transform HEIC files into universally accepted formats like JPG or PNG, all within your web browser. Crucially, our tool processes every single image locally on your device. This eliminates the need to upload your deeply personal photographs to a remote cloud server, providing a 100% secure, zero-upload environment. You can convert your family photos or sensitive business documents with absolute confidence that they remain exclusively on your machine. Ideal for Windows users, digital marketers, and anyone needing to share iPhone photos widely, our batch-processing feature makes handling large albums a breeze. Enjoy completely free, high-speed conversions that preserve the original quality of your photos while rigorously protecting your digital privacy.",
+    "useCases": {
+      "title": "Common Use Cases for HEIC Conversion",
+      "items": [
+        {
+          "icon": "Windows",
+          "title": "Windows Compatibility",
+          "description": "Easily view and edit your iPhone photos on a Windows PC."
+        },
+        {
+          "icon": "Users",
+          "title": "Sharing Photos",
+          "description": "Send images to friends and family without worrying if they can open them."
+        },
+        {
+          "icon": "FilePlus",
+          "title": "Document Submissions",
+          "description": "Convert HEIC files for online portals that only accept JPG or PNG."
+        }
+      ]
+    },
+    "steps": {
+      "title": "How to Convert HEIC Files in 3 Steps",
+      "items": [
+        {
+          "title": "Select Files",
+          "description": "Drag your HEIC images from your computer into the browser."
+        },
+        {
+          "title": "Choose Format",
+          "description": "Select your preferred output format, such as JPG or PNG."
+        },
+        {
+          "title": "Convert & Save",
+          "description": "Instantly process and download the converted files to your device."
+        }
+      ]
+    },
+    "faqs": [
       {
-        q: 'Is there a limit to the number of PDFs I can merge?',
-        a: 'No. You can combine as many PDF files as your browser memory can handle.'
+        "q": "Why can't I open HEIC files on my computer?",
+        "a": "HEIC is a format heavily utilized by Apple. Many older operating systems and non-Apple devices require third-party tools to view them."
       },
       {
-        q: 'Does merging PDFs reduce the quality?',
-        a: 'No, our tool preserves the exact page layout, vector text, fonts, and image resolutions of the original documents.'
+        "q": "Are my personal photos uploaded to the cloud?",
+        "a": "No. The entire conversion process occurs locally in your browser, guaranteeing your photos are never uploaded or stored."
+      },
+      {
+        "q": "Does converting HEIC ruin the photo quality?",
+        "a": "Our converter uses high-quality rendering algorithms to ensure your output files look virtually identical to the original photos."
       }
     ]
   },
-
-  'split-pdf': {
-    title: 'Split PDF Online Free — Extract Pages from PDF',
-    subtitle: 'Extract specific pages or page ranges from any PDF document. Fast, safe, and private.',
-    introduction: 'Need to share only a few pages of a massive report or extract a single certificate from a multi-page document? Our Split PDF tool lets you slice any PDF document in seconds. It runs completely client-side, so your sensitive documents never leave your device.',
-    sections: [
+  "image-to-pdf": {
+    "title": "Image to PDF Converter — Secure & Reliable",
+    "subtitle": "Combine your images into a single PDF document locally. **100% secure.**",
+    "introduction": "Consolidating your images into a professional, easily shareable document is beautifully simple with the ImageFlow Image to PDF converter. Whether you are compiling receipts for an expense report, assembling a digital portfolio, or merging scanned documents, our tool gets the job done swiftly and securely right in your browser. Distinguishing itself from typical online PDF generators, our advanced application ensures that your personal files are never uploaded to a remote server. All the heavy lifting—from image arrangement to PDF compilation—is executed entirely on your local device. This zero-upload, strictly local processing guarantees that your sensitive documents remain completely private and are completely immune to data breaches. Professionals, students, and freelancers can drag and drop dozens of JPG, PNG, or WebP images, reorder them intuitively, and generate a polished PDF in seconds. Enjoy a completely free, highly responsive tool that streamlines your administrative tasks while adhering to the strictest privacy and security standards available on the web today.",
+    "useCases": {
+      "title": "Common Use Cases for Image to PDF Conversion",
+      "items": [
+        {
+          "icon": "FileText",
+          "title": "Expense Reports",
+          "description": "Easily compile photos of receipts into one neat PDF document."
+        },
+        {
+          "icon": "BookOpen",
+          "title": "Digital Portfolios",
+          "description": "Merge your design or photography work into a single presentation."
+        },
+        {
+          "icon": "Scanner",
+          "title": "Scanned Documents",
+          "description": "Combine multiple scanned pages into one continuous, readable file."
+        }
+      ]
+    },
+    "steps": {
+      "title": "How to Convert Images to PDF in 4 Steps",
+      "items": [
+        {
+          "title": "Upload Images",
+          "description": "Drop all the images you want to include into the workspace."
+        },
+        {
+          "title": "Reorder",
+          "description": "Drag the thumbnails to arrange the pages in the correct sequence."
+        },
+        {
+          "title": "Generate",
+          "description": "Click the generate button to compile your local PDF."
+        },
+        {
+          "title": "Download",
+          "description": "Instantly save the finalized PDF document to your computer."
+        }
+      ]
+    },
+    "faqs": [
       {
-        heading: 'Flexible Page Extraction Modes',
-        content: `• **Specific Pages**: Extract individual pages by listing them (e.g., 2, 5, 9).
-• **Page Ranges**: Extract a continuous block of pages (e.g., 1-5 or 10-15).
-• **Custom Combinations**: Combine both ranges and individual pages (e.g., 1, 3-5, 8).`
-      }
-    ],
-    faqs: [
+        "q": "Are my documents safe from being viewed by others?",
+        "a": "Yes, entirely. Your images are compiled into a PDF locally on your own machine. We never see or store your files."
+      },
       {
-        q: 'How do I split a PDF online?',
-        a: 'Upload your PDF, enter the page numbers or ranges you want to extract (e.g., 1-3, 5), click "Extract Pages", and download the new PDF containing only those pages.'
-      }
-    ]
-  },
-
-  'image-upscaler': {
-    title: 'AI Image Upscaler Online Free — Increase Image Resolution',
-    subtitle: 'Upscale your photos 2x or 4x in your browser. Enhance details and improve clarity instantly.',
-    introduction: 'Low-resolution images look blurry on modern high-definition screens and print poorly. Our free online image upscaler uses advanced client-side interpolation algorithms to increase the pixel dimensions of your images while maintaining clean edges and minimizing pixelation.',
-    sections: [
+        "q": "Can I add multiple different image formats?",
+        "a": "Absolutely. You can mix JPG, PNG, and WebP files together into the same PDF document effortlessly."
+      },
       {
-        heading: 'Why Use an Image Upscaler?',
-        content: `• **Print Preparation**: Boost image resolutions to meet the 300 DPI standard for printing.
-• **Social Media**: Enhance low-quality downloads from WhatsApp or Facebook to make them look sharp.
-• **E-commerce**: Make product photos look crisp and professional for your online store.`
-      }
-    ],
-    faqs: [
-      {
-        q: 'Does this upscaler use AI?',
-        a: 'It uses advanced mathematical scaling filters (like Lanczos and bicubic interpolation) processed locally in your browser to sharpen edges and increase resolution without sending your data to external servers.'
-      }
-    ]
-  },
-
-  'remove-background': {
-    title: 'Remove Background from Image Free — Instant PNG Cutouts',
-    subtitle: 'Remove solid or plain backgrounds from your photos. Perfect for product images and profile pictures.',
-    introduction: 'Creating clean product cutouts or professional headshots usually requires complex photo editing software. Our free Background Remover allows you to strip solid backgrounds in one click, generating transparent PNGs directly in your browser.',
-    sections: [
-      {
-        heading: 'How to Get the Best Background Removal Results',
-        content: `• **High Contrast**: Ensure the subject is a different color than the background.
-• **Plain Backgrounds**: Works best on studio backdrops, white backgrounds, or solid walls.
-• **Adjust Tolerance**: Use the tolerance slider to clean up any leftover pixels around the edges.`
-      }
-    ],
-    faqs: [
-      {
-        q: 'Can I remove complex backgrounds?',
-        a: 'Our tool is optimized for solid or high-contrast backgrounds. For busy backgrounds, a manual brush or AI segmentation is recommended.'
-      }
-    ]
-  },
-
-  'thumbnail-creator': {
-    title: 'Free YouTube Thumbnail Maker Online — No Signup Required',
-    subtitle: 'Design eye-catching YouTube thumbnails with templates, text, overlays, and custom borders.',
-    introduction: 'A great YouTube thumbnail is the single most important factor for improving your Click-Through Rate (CTR) and growing your channel. Our free Thumbnail Creator gives you all the tools you need to design professional thumbnails in seconds. Add text, borders, overlays, and templates entirely in your browser.',
-    sections: [
-      {
-        heading: 'YouTube Thumbnail Size & Guidelines',
-        content: `To ensure your thumbnails look professional and don't get cropped:
-• **Ideal Dimensions**: **1280x720 pixels** (16:9 aspect ratio).
-• **File Size Limit**: Under **2MB**.
-• **Formats**: JPEG, PNG, or WebP.`
-      }
-    ],
-    faqs: [
-      {
-        q: 'Is this thumbnail maker free?',
-        a: 'Yes, it is 100% free with no watermarks and no registration required.'
+        "q": "Is there a limit to how many images I can add?",
+        "a": "Our tool does not impose strict limits, but very large numbers of high-resolution images may depend on your device's memory."
       }
     ]
   },
-
-  // === GENERAL FALLBACKS FOR REMAINING TOOLS ===
-  // To ensure every tool has structured SEO text + FAQs + valid schemas
-  'bulk-compress': {
-    title: 'Bulk Image Compressor — Compress Multiple Images at Once',
-    subtitle: 'Upload and compress dozens of images simultaneously. Download all as a single ZIP file.',
-    introduction: 'Manually compressing images one-by-one is tedious. Our Bulk Image Compressor lets you upload multiple JPEGs, PNGs, or WebPs and compress them in a single batch, saving time and storage.',
-    sections: [{ heading: 'How to Batch Compress', content: 'Upload your files, set the target quality, click compress, and download the resulting ZIP archive.' }],
-    faqs: [{ q: 'Is there a file count limit?', a: 'No, but compressing more than 50 images at once may slow down older devices.' }]
+  "convert-format": {
+    "title": "Universal Image Converter — Fast & Private",
+    "subtitle": "Convert between all major image formats instantly in your browser. **100% secure.**",
+    "introduction": "Experience the ultimate flexibility with the ImageFlow Universal Image Converter, your all-in-one solution for format transformations. Whether you need to switch between JPG, PNG, WebP, SVG, or HEIC, this powerful tool handles it all directly within your web browser. The defining feature of our platform is our unwavering commitment to your privacy and data security. Unlike conventional online converters that force you to upload your personal files to vulnerable remote servers, our application leverages advanced browser technologies to perform all conversions locally on your own device. This zero-upload architecture ensures that your sensitive images are never exposed to the internet, providing a 100% secure, offline-like experience once the page loads. Ideal for creative professionals, developers, and everyday users, this tool effortlessly manages batch processing, allowing you to transform massive image libraries in mere seconds. Enjoy a flawlessly fast, entirely free, and uncompromisingly secure workflow that adapts to whatever format requirements your current project demands.",
+    "useCases": {
+      "title": "Common Use Cases for Universal Image Conversion",
+      "items": [
+        {
+          "icon": "Settings",
+          "title": "Format Standardization",
+          "description": "Bring diverse image assets into a single, uniform format for projects."
+        },
+        {
+          "icon": "Globe",
+          "title": "Web Publishing",
+          "description": "Quickly adapt heavy files into optimized, web-ready formats."
+        },
+        {
+          "icon": "ShieldCheck",
+          "title": "Secure Processing",
+          "description": "Process confidential client files without risking a cloud upload."
+        }
+      ]
+    },
+    "steps": {
+      "title": "How to Convert Any Image Format in 4 Steps",
+      "items": [
+        {
+          "title": "Upload Files",
+          "description": "Drag and drop the images you wish to convert into the tool."
+        },
+        {
+          "title": "Select Output",
+          "description": "Choose your desired target format from the dropdown menu."
+        },
+        {
+          "title": "Convert",
+          "description": "Initiate the secure, local conversion process instantly."
+        },
+        {
+          "title": "Download All",
+          "description": "Save your newly formatted files directly to your hard drive."
+        }
+      ]
+    },
+    "faqs": [
+      {
+        "q": "What formats are supported by this universal converter?",
+        "a": "We support a wide array of popular formats including JPG, PNG, WebP, SVG, and HEIC, all processed locally."
+      },
+      {
+        "q": "How is it possible that my files aren't uploaded?",
+        "a": "Our site utilizes modern WebAssembly and browser APIs to execute the file conversion algorithms directly on your device."
+      },
+      {
+        "q": "Does this tool work completely free of charge?",
+        "a": "Yes, the Universal Image Converter is entirely free to use with no hidden subscription fees."
+      }
+    ]
   },
-
-  'batch-resize': {
-    title: 'Batch Image Resizer — Resize Multiple Images Online',
-    subtitle: 'Resize a batch of photos to the same dimensions instantly. Perfect for web galleries.',
-    introduction: 'Ensure all your images have consistent dimensions. Our Batch Resizer lets you set a uniform width or height and process all your images at once.',
-    sections: [{ heading: 'Batch Resizing Guide', content: 'Select your files, enter the target width/height or percentage, and download them as a ZIP.' }],
-    faqs: [{ q: 'Does it preserve aspect ratio?', a: 'Yes, you can lock the aspect ratio to prevent stretching.' }]
+  "merge-pdf": {
+    "title": "Merge PDF Files Online — Secure & Fast",
+    "subtitle": "Combine multiple PDF documents effortlessly. **100% secure and local.**",
+    "introduction": "Are you tired of dealing with multiple scattered documents? With ImageFlow's Merge PDF tool, you can easily combine multiple PDF files into a single, cohesive document directly in your web browser. Whether you are compiling a comprehensive business report, organizing academic research papers, or merging personal invoices, our intuitive platform simplifies the entire process. What sets ImageFlow apart is our commitment to your privacy and security. Unlike traditional online PDF converters that require you to upload your sensitive files to a remote server, our tool processes everything locally on your device. This means your data never leaves your computer, ensuring 100% secure, upload-free operations. You can confidently merge confidential financial records, legal contracts, or medical documents without worrying about data breaches or unauthorized access. Furthermore, because the processing happens locally, you experience lightning-fast speeds without being hindered by slow internet connections or upload limits. The seamless drag-and-drop interface allows you to reorder pages effortlessly before generating your final merged document. Say goodbye to cluttered desktop folders and hello to streamlined file management. Optimize your workflow today by choosing our secure, fast, and completely free in-browser PDF merger. Experience the ultimate peace of mind knowing your files remain strictly under your control while achieving professional results in mere seconds.",
+    "useCases": {
+      "title": "Common Use Cases for Merging PDFs",
+      "items": [
+        {
+          "icon": "Briefcase",
+          "title": "Business Reports",
+          "description": "Combine monthly reports into one file."
+        },
+        {
+          "icon": "GraduationCap",
+          "title": "Academic Portfolios",
+          "description": "Merge research papers and notes."
+        },
+        {
+          "icon": "FileText",
+          "title": "Financial Records",
+          "description": "Group tax documents and invoices."
+        }
+      ]
+    },
+    "steps": {
+      "title": "How to Merge PDFs in 4 Steps",
+      "items": [
+        {
+          "title": "Upload",
+          "description": "Drag and drop your PDF files into the tool."
+        },
+        {
+          "title": "Reorder",
+          "description": "Drag the thumbnails to arrange the files in the desired order."
+        },
+        {
+          "title": "Merge",
+          "description": "Click the merge button to combine the documents."
+        },
+        {
+          "title": "Download",
+          "description": "Save the newly merged PDF instantly to your device."
+        }
+      ]
+    },
+    "faqs": [
+      {
+        "q": "Are my files uploaded to a server?",
+        "a": "No. All processing happens locally in your browser. Your files never leave your device."
+      },
+      {
+        "q": "Can I reorder pages before merging?",
+        "a": "Yes, you can easily drag and drop files into the correct sequence before clicking merge."
+      },
+      {
+        "q": "Is there a file size limit?",
+        "a": "Since processing is local, there are no artificial file size limits, but performance depends on your device's memory."
+      }
+    ]
   },
-
-  'bulk-format-convert': {
-    title: 'Bulk Image Converter — Batch Convert Formats Online',
-    subtitle: 'Convert multiple images to WebP, JPG, or PNG in one click. Free and private.',
-    introduction: 'Batch convert your images to modern web-friendly formats like WebP or standard formats like JPEG and PNG in seconds.',
-    sections: [{ heading: 'How to Batch Convert', content: 'Select your images, choose your target format, convert, and download the ZIP.' }],
-    faqs: [{ q: 'Can I convert PNG to WebP in bulk?', a: 'Yes, WebP is highly recommended for faster website speeds.' }]
+  "split-pdf": {
+    "title": "Split PDF Pages Easily — Free & Secure",
+    "subtitle": "Extract pages and divide PDFs instantly. **100% secure.**",
+    "introduction": "Managing large, unwieldy PDF files can be a frustrating and time-consuming task, especially when you only need a few specific pages. The ImageFlow Split PDF tool is designed to solve this problem by allowing you to easily extract, divide, or separate your documents exactly how you want them. Whether you need to pull a single chapter from a massive digital textbook, extract specific financial statements for your accountant, or divide a scanned batch of individual contracts, our tool makes it incredibly simple. Security is at the core of the ImageFlow experience. All document splitting happens entirely locally within your web browser. There is absolutely no need to upload your sensitive files to external cloud servers, guaranteeing 100% secure processing. Your confidential data, whether it comprises legal agreements, proprietary business plans, or personal records, remains safely on your device at all times. Since everything is handled offline within the browser environment, you will also benefit from instantaneous processing speeds, regardless of your internet connection quality. The user-friendly interface lets you preview pages and precisely select the ranges you wish to extract. Simplify your digital document management and improve your daily productivity with our secure, upload-free PDF splitter. Enjoy the perfect blend of complete privacy, blazing speed, and professional-grade document manipulation without ever compromising your sensitive information.",
+    "useCases": {
+      "title": "Common Use Cases for Splitting PDFs",
+      "items": [
+        {
+          "icon": "Scissors",
+          "title": "Extract Chapters",
+          "description": "Pull specific chapters from long ebooks."
+        },
+        {
+          "icon": "BookOpen",
+          "title": "Separate Contracts",
+          "description": "Divide batch-scanned documents into individual files."
+        },
+        {
+          "icon": "FileText",
+          "title": "Client Invoices",
+          "description": "Isolate specific pages to send to clients."
+        }
+      ]
+    },
+    "steps": {
+      "title": "How to Split PDFs in 4 Steps",
+      "items": [
+        {
+          "title": "Upload",
+          "description": "Select the PDF file you want to split."
+        },
+        {
+          "title": "Select Pages",
+          "description": "Choose specific pages or define custom page ranges."
+        },
+        {
+          "title": "Split",
+          "description": "Click the split button to separate the document."
+        },
+        {
+          "title": "Download",
+          "description": "Download your extracted pages as new PDF files."
+        }
+      ]
+    },
+    "faqs": [
+      {
+        "q": "Is it safe to split confidential documents here?",
+        "a": "Absolutely. Processing is 100% local, so your files are never uploaded to our servers."
+      },
+      {
+        "q": "Can I extract non-consecutive pages?",
+        "a": "Yes, you can manually select individual pages or specify exact page ranges to extract."
+      },
+      {
+        "q": "Will the extracted pages lose quality?",
+        "a": "No, the split PDF files will maintain the exact same quality and resolution as the original."
+      }
+    ]
   },
-
-  'collage-maker': {
-    title: 'Online Collage Maker — Combine Photos into Grid Layouts',
-    subtitle: 'Create beautiful photo collages with customizable grids, borders, and spacings.',
-    introduction: 'Arrange your favorite photos into a single grid. Perfect for social media, travel memories, or product showcases.',
-    sections: [{ heading: 'How to Create a Collage', content: 'Select your layout grid, upload your photos into each slot, adjust borders, and download.' }],
-    faqs: [{ q: 'Can I customize the border color?', a: 'Yes, you can adjust border thickness, roundness, and color.' }]
+  "compress-pdf": {
+    "title": "Compress PDF Size — Optimize Quality",
+    "subtitle": "Reduce PDF file sizes for easy sharing. **100% secure.**",
+    "introduction": "Large PDF files can be incredibly cumbersome, making them difficult to share via email, upload to application portals, or store efficiently on your device. The ImageFlow Compress PDF tool provides the perfect solution, enabling you to significantly reduce your file sizes without sacrificing essential document quality. Whether you are a student submitting a heavy assignment filled with high-resolution images, a professional sharing extensive marketing portfolios, or simply trying to free up valuable hard drive space, our compression tool delivers exceptional results. We prioritize your digital security and privacy above all else. With ImageFlow, the entire compression process takes place locally right inside your web browser. You never have to upload your private files to unknown servers, ensuring a 100% secure, risk-free experience. This local processing model guarantees that your sensitive financial documents, confidential business contracts, and personal records remain strictly on your own hardware. Additionally, by eliminating the need for cloud uploads and downloads, you can compress hefty documents almost instantly, completely bypassing slow internet bottlenecks. Our smart compression algorithms automatically balance file size reduction with visual fidelity, giving you the best of both worlds. Experience seamless, ultra-fast, and completely private document optimization. Compress your PDFs today to ensure effortless sharing and efficient storage, all while maintaining absolute control over your sensitive digital assets.",
+    "useCases": {
+      "title": "Common Use Cases for Compressing PDFs",
+      "items": [
+        {
+          "icon": "Mail",
+          "title": "Email Attachments",
+          "description": "Bypass file size limits for email providers."
+        },
+        {
+          "icon": "HardDrive",
+          "title": "Storage Optimization",
+          "description": "Free up valuable disk space on your computer."
+        },
+        {
+          "icon": "Share2",
+          "title": "Web Uploads",
+          "description": "Meet size requirements for online application portals."
+        }
+      ]
+    },
+    "steps": {
+      "title": "How to Compress PDFs in 4 Steps",
+      "items": [
+        {
+          "title": "Upload",
+          "description": "Drag and drop the large PDF into the compressor."
+        },
+        {
+          "title": "Select Level",
+          "description": "Choose your desired balance between file size and quality."
+        },
+        {
+          "title": "Compress",
+          "description": "Let the tool shrink the file size instantly."
+        },
+        {
+          "title": "Download",
+          "description": "Save the optimized PDF back to your device."
+        }
+      ]
+    },
+    "faqs": [
+      {
+        "q": "Will compression ruin my document's quality?",
+        "a": "Our smart algorithm optimizes images and fonts to significantly reduce size while keeping text sharp and legible."
+      },
+      {
+        "q": "Do I need to upload my file?",
+        "a": "No, all compression happens locally on your device for maximum security and speed."
+      },
+      {
+        "q": "How much smaller will my file be?",
+        "a": "Reductions vary, but image-heavy PDFs can often be compressed by 50-80% without noticeable quality loss."
+      }
+    ]
   },
-
-  'merge-images': {
-    title: 'Merge Images Online — Combine Photos Side-by-Side',
-    subtitle: 'Stitch multiple images together horizontally or vertically into a single photo.',
-    introduction: 'Merge two or more photos side-by-side or stacked vertically. Great for comparison shots, before/after graphics, or panorama stitches.',
-    sections: [{ heading: 'Stitching Guide', content: 'Upload your images, choose horizontal or vertical alignment, adjust spacing, and download.' }],
-    faqs: [{ q: 'Can I change the order of images?', a: 'Yes, you can reorder the uploaded images before merging.' }]
+  "rotate-pdf": {
+    "title": "Rotate PDF Pages — Fix Orientation",
+    "subtitle": "Turn and rotate PDF pages easily. **100% secure.**",
+    "introduction": "Have you ever opened a scanned document only to find that some or all of the pages are upside down or sideways? The ImageFlow Rotate PDF tool offers a quick and effortless way to correct the orientation of your documents, ensuring they are perfectly readable and professionally presented. Whether you are dealing with improperly scanned legal contracts, landscape charts that ended up in portrait mode, or architectural blueprints that need adjustment, our tool gives you full control. Just like all tools in the ImageFlow suite, our PDF rotator is built with absolute security and privacy in mind. We utilize advanced in-browser processing technology, which means your files are modified locally on your own computer. You never have to upload your sensitive documents to a remote server, making the entire process 100% secure and private. Your proprietary business information, personal identification documents, and confidential records never leave your device. Because the processing is completely local, you will also experience immediate results without waiting for files to upload or download. The intuitive interface allows you to rotate individual pages or the entire document with just a few clicks. Fix your document orientation instantly and maintain complete peace of mind knowing that your privacy is fully protected. Achieve perfect alignment for all your important files with our lightning-fast, upload-free PDF rotation tool.",
+    "useCases": {
+      "title": "Common Use Cases for Rotating PDFs",
+      "items": [
+        {
+          "icon": "RefreshCw",
+          "title": "Scanned Documents",
+          "description": "Fix upside-down pages from quick scans."
+        },
+        {
+          "icon": "Image",
+          "title": "Landscape Charts",
+          "description": "Turn wide charts or diagrams to landscape view."
+        },
+        {
+          "icon": "Map",
+          "title": "Blueprints",
+          "description": "Adjust the orientation of architectural plans."
+        }
+      ]
+    },
+    "steps": {
+      "title": "How to Rotate PDFs in 4 Steps",
+      "items": [
+        {
+          "title": "Upload",
+          "description": "Add your misaligned PDF document to the tool."
+        },
+        {
+          "title": "Select Pages",
+          "description": "Choose specific pages or select the entire document."
+        },
+        {
+          "title": "Rotate",
+          "description": "Click the rotate icon to turn pages 90, 180, or 270 degrees."
+        },
+        {
+          "title": "Download",
+          "description": "Save the corrected PDF to your device."
+        }
+      ]
+    },
+    "faqs": [
+      {
+        "q": "Can I rotate just one page?",
+        "a": "Yes, you can rotate individual pages independently from the rest of the document."
+      },
+      {
+        "q": "Is the original file altered permanently?",
+        "a": "No, the tool generates a new, rotated PDF file for you to download. Your original file remains untouched."
+      },
+      {
+        "q": "Are my files stored online?",
+        "a": "Never. All rotation processing is done securely within your browser."
+      }
+    ]
   },
-
-  'watermark-pdf': {
-    title: 'Watermark PDF Online Free — Protect Your PDF Documents',
-    subtitle: 'Add text watermarks to your PDF pages. Customize font, size, opacity, and angle.',
-    introduction: 'Protect your intellectual property, label drafts, or add branding to your PDF files with customizable text watermarks.',
-    sections: [{ heading: 'How to Watermark a PDF', content: 'Upload your PDF, enter the watermark text, adjust the opacity and angle, and download.' }],
-    faqs: [{ q: 'Can I apply the watermark to all pages?', a: 'Yes, the watermark is automatically applied to all pages of the document.' }]
+  "crop-pdf": {
+    "title": "Crop PDF Documents — Trim Margins",
+    "subtitle": "Remove white space and adjust margins. **100% secure.**",
+    "introduction": "Sometimes your PDF documents come with unnecessary white space, unsightly printer marks, or irregular margins that detract from the content itself. The ImageFlow Crop PDF tool provides a highly precise and user-friendly way to trim those excess edges and focus purely on what matters. Whether you are preparing a digital ebook for a clean reading experience, formatting presentation slides, or standardizing scanned receipts for your expense reports, our cropping tool ensures a polished, professional look. At ImageFlow, we believe that optimizing your documents should never come at the cost of your privacy. That is why our cropping tool performs all modifications entirely locally within your web browser. There are zero file uploads required, ensuring a 100% secure environment for your most sensitive data. Whether you are adjusting confidential legal briefings, proprietary design layouts, or personal tax forms, your files never touch an external server. This secure, client-side processing also translates to blazing-fast performance, allowing you to crop large documents instantaneously without relying on a strong internet connection. Our visual interface makes it incredibly easy to define your crop area, giving you granular control over the final dimensions. Enhance your document presentation quickly, securely, and seamlessly with ImageFlow's upload-free PDF cropping solution.",
+    "useCases": {
+      "title": "Common Use Cases for Cropping PDFs",
+      "items": [
+        {
+          "icon": "Crop",
+          "title": "Remove Margins",
+          "description": "Trim large white borders for better reading on screens."
+        },
+        {
+          "icon": "Smartphone",
+          "title": "Mobile Optimization",
+          "description": "Crop content tightly to fit perfectly on mobile devices."
+        },
+        {
+          "icon": "Printer",
+          "title": "Print Preparation",
+          "description": "Eliminate bleed marks and scanner shadows."
+        }
+      ]
+    },
+    "steps": {
+      "title": "How to Crop PDFs in 4 Steps",
+      "items": [
+        {
+          "title": "Upload",
+          "description": "Load the PDF you want to trim."
+        },
+        {
+          "title": "Draw Area",
+          "description": "Use the visual selector to define the new margins."
+        },
+        {
+          "title": "Apply Crop",
+          "description": "Confirm the selection to trim the document."
+        },
+        {
+          "title": "Download",
+          "description": "Save the neatly cropped PDF to your computer."
+        }
+      ]
+    },
+    "faqs": [
+      {
+        "q": "Does cropping reduce file size?",
+        "a": "It can slightly reduce size, but its primary purpose is visually hiding unwanted margin content."
+      },
+      {
+        "q": "Can I crop all pages at once?",
+        "a": "Yes, you can apply your selected crop area universally to every page in the document."
+      },
+      {
+        "q": "Is this tool secure for financial documents?",
+        "a": "Yes. Processing is strictly local, guaranteeing 100% data privacy."
+      }
+    ]
   },
-
-  'sign-pdf': {
-    title: 'Sign PDF Online Free — Add Digital Signature to PDF',
-    subtitle: 'Draw your signature and place it on any page of your PDF document. Secure and offline.',
-    introduction: 'Sign contracts, lease agreements, and official forms in seconds. Draw your signature using your mouse, trackpad, or touch screen and place it anywhere on the PDF.',
-    sections: [{ heading: 'How to Sign a PDF', content: 'Upload your PDF, draw your signature in the pad, drag it to the correct position, and download.' }],
-    faqs: [{ q: 'Is my signature secure?', a: 'Yes, the signing process happens entirely in your browser. We never see or store your signature.' }]
+  "watermark-pdf": {
+    "title": "Add Watermark to PDF — Brand Protection",
+    "subtitle": "Stamp PDFs with text or image watermarks. **100% secure.**",
+    "introduction": "Protecting your intellectual property and establishing brand identity is crucial in today's digital landscape. The ImageFlow Watermark PDF tool empowers you to easily add customized text or image watermarks to your documents, ensuring your work is properly attributed and safeguarded against unauthorized use. Whether you are a photographer sharing sample proofs, a business sending out confidential internal memos, or a creative agency distributing draft designs, watermarking adds an essential layer of professionalism and security. Speaking of security, ImageFlow sets the standard by ensuring your files remain completely private. Our advanced platform processes your documents entirely within your web browser. You do not need to upload your sensitive files to external servers, which guarantees a 100% secure, risk-free experience. When you are stamping documents with 'Confidential' or applying your company logo, you can rest easy knowing that the data never leaves your personal device. This fully local processing architecture also means you benefit from incredibly fast rendering times, completely unaffected by network latency or bandwidth limitations. You can easily adjust the transparency, position, and rotation of your watermark to achieve the perfect balance between visibility and readability. Secure your digital assets, promote your brand, and maintain absolute privacy with our fast, upload-free in-browser PDF watermarking tool.",
+    "useCases": {
+      "title": "Common Use Cases for Watermarking",
+      "items": [
+        {
+          "icon": "Shield",
+          "title": "Document Security",
+          "description": "Stamp files as 'Confidential' or 'Draft'."
+        },
+        {
+          "icon": "Stamp",
+          "title": "Brand Identity",
+          "description": "Overlay your company logo on external documents."
+        },
+        {
+          "icon": "Lock",
+          "title": "Copyright Protection",
+          "description": "Protect photos and artwork from unauthorized sharing."
+        }
+      ]
+    },
+    "steps": {
+      "title": "How to Watermark PDFs in 4 Steps",
+      "items": [
+        {
+          "title": "Upload",
+          "description": "Import the document you wish to protect."
+        },
+        {
+          "title": "Configure",
+          "description": "Add your custom text or logo and adjust opacity."
+        },
+        {
+          "title": "Position",
+          "description": "Place the watermark exactly where you want it."
+        },
+        {
+          "title": "Download",
+          "description": "Save the watermarked PDF securely to your device."
+        }
+      ]
+    },
+    "faqs": [
+      {
+        "q": "Can I use an image as a watermark?",
+        "a": "Yes, you can upload a PNG or JPG logo to use as a custom image watermark."
+      },
+      {
+        "q": "Is my proprietary data safe?",
+        "a": "Absolutely. Your files are processed locally, ensuring zero data exposure to external servers."
+      },
+      {
+        "q": "Can I change the transparency of the text?",
+        "a": "Yes, you have full control over the opacity to ensure the underlying document remains readable."
+      }
+    ]
   },
-
-  'crop-pdf': {
-    title: 'Crop PDF Online Free — Crop PDF Margins easily',
-    subtitle: 'Trim margins or crop specific areas of your PDF pages with an interactive selector.',
-    introduction: 'Remove unwanted white borders, headers, or footers from your PDF documents using our visual cropping tool.',
-    sections: [{ heading: 'PDF Cropping Guide', content: 'Upload your PDF, drag the crop box over the area you want to keep, and download.' }],
-    faqs: [{ q: 'Can I crop all pages at once?', a: 'Yes, you can choose to apply the crop to the current page or all pages.' }]
+  "sign-pdf": {
+    "title": "Sign PDF Documents — Add E-Signatures",
+    "subtitle": "Electronically sign contracts and forms. **100% secure.**",
+    "introduction": "In an increasingly remote and fast-paced world, printing, signing, and scanning documents is a highly inefficient use of your valuable time. The ImageFlow Sign PDF tool provides a seamless digital solution, allowing you to quickly and easily add electronic signatures to your contracts, forms, and agreements right from your computer. Whether you are a freelancer signing a new client agreement, a tenant finalizing a lease, or an HR professional executing onboarding documents, our e-signature tool streamlines your entire administrative workflow. Because signatures inherently involve highly sensitive and legally binding information, security is our utmost priority. ImageFlow operates exclusively through local, in-browser processing. This means your private contracts and personal signatures are never uploaded to any cloud servers. The entire signing process is 100% secure and happens entirely on your own device, protecting you from potential data breaches and unauthorized surveillance. In addition to offering unparalleled privacy, this local-first approach guarantees immediate processing speeds without any annoying upload delays. You can effortlessly draw your signature, type your name, or upload an image of your signature and place it exactly where it needs to go. Modernize your document workflow, save paper, and ensure absolute data confidentiality with our lightning-fast, upload-free PDF signing tool.",
+    "useCases": {
+      "title": "Common Use Cases for Signing PDFs",
+      "items": [
+        {
+          "icon": "PenTool",
+          "title": "Freelance Contracts",
+          "description": "Sign non-disclosure agreements and client contracts."
+        },
+        {
+          "icon": "FileCheck",
+          "title": "Tax Forms",
+          "description": "Quickly sign official W-9 or 1099 tax forms."
+        },
+        {
+          "icon": "Building",
+          "title": "Real Estate",
+          "description": "Execute rental leases and housing applications digitally."
+        }
+      ]
+    },
+    "steps": {
+      "title": "How to Sign PDFs in 4 Steps",
+      "items": [
+        {
+          "title": "Upload",
+          "description": "Open your contract or form in the signing tool."
+        },
+        {
+          "title": "Create Signature",
+          "description": "Draw, type, or upload an image of your signature."
+        },
+        {
+          "title": "Place",
+          "description": "Drag the signature to the correct field and resize it."
+        },
+        {
+          "title": "Download",
+          "description": "Export your finalized, securely signed document."
+        }
+      ]
+    },
+    "faqs": [
+      {
+        "q": "Are my signatures and documents stored online?",
+        "a": "No, our tool is 100% local. Your sensitive documents and signature data never leave your computer."
+      },
+      {
+        "q": "Can I type my signature instead of drawing it?",
+        "a": "Yes, we offer multiple fonts so you can simply type your name for a clean, professional signature."
+      },
+      {
+        "q": "Is this feature entirely free to use?",
+        "a": "Yes, you can sign your documents locally at no cost and with no upload requirements."
+      }
+    ]
   },
-
-  'rotate-pdf': {
-    title: 'Rotate PDF Online Free — Turn PDF Pages Online',
-    subtitle: 'Rotate individual pages or the entire PDF document. Fix upside-down scans instantly.',
-    introduction: 'Correct sideways or upside-down scans quickly. Rotate pages by 90, 180, or 270 degrees in a simple visual interface.',
-    sections: [{ heading: 'How to Rotate PDF Pages', content: 'Upload your PDF, select the rotation angle, choose whether to apply to all or specific pages, and download.' }],
-    faqs: [{ q: 'Can I rotate just one page?', a: 'Yes, you can select and rotate individual pages.' }]
+  "compress-image": {
+    "title": "Free Online Image Compressor — Reduce Image File Size Instantly",
+    "subtitle": "Compress JPG, PNG, and WebP images instantly in your browser. **100% secure.**",
+    "introduction": "Are you struggling with slow-loading web pages or enormous file attachments? Our free online image compressor is the ultimate solution for anyone looking to reduce image file size without sacrificing quality. By leveraging advanced browser-based technology, this tool allows you to compress JPG, PNG, and WebP images entirely locally. Unlike traditional web services, there is absolutely no server upload involved. This means your sensitive photographs and proprietary graphics remain strictly on your own device, guaranteeing complete privacy and 100% security. Whether you are a professional web developer aiming to improve SEO rankings through faster page load times, a digital marketer optimizing visual content for social media, or a casual user trying to free up hard drive space, this image optimization utility is perfect for you. The interface is remarkably intuitive—simply drag and drop your files, adjust the compression settings to your liking, and download the optimized results in seconds. You can easily achieve up to 80% reduction in file size while maintaining stunning visual fidelity. Experience the fastest, safest, and most reliable way to optimize your digital assets today. Reduce image size online with confidence, knowing your data is protected and your workflow is streamlined.",
+    "useCases": {
+      "title": "Common Use Cases for Image Compression",
+      "items": [
+        {
+          "icon": "Globe",
+          "title": "Web Optimization",
+          "description": "Accelerate website loading speeds to improve SEO and user experience."
+        },
+        {
+          "icon": "Mail",
+          "title": "Email Attachments",
+          "description": "Reduce file sizes to easily share photos without exceeding email limits."
+        },
+        {
+          "icon": "Smartphone",
+          "title": "Storage Management",
+          "description": "Free up valuable disk space on your computer or mobile device."
+        }
+      ]
+    },
+    "steps": {
+      "title": "How to Compress Images in 4 Steps",
+      "items": [
+        {
+          "title": "Upload",
+          "description": "Drag and drop your images into the compression area."
+        },
+        {
+          "title": "Select Settings",
+          "description": "Choose your desired compression level and output format."
+        },
+        {
+          "title": "Compress",
+          "description": "Click the compress button to process the images locally."
+        },
+        {
+          "title": "Download",
+          "description": "Save the optimized, smaller image files to your device."
+        }
+      ]
+    },
+    "faqs": [
+      {
+        "q": "Are my images uploaded to a server?",
+        "a": "No, all processing happens locally in your browser. Your files are never uploaded, ensuring 100% privacy."
+      },
+      {
+        "q": "Which image formats are supported?",
+        "a": "You can compress JPG, PNG, WebP, and other common image formats natively."
+      },
+      {
+        "q": "Will compression reduce the quality of my photo?",
+        "a": "Our tool uses smart compression algorithms to significantly reduce file size while maintaining near-original visual quality."
+      }
+    ]
   },
-
-  'rotate-image': {
-    title: 'Rotate Image Online Free — Flip & Turn Photos',
-    subtitle: 'Rotate images by any angle or flip them horizontally/vertically. Free and fast.',
-    introduction: 'Fix photo orientation errors. Rotate your JPG, PNG, or WebP images in seconds.',
-    sections: [{ heading: 'How to Rotate Images', content: 'Upload your image, click the rotate buttons or enter a custom angle, and download.' }],
-    faqs: [{ q: 'Can I flip the image?', a: 'Yes, you can mirror the image horizontally or vertically.' }]
+  "bulk-compress": {
+    "title": "Bulk Image Compressor — Optimize Multiple Photos at Once",
+    "subtitle": "Batch compress thousands of images simultaneously. **100% secure.**",
+    "introduction": "When managing extensive libraries of digital photographs or preparing massive e-commerce product catalogs, compressing files one by one is an incredibly tedious and inefficient process. Our bulk image compressor is explicitly designed to solve this problem by allowing you to optimize hundreds or even thousands of images simultaneously. Utilizing powerful web-assembly and modern browser APIs, this batch image optimization tool processes your entire queue locally on your machine. Because there are no file uploads required, you can bypass the frustrating waiting times associated with slow internet connections or restrictive server upload limits. More importantly, this client-side processing guarantees 100% data security—your unreleased product shots, private family albums, and confidential business assets never leave your computer. Photographers can rapidly prepare high-resolution event galleries for client delivery, while web developers can effortlessly crush entire directories of assets for modern web applications. The tool intelligently balances file size reduction and image quality across the entire batch, ensuring consistent results. Stop wasting precious hours on manual repetitive tasks. Empower your workflow with our secure, lightning-fast batch image compressor and reclaim your time while maintaining total control over your digital content.",
+    "useCases": {
+      "title": "Common Use Cases for Bulk Compression",
+      "items": [
+        {
+          "icon": "Camera",
+          "title": "Photography",
+          "description": "Batch process massive wedding or event galleries for client delivery."
+        },
+        {
+          "icon": "ShoppingCart",
+          "title": "E-Commerce",
+          "description": "Quickly optimize hundreds of product images for faster store loading."
+        },
+        {
+          "icon": "FolderTree",
+          "title": "Archiving",
+          "description": "Shrink entire folders of historical data to save local storage space."
+        }
+      ]
+    },
+    "steps": {
+      "title": "How to Bulk Compress in 3 Steps",
+      "items": [
+        {
+          "title": "Select Files",
+          "description": "Highlight and drag multiple files or entire folders into the tool."
+        },
+        {
+          "title": "Adjust Quality",
+          "description": "Set a global compression target for the entire batch."
+        },
+        {
+          "title": "Process & Save",
+          "description": "Run the bulk operation and download all optimized files as a ZIP."
+        }
+      ]
+    },
+    "faqs": [
+      {
+        "q": "Is there a limit to how many images I can batch compress?",
+        "a": "There is no hard limit. Since it runs in your browser, the only constraint is your computer's memory and processing power."
+      },
+      {
+        "q": "Is bulk compression safe for confidential files?",
+        "a": "Absolutely. Zero files are uploaded to our servers. Everything is handled securely on your device."
+      },
+      {
+        "q": "Can I keep the original folder structure?",
+        "a": "Yes, our tool can maintain your folder hierarchy when saving the optimized files."
+      }
+    ]
   },
-
-  'svg-to-png': {
-    title: 'SVG to PNG Converter — Rasterize Vector Files Online',
-    subtitle: 'Convert SVG vector graphics to high-resolution PNG images with transparency support.',
-    introduction: 'SVG files are vectors and can scale infinitely, but they are not supported everywhere. Convert them to PNGs for easy sharing and web use.',
-    sections: [{ heading: 'How to Convert SVG to PNG', content: 'Upload your SVG, choose the rendering scale (e.g., 2x or 3x for high-res), and download.' }],
-    faqs: [{ q: 'Does it preserve transparent backgrounds?', a: 'Yes, the output PNG will keep the original SVG transparency.' }]
+  "metadata-remover": {
+    "title": "EXIF Data Cleaner — Remove Image Metadata Online",
+    "subtitle": "Strip GPS location and camera data from photos instantly. **100% secure.**",
+    "introduction": "Every photograph you capture with a smartphone or modern digital camera contains a wealth of hidden information known as EXIF data. This metadata can include sensitive details such as the exact GPS coordinates where the picture was taken, the date and time of capture, and the specific device model used. When sharing images online, on social media, or via messaging apps, this hidden data can inadvertently expose your private location and personal habits to the public. Our online metadata remover is an essential privacy utility that completely strips all EXIF, IPTC, and XMP data from your images in a matter of milliseconds. Designed with absolute privacy at its core, this EXIF data cleaner operates entirely within your web browser. Your photos are never uploaded to an external server, meaning your raw, unedited images and their corresponding location data remain 100% secure on your personal device. Whether you are an investigative journalist protecting confidential sources, a concerned parent sharing family photos, or a cybersecurity conscious individual maintaining operational security, this tool provides peace of mind. Simply drop your image into the cleaner, and download a completely sanitized version that is entirely safe to share publicly.",
+    "useCases": {
+      "title": "Common Use Cases for Metadata Removal",
+      "items": [
+        {
+          "icon": "Shield",
+          "title": "Online Privacy",
+          "description": "Remove GPS coordinates before posting pictures on public forums or social media."
+        },
+        {
+          "icon": "Briefcase",
+          "title": "Journalism",
+          "description": "Protect the location and identity of sensitive sources in investigative reporting."
+        },
+        {
+          "icon": "Image",
+          "title": "File Size Reduction",
+          "description": "Strip unnecessary hidden data to slightly reduce the overall file size."
+        }
+      ]
+    },
+    "steps": {
+      "title": "How to Remove EXIF Data in 3 Steps",
+      "items": [
+        {
+          "title": "Upload Image",
+          "description": "Select the photo you wish to clean from metadata."
+        },
+        {
+          "title": "Scrub Data",
+          "description": "The tool automatically detects and deletes all hidden EXIF/GPS information."
+        },
+        {
+          "title": "Download Clean File",
+          "description": "Save the newly sanitized image to your device, ready for safe sharing."
+        }
+      ]
+    },
+    "faqs": [
+      {
+        "q": "What is EXIF data?",
+        "a": "EXIF data is hidden metadata embedded in photos, often containing GPS location, camera settings, and timestamps."
+      },
+      {
+        "q": "Will removing metadata lower the image quality?",
+        "a": "No, stripping metadata does not affect the visual quality or resolution of your image at all."
+      },
+      {
+        "q": "Is my location data uploaded?",
+        "a": "Never. All scrubbing happens locally in your browser, ensuring your private data never leaves your device."
+      }
+    ]
   },
-
-  'webp-converter': {
-    title: 'WebP Converter — Convert Images to WebP Online',
-    subtitle: 'Convert JPG, PNG, or BMP images to WebP format for faster web performance.',
-    introduction: 'WebP is the modern image format for the web. It offers up to 30% smaller file sizes than JPEG with identical visual quality.',
-    sections: [{ heading: 'How to Convert to WebP', content: 'Upload your images, adjust the quality slider, and download the optimized WebP files.' }],
-    faqs: [{ q: 'Why should I use WebP?', a: 'WebP significantly reduces webpage load times, improving your website\'s SEO and PageSpeed score.' }]
+  "batch-resize": {
+    "title": "Bulk Image Resizer — Resize Multiple Photos Quickly",
+    "subtitle": "Change dimensions of multiple images at once. **100% secure.**",
+    "introduction": "Resizing multiple images to exact pixel dimensions is a critical but notoriously time-consuming requirement for web design, app development, and social media management. Our bulk image resizer eliminates this hassle by providing a lightning-fast, browser-based solution to scale hundreds of pictures concurrently. Whether you need to generate uniform thumbnails for a blog, prepare hero images for a responsive website, or format graphics to meet strict Instagram or Facebook dimension guidelines, this tool handles it effortlessly. You can resize by percentage, define precise custom pixel widths and heights, or lock the aspect ratio to prevent unnatural distortion. Crucially, this robust batch resize utility performs all image manipulation directly on your local machine using modern web technologies. There is absolutely no server upload required, which guarantees 100% data privacy and ensures you never have to wait for large files to transfer over the internet. Your proprietary designs and personal photographs are processed instantaneously and securely within the confines of your own device. Streamline your creative workflow, eliminate repetitive manual adjustments in complex editing software like Photoshop, and achieve perfectly sized visuals in a fraction of the time with our free online image resizer.",
+    "useCases": {
+      "title": "Common Use Cases for Batch Resizing",
+      "items": [
+        {
+          "icon": "Layout",
+          "title": "Web Design",
+          "description": "Quickly generate uniform thumbnails and optimized hero images for websites."
+        },
+        {
+          "icon": "Instagram",
+          "title": "Social Media",
+          "description": "Format batches of photos to meet specific dimension requirements for platforms."
+        },
+        {
+          "icon": "Package",
+          "title": "App Development",
+          "description": "Create various icon sizes and image assets required for iOS and Android apps."
+        }
+      ]
+    },
+    "steps": {
+      "title": "How to Batch Resize Images in 4 Steps",
+      "items": [
+        {
+          "title": "Add Files",
+          "description": "Drag and drop the images you want to resize."
+        },
+        {
+          "title": "Set Dimensions",
+          "description": "Input your desired width, height, or percentage scale."
+        },
+        {
+          "title": "Resize",
+          "description": "Click to process the entire batch locally in your browser."
+        },
+        {
+          "title": "Download All",
+          "description": "Download a ZIP file containing all your perfectly sized images."
+        }
+      ]
+    },
+    "faqs": [
+      {
+        "q": "Can I lock the aspect ratio?",
+        "a": "Yes, you can easily lock the aspect ratio to prevent your images from looking stretched or distorted."
+      },
+      {
+        "q": "Are my photos safe?",
+        "a": "100% safe. All resizing occurs locally on your machine. We never see or store your files."
+      },
+      {
+        "q": "Can I resize by percentage instead of pixels?",
+        "a": "Absolutely, you can scale images down by entering a percentage (e.g., 50% of the original size)."
+      }
+    ]
   },
-
-  'webp-to-png': {
-    title: 'WebP to PNG Converter — Free Online Tool',
-    subtitle: 'Convert WebP images back to standard PNG format with transparency preserved.',
-    introduction: 'Need to edit a WebP image in a tool that doesn\'t support it? Convert it back to a lossless PNG in one click.',
-    sections: [{ heading: 'How to Convert WebP to PNG', content: 'Upload your WebP file, click convert, and download the PNG instantly.' }],
-    faqs: [{ q: 'Is the conversion lossless?', a: 'Yes, converting WebP to PNG is a lossless process.' }]
+  "collage-maker": {
+    "title": "Free Online Photo Collage Maker",
+    "subtitle": "Combine photos into beautiful collages instantly. **100% secure.**",
+    "introduction": "Creating stunning visual stories has never been simpler with our free online photo collage maker. Whether you are compiling cherished memories from a recent family vacation, designing an engaging mood board for an interior design project, or crafting eye-catching promotional material for your business's social media channels, this tool offers unparalleled flexibility and ease of use. Featuring a wide variety of customizable grid layouts, adjustable border spacing, and responsive aspect ratios, you can effortlessly blend multiple pictures into a single cohesive masterpiece. The greatest advantage of our collage creator is its entirely local, browser-based architecture. Unlike other platforms that force you to upload your personal photos to remote servers—often subjecting them to questionable data retention policies—our tool processes everything directly on your computer. This guarantees 100% privacy and security for your intimate family portraits and confidential professional assets. Furthermore, bypassing server uploads means the drag-and-drop interface operates with zero lag, providing a seamless, real-time editing experience. Unleash your creativity without needing to install heavy graphic design software or compromise your privacy. Build, customize, and download high-resolution photo grids instantly, completely free of charge.",
+    "useCases": {
+      "title": "Common Use Cases for Photo Collages",
+      "items": [
+        {
+          "icon": "Heart",
+          "title": "Personal Memories",
+          "description": "Combine vacation, wedding, or birthday photos into beautiful keepsakes."
+        },
+        {
+          "icon": "Palette",
+          "title": "Mood Boards",
+          "description": "Create visual inspiration boards for design, fashion, or branding projects."
+        },
+        {
+          "icon": "Share2",
+          "title": "Social Media Posts",
+          "description": "Design engaging multi-photo grids for Instagram, Facebook, or Pinterest."
+        }
+      ]
+    },
+    "steps": {
+      "title": "How to Make a Collage in 4 Steps",
+      "items": [
+        {
+          "title": "Choose Layout",
+          "description": "Select a grid template that fits the number of photos you have."
+        },
+        {
+          "title": "Add Photos",
+          "description": "Drag and drop your images into the designated grid slots."
+        },
+        {
+          "title": "Customize",
+          "description": "Adjust borders, spacing, and aspect ratios to perfect the design."
+        },
+        {
+          "title": "Export",
+          "description": "Save the finished high-resolution collage directly to your device."
+        }
+      ]
+    },
+    "faqs": [
+      {
+        "q": "Do I need to create an account to make a collage?",
+        "a": "No account is required. You can start creating immediately from your browser."
+      },
+      {
+        "q": "Is my family photo privacy guaranteed?",
+        "a": "Yes. Because the collage is generated entirely locally in your browser, your photos are never uploaded or stored."
+      },
+      {
+        "q": "Can I print the final collage?",
+        "a": "Absolutely. You can download the collage in high resolution, making it perfect for printing."
+      }
+    ]
   },
-
-  'webp-to-jpg': {
-    title: 'WebP to JPG Converter — Convert WebP to JPEG',
-    subtitle: 'Convert WebP images to universally compatible JPG/JPEG format online.',
-    introduction: 'Convert WebP images to JPG to ensure they work on older devices, print services, or portals that do not accept WebP.',
-    sections: [{ heading: 'How to Convert WebP to JPG', content: 'Upload your WebP, set the target quality, and download the JPG.' }],
-    faqs: [{ q: 'Will the file size change?', a: 'Yes, the JPG file may be slightly larger than the WebP because WebP has superior compression.' }]
+  "bulk-format-convert": {
+    "title": "Batch Image Converter — Convert Image Formats Online",
+    "subtitle": "Convert JPG, PNG, WebP, and AVIF in bulk. **100% secure.**",
+    "introduction": "In today's diverse digital landscape, dealing with incompatible image formats can be a constant source of frustration. Our bulk format converter provides a robust, seamless solution for transforming hundreds of images from one format to another instantly. Whether you need to convert bulky PNGs into next-generation WebP files for superior website performance, transform proprietary HEIC smartphone photos into universally accepted JPGs, or standardize an entire folder of mixed formats into a single consistent file type, this tool does it all. By executing the conversion process natively within your web browser, we completely eliminate the need for slow, vulnerable server uploads. This innovative client-side approach ensures your files remain strictly on your local device, offering you 100% privacy and security for your proprietary graphics and personal media. It also means you are immune to annoying upload limits and long queue times typical of cloud-based converters. Designed for efficiency, this batch image converter is an indispensable utility for web developers, digital marketers, and casual users alike. Experience unparalleled speed and uncompromising data security as you batch convert your image libraries effortlessly in just a few clicks.",
+    "useCases": {
+      "title": "Common Use Cases for Format Conversion",
+      "items": [
+        {
+          "icon": "Code",
+          "title": "Web Development",
+          "description": "Convert standard JPG/PNG files to next-gen formats like WebP or AVIF."
+        },
+        {
+          "icon": "Smartphone",
+          "title": "Device Compatibility",
+          "description": "Change HEIC or rare formats into universally readable JPG files."
+        },
+        {
+          "icon": "Layers",
+          "title": "Asset Standardization",
+          "description": "Unify a folder of mixed image types into one single standard format."
+        }
+      ]
+    },
+    "steps": {
+      "title": "How to Batch Convert Images in 3 Steps",
+      "items": [
+        {
+          "title": "Select Files",
+          "description": "Drag and drop the batch of images you wish to convert."
+        },
+        {
+          "title": "Choose Format",
+          "description": "Select the target output format (e.g., WebP, JPG, PNG)."
+        },
+        {
+          "title": "Convert & Save",
+          "description": "Initiate the local conversion and download the processed files."
+        }
+      ]
+    },
+    "faqs": [
+      {
+        "q": "Which file formats are supported?",
+        "a": "We support a wide array of formats including JPG, PNG, WebP, AVIF, BMP, and TIFF."
+      },
+      {
+        "q": "Is it safe to convert confidential company documents?",
+        "a": "Yes, 100%. All format conversions are processed locally, so your sensitive files never leave your computer."
+      },
+      {
+        "q": "Can I convert images to a transparent format?",
+        "a": "Yes, you can convert files to PNG or WebP formats which fully support background transparency."
+      }
+    ]
   },
-
-  'jpg-to-png': {
-    title: 'JPG to PNG Converter — Free Online, No Signup',
-    subtitle: 'Convert JPG/JPEG images to PNG format instantly. Supports transparency.',
-    introduction: 'Convert JPEG images to PNG format. PNG is lossless and supports transparency, making it ideal for logos and digital designs.',
-    sections: [{ heading: 'How to Convert JPG to PNG', content: 'Upload your JPG file, click convert, and download the PNG.' }],
-    faqs: [{ q: 'Can I make the background transparent?', a: 'Yes, once converted to PNG, you can use our background remover to make it transparent.' }]
+  "merge-images": {
+    "title": "Merge Images Online — Stitch Photos Vertically or Horizontally",
+    "subtitle": "Seamlessly join multiple pictures together. **100% secure.**",
+    "introduction": "There are countless scenarios where you need to combine several separate pictures into one continuous graphic. Our online image merger is the perfect utility for seamlessly stitching photos together, whether vertically or horizontally. This tool is exceptionally useful for creating long scrolling infographics, assembling panoramic landscape shots, or combining multiple screenshots into a single, easily readable document. Designed with simplicity and speed in mind, you can effortlessly align your images, adjust the canvas background, and export a unified file in seconds. The most critical feature of this image joining tool is its absolute commitment to your privacy. Utilizing state-of-the-art client-side processing, the entire merging operation takes place locally within your web browser. This means there is zero server upload involved. Your confidential financial screenshots, private chat histories, or proprietary design mockups are never transmitted across the internet, ensuring 100% data security. Avoid the steep learning curve of complex desktop software and the privacy risks of cloud-based applications. Quickly append images top-to-bottom or side-by-side, perfectly tailored to your exact needs, completely free and securely on your own device.",
+    "useCases": {
+      "title": "Common Use Cases for Merging Images",
+      "items": [
+        {
+          "icon": "FilePlus",
+          "title": "Infographics",
+          "description": "Combine multiple charts and graphs into one long, continuous infographic."
+        },
+        {
+          "icon": "Monitor",
+          "title": "Screenshots",
+          "description": "Stitch overlapping chat or webpage screenshots into one readable file."
+        },
+        {
+          "icon": "Image",
+          "title": "Panoramas",
+          "description": "Merge individual landscape shots side-by-side to create a panoramic view."
+        }
+      ]
+    },
+    "steps": {
+      "title": "How to Merge Images in 4 Steps",
+      "items": [
+        {
+          "title": "Upload",
+          "description": "Select the images you want to join together."
+        },
+        {
+          "title": "Arrange",
+          "description": "Drag the files to reorder them exactly as you want."
+        },
+        {
+          "title": "Set Direction",
+          "description": "Choose whether to merge them vertically (top-to-bottom) or horizontally (side-by-side)."
+        },
+        {
+          "title": "Merge",
+          "description": "Combine the files locally and download the final merged image."
+        }
+      ]
+    },
+    "faqs": [
+      {
+        "q": "Can I choose the order of the merged images?",
+        "a": "Yes, you can easily drag and drop the thumbnails to arrange them in your preferred sequence before merging."
+      },
+      {
+        "q": "Are my screenshots secure?",
+        "a": "Absolutely. Because the tool runs locally in your browser, your personal screenshots are never uploaded anywhere."
+      },
+      {
+        "q": "Does merging reduce the resolution?",
+        "a": "No, the tool stitches the original files together without compressing or downscaling, preserving the full resolution."
+      }
+    ]
   },
-
-  'png-to-jpg': {
-    title: 'PNG to JPG Converter — Free Online Tool',
-    subtitle: 'Convert PNG images to JPEG format with custom quality control.',
-    introduction: 'Convert PNG images to JPG to reduce file size. PNG is often too heavy for photos; converting to JPG makes them easier to share.',
-    sections: [{ heading: 'How to Convert PNG to JPG', content: 'Upload your PNG, adjust the quality and background color (since JPG doesn\'t support transparency), and download.' }],
-    faqs: [{ q: 'What happens to transparent areas?', a: 'Since JPG doesn\'t support transparency, any transparent areas will be filled with a solid color (default is white).' }]
+  "resize-image": {
+    "title": "Free Online Image Resizer — Fast & Secure",
+    "subtitle": "Resize your photos instantly in your browser. **100% secure.**",
+    "introduction": "Are you looking for a fast, reliable, and secure way to resize your images online without compromising on quality or privacy? Our free in-browser Image Resizer is the ultimate solution for photographers, social media managers, web developers, and everyday users who need to adjust image dimensions instantly. Unlike traditional cloud-based tools that require you to upload your personal files to external servers, our innovative platform processes everything locally right within your web browser. This means absolutely no uploads are required, ensuring your photos remain 100% secure and private on your device at all times. Whether you need to shrink a massive high-resolution photo for faster website loading, crop a picture to fit specific social media aspect ratios for Instagram, Facebook, or Twitter, or reduce file sizes for easy email sharing, this tool handles it all seamlessly. You can maintain the original aspect ratio to avoid distortion or input custom width and height dimensions for exact pixel-perfect results. With support for popular formats like JPEG, PNG, and WebP, our local image resizer guarantees crisp, clear, and professional output every single time. Stop risking your privacy with third-party servers and start using the safest, most efficient image resizing tool available today. Experience lightning-fast processing speeds, zero wait times, and complete peace of mind knowing your digital assets never leave your computer. Perfect for optimizing images for SEO, enhancing blog posts, or preparing visuals for digital marketing campaigns. Try it now and take full control over your image editing workflow with unmatched security and convenience.",
+    "useCases": {
+      "title": "Common Use Cases for Resizing Images",
+      "items": [
+        {
+          "icon": "Monitor",
+          "title": "Web Optimization",
+          "description": "Reduce image dimensions for faster website loading speeds."
+        },
+        {
+          "icon": "Instagram",
+          "title": "Social Media",
+          "description": "Perfectly size photos for Instagram, Facebook, and Twitter."
+        },
+        {
+          "icon": "Share2",
+          "title": "Email Sharing",
+          "description": "Shrink large image files to easily attach them in emails."
+        }
+      ]
+    },
+    "steps": {
+      "title": "How to Resize an Image in 4 Steps",
+      "items": [
+        {
+          "title": "Select Image",
+          "description": "Drag and drop or browse to select the image you want to resize."
+        },
+        {
+          "title": "Set Dimensions",
+          "description": "Enter your desired width and height or choose a preset percentage."
+        },
+        {
+          "title": "Apply Resize",
+          "description": "Click the resize button to instantly adjust your image locally."
+        },
+        {
+          "title": "Download",
+          "description": "Save the resized image to your device instantly."
+        }
+      ]
+    },
+    "faqs": [
+      {
+        "q": "Is my image uploaded to your servers?",
+        "a": "No, all resizing happens locally in your web browser. Your images are never uploaded, ensuring 100% privacy."
+      },
+      {
+        "q": "Can I maintain the original aspect ratio?",
+        "a": "Yes, you can lock the aspect ratio so your image doesn't get stretched or distorted when resizing."
+      },
+      {
+        "q": "What image formats are supported?",
+        "a": "We support popular formats including JPEG, PNG, and WebP for seamless local resizing."
+      }
+    ]
   },
-
-  'convert-format': {
-    title: 'Convert Image Format — Online Image Converter',
-    subtitle: 'Convert between JPEG, PNG, WebP, BMP, and other image formats in seconds.',
-    introduction: 'A universal image converter. Change your image formats quickly without installing any software.',
-    sections: [{ heading: 'How to Convert Formats', content: 'Upload your image, select the target format from the list, and download.' }],
-    faqs: [{ q: 'What formats are supported?', a: 'We support JPEG, PNG, WebP, BMP, and SVG.' }]
+  "photo-editor": {
+    "title": "Secure Online Photo Editor — Enhance Images Instantly",
+    "subtitle": "Edit, crop, and filter photos locally. **100% secure.**",
+    "introduction": "Enhance, retouch, and transform your digital photos instantly with our comprehensive in-browser Photo Editor. Designed for both beginners and experienced creators, this powerful tool brings professional-grade editing capabilities directly to your web browser without the need for heavy software installations or expensive subscriptions. Best of all, our photo editor operates entirely locally on your device. There are zero file uploads to external servers, meaning your personal memories, confidential business graphics, and creative projects remain strictly private and 100% secure. You can confidently edit sensitive images knowing that no data ever leaves your computer. Our intuitive interface offers a wide array of features including cropping, color correction, brightness and contrast adjustments, saturation tweaking, and customizable filters to give your pictures that perfect aesthetic touch. Whether you are fine-tuning a portrait, enhancing landscape photography, or preparing engaging graphics for your social media channels, you have all the essential tools at your fingertips. The local processing engine ensures lightning-fast performance, allowing you to see your edits in real-time without annoying lag or loading screens. Save your edited masterworks in high quality in formats like JPG or PNG instantly. Say goodbye to intrusive watermarks, hidden fees, and privacy concerns associated with cloud editors. Embrace a seamless, secure, and highly efficient workflow that empowers you to unleash your creativity while maintaining absolute control over your digital files. Start using our free, secure photo editor today and elevate your visual content effortlessly.",
+    "useCases": {
+      "title": "Common Use Cases for Photo Editing",
+      "items": [
+        {
+          "icon": "Palette",
+          "title": "Color Correction",
+          "description": "Adjust brightness, contrast, and saturation for the perfect look."
+        },
+        {
+          "icon": "Camera",
+          "title": "Portrait Retouching",
+          "description": "Apply filters and fine-tune details on your favorite portraits."
+        },
+        {
+          "icon": "Image",
+          "title": "Marketing Graphics",
+          "description": "Prepare beautiful visual content for your business campaigns."
+        }
+      ]
+    },
+    "steps": {
+      "title": "How to Edit a Photo in 4 Steps",
+      "items": [
+        {
+          "title": "Upload",
+          "description": "Drag and drop your image into the secure editor."
+        },
+        {
+          "title": "Adjust Settings",
+          "description": "Use the sliders to adjust brightness, contrast, and saturation."
+        },
+        {
+          "title": "Apply Filters",
+          "description": "Choose from a variety of creative filters to enhance the mood."
+        },
+        {
+          "title": "Save",
+          "description": "Download your beautifully edited photo directly to your device."
+        }
+      ]
+    },
+    "faqs": [
+      {
+        "q": "Is the photo editing really private?",
+        "a": "Yes! All processing is handled by your browser, meaning your photos never leave your device."
+      },
+      {
+        "q": "Do I need to install any software?",
+        "a": "No, our photo editor works entirely online through your web browser without any installation."
+      },
+      {
+        "q": "Will my edited image have a watermark?",
+        "a": "No, we never add watermarks to your downloaded images. The final result is completely yours."
+      }
+    ]
   },
-
-  'metadata-remover': {
-    title: 'Metadata Remover — Strip EXIF & GPS Data from Photos',
-    subtitle: 'Remove camera model, GPS coordinates, exposure details, and other metadata from your images.',
-    introduction: 'Protect your privacy online. When you take a photo, your phone embeds hidden metadata (EXIF) including your exact GPS location. Use this tool to strip it clean before sharing.',
-    sections: [{ heading: 'Why Remove Metadata?', content: 'EXIF data can expose where and when a photo was taken. Stripping it protects your privacy and slightly reduces file size.' }],
-    faqs: [{ q: 'Is my photo safe?', a: 'Yes, the metadata stripping is done entirely in your browser. No files are uploaded.' }]
+  "rotate-image": {
+    "title": "Rotate & Flip Images Online — Secure & Fast",
+    "subtitle": "Straighten and rotate pictures directly in your browser. **100% secure.**",
+    "introduction": "Fix orientation issues and perfectly align your pictures in seconds with our lightning-fast, entirely in-browser Image Rotator tool. We understand how frustrating it can be when a great photo is captured sideways or upside down due to camera sensor glitches or accidental smartphone tilting. Our intuitive tool allows you to effortlessly rotate images 90 degrees clockwise or counterclockwise, flip them horizontally or vertically, and make precise angle adjustments to straighten crooked horizons. What sets our rotate image tool apart from the rest is its uncompromising commitment to user privacy and data security. Built on advanced client-side technology, the entire rotation process happens locally within your internet browser. Your files are never uploaded to any remote server, guaranteeing that your personal photos, sensitive documents, and private visual data remain 100% secure on your own device. This no-upload approach not only ensures absolute privacy but also delivers instantaneous results without waiting for files to upload or download over slow network connections. Whether you are prepping real estate photos for a listing, adjusting scanned documents for readability, or correcting family vacation snapshots before sharing them with loved ones, this tool provides a seamless and completely safe solution. Supporting all major file formats such as JPG, PNG, and WEBP, you can easily save the correctly oriented images back to your computer with a single click. Experience the fastest, safest, and most reliable way to rotate your images online today, free from privacy risks and hidden costs.",
+    "useCases": {
+      "title": "Common Use Cases for Rotating Images",
+      "items": [
+        {
+          "icon": "RefreshCw",
+          "title": "Fix Orientation",
+          "description": "Quickly rotate photos taken upside down or sideways."
+        },
+        {
+          "icon": "Layers",
+          "title": "Mirror Effect",
+          "description": "Flip images horizontally or vertically for creative mirroring."
+        },
+        {
+          "icon": "Crop",
+          "title": "Straighten Horizons",
+          "description": "Adjust the angle to fix crooked landscapes and documents."
+        }
+      ]
+    },
+    "steps": {
+      "title": "How to Rotate an Image in 4 Steps",
+      "items": [
+        {
+          "title": "Select File",
+          "description": "Import the image that needs its orientation fixed."
+        },
+        {
+          "title": "Choose Action",
+          "description": "Select whether to rotate by 90 degrees or flip the image."
+        },
+        {
+          "title": "Preview Changes",
+          "description": "Instantly see the newly oriented image in your browser."
+        },
+        {
+          "title": "Export",
+          "description": "Save the corrected image file locally with one click."
+        }
+      ]
+    },
+    "faqs": [
+      {
+        "q": "Does rotating reduce image quality?",
+        "a": "No, rotating or flipping an image using our tool does not compress or degrade the original quality."
+      },
+      {
+        "q": "Are my files safe while rotating?",
+        "a": "Absolutely. Since no files are uploaded to any server, your images are 100% secure."
+      },
+      {
+        "q": "Can I rotate multiple images at once?",
+        "a": "Currently, the tool supports fast, one-by-one rotation to guarantee precision and security."
+      }
+    ]
   },
-
-  'photo-editor': {
-    title: 'Free Online Photo Editor — Edit Photos in Your Browser',
-    subtitle: 'Crop, resize, rotate, compress, and apply filters to your photos. No download required.',
-    introduction: 'A complete, browser-based photo editor. Perform all basic photo editing tasks in a clean, fast interface.',
-    sections: [{ heading: 'How to Edit Your Photos', content: 'Upload your photo, select any of the editing options from the menu, apply changes, and download.' }],
-    faqs: [{ q: 'Is it free?', a: 'Yes, completely free with no watermarks.' }]
+  "remove-background": {
+    "title": "Free AI Background Remover — Instant & Secure",
+    "subtitle": "Create transparent backgrounds instantly. **100% secure.**",
+    "introduction": "Instantly isolate subjects and create stunning transparent backgrounds with our cutting-edge, AI-powered Background Remover tool. Whether you are an e-commerce business owner needing clean product photos, a graphic designer creating marketing materials, or a social media enthusiast crafting the perfect profile picture, this tool is designed to deliver professional, pixel-perfect results in seconds. Unlike traditional background removal services that compromise your privacy by forcing you to upload your images to third-party cloud servers, our revolutionary tool processes your photos entirely locally within your web browser. This means absolutely no data leaves your device, ensuring your original files and personal photos are kept 100% secure and private at all times. Our intelligent client-side processing accurately detects the main subject—be it a person, an object, or an animal—and cleanly erases the background, leaving you with a high-quality transparent PNG. You can then easily place your subject onto a new background, use it in presentations, or integrate it into complex design projects without any hassle. Enjoy the peace of mind that comes with zero uploads, no hidden tracking, and no watermark restrictions. The fast, local processing guarantees immediate results regardless of your internet connection speed. Elevate your creative workflow with our secure, highly efficient, and free background eraser. Say goodbye to tedious manual masking and hello to effortless, secure image editing right from your browser. Try it today and experience the ultimate blend of artificial intelligence, convenience, and absolute data privacy.",
+    "useCases": {
+      "title": "Common Use Cases for Background Removal",
+      "items": [
+        {
+          "icon": "Briefcase",
+          "title": "E-Commerce",
+          "description": "Create clean, professional product photos with transparent backgrounds."
+        },
+        {
+          "icon": "UserCircle",
+          "title": "Profile Pictures",
+          "description": "Isolate your portrait to use on professional networking sites."
+        },
+        {
+          "icon": "Wand2",
+          "title": "Graphic Design",
+          "description": "Easily extract subjects to compose into complex digital artworks."
+        }
+      ]
+    },
+    "steps": {
+      "title": "How to Remove a Background in 3 Steps",
+      "items": [
+        {
+          "title": "Upload Image",
+          "description": "Drag and drop the photo with the background you want to remove."
+        },
+        {
+          "title": "Auto-Process",
+          "description": "Let our local AI automatically detect the subject and erase the background."
+        },
+        {
+          "title": "Download PNG",
+          "description": "Save your new image with a transparent background instantly."
+        }
+      ]
+    },
+    "faqs": [
+      {
+        "q": "How does the AI work locally?",
+        "a": "We use advanced client-side AI models that run directly inside your browser to ensure zero uploads."
+      },
+      {
+        "q": "Is the output always a transparent PNG?",
+        "a": "Yes, to preserve the transparency of the removed background, files are saved in the PNG format."
+      },
+      {
+        "q": "Are there limits on file sizes?",
+        "a": "Because processing happens locally on your machine, there are no strict server-side file size limits."
+      }
+    ]
   },
-
-  'image-to-pdf': {
-    title: 'Image to PDF Converter — Convert JPG/PNG to PDF',
-    subtitle: 'Combine one or more images into a single PDF document. Free and secure.',
-    introduction: 'Convert your photos, scans, or receipts into a clean PDF document. You can combine multiple files into a single PDF page-by-page.',
-    sections: [{ heading: 'How to Convert Images to PDF', content: 'Upload your images, drag to reorder the pages, set the page layout (A4/Letter), and download.' }],
-    faqs: [{ q: 'Can I combine multiple formats?', a: 'Yes, you can upload JPEGs, PNGs, and WebPs together in one PDF.' }]
+  "image-upscaler": {
+    "title": "AI Image Upscaler — Enhance Resolution Securely",
+    "subtitle": "Enlarge images without losing quality. **100% secure.**",
+    "introduction": "Breathe new life into your low-resolution photos and grainy graphics with our state-of-the-art Image Upscaler. Using advanced local processing algorithms, this tool intelligently enlarges your images while preserving crucial details, enhancing sharpness, and minimizing unwanted noise. Perfect for photographers recovering old digital archives, designers preparing print-ready materials, and anyone needing crisp, high-definition visuals from small source files. What makes our upscaler truly exceptional is our unwavering dedication to your privacy and data security. The entire upscaling process runs directly in your web browser. There are zero file uploads, no cloud processing, and absolutely no data transmission to external servers. Your valuable photos, sensitive documents, and proprietary graphics remain 100% secure on your own device throughout the entire enhancement process. You can confidently enlarge private family portraits, confidential business charts, and exclusive artwork without fearing data breaches or unauthorized access. By leveraging your device's computational power, our tool delivers instantaneous, high-quality results without the frustrating wait times associated with uploading large files over the internet. Increase your image dimensions by 2x, 4x, or more while maintaining stunning clarity and vibrant colors. Download your newly upscaled, high-resolution images instantly in popular formats like JPG and PNG. Upgrade your visual assets securely, efficiently, and for free with the most reliable browser-based image upscaler available online today. Don't let low resolution hold your projects back—enhance your images with complete privacy and zero compromises.",
+    "useCases": {
+      "title": "Common Use Cases for Image Upscaling",
+      "items": [
+        {
+          "icon": "Sparkles",
+          "title": "Restore Old Photos",
+          "description": "Enhance and sharpen vintage or low-resolution family pictures."
+        },
+        {
+          "icon": "Maximize",
+          "title": "Print Preparation",
+          "description": "Upscale graphics to ensure crisp quality for physical printing."
+        },
+        {
+          "icon": "Monitor",
+          "title": "Digital Art",
+          "description": "Increase the dimensions of AI-generated art or digital drawings."
+        }
+      ]
+    },
+    "steps": {
+      "title": "How to Upscale an Image in 4 Steps",
+      "items": [
+        {
+          "title": "Load File",
+          "description": "Import your low-resolution image into the secure upscaler."
+        },
+        {
+          "title": "Select Scale",
+          "description": "Choose your desired upscale factor, such as 2x or 4x."
+        },
+        {
+          "title": "Process Locally",
+          "description": "Our in-browser AI will enhance the image without uploading it."
+        },
+        {
+          "title": "Save HD Image",
+          "description": "Download the newly sharpened, high-resolution result."
+        }
+      ]
+    },
+    "faqs": [
+      {
+        "q": "Will upscaling make my image blurry?",
+        "a": "No, our intelligent AI adds realistic detail and sharpens edges, preventing the blur normally caused by enlarging."
+      },
+      {
+        "q": "Is the upscaler completely free to use?",
+        "a": "Yes, our local image upscaler is 100% free with no hidden fees or subscriptions."
+      },
+      {
+        "q": "Do you store my uploaded photos?",
+        "a": "We do not store your photos because no uploads are required. Processing is completely local."
+      }
+    ]
+  },
+  "passport-photo-maker": {
+    "title": "Online Passport Photo Maker — Secure ID Creator",
+    "subtitle": "Generate official ID and passport photos locally. **100% secure.**",
+    "introduction": "Create compliant, professional-quality passport, visa, and ID photos from the comfort of your home with our free, easy-to-use Passport Photo Maker. Navigating the strict dimensional and composition requirements for official documents can be incredibly stressful, but our intuitive tool simplifies the entire process. Whether you need a standard 2x2 inch US passport photo, a European visa picture, or custom dimensions for a specific ID card, this tool provides precise cropping, alignment guides, and background adjustments to ensure your photo meets all official regulations. Most importantly, we prioritize your absolute privacy. Official identification photos are highly sensitive personal data. Unlike other online passport tools that require you to upload your face to remote servers—posing significant privacy risks—our application operates 100% locally in your web browser. Your photo is never uploaded, stored, or transmitted anywhere. It remains completely secure on your personal device from start to finish. You can confidently adjust, crop, and prepare your ID photos knowing your biometric data is totally safe. The in-browser processing is blazingly fast, allowing you to generate a printable, perfectly sized photo sheet in mere seconds. Save time and money by skipping the trip to a local pharmacy or photo studio. Generate flawless, government-compliant passport photos securely and instantly. Print them at home or save them digitally for online applications with the peace of mind that your privacy is completely protected.",
+    "useCases": {
+      "title": "Common Use Cases for Passport Photos",
+      "items": [
+        {
+          "icon": "IDCard",
+          "title": "Official Passports",
+          "description": "Create 2x2 inch photos compliant with US passport regulations."
+        },
+        {
+          "icon": "Plane",
+          "title": "Visa Applications",
+          "description": "Format and crop pictures perfectly for international travel visas."
+        },
+        {
+          "icon": "Briefcase",
+          "title": "Work Badges",
+          "description": "Generate standardized headshots for company ID cards."
+        }
+      ]
+    },
+    "steps": {
+      "title": "How to Make a Passport Photo in 4 Steps",
+      "items": [
+        {
+          "title": "Take a Photo",
+          "description": "Take a clear headshot against a neutral background and load it."
+        },
+        {
+          "title": "Select Country",
+          "description": "Choose the preset for your country or enter custom dimensions."
+        },
+        {
+          "title": "Crop & Align",
+          "description": "Use the guides to position your face perfectly within the frame."
+        },
+        {
+          "title": "Export Sheet",
+          "description": "Download a high-quality, printable sheet of your new ID photos."
+        }
+      ]
+    },
+    "faqs": [
+      {
+        "q": "Are the dimensions accurate for official use?",
+        "a": "Yes, our tool uses standard templates that match the official government regulations for passports and visas."
+      },
+      {
+        "q": "Can I trust this tool with my personal photo?",
+        "a": "Absolutely. All image processing occurs locally in your browser, so your facial data is never sent to a server."
+      },
+      {
+        "q": "Can I print the final photo sheet at home?",
+        "a": "Yes, you can easily download the formatted sheet and print it on high-quality photo paper at home."
+      }
+    ]
+  },
+  "thumbnail-creator": {
+    "title": "Free Thumbnail Creator — Boost Click-Through Rates",
+    "subtitle": "Design custom thumbnails securely in your browser. **100% secure.**",
+    "introduction": "Capture your audience's attention and dramatically increase your click-through rates with our versatile, browser-based Thumbnail Creator. Custom thumbnails are essential for YouTube videos, blog posts, social media campaigns, and digital marketing materials, serving as the first impression for your content. Our robust tool empowers you to design eye-catching, professional thumbnails in minutes, complete with customizable text, engaging graphics, bold filters, and perfect aspect ratios. We understand that your creative assets, unreleased video frames, and branding materials are sensitive. That is why our thumbnail maker is engineered to run entirely locally on your device. There are absolutely no uploads required, ensuring that your original images and creative concepts remain 100% secure and private. Your data never touches an external server, protecting you from leaks and unauthorized access. Enjoy a fluid, lag-free design experience as you seamlessly combine images, adjust layouts, and experiment with typography right in your web browser. Without the bottleneck of uploading large image files, you can iterate on your designs instantly and download the final high-resolution thumbnail without delay. Ideal for content creators, marketers, and webmasters who need rapid, secure, and effective graphic design solutions without relying on expensive software. Elevate your brand's visual identity, drive more traffic to your content, and maintain absolute control over your digital privacy with our free, local thumbnail maker.",
+    "useCases": {
+      "title": "Common Use Cases for Creating Thumbnails",
+      "items": [
+        {
+          "icon": "Youtube",
+          "title": "Video Thumbnails",
+          "description": "Create high-converting covers for your YouTube and Vimeo content."
+        },
+        {
+          "icon": "FileText",
+          "title": "Blog Graphics",
+          "description": "Design eye-catching featured images for your blog articles."
+        },
+        {
+          "icon": "Share2",
+          "title": "Social Media Posts",
+          "description": "Craft engaging visuals tailored for Facebook and Twitter feeds."
+        }
+      ]
+    },
+    "steps": {
+      "title": "How to Create a Thumbnail in 4 Steps",
+      "items": [
+        {
+          "title": "Choose Size",
+          "description": "Select a preset size, like the standard 1280x720 for YouTube."
+        },
+        {
+          "title": "Add Background",
+          "description": "Import an image or choose a solid color for your canvas."
+        },
+        {
+          "title": "Add Text & Graphics",
+          "description": "Layer bold text, shapes, and other graphical elements to stand out."
+        },
+        {
+          "title": "Download Design",
+          "description": "Save your finished high-resolution thumbnail locally."
+        }
+      ]
+    },
+    "faqs": [
+      {
+        "q": "What is the best size for a YouTube thumbnail?",
+        "a": "The ideal size for a YouTube thumbnail is 1280x720 pixels (a 16:9 aspect ratio)."
+      },
+      {
+        "q": "Is my unreleased video content safe?",
+        "a": "Yes! Because our tool works offline in your browser, your unreleased frames and assets remain entirely private."
+      },
+      {
+        "q": "Can I add custom fonts?",
+        "a": "Yes, our thumbnail creator allows you to utilize system fonts or upload custom fonts locally."
+      }
+    ]
   }
 };
