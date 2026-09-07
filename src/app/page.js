@@ -42,9 +42,9 @@ export default function HomePage() {
       {/* SEO + LLM-readable content */}
       <section className="home-hero-section">
         <div className="container home-hero-container">
-          <h1 className="home-hero-title">
+          <h2 className="home-hero-title">
             Free Online PDF and Image Tools for Everyday Work
-          </h1>
+          </h2>
           <p className="home-hero-desc">
             ImageFlow helps you merge PDF, split PDF, compress PDF, rotate PDF, crop PDF, watermark PDF, and sign PDF in your browser. You can also convert image formats like JPG to PNG, PNG to JPG, WebP to PNG, and WebP to JPG, plus resize and compress images.
           </p>
