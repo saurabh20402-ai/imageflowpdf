@@ -320,11 +320,11 @@ function SeoContentSection({ slug, relatedTools }) {
   // Dedicated, approved reference implementation for Merge PDF
   if (slug === 'merge-pdf') {
     return (
-      <section className="pt-2 pb-16">
-        <div className="container max-w-5xl mx-auto px-4 space-y-7 md:space-y-9">
+      <section className="pt-2 pb-20">
+        <div className="container max-w-5xl mx-auto px-4">
           {/* 1. Main Intro Card */}
-          <div className="p-6 sm:p-7 md:p-8 rounded-2xl md:rounded-[22px] bg-[var(--surface-card)] border border-[var(--hairline)] shadow-2xs">
-            <div className="flex flex-col sm:flex-row gap-6 md:gap-7 items-start">
+          <div className="mb-7 sm:mb-8 p-7 sm:p-8 md:p-9 rounded-2xl md:rounded-[22px] bg-[var(--surface-card)] border border-[var(--hairline)] shadow-2xs">
+            <div className="flex flex-col sm:flex-row gap-6 sm:gap-7 md:gap-8 items-start">
               {/* Illustration badge */}
               <div className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-3xl bg-[#edf2fe] dark:bg-indigo-950/40 relative flex items-center justify-center flex-shrink-0 border border-[#dbeafe] dark:border-indigo-900/50 shadow-xs select-none">
                 {/* Back document sheet */}
@@ -343,13 +343,13 @@ function SeoContentSection({ slug, relatedTools }) {
 
               {/* Text content */}
               <div className="flex-1 pt-0.5">
-                <h2 className="text-lg sm:text-xl md:text-[22px] font-bold text-[var(--ink)] tracking-tight mb-2 leading-snug">
+                <h2 className="text-lg sm:text-xl md:text-[22px] font-bold text-[var(--ink)] tracking-tight mb-2 sm:mb-2.5 leading-snug">
                   {content.title}
                 </h2>
                 <p className="text-xs sm:text-sm font-semibold text-[var(--muted)] mb-3 leading-relaxed">
                   {parseBoldText(content.subtitle)}
                 </p>
-                <p className="text-xs sm:text-sm md:text-[14px] text-[var(--body)] leading-relaxed md:leading-[1.75]">
+                <p className="text-xs sm:text-sm md:text-[14px] text-[var(--body)] leading-[1.68] md:leading-[1.72]">
                   {parseBoldText(content.introduction)}
                 </p>
               </div>
@@ -358,11 +358,11 @@ function SeoContentSection({ slug, relatedTools }) {
 
           {/* 2. Common Use Cases Card */}
           {content.useCases && (
-            <div className="p-6 sm:p-7 md:p-8 rounded-2xl md:rounded-[22px] bg-[var(--surface-card)] border border-[var(--hairline)] shadow-2xs">
-              <h3 className="text-sm sm:text-base font-bold text-[var(--ink)] mb-5 md:mb-6 tracking-tight">
+            <div className="mb-8 sm:mb-9 md:mb-10 p-6 sm:p-7 md:p-8 rounded-2xl md:rounded-[22px] bg-[var(--surface-card)] border border-[var(--hairline)] shadow-2xs">
+              <h3 className="text-sm sm:text-base md:text-[16px] font-bold text-[var(--ink)] mb-5 sm:mb-6 tracking-tight">
                 {content.useCases.title}
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-7 lg:gap-8">
                 {content.useCases.items.map((uc, i) => {
                   const UcIcon = Icons[uc.icon] || Icons.CheckCircle;
                   const theme = UC_STYLES[i % UC_STYLES.length];
@@ -384,22 +384,22 @@ function SeoContentSection({ slug, relatedTools }) {
 
           {/* 3. How-to Steps */}
           {content.steps && (
-            <div>
-              <h3 className="text-sm sm:text-base md:text-[17px] font-bold text-[var(--ink)] mb-4 tracking-tight">
+            <div className="mb-8 sm:mb-9 md:mb-10">
+              <h3 className="text-sm sm:text-base md:text-[17px] font-bold text-[var(--ink)] mb-4 sm:mb-5 tracking-tight">
                 {content.steps.title}
               </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:flex lg:items-center gap-3 lg:gap-2.5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:flex lg:items-center gap-3 lg:gap-2">
                 {content.steps.items.map((step, i) => {
                   const StepIcon = STEP_FALLBACK_ICONS[i % STEP_FALLBACK_ICONS.length];
                   return (
-                    <div key={i} className="lg:flex-1 w-full flex items-center gap-2.5 lg:gap-2.5">
-                      <div className="flex-1 p-4 sm:p-4.5 rounded-2xl bg-[var(--surface-card)] border border-[var(--hairline)] flex items-center justify-between gap-3 shadow-2xs hover:border-[var(--primary-muted)] transition-colors min-h-[90px]">
-                        <div className="flex-1">
-                          <div className="flex items-center gap-2 mb-1">
+                    <div key={i} className="lg:flex-1 w-full flex items-center gap-2 lg:gap-2">
+                      <div className="flex-1 p-4 sm:p-4.5 md:p-5 rounded-xl sm:rounded-2xl bg-[var(--surface-card)] border border-[var(--hairline)] flex items-center justify-between gap-3 shadow-2xs hover:border-[var(--primary-muted)] transition-colors min-h-[104px] md:min-h-[108px]">
+                        <div className="flex-1 pr-1">
+                          <div className="flex items-center gap-2 mb-1.5">
                             <span className="w-5 h-5 rounded-md bg-[var(--primary)] text-white text-xs font-bold flex items-center justify-center flex-shrink-0">
                               {i + 1}
                             </span>
-                            <span className="font-bold text-xs sm:text-sm text-[var(--ink)]">
+                            <span className="font-bold text-xs sm:text-sm md:text-[14.5px] text-[var(--ink)]">
                               {step.title}
                             </span>
                           </div>
@@ -412,7 +412,7 @@ function SeoContentSection({ slug, relatedTools }) {
                         </div>
                       </div>
                       {i < content.steps.items.length - 1 && (
-                        <div className="hidden lg:flex text-gray-300 dark:text-gray-600 flex-shrink-0 px-0.5">
+                        <div className="hidden lg:flex text-gray-300 dark:text-gray-600 flex-shrink-0 px-1">
                           <Icons.ArrowRight size={16} />
                         </div>
                       )}
@@ -425,8 +425,8 @@ function SeoContentSection({ slug, relatedTools }) {
 
           {/* 4. Frequently Asked Questions */}
           {content.faqs && content.faqs.length > 0 && (
-            <div>
-              <h3 className="text-sm sm:text-base md:text-[17px] font-bold text-[var(--ink)] mb-4 tracking-tight">
+            <div className="mb-8 sm:mb-9 md:mb-10">
+              <h3 className="text-sm sm:text-base md:text-[17px] font-bold text-[var(--ink)] mb-3.5 sm:mb-4 tracking-tight">
                 Frequently Asked Questions
               </h3>
               <div className="space-y-2.5 sm:space-y-3">
@@ -478,10 +478,10 @@ function SeoContentSection({ slug, relatedTools }) {
           {/* 5. Related Tools */}
           {displayRelatedTools && displayRelatedTools.length > 0 && (
             <div>
-              <h3 className="text-sm sm:text-base md:text-[17px] font-bold text-[var(--ink)] mb-4 tracking-tight">
+              <h3 className="text-sm sm:text-base md:text-[17px] font-bold text-[var(--ink)] mb-3.5 sm:mb-4 tracking-tight">
                 Related Tools
               </h3>
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4">
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-3.5 md:gap-4">
                 {displayRelatedTools.map((rt) => {
                   const RtIcon = Icons[rt.icon] || Icons.FileImage;
                   return (
@@ -489,7 +489,7 @@ function SeoContentSection({ slug, relatedTools }) {
                       key={rt.name + rt.slug}
                       href={`/tools/${rt.slug}/`}
                       title={`${rt.name} — Free Online Tool`}
-                      className="flex items-center gap-2.5 sm:gap-3 py-3 px-3 sm:py-3.5 sm:px-4 bg-[var(--surface-card)] border border-[var(--hairline)] rounded-xl sm:rounded-2xl hover:border-blue-300 hover:shadow-xs transition-all group"
+                      className="flex items-center gap-2.5 sm:gap-3 py-3 px-3 sm:py-3.5 sm:px-4 min-h-[46px] md:min-h-[48px] bg-[var(--surface-card)] border border-[var(--hairline)] rounded-xl sm:rounded-2xl hover:border-blue-300 hover:shadow-xs transition-all group"
                     >
                       <div
                         className={`w-7 h-7 sm:w-8 sm:h-8 rounded-lg flex items-center justify-center flex-shrink-0 transition-transform group-hover:scale-105 ${rt.bg || ''} ${rt.text || ''} ${rt.border ? `border ${rt.border}` : ''}`}
