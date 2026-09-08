@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 /* ===== MODERN DESIGN SYSTEM ===== */
 :root {
   /* OQ-01 Primary Interactive Tokens (WCAG 2.1 AA Compliant) */
