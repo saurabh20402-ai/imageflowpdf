@@ -325,12 +325,12 @@ function SeoContentSection({ slug, relatedTools }) {
           {/* 1. Main Intro Card */}
           <div className="p-6 sm:p-7 md:p-8 rounded-2xl md:rounded-[22px] bg-[var(--surface-card)] border border-[var(--hairline)] shadow-2xs">
             <div className="flex flex-col md:flex-row gap-5 md:gap-7 items-start">
-              {/* User Reference Hero Illustration Badge */}
-              <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-2xl md:rounded-3xl bg-[#edf2fe] dark:bg-indigo-950/40 flex items-center justify-center flex-shrink-0 border border-[#dbeafe] dark:border-indigo-900/50 shadow-xs select-none self-center md:self-start p-1.5 sm:p-2">
+              {/* User Provided Red PDF Merge Hero Asset */}
+              <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-2xl md:rounded-3xl flex items-center justify-center flex-shrink-0 shadow-xs select-none self-center md:self-start overflow-hidden">
                 <img
-                  src="/images/merge-pdf-hero.png"
-                  alt="Merge PDF Online Free"
-                  className="w-full h-full object-contain"
+                  src="/images/merge-pdf-hero.webp"
+                  alt="Merge PDF"
+                  className="w-full h-full object-cover rounded-2xl md:rounded-3xl"
                 />
               </div>
 
