@@ -96,7 +96,7 @@ const TOOL_META = {
   },
   'photo-editor': {
     title: 'Photo Editor Online Free — Edit Photos Without Download',
-    description: 'Edit photos online with quick access to crop, resize, compress, rotate, add filters, remove background, and convert — all in one place. HD quality. No download, no signup, no watermark. 100% free browser tool.',
+    description: 'Edit photos online with quick access to crop, resize, compress, rotate, add filters, remove background, and convert — all in one place. HD quality. No download, no signup, no watermark. Free browser tool.',
     keywords: 'photo editor online free, edit photos online, hd image editing no download, online photo editor free',
   },
   'crop-image': {
@@ -111,7 +111,7 @@ const TOOL_META = {
   },
   'remove-background': {
     title: 'Remove Background from Image — Free Online Tool',
-    description: 'Remove solid-color backgrounds from images instantly using a smart color-picker tool. Ideal for product photos, portraits, and logo cutouts. Free, browser-based with no signup — your image is never uploaded anywhere.',
+    description: 'Remove solid-color backgrounds from images instantly using a smart color-picker tool. Ideal for product photos, portraits, and logo cutouts. Free, browser-based with no signup — your image is processed locally in your browser.',
     keywords: 'remove background free, background remover online, remove white background, image background eraser free',
   },
   'image-upscaler': {
@@ -132,7 +132,7 @@ const TOOL_META = {
   // Optimize Tools
   'compress-image': {
     title: 'Compress Image Online Free — Reduce File Size',
-    description: 'Compress JPEG, PNG, and WebP images online without losing visible quality. Reduce file sizes by up to 80% for faster website loading, smaller email attachments, and easier sharing. Free, instant, 100% private.',
+    description: 'Compress JPEG, PNG, and WebP images online without losing visible quality. Reduce file sizes by up to 80% for faster website loading, smaller email attachments, and easier sharing. Free, instant, browser-based and secure.',
     keywords: 'compress image online free, reduce image size, compress jpeg png webp, image compressor free, shrink photo online',
   },
   'bulk-compress': {
@@ -189,7 +189,7 @@ const TOOL_META = {
   },
   'ocr-extract-text': {
     title: 'OCR — Extract Text from Image Free Online',
-    description: 'Extract text from scanned images, screenshots, and photos using OCR technology. Supports 12+ languages including English, Hindi, and French. Free, instant, 100% private — no file uploads to any external server.',
+    description: 'Extract text from scanned images, screenshots, and photos using OCR technology. Supports 12+ languages including English, Hindi, and French. Free, instant, browser-based — no file uploads to any external server.',
     keywords: 'ocr online free, extract text from image, image to text converter, online ocr free, scan text from photo',
   },
 };
