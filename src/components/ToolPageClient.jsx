@@ -317,15 +317,15 @@ function SeoContentSection({ slug, relatedTools }) {
 
   const displayRelatedTools = (slug === 'merge-pdf') ? MERGE_PDF_RELATED : (relatedTools || []);
 
-  return (
-    <section className="py-10 md:py-16">
-      <div className="container max-w-5xl mx-auto px-4">
-        {/* Main Unified SEO Card Container */}
-        <div className="p-7 md:p-10 lg:p-12 rounded-[28px] bg-[var(--surface-card)] border border-[var(--hairline)] shadow-sm space-y-10 md:space-y-12">
-          
-          {/* 1. Header / Intro Block */}
-          <div className="flex flex-col sm:flex-row gap-6 md:gap-8 lg:gap-9 items-start">
-            {slug === 'merge-pdf' ? (
+  // Dedicated, approved reference implementation for Merge PDF
+  if (slug === 'merge-pdf') {
+    return (
+      <section className="pt-2 pb-16">
+        <div className="container max-w-5xl mx-auto px-4 space-y-7 md:space-y-9">
+          {/* 1. Main Intro Card */}
+          <div className="p-6 sm:p-7 md:p-8 rounded-2xl md:rounded-[22px] bg-[var(--surface-card)] border border-[var(--hairline)] shadow-2xs">
+            <div className="flex flex-col sm:flex-row gap-6 md:gap-7 items-start">
+              {/* Illustration badge */}
               <div className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-3xl bg-[#edf2fe] dark:bg-indigo-950/40 relative flex items-center justify-center flex-shrink-0 border border-[#dbeafe] dark:border-indigo-900/50 shadow-xs select-none">
                 {/* Back document sheet */}
                 <div className="absolute w-12 h-14 sm:w-13 sm:h-15 md:w-14 md:h-16 bg-white/90 dark:bg-gray-800/90 rounded-xl border border-[#c7d2fe] dark:border-indigo-900/60 transform -translate-x-1.5 -translate-y-1 sm:-translate-x-2 sm:-translate-y-1.5 shadow-2xs" />
@@ -340,18 +340,195 @@ function SeoContentSection({ slug, relatedTools }) {
                   <Icons.GitMerge size={17} strokeWidth={2.2} />
                 </div>
               </div>
-            ) : (
-              <div
-                className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-3xl flex items-center justify-center flex-shrink-0 shadow-sm"
-                style={{
-                  background: `linear-gradient(135deg, ${toolColor}18 0%, ${toolColor}08 100%)`,
-                  color: toolColor,
-                  border: `1px solid ${toolColor}25`,
-                }}
-              >
-                <ToolIcon size={44} strokeWidth={1.75} />
+
+              {/* Text content */}
+              <div className="flex-1 pt-0.5">
+                <h2 className="text-lg sm:text-xl md:text-[22px] font-bold text-[var(--ink)] tracking-tight mb-2 leading-snug">
+                  {content.title}
+                </h2>
+                <p className="text-xs sm:text-sm font-semibold text-[var(--muted)] mb-3 leading-relaxed">
+                  {parseBoldText(content.subtitle)}
+                </p>
+                <p className="text-xs sm:text-sm md:text-[14px] text-[var(--body)] leading-relaxed md:leading-[1.75]">
+                  {parseBoldText(content.introduction)}
+                </p>
               </div>
-            )}
+            </div>
+          </div>
+
+          {/* 2. Common Use Cases Card */}
+          {content.useCases && (
+            <div className="p-6 sm:p-7 md:p-8 rounded-2xl md:rounded-[22px] bg-[var(--surface-card)] border border-[var(--hairline)] shadow-2xs">
+              <h3 className="text-sm sm:text-base font-bold text-[var(--ink)] mb-5 md:mb-6 tracking-tight">
+                {content.useCases.title}
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+                {content.useCases.items.map((uc, i) => {
+                  const UcIcon = Icons[uc.icon] || Icons.CheckCircle;
+                  const theme = UC_STYLES[i % UC_STYLES.length];
+                  return (
+                    <div key={i} className="flex items-start gap-4">
+                      <div className={`w-11 h-11 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center flex-shrink-0 ${theme.bg} ${theme.text} border ${theme.border}`}>
+                        <UcIcon size={21} />
+                      </div>
+                      <div className="pt-0.5">
+                        <h4 className="font-bold text-sm sm:text-[15px] text-[var(--ink)] mb-1">{uc.title}</h4>
+                        <p className="text-xs sm:text-[13px] text-[var(--muted)] leading-relaxed">{uc.description}</p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+
+          {/* 3. How-to Steps */}
+          {content.steps && (
+            <div>
+              <h3 className="text-sm sm:text-base md:text-[17px] font-bold text-[var(--ink)] mb-4 tracking-tight">
+                {content.steps.title}
+              </h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:flex lg:items-center gap-3 lg:gap-2.5">
+                {content.steps.items.map((step, i) => {
+                  const StepIcon = STEP_FALLBACK_ICONS[i % STEP_FALLBACK_ICONS.length];
+                  return (
+                    <div key={i} className="lg:flex-1 w-full flex items-center gap-2.5 lg:gap-2.5">
+                      <div className="flex-1 p-4 sm:p-4.5 rounded-2xl bg-[var(--surface-card)] border border-[var(--hairline)] flex items-center justify-between gap-3 shadow-2xs hover:border-[var(--primary-muted)] transition-colors min-h-[90px]">
+                        <div className="flex-1">
+                          <div className="flex items-center gap-2 mb-1">
+                            <span className="w-5 h-5 rounded-md bg-[var(--primary)] text-white text-xs font-bold flex items-center justify-center flex-shrink-0">
+                              {i + 1}
+                            </span>
+                            <span className="font-bold text-xs sm:text-sm text-[var(--ink)]">
+                              {step.title}
+                            </span>
+                          </div>
+                          <p className="text-xs text-[var(--muted)] leading-relaxed">
+                            {step.description}
+                          </p>
+                        </div>
+                        <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-[#eff6ff] dark:bg-blue-950/50 text-[#2563eb] dark:text-blue-400 border border-[#dbeafe] dark:border-blue-900/40 flex items-center justify-center flex-shrink-0 self-center">
+                          <StepIcon size={18} />
+                        </div>
+                      </div>
+                      {i < content.steps.items.length - 1 && (
+                        <div className="hidden lg:flex text-gray-300 dark:text-gray-600 flex-shrink-0 px-0.5">
+                          <Icons.ArrowRight size={16} />
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+
+          {/* 4. Frequently Asked Questions */}
+          {content.faqs && content.faqs.length > 0 && (
+            <div>
+              <h3 className="text-sm sm:text-base md:text-[17px] font-bold text-[var(--ink)] mb-4 tracking-tight">
+                Frequently Asked Questions
+              </h3>
+              <div className="space-y-2.5 sm:space-y-3">
+                {content.faqs.map((faq, idx) => {
+                  const isOpen = openFaq === idx;
+                  return (
+                    <div
+                      key={idx}
+                      className="border border-[var(--hairline)] rounded-xl sm:rounded-2xl overflow-hidden bg-[var(--surface-card)] transition-colors shadow-2xs"
+                    >
+                      <button
+                        type="button"
+                        onClick={() => setOpenFaq(isOpen ? null : idx)}
+                        aria-expanded={isOpen}
+                        className="w-full flex items-center justify-between py-3.5 px-4 sm:py-4 sm:px-5 text-left text-xs sm:text-sm md:text-[14.5px] font-medium text-[var(--ink)] hover:bg-[var(--surface)] transition-colors focus:outline-hidden focus-visible:ring-2 focus-visible:ring-[var(--primary)]"
+                      >
+                        <div className="flex items-center gap-3">
+                          <div className="w-5 h-5 sm:w-5.5 sm:h-5.5 rounded-full border border-blue-200 dark:border-blue-900/50 text-blue-600 dark:text-blue-400 text-xs font-semibold flex items-center justify-center flex-shrink-0">
+                            ?
+                          </div>
+                          <span>{faq.q}</span>
+                        </div>
+                        <Icons.ChevronDown
+                          size={17}
+                          className={`text-[var(--muted-soft)] flex-shrink-0 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
+                        />
+                      </button>
+                      <AnimatePresence initial={false}>
+                        {isOpen && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: 'auto', opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{ duration: 0.2, ease: 'easeInOut' }}
+                          >
+                            <div className="px-4 pb-4 pt-1 sm:px-5 sm:pb-5 sm:pl-12 text-xs sm:text-sm text-[var(--body)] leading-relaxed border-t border-[var(--hairline-soft)]">
+                              {parseBoldText(faq.a)}
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+
+          {/* 5. Related Tools */}
+          {displayRelatedTools && displayRelatedTools.length > 0 && (
+            <div>
+              <h3 className="text-sm sm:text-base md:text-[17px] font-bold text-[var(--ink)] mb-4 tracking-tight">
+                Related Tools
+              </h3>
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4">
+                {displayRelatedTools.map((rt) => {
+                  const RtIcon = Icons[rt.icon] || Icons.FileImage;
+                  return (
+                    <Link
+                      key={rt.name + rt.slug}
+                      href={`/tools/${rt.slug}/`}
+                      title={`${rt.name} — Free Online Tool`}
+                      className="flex items-center gap-2.5 sm:gap-3 py-3 px-3 sm:py-3.5 sm:px-4 bg-[var(--surface-card)] border border-[var(--hairline)] rounded-xl sm:rounded-2xl hover:border-blue-300 hover:shadow-xs transition-all group"
+                    >
+                      <div
+                        className={`w-7 h-7 sm:w-8 sm:h-8 rounded-lg flex items-center justify-center flex-shrink-0 transition-transform group-hover:scale-105 ${rt.bg || ''} ${rt.text || ''} ${rt.border ? `border ${rt.border}` : ''}`}
+                        style={!rt.bg ? { backgroundColor: `${rt.color}14`, color: rt.color } : {}}
+                      >
+                        <RtIcon size={16} />
+                      </div>
+                      <span className="text-xs sm:text-sm font-semibold text-[var(--ink)] truncate">
+                        {rt.name}
+                      </span>
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+        </div>
+      </section>
+    );
+  }
+
+  return (
+    <section className="py-10 md:py-16">
+      <div className="container max-w-5xl mx-auto px-4">
+        {/* Main Unified SEO Card Container */}
+        <div className="p-7 md:p-10 lg:p-12 rounded-[28px] bg-[var(--surface-card)] border border-[var(--hairline)] shadow-sm space-y-10 md:space-y-12">
+          
+          {/* 1. Header / Intro Block */}
+          <div className="flex flex-col sm:flex-row gap-6 md:gap-8 lg:gap-9 items-start">
+            <div
+              className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-3xl flex items-center justify-center flex-shrink-0 shadow-sm"
+              style={{
+                background: `linear-gradient(135deg, ${toolColor}18 0%, ${toolColor}08 100%)`,
+                color: toolColor,
+                border: `1px solid ${toolColor}25`,
+              }}
+            >
+              <ToolIcon size={44} strokeWidth={1.75} />
+            </div>
             <div className="flex-1 pt-0.5">
               <h2 className="text-xl sm:text-2xl md:text-[26px] font-bold text-[var(--ink)] tracking-tight mb-2 leading-snug">
                 {content.title}
@@ -561,13 +738,13 @@ export default function ToolPageClient({ slug }) {
   return (
     <div className="animate-fade-in">
       {/* Tool Header */}
-      <section className="pt-8 pb-6 border-b border-[var(--hairline-soft)]">
-        <div className="container mx-auto px-4">
+      <section className={`pt-8 ${slug === 'merge-pdf' ? 'pb-2' : 'pb-6 border-b border-[var(--hairline-soft)]'}`}>
+        <div className="container max-w-5xl mx-auto px-4">
           <div className="flex items-center gap-2 text-xs text-[var(--muted)] mb-4">
             <Link href="/" title="ImageFlow Home" className="hover:text-[var(--primary)] transition-colors">Home</Link>
-            <span>/</span>
+            <span className="text-[var(--border-strong)]">{slug === 'merge-pdf' ? '>' : '/'}</span>
             <Link href="/#all-tools" title="All ImageFlow Tools" className="hover:text-[var(--primary)] transition-colors">Tools</Link>
-            <span>/</span>
+            <span className="text-[var(--border-strong)]">{slug === 'merge-pdf' ? '>' : '/'}</span>
             <span className="text-[var(--ink)] font-medium">{tool.name}</span>
           </div>
           <div className="flex items-center gap-4">
@@ -586,7 +763,7 @@ export default function ToolPageClient({ slug }) {
       </section>
 
       {/* Tool Component */}
-      <section className="py-8 md:py-12">
+      <section className={slug === 'merge-pdf' ? 'py-5 md:py-6' : 'py-8 md:py-12'}>
         <div className={`container mx-auto px-4 ${slug === 'thumbnail-creator' ? 'max-w-6xl' : 'max-w-5xl'}`}>
           {ToolComponent ? (
             <ToolComponent tool={tool} config={tool.config} />
@@ -600,25 +777,45 @@ export default function ToolPageClient({ slug }) {
 
       {/* Recommended Next Step Callout */}
       {nextStep && (
-        <section className="py-4 bg-[var(--surface-soft)]/50 border-t border-b border-[var(--hairline-soft)]">
+        <section className={slug === 'merge-pdf' ? 'pt-1 pb-5 md:pb-6' : 'py-4 bg-[var(--surface-soft)]/50 border-t border-b border-[var(--hairline-soft)]'}>
           <div className="container max-w-5xl mx-auto px-4">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-4 p-4 bg-[var(--surface-card)] rounded-2xl border border-[var(--hairline-soft)] shadow-2xs">
-              <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-full bg-[var(--primary-light)] text-[var(--primary)] flex items-center justify-center flex-shrink-0">
-                  <Icons.ArrowRight size={16} />
+            {slug === 'merge-pdf' ? (
+              <div className="flex flex-col sm:flex-row items-center justify-between gap-4 px-5 py-3.5 bg-[var(--surface-card)] rounded-2xl border border-[var(--hairline)] shadow-2xs">
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-full bg-[#eff6ff] dark:bg-blue-950/50 text-[#2563eb] dark:text-blue-400 flex items-center justify-center flex-shrink-0">
+                    <Icons.ArrowRight size={15} />
+                  </div>
+                  <p className="text-xs sm:text-sm text-[var(--ink)] font-medium text-center sm:text-left leading-relaxed">
+                    {nextStep.text}
+                  </p>
                 </div>
-                <p className="text-xs md:text-sm text-[var(--ink)] font-medium text-center md:text-left leading-relaxed">
-                  {nextStep.text}
-                </p>
+                <Link
+                  href={`/tools/${nextStep.toolSlug}/`}
+                  title={`${nextStep.actionText} — Free Online Tool`}
+                  className="px-4 py-1.5 rounded-full border border-[#dbeafe] dark:border-blue-900/50 text-[#2563eb] dark:text-blue-400 hover:bg-[#eff6ff] dark:hover:bg-blue-950/30 text-xs font-semibold transition-colors whitespace-nowrap"
+                >
+                  {nextStep.actionText} →
+                </Link>
               </div>
-              <Link
-                href={`/tools/${nextStep.toolSlug}/`}
-                title={`${nextStep.actionText} — Free Online Tool`}
-                className="px-4 py-2 bg-[var(--primary)] text-white text-xs font-bold rounded-xl hover:bg-[var(--primary-hover)] transition-all duration-200 shadow-2xs whitespace-nowrap"
-              >
-                {nextStep.actionText} →
-              </Link>
-            </div>
+            ) : (
+              <div className="flex flex-col md:flex-row items-center justify-between gap-4 p-4 bg-[var(--surface-card)] rounded-2xl border border-[var(--hairline-soft)] shadow-2xs">
+                <div className="flex items-center gap-3">
+                  <div className="w-9 h-9 rounded-full bg-[var(--primary-light)] text-[var(--primary)] flex items-center justify-center flex-shrink-0">
+                    <Icons.ArrowRight size={16} />
+                  </div>
+                  <p className="text-xs md:text-sm text-[var(--ink)] font-medium text-center md:text-left leading-relaxed">
+                    {nextStep.text}
+                  </p>
+                </div>
+                <Link
+                  href={`/tools/${nextStep.toolSlug}/`}
+                  title={`${nextStep.actionText} — Free Online Tool`}
+                  className="px-4 py-2 bg-[var(--primary)] text-white text-xs font-bold rounded-xl hover:bg-[var(--primary-hover)] transition-all duration-200 shadow-2xs whitespace-nowrap"
+                >
+                  {nextStep.actionText} →
+                </Link>
+              </div>
+            )}
           </div>
         </section>
       )}

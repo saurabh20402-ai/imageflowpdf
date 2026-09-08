@@ -9,7 +9,7 @@ const TOOL_META = {
   // PDF Tools
   'merge-pdf': {
     title: 'Merge PDF Online Free — Combine PDF Files in Seconds',
-    description: 'Merge multiple PDF files into one document instantly. No signup, no upload to servers. Combine PDF files for job applications, reports, invoices, or assignments — all inside your browser with 100% privacy.',
+    description: 'Merge multiple PDF files into one document instantly. No signup required. Combine PDF files for job applications, reports, invoices, or assignments — all inside your browser using client-side processing.',
     keywords: 'merge pdf online, combine pdf files free, join pdf online, merge pdf without upload, pdf merger free',
   },
   'split-pdf': {
