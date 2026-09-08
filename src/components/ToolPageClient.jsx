@@ -320,11 +320,11 @@ function SeoContentSection({ slug, relatedTools }) {
   // Dedicated, approved reference implementation for Merge PDF
   if (slug === 'merge-pdf') {
     return (
-      <section className="pt-2 pb-20">
-        <div className="container max-w-5xl mx-auto px-4">
+      <section className="pt-2 pb-24">
+        <div className="container max-w-5xl mx-auto px-4 flex flex-col gap-10 md:gap-12 lg:gap-14">
           {/* 1. Main Intro Card */}
-          <div className="mb-7 sm:mb-8 p-7 sm:p-8 md:p-9 rounded-2xl md:rounded-[22px] bg-[var(--surface-card)] border border-[var(--hairline)] shadow-2xs">
-            <div className="flex flex-col sm:flex-row gap-6 sm:gap-7 md:gap-8 items-start">
+          <div className="p-8 sm:p-9 md:p-10 rounded-2xl md:rounded-[24px] bg-[var(--surface-card)] border border-[var(--hairline)] shadow-2xs">
+            <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 md:gap-9 items-start">
               {/* Illustration badge */}
               <div className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-3xl bg-[#edf2fe] dark:bg-indigo-950/40 relative flex items-center justify-center flex-shrink-0 border border-[#dbeafe] dark:border-indigo-900/50 shadow-xs select-none">
                 {/* Back document sheet */}
@@ -358,21 +358,21 @@ function SeoContentSection({ slug, relatedTools }) {
 
           {/* 2. Common Use Cases Card */}
           {content.useCases && (
-            <div className="mb-8 sm:mb-9 md:mb-10 p-6 sm:p-7 md:p-8 rounded-2xl md:rounded-[22px] bg-[var(--surface-card)] border border-[var(--hairline)] shadow-2xs">
-              <h3 className="text-sm sm:text-base md:text-[16px] font-bold text-[var(--ink)] mb-5 sm:mb-6 tracking-tight">
+            <div className="p-7 sm:p-8 md:p-9 rounded-2xl md:rounded-[24px] bg-[var(--surface-card)] border border-[var(--hairline)] shadow-2xs">
+              <h3 className="text-sm sm:text-base md:text-[17px] font-bold text-[var(--ink)] mb-6 sm:mb-7 tracking-tight">
                 {content.useCases.title}
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-7 lg:gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 lg:gap-10">
                 {content.useCases.items.map((uc, i) => {
                   const UcIcon = Icons[uc.icon] || Icons.CheckCircle;
                   const theme = UC_STYLES[i % UC_STYLES.length];
                   return (
                     <div key={i} className="flex items-start gap-4">
-                      <div className={`w-11 h-11 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center flex-shrink-0 ${theme.bg} ${theme.text} border ${theme.border}`}>
-                        <UcIcon size={21} />
+                      <div className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 ${theme.bg} ${theme.text} border ${theme.border}`}>
+                        <UcIcon size={22} />
                       </div>
                       <div className="pt-0.5">
-                        <h4 className="font-bold text-sm sm:text-[15px] text-[var(--ink)] mb-1">{uc.title}</h4>
+                        <h4 className="font-bold text-sm sm:text-[15px] text-[var(--ink)] mb-1.5">{uc.title}</h4>
                         <p className="text-xs sm:text-[13px] text-[var(--muted)] leading-relaxed">{uc.description}</p>
                       </div>
                     </div>
@@ -384,16 +384,16 @@ function SeoContentSection({ slug, relatedTools }) {
 
           {/* 3. How-to Steps */}
           {content.steps && (
-            <div className="mb-8 sm:mb-9 md:mb-10">
-              <h3 className="text-sm sm:text-base md:text-[17px] font-bold text-[var(--ink)] mb-4 sm:mb-5 tracking-tight">
+            <div>
+              <h3 className="text-sm sm:text-base md:text-[17px] font-bold text-[var(--ink)] mb-5 sm:mb-6 tracking-tight">
                 {content.steps.title}
               </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:flex lg:items-center gap-3 lg:gap-2">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:flex lg:items-center gap-3 lg:gap-2.5">
                 {content.steps.items.map((step, i) => {
                   const StepIcon = STEP_FALLBACK_ICONS[i % STEP_FALLBACK_ICONS.length];
                   return (
-                    <div key={i} className="lg:flex-1 w-full flex items-center gap-2 lg:gap-2">
-                      <div className="flex-1 p-4 sm:p-4.5 md:p-5 rounded-xl sm:rounded-2xl bg-[var(--surface-card)] border border-[var(--hairline)] flex items-center justify-between gap-3 shadow-2xs hover:border-[var(--primary-muted)] transition-colors min-h-[104px] md:min-h-[108px]">
+                    <div key={i} className="lg:flex-1 w-full flex items-center gap-2.5 lg:gap-2.5">
+                      <div className="flex-1 p-4.5 sm:p-5 rounded-xl sm:rounded-2xl bg-[var(--surface-card)] border border-[var(--hairline)] flex items-center justify-between gap-3 shadow-2xs hover:border-[var(--primary-muted)] transition-colors min-h-[112px] md:min-h-[116px]">
                         <div className="flex-1 pr-1">
                           <div className="flex items-center gap-2 mb-1.5">
                             <span className="w-5 h-5 rounded-md bg-[var(--primary)] text-white text-xs font-bold flex items-center justify-center flex-shrink-0">
@@ -412,8 +412,8 @@ function SeoContentSection({ slug, relatedTools }) {
                         </div>
                       </div>
                       {i < content.steps.items.length - 1 && (
-                        <div className="hidden lg:flex text-gray-300 dark:text-gray-600 flex-shrink-0 px-1">
-                          <Icons.ArrowRight size={16} />
+                        <div className="hidden lg:flex text-gray-400 dark:text-gray-500 flex-shrink-0 px-1.5">
+                          <Icons.ArrowRight size={17} />
                         </div>
                       )}
                     </div>
@@ -425,11 +425,11 @@ function SeoContentSection({ slug, relatedTools }) {
 
           {/* 4. Frequently Asked Questions */}
           {content.faqs && content.faqs.length > 0 && (
-            <div className="mb-8 sm:mb-9 md:mb-10">
-              <h3 className="text-sm sm:text-base md:text-[17px] font-bold text-[var(--ink)] mb-3.5 sm:mb-4 tracking-tight">
+            <div>
+              <h3 className="text-sm sm:text-base md:text-[17px] font-bold text-[var(--ink)] mb-5 sm:mb-6 tracking-tight">
                 Frequently Asked Questions
               </h3>
-              <div className="space-y-2.5 sm:space-y-3">
+              <div className="space-y-3 sm:space-y-3.5">
                 {content.faqs.map((faq, idx) => {
                   const isOpen = openFaq === idx;
                   return (
@@ -441,7 +441,7 @@ function SeoContentSection({ slug, relatedTools }) {
                         type="button"
                         onClick={() => setOpenFaq(isOpen ? null : idx)}
                         aria-expanded={isOpen}
-                        className="w-full flex items-center justify-between py-3.5 px-4 sm:py-4 sm:px-5 text-left text-xs sm:text-sm md:text-[14.5px] font-medium text-[var(--ink)] hover:bg-[var(--surface)] transition-colors focus:outline-hidden focus-visible:ring-2 focus-visible:ring-[var(--primary)]"
+                        className="w-full flex items-center justify-between py-4 px-4 sm:py-4.5 sm:px-5 text-left text-xs sm:text-sm md:text-[14.5px] font-medium text-[var(--ink)] hover:bg-[var(--surface)] transition-colors focus:outline-hidden focus-visible:ring-2 focus-visible:ring-[var(--primary)]"
                       >
                         <div className="flex items-center gap-3">
                           <div className="w-5 h-5 sm:w-5.5 sm:h-5.5 rounded-full border border-blue-200 dark:border-blue-900/50 text-blue-600 dark:text-blue-400 text-xs font-semibold flex items-center justify-center flex-shrink-0">
@@ -478,10 +478,10 @@ function SeoContentSection({ slug, relatedTools }) {
           {/* 5. Related Tools */}
           {displayRelatedTools && displayRelatedTools.length > 0 && (
             <div>
-              <h3 className="text-sm sm:text-base md:text-[17px] font-bold text-[var(--ink)] mb-3.5 sm:mb-4 tracking-tight">
+              <h3 className="text-sm sm:text-base md:text-[17px] font-bold text-[var(--ink)] mb-5 sm:mb-6 tracking-tight">
                 Related Tools
               </h3>
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-3.5 md:gap-4">
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3.5 sm:gap-4 md:gap-4.5">
                 {displayRelatedTools.map((rt) => {
                   const RtIcon = Icons[rt.icon] || Icons.FileImage;
                   return (
@@ -489,7 +489,7 @@ function SeoContentSection({ slug, relatedTools }) {
                       key={rt.name + rt.slug}
                       href={`/tools/${rt.slug}/`}
                       title={`${rt.name} — Free Online Tool`}
-                      className="flex items-center gap-2.5 sm:gap-3 py-3 px-3 sm:py-3.5 sm:px-4 min-h-[46px] md:min-h-[48px] bg-[var(--surface-card)] border border-[var(--hairline)] rounded-xl sm:rounded-2xl hover:border-blue-300 hover:shadow-xs transition-all group"
+                      className="flex items-center gap-2.5 sm:gap-3 py-3 px-3 sm:py-3.5 sm:px-4 min-h-[48px] md:min-h-[50px] bg-[var(--surface-card)] border border-[var(--hairline)] rounded-xl sm:rounded-2xl hover:border-blue-300 hover:shadow-xs transition-all group"
                     >
                       <div
                         className={`w-7 h-7 sm:w-8 sm:h-8 rounded-lg flex items-center justify-center flex-shrink-0 transition-transform group-hover:scale-105 ${rt.bg || ''} ${rt.text || ''} ${rt.border ? `border ${rt.border}` : ''}`}
