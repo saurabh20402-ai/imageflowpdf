@@ -75,7 +75,7 @@ const TOOL_META = {
   },
   'heic-converter': {
     title: 'HEIC to JPG Converter — Convert iPhone Photos Free',
-    description: 'Convert Apple HEIC and HEIF photos from your iPhone to JPG or PNG format without any software download. Works on Windows, Mac, and Android browsers. Free, instant, 100% private — no files sent to any server.',
+    description: 'Convert Apple HEIC and HEIF photos from your iPhone to JPG or PNG format without any software download. Works on Windows, Mac, and Android browsers. Free, instant, secure and browser-based — no files sent to any server.',
     keywords: 'heic to jpg converter free, convert heic to jpg online, iphone heic converter, heif to jpg free',
   },
   'image-to-pdf': {
