@@ -325,20 +325,13 @@ function SeoContentSection({ slug, relatedTools }) {
           {/* 1. Main Intro Card */}
           <div className="p-6 sm:p-7 md:p-8 rounded-2xl md:rounded-[22px] bg-[var(--surface-card)] border border-[var(--hairline)] shadow-2xs">
             <div className="flex flex-col md:flex-row gap-5 md:gap-7 items-start">
-              {/* Compact Illustration badge */}
-              <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-2xl md:rounded-3xl bg-[#edf2fe] dark:bg-indigo-950/40 relative flex items-center justify-center flex-shrink-0 border border-[#dbeafe] dark:border-indigo-900/50 shadow-xs select-none self-center md:self-start">
-                {/* Back document sheet */}
-                <div className="absolute w-10 h-12 sm:w-12 sm:h-14 md:w-13 md:h-15 bg-white/90 dark:bg-gray-800/90 rounded-lg border border-[#c7d2fe] dark:border-indigo-900/60 transform -translate-x-1.5 -translate-y-1 sm:-translate-x-2 sm:-translate-y-1.5 shadow-2xs" />
-                {/* Front document sheet */}
-                <div className="relative w-10 h-12 sm:w-12 sm:h-14 md:w-13 md:h-15 bg-white dark:bg-gray-800 rounded-lg border border-[#c7d2fe] dark:border-indigo-900/80 shadow-xs flex flex-col justify-start p-1.5 sm:p-2 gap-1 sm:gap-1.5">
-                  <div className="w-5 sm:w-6 h-1 sm:h-1.5 bg-blue-300 dark:bg-blue-700 rounded-full" />
-                  <div className="w-3.5 sm:w-4 h-1 sm:h-1.5 bg-blue-200 dark:bg-blue-800 rounded-full" />
-                  <div className="w-4 sm:w-5 h-1 sm:h-1.5 bg-blue-200 dark:bg-blue-800 rounded-full" />
-                </div>
-                {/* Floating merge badge */}
-                <div className="absolute -bottom-1 -right-1 sm:-bottom-1.5 sm:-right-1.5 w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-600 shadow-md flex items-center justify-center text-white">
-                  <Icons.GitMerge size={15} strokeWidth={2.2} />
-                </div>
+              {/* User Reference Hero Illustration Badge */}
+              <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-2xl md:rounded-3xl bg-[#edf2fe] dark:bg-indigo-950/40 flex items-center justify-center flex-shrink-0 border border-[#dbeafe] dark:border-indigo-900/50 shadow-xs select-none self-center md:self-start p-1.5 sm:p-2">
+                <img
+                  src="/images/merge-pdf-hero.png"
+                  alt="Merge PDF Online Free"
+                  className="w-full h-full object-contain"
+                />
               </div>
 
               {/* Text content */}
