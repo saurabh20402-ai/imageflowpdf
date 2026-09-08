@@ -17,6 +17,12 @@ const nextConfig = {
         destination: '/#all-tools',
         permanent: true,
       },
+      // Convenience alias for edit-pdf
+      {
+        source: '/tools/edit-pdf/',
+        destination: '/tools/sign-pdf/',
+        permanent: true,
+      },
       // Redirect www → non-www (requires www.imageflow.in domain in Vercel for SSL)
       {
         source: '/:path*',

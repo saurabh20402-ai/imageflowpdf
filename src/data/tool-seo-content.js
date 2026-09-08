@@ -523,62 +523,62 @@ export const TOOL_SEO_CONTENT = {
     ]
   },
   "merge-pdf": {
-    "title": "Merge PDF Files Online — Secure & Fast",
-    "subtitle": "Combine multiple PDF documents effortlessly. **100% secure and local.**",
-    "introduction": "Are you tired of dealing with multiple scattered documents? With ImageFlow's Merge PDF tool, you can easily combine multiple PDF files into a single, cohesive document directly in your web browser. Whether you are compiling a comprehensive business report, organizing academic research papers, or merging personal invoices, our intuitive platform simplifies the entire process. What sets ImageFlow apart is our commitment to your privacy and security. Unlike traditional online PDF converters that require you to upload your sensitive files to a remote server, our tool processes everything locally on your device. This means your data never leaves your computer, ensuring 100% secure, upload-free operations. You can confidently merge confidential financial records, legal contracts, or medical documents without worrying about data breaches or unauthorized access. Furthermore, because the processing happens locally, you experience lightning-fast speeds without being hindered by slow internet connections or upload limits. The seamless drag-and-drop interface allows you to reorder pages effortlessly before generating your final merged document. Say goodbye to cluttered desktop folders and hello to streamlined file management. Optimize your workflow today by choosing our secure, fast, and completely free in-browser PDF merger. Experience the ultimate peace of mind knowing your files remain strictly under your control while achieving professional results in mere seconds.",
+    "title": "Merge PDF Online Free — Combine PDF Files in Seconds",
+    "subtitle": "Combine two or more PDF documents into one single file. No signup. No limits. **100% secure.**",
+    "introduction": "Whether you are submitting university assignments, compiling monthly business invoices, or organizing tax documents, keeping your PDFs together is essential. Our free online PDF Merger runs entirely inside your browser. Your **private documents are never uploaded to any external server**, ensuring complete confidentiality and rapid processing speeds.",
     "useCases": {
       "title": "Common Use Cases for Merging PDFs",
       "items": [
         {
           "icon": "Briefcase",
-          "title": "Business Reports",
-          "description": "Combine monthly reports into one file."
+          "title": "Job Applications",
+          "description": "Combine your resume, cover letter, and certificates into a single PDF."
         },
         {
           "icon": "GraduationCap",
-          "title": "Academic Portfolios",
-          "description": "Merge research papers and notes."
+          "title": "Academic Submissions",
+          "description": "Merge multiple chapters or assignment sheets into one file."
         },
         {
-          "icon": "FileText",
+          "icon": "Calculator",
           "title": "Financial Records",
-          "description": "Group tax documents and invoices."
+          "description": "Group all monthly receipts, invoices, or statements together."
         }
       ]
     },
     "steps": {
-      "title": "How to Merge PDFs in 4 Steps",
+      "title": "How to Merge PDF Files in 4 Steps",
       "items": [
         {
           "title": "Upload",
-          "description": "Drag and drop your PDF files into the tool."
+          "description": "Click \"Choose Files\" or drag-and-drop your PDFs into the tool."
         },
         {
           "title": "Reorder",
-          "description": "Drag the thumbnails to arrange the files in the desired order."
+          "description": "Drag the file cards to arrange them in the correct sequence."
         },
         {
           "title": "Merge",
-          "description": "Click the merge button to combine the documents."
+          "description": "Click the \"Merge PDFs\" button. The tool merges them locally."
         },
         {
           "title": "Download",
-          "description": "Save the newly merged PDF instantly to your device."
+          "description": "Save your combined PDF instantly to your device."
         }
       ]
     },
     "faqs": [
       {
-        "q": "Are my files uploaded to a server?",
-        "a": "No. All processing happens locally in your browser. Your files never leave your device."
+        "q": "Is there a limit to the number of PDFs I can merge?",
+        "a": "No, you can combine as many PDF files as your device memory allows. Everything processes locally in your browser with zero server restrictions."
       },
       {
-        "q": "Can I reorder pages before merging?",
-        "a": "Yes, you can easily drag and drop files into the correct sequence before clicking merge."
+        "q": "Does merging PDFs reduce the quality?",
+        "a": "Not at all. Your pages, text, vector elements, and images retain their original quality, resolution, and formatting."
       },
       {
-        "q": "Is there a file size limit?",
-        "a": "Since processing is local, there are no artificial file size limits, but performance depends on your device's memory."
+        "q": "Are my PDF files secure?",
+        "a": "Yes, 100% secure. Because the tool operates purely on the client side, your documents are never uploaded to the cloud or saved to remote databases."
       }
     ]
   },

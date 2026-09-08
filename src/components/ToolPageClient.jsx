@@ -292,45 +292,74 @@ function SeoContentSection({ slug, relatedTools }) {
   const ToolIcon = Icons[tool?.icon] || Icons.FileImage;
   const toolColor = tool?.color || '#3b82f6';
 
-  const STEP_FALLBACK_ICONS = [
-    Icons.UploadCloud || Icons.Upload,
-    Icons.ListOrdered || Icons.Sliders,
-    Icons.Zap || Icons.Play,
-    Icons.Download || Icons.CheckCircle,
-  ];
+  const STEP_FALLBACK_ICONS = slug === 'merge-pdf'
+    ? [Icons.UploadCloud, Icons.ListFilter, Icons.GitMerge, Icons.Download]
+    : [
+        Icons.UploadCloud || Icons.Upload,
+        Icons.ListOrdered || Icons.Sliders,
+        Icons.Zap || Icons.Play,
+        Icons.Download || Icons.CheckCircle,
+      ];
 
   const UC_COLORS = [
-    { bg: 'bg-blue-50 dark:bg-blue-950/40', text: 'text-blue-600 dark:text-blue-400', border: 'border-blue-100 dark:border-blue-900/40' },
-    { bg: 'bg-emerald-50 dark:bg-emerald-950/40', text: 'text-emerald-600 dark:text-emerald-400', border: 'border-emerald-100 dark:border-emerald-900/40' },
-    { bg: 'bg-amber-50 dark:bg-amber-950/40', text: 'text-amber-600 dark:text-amber-400', border: 'border-amber-100 dark:border-amber-900/40' },
+    { bg: 'bg-blue-50 dark:bg-blue-950/40', text: 'text-blue-600 dark:text-blue-400', border: 'border-blue-100 dark:border-blue-900/30' },
+    { bg: 'bg-emerald-50 dark:bg-emerald-950/40', text: 'text-emerald-600 dark:text-emerald-400', border: 'border-emerald-100 dark:border-emerald-900/30' },
+    { bg: 'bg-amber-50 dark:bg-amber-950/40', text: 'text-amber-600 dark:text-amber-400', border: 'border-amber-100 dark:border-amber-900/30' },
   ];
+
+  const MERGE_PDF_RELATED = [
+    { name: 'Edit PDF', slug: 'sign-pdf', icon: 'Scissors', color: '#f97316' },
+    { name: 'Compress PDF', slug: 'compress-pdf', icon: 'Zap', color: '#eab308' },
+    { name: 'Rotate PDF', slug: 'rotate-pdf', icon: 'RotateCw', color: '#fb7185' },
+    { name: 'Crop PDF', slug: 'crop-pdf', icon: 'Crop', color: '#0e7490' },
+    { name: 'Split PDF', slug: 'split-pdf', icon: 'Columns', color: '#3b82f6' },
+  ];
+
+  const displayRelatedTools = (slug === 'merge-pdf') ? MERGE_PDF_RELATED : (relatedTools || []);
 
   return (
     <section className="py-8 md:py-12">
       <div className="container max-w-5xl mx-auto px-4">
         {/* Main Unified SEO Card Container */}
-        <div className="p-6 md:p-8 rounded-3xl bg-[var(--surface)] border border-[var(--hairline)] shadow-sm space-y-8">
+        <div className="p-6 md:p-8 rounded-3xl bg-white dark:bg-[var(--surface)] border border-gray-100 dark:border-[var(--hairline)] shadow-sm space-y-8">
           
           {/* 1. Header / Intro Block */}
           <div className="flex flex-col md:flex-row gap-6 items-start">
-            <div
-              className="w-20 h-20 md:w-24 md:h-24 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-sm"
-              style={{
-                background: `linear-gradient(135deg, ${toolColor}18 0%, ${toolColor}08 100%)`,
-                color: toolColor,
-                border: `1px solid ${toolColor}25`,
-              }}
-            >
-              <ToolIcon size={44} strokeWidth={1.75} />
-            </div>
+            {slug === 'merge-pdf' ? (
+              <div className="w-24 h-24 md:w-28 md:h-28 rounded-3xl bg-[#edf2fe] dark:bg-indigo-950/40 relative flex items-center justify-center flex-shrink-0 border border-blue-100/80 dark:border-indigo-900/40 shadow-xs select-none">
+                {/* Back document sheet */}
+                <div className="absolute w-12 h-14 bg-white/80 dark:bg-gray-800/80 rounded-lg border border-blue-100 dark:border-indigo-900/50 transform -translate-x-1.5 -translate-y-1 shadow-2xs" />
+                {/* Front document sheet */}
+                <div className="relative w-12 h-14 bg-white dark:bg-gray-800 rounded-lg border border-blue-100 dark:border-indigo-900/70 shadow-xs flex flex-col justify-start p-2 gap-1.5">
+                  <div className="w-6 h-1 bg-blue-200 dark:bg-blue-700/60 rounded-full" />
+                  <div className="w-4 h-1 bg-blue-100 dark:bg-blue-800/60 rounded-full" />
+                  <div className="w-5 h-1 bg-blue-100 dark:bg-blue-800/60 rounded-full" />
+                </div>
+                {/* Floating merge badge */}
+                <div className="absolute -bottom-1 -right-1 w-8 h-8 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-600 shadow-md flex items-center justify-center text-white">
+                  <Icons.GitMerge size={16} strokeWidth={2.2} />
+                </div>
+              </div>
+            ) : (
+              <div
+                className="w-20 h-20 md:w-24 md:h-24 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-sm"
+                style={{
+                  background: `linear-gradient(135deg, ${toolColor}18 0%, ${toolColor}08 100%)`,
+                  color: toolColor,
+                  border: `1px solid ${toolColor}25`,
+                }}
+              >
+                <ToolIcon size={44} strokeWidth={1.75} />
+              </div>
+            )}
             <div className="flex-1">
-              <h2 className="text-xl md:text-2xl font-bold text-[var(--ink)] tracking-tight mb-1.5">
+              <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white tracking-tight mb-1.5">
                 {content.title}
               </h2>
-              <p className="text-sm font-medium text-[var(--muted)] mb-3 leading-relaxed">
+              <p className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-3 leading-relaxed">
                 {parseBoldText(content.subtitle)}
               </p>
-              <p className="text-sm text-[var(--body)] leading-relaxed">
+              <p className="text-xs md:text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
                 {parseBoldText(content.introduction)}
               </p>
             </div>
@@ -338,22 +367,22 @@ function SeoContentSection({ slug, relatedTools }) {
 
           {/* 2. Common Use Cases */}
           {content.useCases && (
-            <div className="p-6 bg-[var(--surface-card)] border border-[var(--hairline)] rounded-2xl shadow-2xs">
-              <h3 className="text-sm md:text-base font-bold text-[var(--ink)] mb-4 tracking-tight">
+            <div className="p-6 bg-gray-50/50 dark:bg-white/[0.02] border border-gray-100 dark:border-[var(--hairline)] rounded-2xl">
+              <h3 className="text-sm md:text-base font-bold text-gray-900 dark:text-white mb-4 tracking-tight">
                 {content.useCases.title}
               </h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
                 {content.useCases.items.map((uc, i) => {
                   const UcIcon = Icons[uc.icon] || Icons.CheckCircle;
                   const colorTheme = UC_COLORS[i % UC_COLORS.length];
                   return (
                     <div key={i} className="flex items-start gap-3.5">
-                      <div className={`w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 ${colorTheme.bg} ${colorTheme.text} border ${colorTheme.border}`}>
+                      <div className={`w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 ${colorTheme.bg} ${colorTheme.text} border ${colorTheme.border}`}>
                         <UcIcon size={20} />
                       </div>
                       <div>
-                        <h4 className="font-bold text-sm text-[var(--ink)] mb-1">{uc.title}</h4>
-                        <p className="text-xs text-[var(--muted)] leading-relaxed">{uc.description}</p>
+                        <h4 className="font-bold text-sm text-gray-900 dark:text-white mb-1">{uc.title}</h4>
+                        <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">{uc.description}</p>
                       </div>
                     </div>
                   );
@@ -365,7 +394,7 @@ function SeoContentSection({ slug, relatedTools }) {
           {/* 3. How-to Steps */}
           {content.steps && (
             <div>
-              <h3 className="text-sm md:text-base font-bold text-[var(--ink)] mb-4 tracking-tight">
+              <h3 className="text-sm md:text-base font-bold text-gray-900 dark:text-white mb-4 tracking-tight">
                 {content.steps.title}
               </h3>
               <div className="flex flex-col md:flex-row items-center gap-2.5 md:gap-3">
@@ -373,26 +402,26 @@ function SeoContentSection({ slug, relatedTools }) {
                   const StepIcon = STEP_FALLBACK_ICONS[i % STEP_FALLBACK_ICONS.length];
                   return (
                     <div key={i} className="flex-1 w-full flex items-center gap-2.5 md:gap-3">
-                      <div className="flex-1 p-4 rounded-xl bg-[var(--surface-card)] border border-[var(--hairline)] flex flex-col justify-between min-h-[105px] shadow-2xs hover:border-[var(--primary-muted)] transition-colors">
-                        <div className="flex items-center justify-between mb-2">
-                          <div className="flex items-center gap-2">
-                            <span className="w-5 h-5 rounded-full bg-[var(--primary)] text-white text-[11px] font-bold flex items-center justify-center">
+                      <div className="flex-1 p-4 rounded-xl bg-white dark:bg-[var(--surface-card)] border border-gray-100 dark:border-[var(--hairline)] flex items-center justify-between gap-3 shadow-2xs hover:border-blue-200 dark:hover:border-blue-900/40 transition-colors min-h-[96px]">
+                        <div className="flex-1">
+                          <div className="flex items-center gap-2 mb-1.5">
+                            <span className="w-5 h-5 rounded bg-blue-600 text-white text-xs font-bold flex items-center justify-center flex-shrink-0">
                               {i + 1}
                             </span>
-                            <span className="font-bold text-xs md:text-sm text-[var(--ink)]">
+                            <span className="font-bold text-xs md:text-sm text-gray-900 dark:text-white">
                               {step.title}
                             </span>
                           </div>
-                          <div className="w-7 h-7 rounded-lg bg-[var(--primary-light)]/40 text-[var(--primary)] flex items-center justify-center flex-shrink-0">
-                            <StepIcon size={14} />
-                          </div>
+                          <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+                            {step.description}
+                          </p>
                         </div>
-                        <p className="text-xs text-[var(--muted)] leading-relaxed">
-                          {step.description}
-                        </p>
+                        <div className="w-10 h-10 rounded-xl bg-blue-50/80 dark:bg-blue-950/50 text-blue-600 dark:text-blue-400 flex items-center justify-center flex-shrink-0 self-center">
+                          <StepIcon size={18} />
+                        </div>
                       </div>
                       {i < content.steps.items.length - 1 && (
-                        <div className="hidden md:flex text-[var(--muted-soft)] flex-shrink-0">
+                        <div className="hidden md:flex text-gray-400 dark:text-gray-600 flex-shrink-0">
                           <Icons.ArrowRight size={16} />
                         </div>
                       )}
@@ -420,31 +449,31 @@ function SeoContentSection({ slug, relatedTools }) {
           {/* 4. Frequently Asked Questions */}
           {content.faqs && content.faqs.length > 0 && (
             <div>
-              <h3 className="text-sm md:text-base font-bold text-[var(--ink)] mb-3.5 tracking-tight">
+              <h3 className="text-sm md:text-base font-bold text-gray-900 dark:text-white mb-3.5 tracking-tight">
                 Frequently Asked Questions
               </h3>
-              <div className="space-y-2">
+              <div className="space-y-2.5">
                 {content.faqs.map((faq, idx) => {
                   const isOpen = openFaq === idx;
                   return (
                     <div
                       key={idx}
-                      className="border border-[var(--hairline)] rounded-xl overflow-hidden bg-[var(--surface-card)] transition-colors"
+                      className="border border-gray-100 dark:border-[var(--hairline)] rounded-xl overflow-hidden bg-white dark:bg-[var(--surface-card)] transition-colors"
                     >
                       <button
                         type="button"
                         onClick={() => setOpenFaq(isOpen ? null : idx)}
-                        className="w-full flex items-center justify-between p-3.5 md:p-4 text-left text-xs md:text-sm font-semibold text-[var(--ink)] hover:bg-[var(--surface)]/50 transition-colors"
+                        className="w-full flex items-center justify-between p-3.5 md:p-4 text-left text-xs md:text-sm font-semibold text-gray-900 dark:text-white hover:bg-gray-50/50 dark:hover:bg-white/[0.02] transition-colors"
                       >
                         <div className="flex items-center gap-3">
-                          <div className="w-5 h-5 rounded-full bg-[var(--primary-light)]/40 text-[var(--primary)] text-xs font-bold flex items-center justify-center flex-shrink-0">
+                          <div className="w-5 h-5 rounded-full bg-blue-50 dark:bg-blue-950/50 text-blue-600 dark:text-blue-400 text-xs font-bold flex items-center justify-center flex-shrink-0">
                             ?
                           </div>
                           <span>{faq.q}</span>
                         </div>
                         <Icons.ChevronDown
                           size={16}
-                          className={`text-[var(--muted)] flex-shrink-0 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
+                          className={`text-gray-400 dark:text-gray-500 flex-shrink-0 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
                         />
                       </button>
                       <AnimatePresence initial={false}>
@@ -455,7 +484,7 @@ function SeoContentSection({ slug, relatedTools }) {
                             exit={{ height: 0, opacity: 0 }}
                             transition={{ duration: 0.2, ease: 'easeInOut' }}
                           >
-                            <div className="px-4 pb-3.5 pt-0 pl-11 text-xs md:text-sm text-[var(--muted)] leading-relaxed border-t border-[var(--hairline-soft)]/50 bg-[var(--surface)]/20">
+                            <div className="px-4 pb-4 pt-1 pl-11 text-xs md:text-sm text-gray-600 dark:text-gray-400 leading-relaxed border-t border-gray-50 dark:border-[var(--hairline)]/50">
                               {parseBoldText(faq.a)}
                             </div>
                           </motion.div>
@@ -469,28 +498,28 @@ function SeoContentSection({ slug, relatedTools }) {
           )}
 
           {/* 5. Related Tools (Integrated into Card) */}
-          {relatedTools && relatedTools.length > 0 && (
-            <div className="pt-2">
-              <h3 className="text-sm md:text-base font-bold text-[var(--ink)] mb-3.5 tracking-tight">
+          {displayRelatedTools && displayRelatedTools.length > 0 && (
+            <div className="pt-1">
+              <h3 className="text-sm md:text-base font-bold text-gray-900 dark:text-white mb-3.5 tracking-tight">
                 Related Tools
               </h3>
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
-                {relatedTools.map((rt) => {
+                {displayRelatedTools.map((rt) => {
                   const RtIcon = Icons[rt.icon] || Icons.FileImage;
                   return (
                     <Link
-                      key={rt.slug}
+                      key={rt.name + rt.slug}
                       href={`/tools/${rt.slug}/`}
                       title={`${rt.name} — Free Online Tool`}
-                      className="flex items-center gap-2.5 p-3 bg-[var(--surface-card)] border border-[var(--hairline)] rounded-xl hover:border-[var(--primary-muted)] hover:shadow-xs transition-all group"
+                      className="flex items-center gap-2.5 p-3 bg-white dark:bg-[var(--surface-card)] border border-gray-100 dark:border-[var(--hairline)] rounded-xl hover:border-blue-200 dark:hover:border-blue-900/40 hover:shadow-xs transition-all group"
                     >
                       <div
-                        className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 transition-transform group-hover:scale-105"
+                        className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0 transition-transform group-hover:scale-105"
                         style={{ backgroundColor: `${rt.color}14`, color: rt.color }}
                       >
                         <RtIcon size={16} />
                       </div>
-                      <span className="text-xs font-semibold text-[var(--ink)] truncate">
+                      <span className="text-xs font-semibold text-gray-800 dark:text-gray-200 truncate">
                         {rt.name}
                       </span>
                     </Link>
