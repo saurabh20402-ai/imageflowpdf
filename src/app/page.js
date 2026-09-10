@@ -86,7 +86,7 @@ export default function HomePage() {
       {/* All Tools with Category Tabs */}
       <section id="all-tools" className="home-section-padding home-section-bg">
         <div className="container">
-          <div className="home-section-header" style={{ marginBottom: '36px' }}>
+          <div className="home-section-header" style={{ marginBottom: '28px' }}>
             <p className="home-section-label">
               Complete Toolkit
             </p>
@@ -94,7 +94,7 @@ export default function HomePage() {
               All {TOOLS.length} online tools
             </h2>
             <p className="home-section-subtitle home-section-subtitle-mx">
-              Everything you need for PDFs and images — merge, split, compress, convert, and create. 100% free, no signup.
+              Everything you need for PDFs and images — merge, split, compress, convert, and create. No signup required.
             </p>
           </div>
 

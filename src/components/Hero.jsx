@@ -27,7 +27,7 @@ export default function Hero() {
           }}
         >
           <Zap size={12} />
-          100% Free · No Sign-up Required
+          No Sign-up Required
         </motion.div>
 
         {/* Heading */}
@@ -88,7 +88,7 @@ export default function Hero() {
           }}
         >
           {[
-            { icon: Shield, text: '100% Private' },
+            { icon: Shield, text: 'Local Processing' },
             { icon: Zap, text: 'Instant Processing' },
             { icon: Globe, text: 'Works Offline' },
           ].map(({ icon: Icon, text }) => (

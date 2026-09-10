@@ -465,3 +465,174 @@ input[type="color"]::-webkit-color-swatch { border: none; border-radius: 4px; }
   }
 }
 
+/* ===================================================
+   HOME PAGE — AREA A & AREA B SECTION STYLES
+   Uses existing design tokens exclusively.
+   =================================================== */
+
+/* ---- Shared section rhythm ---- */
+.home-section-padding {
+  padding-top: var(--space-16);
+  padding-bottom: var(--space-16);
+}
+
+.home-section-border {
+  border-top: 1px solid var(--hairline-soft);
+}
+
+.home-section-bg {
+  background: var(--surface);
+  border-top: 1px solid var(--hairline-soft);
+}
+
+/* ---- Section header block ---- */
+.home-section-header {
+  margin-bottom: var(--space-10);
+}
+
+/* ---- Section label (eyebrow / "Most Popular", "Complete Toolkit") ---- */
+.home-section-label {
+  display: inline-block;
+  font-size: var(--font-size-12);
+  font-weight: var(--font-weight-700);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: var(--space-3);
+}
+
+/* ---- Section heading ---- */
+.home-section-title {
+  font-size: var(--font-size-28);
+  font-weight: var(--font-weight-700);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin-bottom: var(--space-3);
+}
+.home-section-title-mb {
+  margin-bottom: var(--space-3);
+}
+
+/* ---- Section subtitle / supporting text ---- */
+.home-section-subtitle {
+  font-size: var(--font-size-16);
+  color: var(--muted);
+  line-height: 1.65;
+  max-width: 540px;
+}
+.home-section-subtitle-mx {
+  /* No auto-centering; left-aligned to match heading */
+}
+
+/* ---- Responsive typography for section titles ---- */
+@media (max-width: 1024px) {
+  .home-section-title {
+    font-size: var(--font-size-24);
+  }
+}
+@media (max-width: 640px) {
+  .home-section-title {
+    font-size: var(--font-size-20);
+  }
+  .home-section-subtitle {
+    font-size: var(--font-size-14);
+  }
+}
+
+/* ---- Area A: SEO intro block ---- */
+.home-hero-section {
+  padding-top: var(--space-10);
+  padding-bottom: var(--space-10);
+  border-top: 1px solid var(--hairline-soft);
+}
+
+.home-hero-container {
+  max-width: var(--max-w);
+}
+
+.home-hero-title {
+  font-size: var(--font-size-20);
+  font-weight: var(--font-weight-700);
+  color: var(--ink);
+  line-height: 1.35;
+  letter-spacing: -0.005em;
+  margin-bottom: var(--space-4);
+  max-width: 680px;
+}
+
+.home-hero-desc {
+  font-size: var(--font-size-14);
+  color: var(--muted);
+  line-height: 1.75;
+  max-width: 680px;
+  margin-bottom: var(--space-3);
+}
+.home-hero-desc:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 640px) {
+  .home-hero-title {
+    font-size: var(--font-size-16);
+  }
+  .home-hero-desc {
+    font-size: var(--font-size-13);
+  }
+}
+
+/* ---- Area B: Search bar ---- */
+.home-search-container {
+  position: relative;
+  margin-bottom: var(--space-4);
+}
+
+.home-search-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--muted-soft);
+  pointer-events: none;
+}
+
+.home-search-input {
+  padding-left: 40px !important;
+  background: var(--surface-card) !important;
+  border: 1px solid var(--hairline) !important;
+  font-size: var(--font-size-14) !important;
+  height: 44px;
+}
+
+.home-search-input:focus {
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 3px var(--primary-glow) !important;
+}
+
+/* ---- Area B: Category tab pills ---- */
+.home-tabs-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-8);
+}
+
+.home-tab-btn {
+  /* inherits .pill and .pill-active from globals.css */
+}
+
+/* ---- Empty state ---- */
+.home-empty-state {
+  padding: var(--space-16) 0;
+  text-align: center;
+}
+.home-empty-title {
+  font-size: var(--font-size-16);
+  font-weight: var(--font-weight-600);
+  color: var(--ink);
+  margin-bottom: var(--space-2);
+}
+.home-empty-desc {
+  font-size: var(--font-size-14);
+  color: var(--muted);
+}
