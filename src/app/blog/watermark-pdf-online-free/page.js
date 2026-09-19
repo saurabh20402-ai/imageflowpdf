@@ -2,9 +2,15 @@ import '../blog-post.css';
 
 export const metadata = {
   title: 'Watermark PDF Online Free (Add Text & Image Watermarks Instantly)',
-  description: 'Add watermarks to PDF online free. Watermark PDF documents with text or images instantly. Secure browser-based PDF watermarking tool with no signup required.',  alternates: {
+  description: 'Add watermarks to PDF online free. Watermark PDF documents with text or images instantly. Secure browser-based PDF watermarking tool with no signup required.',
+  alternates: {
     canonical: 'https://imageflow.in/blog/watermark-pdf-online-free/',
-  },};
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
 
 const FEATURES = [
   { title: 'Instant watermarking', text: 'Add text or image watermarks to PDF documents in seconds.', bg: '#eef2ff' },

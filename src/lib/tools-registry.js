@@ -260,6 +260,16 @@ export const TOOLS = [
     component: 'ThumbnailCreatorTool',
     config: {},
   },
+  {
+    slug: 'ocr-extract-text',
+    name: 'OCR — Extract Text',
+    description: 'Extract text from scanned images, screenshots, and photos using OCR technology. Supports 12+ languages.',
+    category: 'transform',
+    color: '#0369a1',
+    icon: 'ScanText',
+    component: 'OcrTool',
+    config: {},
+  },
 
   // === OPTIMIZE ===
   {
