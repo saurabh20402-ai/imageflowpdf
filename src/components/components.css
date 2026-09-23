@@ -327,18 +327,20 @@ header.glass.navbar-header {
    FOOTER STYLES
    =========================================== */
 
-footer {
+footer, .footer-root {
   background: var(--surface-card);
   border-top: 1px solid var(--hairline-soft);
-  padding-top: 56px;
-  padding-bottom: 28px;
+  padding-top: 64px;
+  padding-bottom: 36px;
+  width: 100%;
 }
 
 .footer-grid {
   display: grid;
-  grid-template-columns: auto repeat(4, 1fr);
-  gap: 40px;
-  margin-bottom: 48px;
+  grid-template-columns: 320px repeat(4, minmax(160px, 1fr));
+  gap: 48px;
+  margin-bottom: 52px;
+  align-items: start;
 }
 
 .footer-brand {
@@ -350,38 +352,55 @@ footer {
   display: flex;
   align-items: center;
   text-decoration: none;
-  margin-bottom: 14px;
+  margin-bottom: 16px;
   width: fit-content;
   line-height: 0;
 }
 
 .footer-brand-text {
-  font-size: 13px;
+  font-size: 14.5px;
   color: var(--muted);
-  line-height: 1.7;
-  max-width: 200px;
+  line-height: 1.65;
+  max-width: 300px;
+  margin-bottom: 20px;
+}
+
+.footer-badges-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
 }
 
 .footer-badge {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 5px 12px;
+  gap: 8px;
+  padding: 6px 14px;
   border-radius: 99px;
-  background: var(--primary-light);
-  color: var(--primary);
-  font-size: 12px;
-  font-weight: 700;
-  margin-top: 16px;
+  background: var(--surface-elevated);
+  border: 1px solid var(--hairline);
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 600;
+  transition: border-color var(--transition);
+}
+
+.footer-badge:hover {
+  border-color: var(--border-strong);
+}
+
+.footer-column {
+  min-width: 0;
 }
 
 .footer-section-title {
-  font-size: 11px;
+  font-size: 13.5px;
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   color: var(--ink);
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 
 .footer-link-list {
@@ -390,60 +409,78 @@ footer {
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 9px;
+  gap: 12px;
 }
 
 .footer-link {
-  font-size: 13px;
-  color: var(--muted);
+  font-size: 14.5px;
+  color: var(--body);
   text-decoration: none;
-  transition: color 150ms;
+  font-weight: 500;
+  transition: color 150ms ease, transform 150ms ease;
+  display: inline-block;
 }
 
 .footer-link:hover {
-  color: var(--ink);
+  color: var(--primary);
+  transform: translateX(2px);
 }
 
 .footer-instagram-section {
-  margin-bottom: 40px;
-  padding: 22px 20px;
-  border-radius: 14px;
+  margin-bottom: 44px;
+  padding: 24px 32px;
+  border-radius: 16px;
   background: var(--surface);
   border: 1px solid var(--hairline-soft);
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
-  gap: 14px;
-  text-align: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.footer-instagram-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .footer-instagram-title {
   margin: 0;
-  font-size: 13px;
-  font-weight: 700;
+  font-size: 16px;
+  font-weight: 800;
   color: var(--ink);
-  width: 100%;
+}
+
+.footer-instagram-subtitle {
+  margin: 0;
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.5;
 }
 
 .footer-instagram-link {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 10px 18px;
-  border-radius: 10px;
-  border: 1px solid var(--hairline-soft);
+  padding: 12px 24px;
+  border-radius: 12px;
+  border: 1px solid var(--hairline);
   background: var(--surface-card);
   color: var(--ink);
-  font-size: 14px;
+  font-size: 14.5px;
   font-weight: 700;
   text-decoration: none;
-  transition: border-color 150ms, box-shadow 150ms;
+  transition: all var(--transition);
+  box-shadow: var(--shadow-xs);
+  flex-shrink: 0;
 }
 
 .footer-instagram-link:hover {
-  border-color: var(--primary);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-color: #E4405F;
+  color: #E4405F;
+  box-shadow: 0 4px 14px rgba(228, 64, 95, 0.15);
+  transform: translateY(-1px);
 }
 
 .footer-instagram-icon {
@@ -453,25 +490,25 @@ footer {
 
 .footer-bottom {
   border-top: 1px solid var(--hairline-soft);
-  padding-top: 20px;
+  padding-top: 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 16px;
 }
 
 .footer-copyright {
-  font-size: 12px;
-  color: var(--muted-soft);
+  font-size: 13.5px;
+  color: var(--muted);
 }
 
 .footer-heart {
-  font-size: 12px;
-  color: var(--muted-soft);
+  font-size: 13.5px;
+  color: var(--muted);
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
 }
 
 .footer-heart-icon {
@@ -480,16 +517,18 @@ footer {
 
 .footer-bottom-links {
   display: flex;
-  gap: 16px;
+  align-items: center;
+  gap: 20px;
 }
 
 .footer-bottom-link {
-  font-size: 12px;
-  color: var(--muted-soft);
+  font-size: 13.5px;
+  color: var(--muted);
   text-decoration: none;
-  transition: color 150ms;
+  font-weight: 500;
+  transition: color 150ms ease;
 }
 
 .footer-bottom-link:hover {
-  color: var(--muted);
+  color: var(--ink);
 }
