@@ -34,6 +34,13 @@ const COMPONENT_MAP = {
   BulkFormatConvertTool: dynamic(() => import('@/components/tools/BulkFormatConvertTool'), { ssr: false }),
   PassportPhotoTool: dynamic(() => import('@/components/tools/PassportPhotoTool'), { ssr: false }),
   ThumbnailCreatorTool: dynamic(() => import('@/components/tools/ThumbnailCreatorTool'), { ssr: false }),
+  OcrTool: dynamic(() => import('@/components/tools/OcrTool'), { ssr: false }),
+  CropTool: dynamic(() => import('@/components/tools/CropTool'), { ssr: false }),
+  BorderTool: dynamic(() => import('@/components/tools/BorderTool'), { ssr: false }),
+  FilterTool: dynamic(() => import('@/components/tools/FilterTool'), { ssr: false }),
+  MemeTool: dynamic(() => import('@/components/tools/MemeTool'), { ssr: false }),
+  TextTool: dynamic(() => import('@/components/tools/TextTool'), { ssr: false }),
+  WatermarkTool: dynamic(() => import('@/components/tools/WatermarkTool'), { ssr: false }),
 };
 
 const NEXT_STEP_MAP = {

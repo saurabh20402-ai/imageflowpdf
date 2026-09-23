@@ -209,6 +209,17 @@ export const TOOLS = [
     popular: true,
   },
   {
+    slug: 'crop-image',
+    name: 'Crop Image',
+    description: 'Crop images with custom box and popular aspect ratio presets.',
+    category: 'transform',
+    color: '#0e7490',
+    icon: 'Crop',
+    component: 'CropTool',
+    config: {},
+    popular: true,
+  },
+  {
     slug: 'rotate-image',
     name: 'Rotate Image',
     description: 'Rotate images by 90°, 180°, 270°, or any custom angle.',
