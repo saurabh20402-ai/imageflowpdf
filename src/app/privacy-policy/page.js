@@ -73,17 +73,20 @@ const policySections = [
   },
   {
     id: 'cookies',
-    title: '5. Do we use cookies and tracking technologies?',
+    title: '5. Cookies, Analytics & Advertising Technologies',
     content: [
-      'We use only essential technologies to support the site and save basic preferences.',
-      'This includes cookies and local storage for items like theme preference, session state, and form progress.',
+      'ImageFlow uses cookies, local storage, and third-party technologies for website performance, traffic analytics, and advertising.',
+      'Third-party vendors, including Google, use cookies (such as the Google DoubleClick cookie) to serve advertisements to users based on their prior visits to ImageFlow or other websites on the Internet.',
+      'Google\'s use of advertising cookies enables it and its partners to serve relevant ads based on visits to this site and other sites across the web.',
+      'We also utilize privacy-friendly analytics services (Google Analytics and Ahrefs Web Analytics) to analyze aggregated traffic trends and site speed.',
     ],
     bullets: [
-      'No advertising cookies.',
-      'No third-party tracking pixels for marketing.',
-      'No Google Analytics or Meta Pixel by default.',
+      'Essential Storage: Used to preserve light/dark theme choices, UI preferences, and local tool state.',
+      'Advertising Cookies (Google AdSense): Google and authorized third-party ad networks may place cookies or use web beacons in the course of ad serving.',
+      'Analytics Measurement: Non-personally identifiable traffic and performance telemetry.',
+      'Opt-Out Controls: Users may opt out of personalized advertising by visiting Google Ads Settings (https://www.google.com/settings/ads) or via www.aboutads.info.',
     ],
-    note: 'If you disable cookies, some site features may not work as expected.',
+    note: 'Your image and PDF files are never shared with, processed by, or accessible to Google, advertisers, or analytics services. All file operations remain 100% in your local browser.',
   },
   {
     id: 'inforetain',

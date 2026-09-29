@@ -18,15 +18,16 @@ export default function CookiesPage() {
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: 28 }}>
           {[
-            { title: 'What Are Cookies?', content: 'Cookies are small text files stored in your browser. They are commonly used to remember your preferences and improve your experience. ImageFlow uses minimal cookies — only what\'s necessary to make the site work correctly.' },
+            { title: 'What Are Cookies?', content: 'Cookies are small text files stored in your browser. They are commonly used to remember your preferences, deliver relevant advertising, and improve your experience. ImageFlow uses minimal, standard web technologies to make the site work efficiently and support our free services.' },
             { title: 'Cookies We Use', content: null, table: [
               { name: 'theme', purpose: 'Remembers your light/dark mode preference', type: 'Strictly Necessary', duration: 'Persistent (1 year)' },
-              { name: 'next-auth.session', purpose: 'Session management (if applicable)', type: 'Strictly Necessary', duration: 'Session' },
+              { name: '_ga, _ga_*', purpose: 'Google Analytics anonymized traffic metrics', type: 'Analytics', duration: '2 years' },
+              { name: '__gads, __gpi', purpose: 'Google AdSense ad serving and fraud prevention', type: 'Advertising', duration: 'Up to 13 months' },
             ]},
             { title: 'Local Storage', content: 'In addition to cookies, ImageFlow uses your browser\'s localStorage (not cookies) to save:\n\n• Processing history — auto-deleted after 8 hours\n• Review history — only what you submit\n• Tool preferences — e.g., last used quality setting\n\nThis data never leaves your device and is not accessible to our servers.' },
-            { title: 'Cookies We Don\'t Use', content: 'We do NOT use:\n• Advertising or tracking cookies\n• Analytics cookies (Google Analytics, Hotjar, etc.)\n• Social media tracking pixels (Meta, Twitter, etc.)\n• Cross-site tracking\n\nWe believe in minimal data collection. Your browsing stays private.' },
-            { title: 'Managing Cookies', content: 'You can control and delete cookies through your browser settings. Deleting cookies will reset your theme preference and any locally-stored data. Note that blocking all cookies may affect site functionality.' },
-            { title: 'Contact', content: 'If you have questions about our cookie usage, please contact us. We\'re happy to explain anything in more detail.' },
+            { title: 'Advertising & Third-Party Partners', content: 'We partner with third-party networks, including Google AdSense, to display non-intrusive advertisements on ImageFlow:\n\n• Google uses cookies to serve ads based on prior visits to this and other websites.\n• Google and third-party ad vendors may use tracking cookies or web beacons to measure ad effectiveness.\n• You can opt out of personalized ads at any time through Google Ads Settings (https://www.google.com/settings/ads) or www.aboutads.info.' },
+            { title: 'Managing & Disabling Cookies', content: 'You can control, block, or delete cookies through your browser settings. Note that disabling essential cookies may reset your theme preference, while advertising opt-outs allow you to see generic instead of personalized ads.' },
+            { title: 'Contact', content: 'If you have questions about our cookie usage or privacy practices, reach out via the Support page.' },
           ].map((section) => (
             <div key={section.title} style={{ paddingBottom: 28, borderBottom: '1px solid var(--hairline-soft)' }}>
               <h2 style={{ fontSize: 18, fontWeight: 700, color: 'var(--ink)', marginBottom: 12 }}>{section.title}</h2>
