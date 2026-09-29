@@ -127,6 +127,12 @@ export default function RootLayout({ children }) {
             `,
           }}
         />
+        {/* Ahrefs Web Analytics */}
+        <script
+          async
+          src="https://analytics.ahrefs.com/analytics.js"
+          data-key="ywk4WvLaaK55qXZJdkPvIg"
+        />
         <link rel="icon" href="/favicon.ico" />
         <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/favicon.ico" />
