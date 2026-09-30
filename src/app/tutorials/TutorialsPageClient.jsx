@@ -88,18 +88,8 @@ const TUTORIALS = [
     tips: ['Use current page for standard approvals'],
     useCases: ['Agreements', 'Forms', 'Approvals'],
   },
-  {
-    slug: 'remove-background',
-    name: 'Remove Background',
-    icon: 'Eraser',
-    color: '#3b82f6',
-    emoji: '🧼',
-    shortDesc: 'Solid background remover',
-    whatItDoes: 'Remove flat-color backgrounds using color + tolerance.',
-    steps: ['Upload image', 'Pick background color', 'Adjust tolerance', 'Export PNG'],
-    tips: ['Works best for studio or plain backgrounds'],
-    useCases: ['Product photos', 'Profile cutouts'],
-  },
+  // TEMPORARILY REMOVED — restore after AdSense approval
+  // { slug: 'remove-background', name: 'Remove Background', ... }
   {
     slug: 'image-upscaler',
     name: 'Image Upscaler',
@@ -264,24 +254,8 @@ const TUTORIALS = [
     tips: ['Vintage gives a warm, faded film look', 'Cool filter works well for winter/night photos', 'Vivid boosts all colors for a more striking look'],
     useCases: ['Social media posts', 'Photography editing', 'Brand consistency', 'Artistic effects'],
   },
-  {
-    slug: 'ocr-extract-text',
-    name: 'OCR - Extract Text',
-    icon: 'FileSearch',
-    color: '#2563eb',
-    emoji: '🔍',
-    shortDesc: 'Read text from any image',
-    whatItDoes: 'Optical Character Recognition (OCR) reads and extracts text from images using AI. Works on screenshots, documents, signs, receipts, and photos containing text.',
-    steps: [
-      'Upload an image containing text',
-      'Select the language of the text in the image',
-      'Click "Extract Text" — the AI engine will analyze your image',
-      'Watch the progress bar as text is recognized',
-      'Copy the extracted text or download as a .TXT file',
-    ],
-    tips: ['Higher resolution images give better results', 'Ensure the text is clearly visible and not blurry', 'High contrast text (black on white) is recognized most accurately', 'OCR works best on printed text; handwriting may have lower accuracy'],
-    useCases: ['Digitizing documents', 'Extracting text from screenshots', 'Reading receipts/invoices', 'Searching text in images'],
-  },
+  // TEMPORARILY REMOVED — restore after AdSense approval
+  // { slug: 'ocr-extract-text', name: 'OCR - Extract Text', ... }
   {
     slug: 'watermark',
     name: 'Add Watermark',

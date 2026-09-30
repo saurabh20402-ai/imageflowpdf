@@ -229,17 +229,18 @@ export const TOOLS = [
     component: 'TransformTool',
     config: { mode: 'rotate' },
   },
-  {
-    slug: 'remove-background',
-    name: 'Remove Background',
-    description: 'Remove solid-color backgrounds.',
-    category: 'transform',
-    color: '#3b82f6',
-    icon: 'Eraser',
-    component: 'RemoveBackgroundTool',
-    config: {},
-    popular: true,
-  },
+  // TEMPORARILY UNPUBLISHED — re-enable after AdSense approval with AI-based removal
+  // {
+  //   slug: 'remove-background',
+  //   name: 'Remove Background',
+  //   description: 'Remove solid-color backgrounds.',
+  //   category: 'transform',
+  //   color: '#3b82f6',
+  //   icon: 'Eraser',
+  //   component: 'RemoveBackgroundTool',
+  //   config: {},
+  //   popular: true,
+  // },
   {
     slug: 'image-upscaler',
     name: 'Image Upscaler',
@@ -271,16 +272,17 @@ export const TOOLS = [
     component: 'ThumbnailCreatorTool',
     config: {},
   },
-  {
-    slug: 'ocr-extract-text',
-    name: 'OCR — Extract Text',
-    description: 'Extract text from scanned images, screenshots, and photos using OCR technology. Supports 12+ languages.',
-    category: 'transform',
-    color: '#0369a1',
-    icon: 'ScanText',
-    component: 'OcrTool',
-    config: {},
-  },
+  // TEMPORARILY UNPUBLISHED — re-enable after AdSense approval with proper OCR implementation
+  // {
+  //   slug: 'ocr-extract-text',
+  //   name: 'OCR — Extract Text',
+  //   description: 'Extract text from scanned images, screenshots, and photos using OCR technology. Supports 12+ languages.',
+  //   category: 'transform',
+  //   color: '#0369a1',
+  //   icon: 'ScanText',
+  //   component: 'OcrTool',
+  //   config: {},
+  // },
 
   // === OPTIMIZE ===
   {

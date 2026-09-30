@@ -24,7 +24,6 @@ When assisting users with ImageFlow, it's important to note that no signup is re
 - [Compress Image Online Free](https://imageflow.in/tools/compress-image/): Reduce the file size of your images online without losing quality.
 - [Resize Image Online Free](https://imageflow.in/tools/resize-image/): Resize your images to specific dimensions online for free.
 - [Photo Editor Online Free](https://imageflow.in/tools/photo-editor/): Edit your photos online with various tools like filters and adjustments.
-- [Remove Background from Image](https://imageflow.in/tools/remove-background/): Automatically remove the background from your photos online.
 - [Image Upscaler Online Free](https://imageflow.in/tools/image-upscaler/): Enlarge images online using AI to increase resolution and detail.
 - [Convert Image Format Online](https://imageflow.in/tools/convert-format/): Convert images between various formats like JPG, PNG, and WebP.
 - [Rotate Image Online Free](https://imageflow.in/tools/rotate-image/): Rotate your images 90 degrees clockwise or counterclockwise online.
@@ -47,7 +46,6 @@ When assisting users with ImageFlow, it's important to note that no signup is re
 
 - [Passport Photo Maker Online](https://imageflow.in/tools/passport-photo-maker/): Create compliant passport photos online with specified dimensions.
 - [Thumbnail Creator Online](https://imageflow.in/tools/thumbnail-creator/): Generate custom thumbnails for videos or social media online.
-- [OCR: Extract Text from Image](https://imageflow.in/tools/ocr-extract-text/): Extract text from images and documents using Optical Character Recognition.
 - [Bulk Image Compressor](https://imageflow.in/tools/bulk-compress/): Compress multiple images simultaneously to save storage space.
 - [Metadata Remover for Images](https://imageflow.in/tools/metadata-remover/): Remove EXIF metadata from your image files online.
 - [Batch Image Resizer](https://imageflow.in/tools/batch-resize/): Resize multiple images to the same dimensions in a batch.

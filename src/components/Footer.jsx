@@ -23,7 +23,6 @@ const FOOTER_LINKS = {
     { label: 'Resize Image', href: '/tools/resize-image/' },
     { label: 'Crop Image', href: '/tools/crop-image/' },
     { label: 'Convert Format', href: '/tools/convert-format/' },
-    { label: 'Remove Background', href: '/tools/remove-background/' },
     { label: 'Image Upscaler', href: '/tools/image-upscaler/' },
     { label: 'Bulk Compressor', href: '/tools/bulk-compress/' },
   ],
