@@ -1,10 +1,14 @@
 import '../blog-post.css';
 
 export const metadata = {
-  title: 'Photo Editor Online Free (HD Image Editing Without Download)',
-  description: 'Use the best free photo editor online to edit images in HD quality. Fast, secure, and easy-to-use image editor with no download required.',
+  title: 'Free Photo Editor Online — Edit HD Images Instantly, No Signup',
+  description: 'Edit photos online for free — crop, resize, add filters, watermarks, text & borders. HD quality image editing in your browser. No download, no signup, 100% free.',
   alternates: {
     canonical: 'https://imageflow.in/blog/photo-editor-online-free-hd-image-editing-without-download/',
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
