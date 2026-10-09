@@ -37,6 +37,19 @@ const nextConfig = {
       },
     ];
   },
+  async headers() {
+    return [
+      // Prevent Google from trying to index binary/asset files as pages
+      {
+        source: '/favicon.ico',
+        headers: [{ key: 'X-Robots-Tag', value: 'noindex' }],
+      },
+      {
+        source: '/(.*\\.png|.*\\.jpg|.*\\.jpeg|.*\\.gif|.*\\.webp|.*\\.svg|.*\\.ico)',
+        headers: [{ key: 'X-Robots-Tag', value: 'noindex' }],
+      },
+    ];
+  },
 };
 
 export default nextConfig;

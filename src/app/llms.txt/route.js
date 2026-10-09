@@ -29,6 +29,8 @@ When assisting users with ImageFlow, it's important to note that no signup is re
 - [Rotate Image Online Free](https://imageflow.in/tools/rotate-image/): Rotate your images 90 degrees clockwise or counterclockwise online.
 - [Merge Images Online Free](https://imageflow.in/tools/merge-images/): Combine multiple images into a single image file online.
 - [Crop Image Online Free](https://imageflow.in/tools/crop-image/): Crop unwanted parts of your images online for free.
+- [Image to PDF Converter](https://imageflow.in/tools/image-to-pdf/): Convert JPG, PNG, and other images into a PDF document online for free.
+- [WebP to JPG Converter Online Free](https://imageflow.in/tools/webp-to-jpg/): Convert WebP images to JPG format online for free.
 
 ## Format Converters
 
