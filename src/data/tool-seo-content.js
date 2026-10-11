@@ -1350,6 +1350,70 @@ export const TOOL_SEO_CONTENT = {
       }
     ]
   },
+  "crop-image": {
+    "title": "Free Online Image Cropper — Crop Photos with Custom & Preset Ratios",
+    "subtitle": "Crop your images instantly in your browser with exact aspect ratio presets. **secure and client-side.**",
+    "introduction": "Looking for a fast, precise, and completely secure way to crop images online? The ImageFlow Image Cropper allows you to trim and frame your photos directly inside your web browser with zero server uploads. Whether you need a square 1:1 crop for an Instagram profile picture, a 16:9 cinematic crop for a YouTube thumbnail or banner, or a customized freehand selection to cut out unwanted backgrounds, our tool handles it seamlessly with pixel-perfect accuracy. Unlike traditional online photo editors that force you to send your personal photos to a remote server, ImageFlow processes all canvas operations locally on your machine using hardware-accelerated HTML5 Canvas technology. This guarantees that your private snapshots, official documents, and creative designs never leave your computer. You retain complete control over zoom, aspect ratio locks, and boundary snapping, ensuring clean and sharp results with zero loss in resolution or color fidelity. Ideal for content creators preparing social media graphics, designers formatting product images for e-commerce stores, and job applicants sizing passport photos. Enjoy blazing-fast performance without downloading heavy desktop software or registering for an account. Crop your images safely, effortlessly, and completely free of charge.",
+    "useCases": {
+      "title": "Common Use Cases for Image Cropping",
+      "items": [
+        {
+          "icon": "Instagram",
+          "title": "Social Media Posts",
+          "description": "Crop photos to exact 1:1, 4:5, or 16:9 dimensions for Instagram, Twitter, and LinkedIn."
+        },
+        {
+          "icon": "ShoppingBag",
+          "title": "E-Commerce Products",
+          "description": "Create uniform, professional product listings by trimming unnecessary margins."
+        },
+        {
+          "icon": "IdCard",
+          "title": "Profile & ID Photos",
+          "description": "Frame your portrait accurately for resumes, passport applications, and badges."
+        }
+      ]
+    },
+    "steps": {
+      "title": "How to Crop an Image in 4 Easy Steps",
+      "items": [
+        {
+          "title": "Upload Image",
+          "description": "Select or drag and drop your photo into the cropper canvas."
+        },
+        {
+          "title": "Choose Aspect Ratio",
+          "description": "Select a preset ratio (1:1, 16:9, 4:3) or use freehand mode to adjust freely."
+        },
+        {
+          "title": "Adjust Selection Box",
+          "description": "Drag the bounding handles to frame the exact portion of the image you want."
+        },
+        {
+          "title": "Crop and Save",
+          "description": "Click Crop Image to export your high-definition result in your desired format."
+        }
+      ]
+    },
+    "faqs": [
+      {
+        "q": "Does cropping reduce the quality of my image?",
+        "a": "No. The cropped portion retains the original pixel density and clarity of your source image without compression artifacts."
+      },
+      {
+        "q": "Are my images uploaded to any server during cropping?",
+        "a": "No, all image calculations and exports happen locally inside your web browser. Your images remain 100% private and never touch our servers."
+      },
+      {
+        "q": "What aspect ratio presets are supported?",
+        "a": "ImageFlow supports popular presets including 1:1 (Square), 16:9 (Widescreen), 4:3 (Standard Photo), 9:16 (Stories/Reels), and customizable Freehand mode."
+      },
+      {
+        "q": "Is this image cropper free to use?",
+        "a": "Yes, ImageFlow's image cropper is completely free with no daily limits, subscriptions, or sign-up requirements."
+      }
+    ]
+  },
   "resize-image": {
     "title": "Free Online Image Resizer — Fast & Secure",
     "subtitle": "Resize your photos instantly in your browser. **secure and client-side.**",

@@ -10,7 +10,7 @@ const FAQS = [
   { q: 'What image formats are supported?', a: 'We support JPEG, PNG, WebP, SVG, HEIC (iPhone photos), and more. You can convert between any supported format.' },
   { q: 'Is there a file size limit?', a: 'There\'s no hard limit, but very large files (50MB+) may process slower on older devices since everything runs in your browser.' },
   { q: 'Can I process multiple images at once?', a: 'Yes! Tools like Compress, Resize, and Collage support batch processing. Multiple files are downloaded as a ZIP archive.' },
-  { q: 'Does it work offline?', a: 'Most tools work offline after the first page load. The OCR tool requires a one-time language model download (~2MB).' },
+  { q: 'Does it work offline?', a: 'Most tools work offline after the initial page load because processing runs locally in your browser using modern WebAssembly and HTML5 Canvas technology.' },
 ];
 
 export default function FAQ() {

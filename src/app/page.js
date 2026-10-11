@@ -1,8 +1,9 @@
 'use client';
 
+import Link from 'next/link';
 import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Search } from 'lucide-react';
+import { Search, ShieldCheck, Cpu, Lock, ArrowRight, BookOpen, Sparkles } from 'lucide-react';
 import Hero from '@/components/Hero';
 import ToolCard from '@/components/ToolCard';
 import Features from '@/components/Features';
@@ -154,6 +155,167 @@ export default function HomePage() {
       </section>
 
       <Features />
+
+      {/* Educational & Architectural Deep-Dive Section (High Value Content) */}
+      <section style={{ padding: '64px 0', borderTop: '1px solid var(--hairline-soft)', borderBottom: '1px solid var(--hairline-soft)' }}>
+        <div className="container" style={{ maxWidth: 1040 }}>
+          
+          <div style={{ textAlign: 'center', marginBottom: 48 }}>
+            <p style={{ fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', color: 'var(--primary)', marginBottom: 8 }}>
+              Architecture &amp; Ethics
+            </p>
+            <h2 style={{ fontSize: 'clamp(24px, 3.5vw, 36px)', fontWeight: 800, color: 'var(--ink)', letterSpacing: '-0.02em', marginBottom: 14 }}>
+              How ImageFlow Works: Zero-Upload Technology
+            </h2>
+            <p style={{ fontSize: 16, color: 'var(--muted)', maxWidth: 680, margin: '0 auto', lineHeight: 1.65 }}>
+              Most online file tools secretly upload your documents, confidential IDs, and photos to external cloud storage. ImageFlow is built differently.
+            </p>
+          </div>
+
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gap: 24,
+            marginBottom: 48,
+          }}>
+            <div style={{
+              padding: 28,
+              borderRadius: 20,
+              background: 'var(--surface-card)',
+              border: '1px solid var(--hairline)',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 12,
+            }}>
+              <div style={{
+                width: 42, height: 42, borderRadius: 12,
+                background: 'rgba(16, 185, 129, 0.1)', color: '#10b981',
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+              }}>
+                <ShieldCheck size={22} />
+              </div>
+              <h3 style={{ fontSize: 18, fontWeight: 700, color: 'var(--ink)', margin: 0 }}>
+                1. Local Execution Engine
+              </h3>
+              <p style={{ fontSize: 14, color: 'var(--muted)', lineHeight: 1.7, margin: 0 }}>
+                When you drag a file into ImageFlow, your web browser executes the file manipulation algorithms using HTML5 Canvas and client-side WebAssembly. No bytes leave your device or travel over the internet.
+              </p>
+            </div>
+
+            <div style={{
+              padding: 28,
+              borderRadius: 20,
+              background: 'var(--surface-card)',
+              border: '1px solid var(--hairline)',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 12,
+            }}>
+              <div style={{
+                width: 42, height: 42, borderRadius: 12,
+                background: 'rgba(37, 99, 235, 0.1)', color: '#2563eb',
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+              }}>
+                <Cpu size={22} />
+              </div>
+              <h3 style={{ fontSize: 18, fontWeight: 700, color: 'var(--ink)', margin: 0 }}>
+                2. Instant Hardware Speeds
+              </h3>
+              <p style={{ fontSize: 14, color: 'var(--muted)', lineHeight: 1.7, margin: 0 }}>
+                Because you never wait for slow file uploads or server queues, even large files compress, convert, or merge in milliseconds directly on your device&apos;s processor and GPU.
+              </p>
+            </div>
+
+            <div style={{
+              padding: 28,
+              borderRadius: 20,
+              background: 'var(--surface-card)',
+              border: '1px solid var(--hairline)',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 12,
+            }}>
+              <div style={{
+                width: 42, height: 42, borderRadius: 12,
+                background: 'rgba(168, 85, 247, 0.1)', color: '#a855f7',
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+              }}>
+                <Lock size={22} />
+              </div>
+              <h3 style={{ fontSize: 18, fontWeight: 700, color: 'var(--ink)', margin: 0 }}>
+                3. Zero Account Friction
+              </h3>
+              <p style={{ fontSize: 14, color: 'var(--muted)', lineHeight: 1.7, margin: 0 }}>
+                We believe basic digital productivity should be universal. We do not require credit cards, email registrations, or daily quota limits to get your work done.
+              </p>
+            </div>
+          </div>
+
+          {/* Practical Guides Showcase */}
+          <div style={{
+            padding: '32px 28px',
+            borderRadius: 20,
+            background: 'var(--surface)',
+            border: '1px solid var(--hairline)',
+            display: 'flex',
+            flexDirection: 'column',
+            mdFlexDirection: 'row',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: 20,
+          }}>
+            <div>
+              <h3 style={{ fontSize: 19, fontWeight: 700, color: 'var(--ink)', marginBottom: 6 }}>
+                Need help formatting files for exams, visas, or emails?
+              </h3>
+              <p style={{ fontSize: 14, color: 'var(--muted)', margin: 0, lineHeight: 1.6 }}>
+                Explore our detailed step-by-step guides covering Aadhaar card sizes, SSC/UPSC requirements, email compression limits, and more.
+              </p>
+            </div>
+            <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', flexShrink: 0 }}>
+              <Link
+                href="/tutorials/"
+                className="btn"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: 6,
+                  padding: '10px 20px',
+                  borderRadius: 12,
+                  background: 'var(--primary)',
+                  color: '#fff',
+                  fontSize: 14,
+                  fontWeight: 600,
+                  textDecoration: 'none',
+                }}
+              >
+                <BookOpen size={16} /> Explore Tutorials
+              </Link>
+              <Link
+                href="/blog/"
+                className="btn"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: 6,
+                  padding: '10px 20px',
+                  borderRadius: 12,
+                  background: 'var(--surface-card)',
+                  border: '1px solid var(--hairline)',
+                  color: 'var(--ink)',
+                  fontSize: 14,
+                  fontWeight: 600,
+                  textDecoration: 'none',
+                }}
+              >
+                Read Guides <ArrowRight size={14} />
+              </Link>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
       <FAQ />
     </main>
   );
