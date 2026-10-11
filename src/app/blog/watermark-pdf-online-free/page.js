@@ -46,12 +46,11 @@ const USE_CASES = [
   'Protect creative portfolios with copyright watermarks.',
 ];
 
-const COMPARISON = [
-  { feature: 'Free watermark tool', our: '✓', adobe: '✗', ilove: '✓' },
-  { feature: 'No account required', our: '✓', adobe: '✗', ilove: '✗' },
-  { feature: 'Draft watermark support', our: '✓', adobe: '✓', ilove: '✓' },
-  { feature: 'Secure browser-based', our: '✓', adobe: '✗', ilove: '✓' },
-  { feature: 'Mobile-friendly', our: '✓', adobe: '✓', ilove: '✓' },
+const WATERMARK_STYLES_GUIDE = [
+  { watermarkType: 'DRAFT / PRELIMINARY', suggestedAngle: '45° Diagonal', suggestedOpacity: '15% – 25%', bestPractice: 'Centered across page; clearly flags review state without hiding body text' },
+  { watermarkType: 'CONFIDENTIAL / STRICT PRIVACY', suggestedAngle: '45° Diagonal', suggestedOpacity: '20% – 30%', bestPractice: 'Bold lettering in slate gray or red to deter unauthorized redistribution' },
+  { watermarkType: 'Corporate Logo / Brand Emblem', suggestedAngle: '0° Horizontal', suggestedOpacity: '35% – 50%', bestPractice: 'Bottom-right or top-right margin; reinforces document authenticity' },
+  { watermarkType: 'Sample / Proof of Work', suggestedAngle: '45° Diagonal', suggestedOpacity: '30% – 40%', bestPractice: 'Covers central graphics to protect creative output before final approval' },
 ];
 
 const PRO_TIPS = [
@@ -73,24 +72,20 @@ const FAQs = [
     a: 'Yes, watermarking PDFs online is 100% free with no hidden charges or subscription required.',
   },
   {
-    q: 'Can I add sample watermarks to PDFs?',
-    a: 'Yes, you can create sample watermarks with custom text like "Sample", "Draft", or any custom message.',
+    q: 'Can I customize watermark opacity and font size?',
+    a: 'Yes, you can adjust transparency, font size, and rotation angle so that the watermark is legible without obscuring underlying document text.',
   },
   {
     q: 'Can I remove watermarks from PDF?',
-    a: 'Our tool is for adding watermarks. To remove existing watermarks, you would need a different tool designed for that purpose.',
-  },
-  {
-    q: 'What watermark PDF tools are best compared to Adobe and iLovePDF?',
-    a: 'ImageFlow offers free, no-signup watermarking comparable to iLovePDF but without paid requirements. It\'s faster and more privacy-focused than Adobe solutions.',
+    a: 'Our tool is designed for stamping watermarks. To remove existing baked-in watermarks, specialized document editing software is required.',
   },
   {
     q: 'Can I create draft watermark PDFs?',
-    a: 'Yes, absolutely. You can easily create draft watermark PDFs by entering "DRAFT" as your watermark text with custom styling.',
+    a: 'Yes, absolutely. You can easily stamp draft watermark PDFs by entering "DRAFT" as your watermark text with customizable styling.',
   },
   {
     q: 'Is my document secure when adding watermarks?',
-    a: 'Yes, all processing happens in your browser. Your PDFs are never uploaded to any servers, ensuring complete privacy and security.',
+    a: 'Yes. Watermark stamping is executed locally in your browser using client-side canvas and PDF rendering. Your document contents are never transmitted to ImageFlow application servers.',
   },
 ];
 
@@ -288,26 +283,27 @@ export default function WatermarkPdfBlog() {
           </section>
 
           {/* Tool Comparison Section */}
+          {/* Watermark Styling Guide Section */}
           <section className="blog-section">
-            <h2>Watermark PDF tool comparison</h2>
-            <p>When comparing watermark PDF online tools, many users evaluate options like Adobe PDF watermarking, iLovePDF watermark features, Sejda PDF watermarking, and 11zon PDF tools. Our tool provides the same quality features as Adobe and iLovePDF but completely free with no signup requirements and better privacy protection through browser-based processing.</p>
+            <h2>Recommended watermark styling by document purpose</h2>
+            <p>Choosing proper opacity, rotation, and placement prevents your security mark from blocking critical document text:</p>
             <div className="table-container">
               <table>
                 <thead>
                   <tr>
-                    <th>Feature</th>
-                    <th>Our tool</th>
-                    <th>Adobe</th>
-                    <th>iLovePDF</th>
+                    <th>Watermark Purpose</th>
+                    <th>Angle &amp; Alignment</th>
+                    <th>Recommended Opacity</th>
+                    <th>Best Practice</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {COMPARISON.map((row) => (
-                    <tr key={row.feature}>
-                      <td>{row.feature}</td>
-                      <td className="check">✓</td>
-                      <td>{row.adobe === '✓' ? <span className="check">✓</span> : <span className="cross">✗</span>}</td>
-                      <td>{row.ilove === '✓' ? <span className="check">✓</span> : <span className="cross">✗</span>}</td>
+                  {WATERMARK_STYLES_GUIDE.map((row) => (
+                    <tr key={row.watermarkType}>
+                      <td><strong>{row.watermarkType}</strong></td>
+                      <td>{row.suggestedAngle}</td>
+                      <td>{row.suggestedOpacity}</td>
+                      <td>{row.bestPractice}</td>
                     </tr>
                   ))}
                 </tbody>

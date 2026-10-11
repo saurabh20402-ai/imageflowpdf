@@ -41,12 +41,12 @@ const USE_CASES = [
   'Save PNG versions of JPG images for archival and backup.',
 ];
 
-const COMPARISON = [
-  { feature: 'Free to use', our: '✓', adobe: '✗', ilove: '✓' },
-  { feature: 'No signup needed', our: '✓', adobe: '✗', ilove: '✗' },
-  { feature: 'Instant conversion', our: '✓', adobe: '✓', ilove: '✓' },
-  { feature: 'Secure browser-based', our: '✓', adobe: '✗', ilove: '✓' },
-  { feature: 'Mobile-friendly', our: '✓', adobe: '✓', ilove: '✓' },
+const FORMAT_COMPARISON = [
+  { feature: 'Compression Type', jpg: 'Lossy (discards subtle high-frequency data)', png: 'Lossless (exact pixel preservation)' },
+  { feature: 'Alpha Transparency', jpg: 'No (solid background only)', png: 'Yes (full 8-bit alpha channel)' },
+  { feature: 'Text & Sharp Lines', jpg: 'May show compression artifacts around edges', png: 'Pixel-perfect sharpness without ringing' },
+  { feature: 'Typical File Size', jpg: 'Significantly smaller for photographic scenes', png: 'Larger due to uncompressed pixel structure' },
+  { feature: 'Best Recommended For', jpg: 'Photographs, social posts, web banners', png: 'Logos, icons, screenshots, vector-like graphics' },
 ];
 
 const PRO_TIPS = [
@@ -81,7 +81,7 @@ const FAQs = [
   },
   {
     q: 'Is my image secure when converting?',
-    a: 'Yes, all processing happens in your browser. Your images are never uploaded to any servers, ensuring complete privacy.',
+    a: 'Yes. All conversion processing runs locally in your browser. Your images are never uploaded to ImageFlow application servers.',
   },
 ];
 
@@ -263,25 +263,23 @@ export default function JpgToPngConverterPage() {
 
           {/* Tool Comparison Section */}
           <section className="blog-section">
-            <h2>JPG to PNG converter comparison</h2>
-            <p>When comparing JPG to PNG conversion tools, users often evaluate options like Photoshop, iLovePDF, Convertio, and other online converters. Our tool provides the same quality conversion as premium tools but completely free with no signup and better privacy through browser-based processing.</p>
+            <h2>JPG vs PNG: Technical differences and when to use each</h2>
+            <p>Understanding image format mechanics helps you choose the right container for your digital graphics:</p>
             <div className="table-container">
               <table>
                 <thead>
                   <tr>
                     <th>Feature</th>
-                    <th>Our tool</th>
-                    <th>Adobe</th>
-                    <th>iLovePDF</th>
+                    <th>JPG Format</th>
+                    <th>PNG Format</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {COMPARISON.map((row) => (
+                  {FORMAT_COMPARISON.map((row) => (
                     <tr key={row.feature}>
-                      <td>{row.feature}</td>
-                      <td className="check">✓</td>
-                      <td>{row.adobe === '✓' ? <span className="check">✓</span> : <span className="cross">✗</span>}</td>
-                      <td>{row.ilove === '✓' ? <span className="check">✓</span> : <span className="cross">✗</span>}</td>
+                      <td><strong>{row.feature}</strong></td>
+                      <td>{row.jpg}</td>
+                      <td>{row.png}</td>
                     </tr>
                   ))}
                 </tbody>

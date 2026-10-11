@@ -46,12 +46,11 @@ const USE_CASES = [
   'Create graphics and visual content for marketing materials.',
 ];
 
-const COMPARISON = [
-  { feature: 'Free to use', our: '✓', adobe: '✗', ilove: '✓' },
-  { feature: 'No account required', our: '✓', adobe: '✗', ilove: '✗' },
-  { feature: 'HD editing quality', our: '✓', adobe: '✓', ilove: '✓' },
-  { feature: 'No download needed', our: '✓', adobe: '✗', ilove: '✓' },
-  { feature: 'Mobile-friendly', our: '✓', adobe: '✓', ilove: '✓' },
+const EDITING_CONTROLS_GUIDE = [
+  { adjustment: 'Brightness & Exposure', function: 'Regulates overall luminance across the image', recommendation: 'Lift gently for underexposed shadows without clipping white highlights' },
+  { adjustment: 'Contrast', function: 'Expands tonal separation between darks and lights', recommendation: 'Boost moderately to add punch and crisp definition to flat captures' },
+  { adjustment: 'Saturation & Vibrance', function: 'Controls color intensity and richness', recommendation: 'Preserve natural skin tones; adjust vibrance to enhance muted background tones' },
+  { adjustment: 'Cropping & Alignment', function: 'Frames the focal subject and levels tilted angles', recommendation: 'Apply rule-of-thirds grid alignment or target specific social aspect ratios' },
 ];
 
 const PRO_TIPS = [
@@ -78,7 +77,7 @@ const FAQs = [
   },
   {
     q: 'Is my image secure when editing?',
-    a: 'Yes, all editing happens in your browser. Your images never leave your device.',
+    a: 'Yes. All photo adjustments are performed client-side using browser HTML5 canvas routines. Your photos are never uploaded to ImageFlow application servers.',
   },
   {
     q: 'What image formats are supported?',
@@ -246,25 +245,23 @@ export default function PhotoEditorOnlineFreePage() {
           </section>
 
           <section className="blog-section">
-            <h2>Photo editor comparison</h2>
-            <p>When comparing online photo editors, users often consider Photoshop, Pixlr, Canva, and other tools. Our editor provides professional-quality editing comparable to premium tools but completely free with better privacy and no signup.</p>
+            <h2>Essential photo adjustment guide</h2>
+            <p>Mastering core tone and geometry adjustments helps you achieve professional results without over-processing:</p>
             <div className="table-container">
               <table>
                 <thead>
                   <tr>
-                    <th>Feature</th>
-                    <th>Our tool</th>
-                    <th>Adobe</th>
-                    <th>Pixlr</th>
+                    <th>Adjustment Control</th>
+                    <th>Core Function</th>
+                    <th>Recommended Practice</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {COMPARISON.map((row) => (
-                    <tr key={row.feature}>
-                      <td>{row.feature}</td>
-                      <td className="check">✓</td>
-                      <td>{row.adobe === '✓' ? <span className="check">✓</span> : <span className="cross">✗</span>}</td>
-                      <td>{row.ilove === '✓' ? <span className="check">✓</span> : <span className="cross">✗</span>}</td>
+                  {EDITING_CONTROLS_GUIDE.map((row) => (
+                    <tr key={row.adjustment}>
+                      <td><strong>{row.adjustment}</strong></td>
+                      <td>{row.function}</td>
+                      <td>{row.recommendation}</td>
                     </tr>
                   ))}
                 </tbody>

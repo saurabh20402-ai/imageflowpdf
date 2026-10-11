@@ -41,12 +41,11 @@ const USE_CASES = [
   'Prepare images for social media posting.',
 ];
 
-const COMPARISON = [
-  { feature: 'Free to use', our: '✓', adobe: '✗', ilove: '✓' },
-  { feature: 'No account required', our: '✓', adobe: '✗', ilove: '✗' },
-  { feature: 'Quality preservation', our: '✓', adobe: '✓', ilove: '✓' },
-  { feature: 'No downloads needed', our: '✓', adobe: '✗', ilove: '✓' },
-  { feature: 'Mobile-friendly', our: '✓', adobe: '✓', ilove: '✓' },
+const RESOLUTION_GUIDE = [
+  { platform: 'Website Hero & Banners', resolution: '1920 × 1080 px (16:9)', targetSize: '150 – 300 KB', benefit: 'Crisp desktop display without slowing web page speed' },
+  { platform: 'Blog & Article Headers', resolution: '1200 × 630 px (1.91:1)', targetSize: '80 – 150 KB', benefit: 'Optimal Open Graph ratio for social preview cards' },
+  { platform: 'Social Media Feed Posts', resolution: '1080 × 1080 px (1:1)', targetSize: '100 – 200 KB', benefit: 'Eliminates platform aggressive downscaling compression' },
+  { platform: 'Exam & Portal ID Photos', resolution: '35 × 45 mm (or portal spec)', targetSize: '20 – 50 KB', benefit: 'Meets official portal dimensional and file-size constraints' },
 ];
 
 const PRO_TIPS = [
@@ -81,7 +80,7 @@ const FAQs = [
   },
   {
     q: 'Is my image secure?',
-    a: 'Yes, all processing happens in your browser. Your images are never uploaded to any server.',
+    a: 'Yes. All resizing operations execute client-side in your browser using local canvas resampling. Your images are never uploaded to ImageFlow application servers.',
   },
 ];
 
@@ -242,25 +241,25 @@ export default function ResizeImageOnlineFreePage() {
           </section>
 
           <section className="blog-section">
-            <h2>Image resizer comparison</h2>
-            <p>When comparing image resizers, users evaluate options like Adobe, ImageMagick, and online services. Our resizer provides professional-quality results comparable to premium tools but completely free with better privacy.</p>
+            <h2>Recommended image dimensions by platform</h2>
+            <p>Resizing your images to target display specifications avoids blurry automatic downsampling on social and web channels:</p>
             <div className="table-container">
               <table>
                 <thead>
                   <tr>
-                    <th>Feature</th>
-                    <th>Our tool</th>
-                    <th>Adobe</th>
-                    <th>iLovePDF</th>
+                    <th>Platform / Medium</th>
+                    <th>Standard Resolution</th>
+                    <th>Target Size</th>
+                    <th>Key Benefit</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {COMPARISON.map((row) => (
-                    <tr key={row.feature}>
-                      <td>{row.feature}</td>
-                      <td className="check">✓</td>
-                      <td>{row.adobe === '✓' ? <span className="check">✓</span> : <span className="cross">✗</span>}</td>
-                      <td>{row.ilove === '✓' ? <span className="check">✓</span> : <span className="cross">✗</span>}</td>
+                  {RESOLUTION_GUIDE.map((row) => (
+                    <tr key={row.platform}>
+                      <td><strong>{row.platform}</strong></td>
+                      <td>{row.resolution}</td>
+                      <td>{row.targetSize}</td>
+                      <td>{row.benefit}</td>
                     </tr>
                   ))}
                 </tbody>

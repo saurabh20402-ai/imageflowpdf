@@ -42,12 +42,11 @@ const USE_CASES = [
   'Prepare documents for professional presentations.',
 ];
 
-const COMPARISON = [
-  { feature: 'Free to use', our: '✓', adobe: '✗', ilove: '✓' },
-  { feature: 'No signup needed', our: '✓', adobe: '✗', ilove: '✗' },
-  { feature: 'Per-page rotation', our: '✓', adobe: '✓', ilove: '✓' },
-  { feature: 'Secure browser-based', our: '✓', adobe: '✗', ilove: '✓' },
-  { feature: 'Mobile-friendly', our: '✓', adobe: '✓', ilove: '✓' },
+const ROTATION_SCENARIOS = [
+  { documentIssue: 'Landscape spread in portrait scan', rotationAngle: '90° Clockwise / Counter-Clockwise', benefit: 'Aligns wide spreadsheets, charts, and architectural drawings for screen reading' },
+  { documentIssue: 'Inverted mobile phone photo', rotationAngle: '180° Complete Inversion', benefit: 'Flips upside-down receipts and handwritten forms upright in one click' },
+  { documentIssue: 'Mixed-orientation batch scan', rotationAngle: 'Per-page selective rotation', benefit: 'Rotates only sideways pages without disturbing correctly oriented sheets' },
+  { documentIssue: 'Duplex scanner reverse page flip', rotationAngle: '180° on alternate sheets', benefit: 'Restores continuous top-to-bottom reading across double-sided document scans' },
 ];
 
 const PRO_TIPS = [
@@ -82,7 +81,7 @@ const FAQs = [
   },
   {
     q: 'Is it safe to rotate PDFs online?',
-    a: 'Yes, absolutely. ImageFlow processes everything in your browser without uploading to servers. Your files never leave your device.',
+    a: 'Yes. ImageFlow modifies PDF page rotation metadata directly in your browser. Your document contents are never transmitted to ImageFlow application servers.',
   },
 ];
 
@@ -299,27 +298,25 @@ export default function RotatePdfBlog() {
             </div>
           </section>
 
-          {/* Comparison Table */}
+          {/* Rotation Scenarios Section */}
           <section className="blog-section">
-            <h2>Rotate PDF vs. other tools</h2>
-            <p>Many users compare tools like iLovePDF Rotate PDF, Smallpdf Rotate PDF, and Adobe Rotate PDF. Users generally look for faster processing, better privacy, mobile support, and no signup requirement. Our tool focuses on speed, browser-based processing, and simplicity.</p>
+            <h2>Common PDF orientation correction scenarios</h2>
+            <p>Selecting the appropriate rotation degree depends on how your original document was captured or scanned:</p>
             <div className="table-container">
               <table>
                 <thead>
                   <tr>
-                    <th>Feature</th>
-                    <th>Our tool</th>
-                    <th>Adobe</th>
-                    <th>iLovePDF</th>
+                    <th>Scan / Capture Problem</th>
+                    <th>Correction Angle</th>
+                    <th>Practical Benefit</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {COMPARISON.map((row) => (
-                    <tr key={row.feature}>
-                      <td>{row.feature}</td>
-                      <td className="check">✓</td>
-                      <td>{row.adobe === '✓' ? <span className="check">✓</span> : <span className="cross">✗</span>}</td>
-                      <td>{row.ilove === '✓' ? <span className="check">✓</span> : <span className="cross">✗</span>}</td>
+                  {ROTATION_SCENARIOS.map((row) => (
+                    <tr key={row.documentIssue}>
+                      <td><strong>{row.documentIssue}</strong></td>
+                      <td>{row.rotationAngle}</td>
+                      <td>{row.benefit}</td>
                     </tr>
                   ))}
                 </tbody>

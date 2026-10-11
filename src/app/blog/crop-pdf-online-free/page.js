@@ -42,12 +42,11 @@ const USE_CASES = [
   'Improve document appearance for professional presentations.',
 ];
 
-const COMPARISON = [
-  { feature: 'Free to use', our: '✓', adobe: '✗', ilove: '✓' },
-  { feature: 'No signup needed', our: '✓', adobe: '✗', ilove: '✗' },
-  { feature: 'Auto crop feature', our: '✓', adobe: '✓', ilove: '✓' },
-  { feature: 'Secure browser-based', our: '✓', adobe: '✗', ilove: '✓' },
-  { feature: 'Mobile-friendly', our: '✓', adobe: '✓', ilove: '✓' },
+const CROPPING_GUIDE = [
+  { scenario: 'Standard document margins', recommendation: 'Keep 12.7 mm (0.5 in) padding', reason: 'Ensures body text and headers do not clip when printing or binding' },
+  { scenario: 'Scanned receipts & bills', recommendation: 'Crop tight to receipt edges', reason: 'Removes flatbed scanner dark borders and reduces unnecessary canvas area' },
+  { scenario: 'Presentation slides', recommendation: 'Match 16:9 or 4:3 aspect ratio', reason: 'Eliminates distracting black bars on digital projectors and monitors' },
+  { scenario: 'eReader & mobile reading', recommendation: 'Trim all outer whitespace', reason: 'Maximizes legible text size on compact tablet and mobile screens' },
 ];
 
 const PRO_TIPS = [
@@ -82,7 +81,7 @@ const FAQs = [
   },
   {
     q: 'Is it safe to crop PDFs online?',
-    a: 'Yes, absolutely. ImageFlow processes everything in your browser without uploading to servers. Your files never leave your device.',
+    a: 'Yes. ImageFlow processes your PDF locally in your browser using client-side rendering. Your document contents are never transmitted to ImageFlow application servers.',
   },
 ];
 
@@ -299,27 +298,25 @@ export default function CropPdfBlog() {
             </div>
           </section>
 
-          {/* Comparison Table */}
+          {/* Cropping Guidelines Section */}
           <section className="blog-section">
-            <h2>Crop PDF vs. other tools</h2>
-            <p>Users frequently compare tools like iLovePDF Crop, Crop PDF 11zon, and Adobe PDF Editor. Most users want fast performance, better privacy, mobile support, and an easy-to-use interface. Our tool focuses on browser-based processing and simplicity.</p>
+            <h2>Recommended PDF cropping dimensions by scenario</h2>
+            <p>Applying the correct crop margins helps optimize page layout without cutting off essential content:</p>
             <div className="table-container">
               <table>
                 <thead>
                   <tr>
-                    <th>Feature</th>
-                    <th>Our tool</th>
-                    <th>Adobe</th>
-                    <th>iLovePDF</th>
+                    <th>Scenario</th>
+                    <th>Recommended Margin / Ratio</th>
+                    <th>Practical Benefit</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {COMPARISON.map((row) => (
-                    <tr key={row.feature}>
-                      <td>{row.feature}</td>
-                      <td className="check">✓</td>
-                      <td>{row.adobe === '✓' ? <span className="check">✓</span> : <span className="cross">✗</span>}</td>
-                      <td>{row.ilove === '✓' ? <span className="check">✓</span> : <span className="cross">✗</span>}</td>
+                  {CROPPING_GUIDE.map((row) => (
+                    <tr key={row.scenario}>
+                      <td><strong>{row.scenario}</strong></td>
+                      <td>{row.recommendation}</td>
+                      <td>{row.reason}</td>
                     </tr>
                   ))}
                 </tbody>

@@ -1,4 +1,4 @@
-﻿import '../blog-post.css';
+import '../blog-post.css';
 
 export const metadata = {
   title: 'Compress PDF Online Free Without Losing Quality (Fast, Secure & Easy)',
@@ -42,12 +42,11 @@ const USE_CASES = [
   'Optimize form PDFs for mobile viewing.',
 ];
 
-const COMPARISON = [
-  { feature: 'Free compression', our: '✓', adobe: '✗', ilove: '✓' },
-  { feature: 'No account required', our: '✓', adobe: '✗', ilove: '✗' },
-  { feature: 'Browser-based', our: '✓', adobe: '✗', ilove: '✓' },
-  { feature: 'No size limits', our: '✓', adobe: '✗', ilove: '✗' },
-  { feature: 'Mobile-friendly', our: '✓', adobe: '✓', ilove: '✓' },
+const COMPRESSION_GUIDE = [
+  { useCase: 'Email attachments', target: 'Under 10 MB', quality: '70% – 80%', benefit: 'Preserves sharp text while bypassing inbox size limits' },
+  { useCase: 'Job & exam portals', target: 'Under 1 MB', quality: '50% – 65%', benefit: 'Meets strict institutional upload limits without blur' },
+  { useCase: 'Web publishing', target: 'Under 2 MB', quality: '60% – 70%', benefit: 'Fast loading speeds on mobile networks and browsers' },
+  { useCase: 'Print & archiving', target: 'Original DPI', quality: '85% – 95%', benefit: 'Retains maximum detail for high-resolution printing' },
 ];
 
 const PRO_TIPS = [
@@ -66,7 +65,7 @@ const RELATED_TOOLS = [
 const FAQs = [
   {
     q: 'Is it safe to compress PDF online?',
-    a: 'Yes. Processing happens in your browser—your PDF is never uploaded to any server, ensuring complete privacy and security.',
+    a: 'Yes. Processing happens client-side in your browser using local canvas and WebAssembly routines. Your PDF file contents are never uploaded to ImageFlow application servers.',
   },
   {
     q: 'Is this tool free?',
@@ -294,27 +293,27 @@ export default function CompressPdfBlog() {
             </div>
           </section>
 
-          {/* Tool Comparison Section */}
+          {/* Compression Settings Guide Section */}
           <section className="blog-section">
-            <h2>PDF compression tool comparison</h2>
-            <p>When evaluating PDF compressors, many users compare options like Adobe PDF compression, iLovePDF, and other online tools. Our tool provides the same quality compression as these services but completely free with no signup requirements and better privacy protection.</p>
+            <h2>Recommended PDF compression settings by use case</h2>
+            <p>Choosing the right balance between file size reduction and visual clarity depends on where you plan to share your document:</p>
             <div className="table-container">
               <table>
                 <thead>
                   <tr>
-                    <th>Feature</th>
-                    <th>Our tool</th>
-                    <th>Adobe</th>
-                    <th>iLovePDF</th>
+                    <th>Use Case</th>
+                    <th>Target Size</th>
+                    <th>Recommended Quality</th>
+                    <th>Key Benefit</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {COMPARISON.map((row) => (
-                    <tr key={row.feature}>
-                      <td>{row.feature}</td>
-                      <td className="check">✓</td>
-                      <td>{row.adobe === '✓' ? <span className="check">✓</span> : <span className="cross">✗</span>}</td>
-                      <td>{row.ilove === '✓' ? <span className="check">✓</span> : <span className="cross">✗</span>}</td>
+                  {COMPRESSION_GUIDE.map((row) => (
+                    <tr key={row.useCase}>
+                      <td><strong>{row.useCase}</strong></td>
+                      <td>{row.target}</td>
+                      <td>{row.quality}</td>
+                      <td>{row.benefit}</td>
                     </tr>
                   ))}
                 </tbody>

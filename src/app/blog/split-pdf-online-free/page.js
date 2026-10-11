@@ -1,4 +1,4 @@
-﻿import '../blog-post.css';
+import '../blog-post.css';
 
 export const metadata = {
   title: 'Split PDF Online Free (Extract PDF Pages Instantly)',
@@ -42,12 +42,11 @@ const USE_CASES = [
   'Create individual PDF files for each form section.',
 ];
 
-const COMPARISON = [
-  { feature: 'Free to use', our: '✓', adobe: '✗', ilove: '✓' },
-  { feature: 'No signup needed', our: '✓', adobe: '✗', ilove: '✗' },
-  { feature: 'Fast processing', our: '✓', adobe: '✓', ilove: '✓' },
-  { feature: 'Secure browser-based', our: '✓', adobe: '✗', ilove: '✓' },
-  { feature: 'Mobile-friendly', our: '✓', adobe: '✓', ilove: '✓' },
+const SPLIT_STRATEGIES_GUIDE = [
+  { workflow: 'Extract specific single page', method: 'Select exact page number (e.g., Page 4)', typicalUse: 'Isolating a certificate, invoice, or receipt from a large document package' },
+  { workflow: 'Extract custom page range', method: 'Define page numbers or ranges (e.g., Pages 5–12)', typicalUse: 'Sharing a specific chapter or agreement schedule without unrelated sections' },
+  { workflow: 'Burst into individual pages', method: 'Extract every page into standalone files', typicalUse: 'Archiving individual invoice sheets or student records from a batch scan' },
+  { workflow: 'Remove unwanted pages', method: 'Extract all pages except trailing blanks', typicalUse: 'Trimming scanner blank pages and separator dividers before submission' },
 ];
 
 const PRO_TIPS = [
@@ -64,7 +63,7 @@ const RELATED_TOOLS = [
 ];
 
 const FAQs = [
-  { q: 'Is it safe to split PDF online?', a: 'Yes. Our tool processes files in your browser and deletes them immediately after splitting. We never store your data on servers.' },
+  { q: 'Is it safe to split PDF online?', a: 'Yes. Our tool processes files client-side directly in your browser using local WebAssembly. Your documents are never uploaded to or stored on ImageFlow servers.' },
   { q: 'Is this tool free?', a: 'Yes. ImageFlow lets you split PDF online free with no signup, no limits, and no hidden fees.' },
   { q: 'Can I split PDF pages into separate files?', a: 'Yes. You can extract individual pages or page ranges, and each can be downloaded as a separate PDF file.' },
   { q: 'Does splitting reduce quality?', a: 'No. Splitting preserves the original quality of text, images, and formatting perfectly.' },
@@ -244,26 +243,25 @@ export default function SplitPdfOnlineFreePage() {
           </div>
         </section>
 
-        {/* Comparison Table */}
+        {/* Split Strategies Section */}
         <section className="blog-section">
-          <h2>Split PDF vs. other tools</h2>
+          <h2>PDF extraction strategies by workflow</h2>
+          <p>Choose the extraction method that best matches how your documents need to be segmented or archived:</p>
           <div className="table-container">
             <table>
               <thead>
                 <tr>
-                  <th>Feature</th>
-                  <th>Our tool</th>
-                  <th>Adobe</th>
-                  <th>iLovePDF</th>
+                  <th>Extraction Workflow</th>
+                  <th>Selection Method</th>
+                  <th>Typical Application</th>
                 </tr>
               </thead>
               <tbody>
-                {COMPARISON.map((row) => (
-                  <tr key={row.feature}>
-                    <td>{row.feature}</td>
-                    <td className="check">✓</td>
-                    <td>{row.adobe === '✓' ? <span className="check">✓</span> : <span className="cross">✗</span>}</td>
-                    <td>{row.ilove === '✓' ? <span className="check">✓</span> : <span className="cross">✗</span>}</td>
+                {SPLIT_STRATEGIES_GUIDE.map((row) => (
+                  <tr key={row.workflow}>
+                    <td><strong>{row.workflow}</strong></td>
+                    <td>{row.method}</td>
+                    <td>{row.typicalUse}</td>
                   </tr>
                 ))}
               </tbody>

@@ -1,4 +1,4 @@
-﻿import '../blog-post.css';
+import '../blog-post.css';
 
 export const metadata = {
   title: 'Merge PDF Online Free (Fast, Secure & Easy)',
@@ -42,12 +42,11 @@ const USE_CASES = [
   'Consolidate multi-part applications into a single submission.',
 ];
 
-const COMPARISON = [
-  { feature: 'Free to use', our: '✓', adobe: '✗', ilove: '✓' },
-  { feature: 'No signup needed', our: '✓', adobe: '✗', ilove: '✗' },
-  { feature: 'Fast processing', our: '✓', adobe: '✓', ilove: '✓' },
-  { feature: 'Secure browser-based', our: '✓', adobe: '✗', ilove: '✓' },
-  { feature: 'Mobile-friendly', our: '✓', adobe: '✓', ilove: '✓' },
+const MERGE_GUIDE = [
+  { documentType: 'Office contracts & annexures', preparation: 'Place master agreement first, followed by numbered exhibits', benefit: 'Maintains clear legal hierarchy and readable document flow' },
+  { documentType: 'Monthly invoices & receipts', preparation: 'Group by date or vendor chronologically before merging', benefit: 'Facilitates fast reconciliation for accounting audits' },
+  { documentType: 'Research papers & appendices', preparation: 'Verify consistent page orientation (portrait vs landscape)', benefit: 'Eliminates unexpected mixed-orientation printing errors' },
+  { documentType: 'Job & scholarship dossiers', preparation: 'Place resume first, then cover letter, transcripts, and certificates', benefit: 'Presents a cohesive professional narrative to evaluators' },
 ];
 
 const PRO_TIPS = [
@@ -66,7 +65,7 @@ const RELATED_TOOLS = [
 const FAQs = [
   {
     q: 'Is it safe to merge PDFs online?',
-    a: 'Yes, absolutely. ImageFlow processes everything in your browser without uploading to servers. Your files never leave your device.',
+    a: 'Yes. ImageFlow merges your files directly in your browser using client-side JavaScript. Your file contents are never transmitted to ImageFlow application servers.',
   },
   {
     q: 'Can I merge PDFs on mobile?',
@@ -259,26 +258,25 @@ export default function MergePdfBlog() {
             </div>
           </section>
 
-          {/* Comparison Table */}
+          {/* Merge Guidelines Section */}
           <section className="blog-section">
-            <h2>Merge PDF vs. other tools</h2>
+            <h2>Best practices for combining multi-document PDFs</h2>
+            <p>Structuring your source files before merging prevents layout inconsistencies and missing pages:</p>
             <div className="table-container">
               <table>
                 <thead>
                   <tr>
-                    <th>Feature</th>
-                    <th>Our tool</th>
-                    <th>Adobe</th>
-                    <th>iLovePDF</th>
+                    <th>Document Type</th>
+                    <th>Recommended Preparation</th>
+                    <th>Key Benefit</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {COMPARISON.map((row) => (
-                    <tr key={row.feature}>
-                      <td>{row.feature}</td>
-                      <td className="check">✓</td>
-                      <td>{row.adobe === '✓' ? <span className="check">✓</span> : <span className="cross">✗</span>}</td>
-                      <td>{row.ilove === '✓' ? <span className="check">✓</span> : <span className="cross">✗</span>}</td>
+                  {MERGE_GUIDE.map((row) => (
+                    <tr key={row.documentType}>
+                      <td><strong>{row.documentType}</strong></td>
+                      <td>{row.preparation}</td>
+                      <td>{row.benefit}</td>
                     </tr>
                   ))}
                 </tbody>

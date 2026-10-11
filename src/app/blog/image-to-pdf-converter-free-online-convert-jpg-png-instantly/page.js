@@ -41,12 +41,11 @@ const USE_CASES = [
   'Build PDF presentations from individual image files.',
 ];
 
-const COMPARISON = [
-  { feature: 'Free to use', our: '✓', adobe: '✗', ilove: '✓' },
-  { feature: 'No signup needed', our: '✓', adobe: '✗', ilove: '✗' },
-  { feature: 'Batch conversion', our: '✓', adobe: '✓', ilove: '✓' },
-  { feature: 'Secure browser-based', our: '✓', adobe: '✗', ilove: '✓' },
-  { feature: 'Mobile-friendly', our: '✓', adobe: '✓', ilove: '✓' },
+const CONVERSION_GUIDE = [
+  { documentType: 'Multi-page contracts & forms', pageLayout: 'Portrait A4 / Letter', benefit: 'Consolidates separate page photos into one unified document' },
+  { documentType: 'Receipts & expense bills', pageLayout: 'Sequential auto-fit', benefit: 'Simplifies accounting review without handling loose image files' },
+  { documentType: 'Design portfolios & slides', pageLayout: 'Original aspect ratio', benefit: 'Maintains presentation dimensions and crisp image fidelity' },
+  { documentType: 'Academic assignments', pageLayout: 'Ordered pages in sequence', benefit: 'Ensures evaluators receive all handwritten sheets in order' },
 ];
 
 const PRO_TIPS = [
@@ -81,7 +80,7 @@ const FAQs = [
   },
   {
     q: 'Is my data secure?',
-    a: 'Yes, all processing happens in your browser. Your images are never uploaded to any server.',
+    a: 'Yes. All image processing runs locally in your browser. Your images are never uploaded to ImageFlow application servers.',
   },
 ];
 
@@ -242,25 +241,23 @@ export default function ImageToPdfConverterPage() {
           </section>
 
           <section className="blog-section">
-            <h2>Image to PDF converter comparison</h2>
-            <p>When comparing image to PDF converters, users evaluate options like Adobe, iLovePDF, and Sejda. Our tool provides the same quality conversion as premium options but completely free with no signup required.</p>
+            <h2>Recommended document layout by use case</h2>
+            <p>Choosing the right layout when converting images into PDF ensures your final document looks clean and readable:</p>
             <div className="table-container">
               <table>
                 <thead>
                   <tr>
-                    <th>Feature</th>
-                    <th>Our tool</th>
-                    <th>Adobe</th>
-                    <th>iLovePDF</th>
+                    <th>Document Type</th>
+                    <th>Recommended Layout</th>
+                    <th>Practical Benefit</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {COMPARISON.map((row) => (
-                    <tr key={row.feature}>
-                      <td>{row.feature}</td>
-                      <td className="check">✓</td>
-                      <td>{row.adobe === '✓' ? <span className="check">✓</span> : <span className="cross">✗</span>}</td>
-                      <td>{row.ilove === '✓' ? <span className="check">✓</span> : <span className="cross">✗</span>}</td>
+                  {CONVERSION_GUIDE.map((row) => (
+                    <tr key={row.documentType}>
+                      <td><strong>{row.documentType}</strong></td>
+                      <td>{row.pageLayout}</td>
+                      <td>{row.benefit}</td>
                     </tr>
                   ))}
                 </tbody>

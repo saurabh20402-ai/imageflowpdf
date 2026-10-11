@@ -62,16 +62,16 @@ export default function Footer() {
               <ImageFlowLogoImg height={42} />
             </Link>
             <p className="footer-brand-text">
-              Free, instant online PDF and image processing tools. 100% private in-browser processing with zero server uploads and no signup required.
+              Free, instant online PDF and image processing tools. Client-side processing for standard utilities with no accounts or software installation required.
             </p>
             <div className="footer-badges-wrap">
               <span className="footer-badge">
                 <ShieldCheck size={14} className="text-[var(--primary)]" />
-                100% Client-Side Privacy
+                Client-Side Processing
               </span>
               <span className="footer-badge">
                 <Zap size={14} className="text-[#10b981]" />
-                Fast & No Signup
+                Fast &amp; No Signup
               </span>
             </div>
           </div>

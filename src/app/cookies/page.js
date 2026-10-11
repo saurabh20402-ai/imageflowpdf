@@ -13,7 +13,7 @@ export default function CookiesPage() {
         <div style={{ marginBottom: 40 }}>
           <p style={{ fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--primary)', marginBottom: 10 }}>Legal</p>
           <h1 style={{ fontSize: 'clamp(28px, 4vw, 42px)', fontWeight: 800, color: 'var(--ink)', letterSpacing: '-0.02em', marginBottom: 12 }}>Cookie Policy</h1>
-          <p style={{ fontSize: 15, color: 'var(--muted)', lineHeight: 1.7 }}>Last updated: May 2025 · A clear explanation of how we use cookies and local storage.</p>
+          <p style={{ fontSize: 15, color: 'var(--muted)', lineHeight: 1.7 }}>Last updated: October 2026 · A clear explanation of how we use cookies and local storage.</p>
         </div>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: 28 }}>

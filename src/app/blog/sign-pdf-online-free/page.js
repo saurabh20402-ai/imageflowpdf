@@ -42,12 +42,10 @@ const USE_CASES = [
   'Execute business forms and employment agreements remotely.',
 ];
 
-const COMPARISON = [
-  { feature: 'Free to use', our: '✓', adobe: '✗', ilove: '✓' },
-  { feature: 'No account required', our: '✓', adobe: '✗', ilove: '✗' },
-  { feature: 'Mobile support', our: '✓', adobe: '✓', ilove: '✓' },
-  { feature: 'Secure browser-based', our: '✓', adobe: '✗', ilove: '✓' },
-  { feature: 'Instant download', our: '✓', adobe: '✓', ilove: '✓' },
+const SIGNATURE_TYPES_GUIDE = [
+  { signatureType: 'Simple Electronic Signature (SES)', mechanism: 'Drawn canvas signature or pasted signature image', bestUsedFor: 'Internal memos, everyday approvals, vendor receipts, simple agreements' },
+  { signatureType: 'Advanced Electronic Signature (AES)', mechanism: 'Signer identification and document tamper audit trail', bestUsedFor: 'Commercial contracts, NDAs, employment agreements' },
+  { signatureType: 'Cryptographic Digital Signature (DSC / PKI)', mechanism: 'Hardware crypto token or official certification authority', bestUsedFor: 'Statutory filings, court pleadings, high-value government tenders' },
 ];
 
 const PRO_TIPS = [
@@ -78,7 +76,7 @@ const FAQs = [
   },
   {
     q: 'Is my document secure when signing?',
-    a: 'Yes, all files are processed securely in your browser. Your documents never leave your device.',
+    a: 'Yes. Drawing and placing your signature happens entirely client-side in your browser. Your document and signature data are never transmitted to ImageFlow application servers.',
   },
   {
     q: 'Can I fill and sign PDFs at the same time?',
@@ -305,25 +303,23 @@ export default function SignPdfBlog() {
 
           {/* Comparison Table */}
           <section className="blog-section">
-            <h2>Sign PDF vs. other tools</h2>
-            <p>People commonly compare tools such as Adobe Sign PDF, iLovePDF Sign PDF, and eSign PDF tools. Users generally want faster processing, better privacy, no account requirement, and easy mobile access. Our tool focuses on speed and browser-based processing.</p>
+            <h2>Understanding electronic vs digital signatures</h2>
+            <p>Choosing the right signing method depends on the legal requirements and formality of your document:</p>
             <div className="table-container">
               <table>
                 <thead>
                   <tr>
-                    <th>Feature</th>
-                    <th>Our tool</th>
-                    <th>Adobe</th>
-                    <th>iLovePDF</th>
+                    <th>Signature Category</th>
+                    <th>Technical Mechanism</th>
+                    <th>Typical Best Use</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {COMPARISON.map((row) => (
-                    <tr key={row.feature}>
-                      <td>{row.feature}</td>
-                      <td className="check">✓</td>
-                      <td>{row.adobe === '✓' ? <span className="check">✓</span> : <span className="cross">✗</span>}</td>
-                      <td>{row.ilove === '✓' ? <span className="check">✓</span> : <span className="cross">✗</span>}</td>
+                  {SIGNATURE_TYPES_GUIDE.map((row) => (
+                    <tr key={row.signatureType}>
+                      <td><strong>{row.signatureType}</strong></td>
+                      <td>{row.mechanism}</td>
+                      <td>{row.bestUsedFor}</td>
                     </tr>
                   ))}
                 </tbody>

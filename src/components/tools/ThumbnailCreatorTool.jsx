@@ -805,6 +805,9 @@ export default function ThumbnailCreatorTool() {
           <div className="card" style={{ padding: 16, maxHeight: 520, overflowY: 'auto' }}>
             {activeTab === 'ai' && (
               <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+                <div style={{ padding: '8px 12px', borderRadius: 8, background: 'var(--surface)', border: '1px solid var(--hairline)', fontSize: 11, color: 'var(--muted)', lineHeight: 1.5 }}>
+                  <strong style={{ color: 'var(--ink)' }}>AI Transparency:</strong> Manual editing runs locally on your device. When using this tab, your entered text prompt is sent to Google Gemini for layout suggestions, and generated backgrounds are fetched from external providers. Your uploaded personal images are never sent to external AI servers.
+                </div>
                 <div style={{ background: 'var(--surface-hover)', padding: 12, borderRadius: 8 }}>
                   <button 
                     type="button" 
