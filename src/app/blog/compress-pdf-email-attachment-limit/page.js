@@ -15,37 +15,37 @@ const FEATURES = [
 ];
 
 const STEPS = [
-  'Go to the Compress PDF tool on ImageFlow.',
-  'Upload the PDF file that exceeds the 25MB limit.',
-  'Choose the "Recommended Compression" level.',
-  'Click "Compress PDF" and wait a few seconds for processing.',
-  'Download your optimized PDF, now ready for email attachment.',
+  'Open the Compress PDF tool on ImageFlow.',
+  'Select or drag and drop the PDF file that exceeds your email attachment limit.',
+  'Adjust the Quality slider (e.g., 60–75%) and Scale slider to balance file size and legibility.',
+  'Click Compress PDF to process the pages locally in your browser.',
+  'Download your optimized PDF, now ready for direct attachment.',
 ];
 
 const PRO_TIPS = [
-  'Gmail and Outlook both have a strict 25MB limit. Aim for 23MB or less to be safe.',
-  'If your PDF is still over 25MB after compression, consider using our Split PDF tool to send it in parts.',
-  'Remove unnecessary pages or high-resolution images from the document before converting to PDF.',
+  'Gmail and Outlook enforce a strict 25MB attachment limit. We recommend aiming under 22MB to account for base64 email encoding overhead.',
+  'If your document has hundreds of pages, consider using our Split PDF tool to break it into logical sections.',
+  'For scanned documents and contracts, setting Quality around 70% typically cuts file size by 50% to 70% while keeping text clear.',
 ];
 
 const RELATED_TOOLS = [
-  { title: 'Compress PDF', description: 'Shrink your PDF file size.', href: '/tools/compress-pdf/' },
-  { title: 'Split PDF', description: 'Extract pages to make smaller files.', href: '/tools/split-pdf/' },
-  { title: 'Merge PDF', description: 'Combine multiple PDFs into one.', href: '/tools/merge-pdf/' },
+  { title: 'Compress PDF', description: 'Shrink your PDF file size locally in your browser.', href: '/tools/compress-pdf/' },
+  { title: 'Split PDF', description: 'Extract pages to make smaller individual files.', href: '/tools/split-pdf/' },
+  { title: 'Merge PDF', description: 'Combine multiple PDF documents into one.', href: '/tools/merge-pdf/' },
 ];
 
 const FAQs = [
   {
-    q: 'What is the maximum PDF size I can send via Gmail?',
-    a: 'The maximum attachment limit for both Gmail and Outlook is 25MB. If your file is larger, it will be uploaded to Google Drive or OneDrive as a link instead of a direct attachment.',
+    q: 'What is the maximum PDF size I can send via Gmail and Outlook?',
+    a: 'Both Gmail and Outlook standard webmail limit direct email attachments to 25MB. Files exceeding this size are converted into cloud links (Google Drive or OneDrive links). To send an actual standalone file, the compressed PDF must be under 25MB.',
   },
   {
-    q: 'Will compressing my PDF make the text blurry?',
-    a: 'No. Our compression tool uses vector-safe optimization which keeps text and document layouts perfectly sharp, only compressing embedded images and removing unnecessary metadata.',
+    q: 'How does ImageFlow reduce PDF file size?',
+    a: 'ImageFlow processes your PDF pages locally using client-side rendering with configurable JPEG compression quality and render scaling. This significantly reduces data-heavy scanned pages and image layers. Always inspect your output preview to ensure small text remains legible at your chosen quality level.',
   },
   {
-    q: 'Is it safe to compress confidential documents here?',
-    a: 'Yes. ImageFlow processes all files locally in your web browser using WebAssembly. Your documents are never uploaded to any server, ensuring complete privacy.',
+    q: 'Is my document private when compressed on ImageFlow?',
+    a: 'Yes. The document is processed directly inside your browser on your device. The file content is never transmitted to or stored on our servers.',
   },
 ];
 

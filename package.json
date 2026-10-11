@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test": "node check-links.js"
   },
   "dependencies": {
     "@upstash/redis": "^1.34.3",

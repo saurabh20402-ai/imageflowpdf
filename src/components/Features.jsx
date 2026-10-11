@@ -4,12 +4,12 @@ import { motion } from 'framer-motion';
 import { Shield, Zap, Laptop, Lock, RefreshCw, Layers } from 'lucide-react';
 
 const FEATURES = [
-  { icon: Shield, title: 'Privacy First', desc: 'Images never leave your browser. All processing is 100% client-side.' },
-  { icon: Zap, title: 'Lightning Fast', desc: 'No uploading or downloading from servers. Instant results on your device.' },
-  { icon: Laptop, title: 'Works Everywhere', desc: 'Any modern browser, any device. No software to install.' },
-  { icon: Lock, title: 'No Sign-up', desc: 'No accounts, no emails, no tracking. Just open and use.' },
+  { icon: Shield, title: 'Privacy First', desc: 'Core file processing runs locally on your device without server uploads.' },
+  { icon: Zap, title: 'Lightning Fast', desc: 'Instant browser-side processing without waiting for remote server queues.' },
+  { icon: Laptop, title: 'Works Everywhere', desc: 'Runs in any modern mobile or desktop browser without software installation.' },
+  { icon: Lock, title: 'No Sign-up', desc: 'No accounts, no passwords, and no subscription paywalls.' },
   { icon: RefreshCw, title: 'Batch Processing', desc: 'Process multiple images at once with ZIP download support.' },
-  { icon: Layers, title: '30+ Tools', desc: 'From format conversion to meme generation — everything in one place.' },
+  { icon: Layers, title: '30 Tools', desc: 'Comprehensive PDF and image utility suite in one clean interface.' },
 ];
 
 export default function Features() {

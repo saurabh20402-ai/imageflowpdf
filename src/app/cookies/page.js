@@ -21,7 +21,8 @@ export default function CookiesPage() {
             { title: 'What Are Cookies?', content: 'Cookies are small text files stored in your browser. They are commonly used to remember your preferences, deliver relevant advertising, and improve your experience. ImageFlow uses minimal, standard web technologies to make the site work efficiently and support our free services.' },
             { title: 'Cookies We Use', content: null, table: [
               { name: 'theme', purpose: 'Remembers your light/dark mode preference', type: 'Strictly Necessary', duration: 'Persistent (1 year)' },
-              { name: '_ga, _ga_*', purpose: 'Google Analytics anonymized traffic metrics', type: 'Analytics', duration: '2 years' },
+              { name: '_ga, _ga_*', purpose: 'Google Analytics 4 traffic and performance telemetry', type: 'Analytics', duration: 'Up to 2 years' },
+              { name: 'Ahrefs Analytics', purpose: 'Aggregate visitor metrics and site performance (cookie-free script measurement)', type: 'Analytics', duration: 'Session' },
               { name: '__gads, __gpi', purpose: 'Google AdSense ad serving and fraud prevention', type: 'Advertising', duration: 'Up to 13 months' },
             ]},
             { title: 'Local Storage', content: 'In addition to cookies, ImageFlow uses your browser\'s localStorage (not cookies) to save:\n\n• Processing history — auto-deleted after 8 hours\n• Review history — only what you submit\n• Tool preferences — e.g., last used quality setting\n\nThis data never leaves your device and is not accessible to our servers.' },

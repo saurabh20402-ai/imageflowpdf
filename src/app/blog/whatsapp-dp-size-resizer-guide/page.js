@@ -31,7 +31,7 @@ const PRO_TIPS = [
 const RELATED_TOOLS = [
   { title: 'Resize Image', description: 'Change dimensions to 1:1 or custom sizes.', href: '/tools/resize-image/' },
   { title: 'Crop Image', description: 'Crop your photo to a perfect square.', href: '/tools/crop-image/' },
-  { title: 'Remove Background', description: 'Remove the background to make a custom cutout DP.', href: '/tools/remove-background/' },
+  { title: 'Photo Editor', description: 'Add filters, borders, and adjustments to your profile picture.', href: '/tools/photo-editor/' },
 ];
 
 const FAQs = [

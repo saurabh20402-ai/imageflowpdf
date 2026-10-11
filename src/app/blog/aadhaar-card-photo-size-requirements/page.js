@@ -1,60 +1,69 @@
 import '../blog-post.css';
 
 export const metadata = {
-  title: 'Aadhaar Card Photo Size, Background & Upload Requirements',
-  description: 'Understand the official photo size, white background requirements, and guidelines for Aadhaar card updates and enrollment.',
+  title: 'Aadhaar Card Photo Size, Background & Verification Guidelines',
+  description: 'Verified guidelines for Aadhaar card photo updates, in-person biometric capture rules, and standard 35x45mm photo formatting for Indian identity documents.',
   alternates: {
     canonical: 'https://imageflow.in/blog/aadhaar-card-photo-size-requirements/',
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
 const FEATURES = [
-  { title: 'White Background', text: 'Learn why UIDAI strictly requires a solid white background.', bg: '#eef2ff' },
-  { title: 'Official Dimensions', text: 'Get the exact dimensions for print and digital uploads.', bg: '#f5f3ff' },
-  { title: '100% Privacy', text: 'Prepare your identity documents securely in your browser.', bg: '#ecfdf5' },
+  { title: 'In-Person Biometrics', text: 'UIDAI captures Aadhaar photos live at authorized centers.', bg: '#eef2ff' },
+  { title: 'Standard 35×45mm Size', text: 'Official dimensions for physical forms and Indian passport photos.', bg: '#f5f3ff' },
+  { title: 'Local Browser Processing', text: 'Format your identity photos privately without server uploads.', bg: '#ecfdf5' },
 ];
 
 const STEPS = [
-  'Stand in front of a solid white or light-colored wall.',
-  'Take a well-lit photo looking straight into the camera.',
-  'Upload the image to the Passport Photo Maker on ImageFlow.',
-  'Select the India Passport/Aadhaar preset (2x2 inches).',
-  'Align your face within the guidelines and download.',
+  'Stand in front of a solid white or light-coloured background with balanced lighting.',
+  'Capture a clear frontal photo looking directly into the camera with a neutral expression.',
+  'Open the Passport Photo Maker tool on ImageFlow.',
+  'Select the India 35×45mm preset (standard Indian passport and identity size).',
+  'Align your face within the frame guidelines and download your formatted JPEG.',
 ];
 
 const PRO_TIPS = [
-  'Do not wear white clothes, as they blend into the white background.',
-  'Keep a neutral expression; smiling or showing teeth is not allowed.',
-  'Ensure your ears are visible and there are no shadows on your face.',
-  'Spectacles/glasses with tinted lenses or glare are not accepted.',
+  'Avoid wearing white clothing so your shoulders do not blend into the white background.',
+  'Maintain a neutral expression with both eyes open and mouth closed.',
+  'Ensure both ears are visible and there are no harsh shadows across your face.',
+  'Tinted glasses and sunglasses are not allowed. Clear spectacles must have zero flash reflection.',
+  'Remember that updating the photo on your Aadhaar card requires an in-person visit to an Aadhaar Seva Kendra.',
 ];
 
 const RELATED_TOOLS = [
-  { title: 'Passport Photo Maker', description: 'Create passport-size photos with presets.', href: '/tools/passport-photo-maker/' },
-  { title: 'Remove Background', description: 'Make any background solid white in one click.', href: '/tools/remove-background/' },
-  { title: 'Compress Image', description: 'Shrink photo file size for online uploads.', href: '/tools/compress-image/' },
+  { title: 'Passport Photo Maker', description: 'Create standard 35×45mm photos with precise presets.', href: '/tools/passport-photo-maker/' },
+  { title: 'Crop Image', description: 'Crop and frame your portrait with custom dimensions.', href: '/tools/crop-image/' },
+  { title: 'Compress Image', description: 'Reduce photo file size for online portal applications.', href: '/tools/compress-image/' },
 ];
 
 const FAQs = [
   {
-    q: 'What is the background color required for Aadhaar card photos?',
-    a: 'UIDAI requires a solid white or very light grey background for Aadhaar card photos.',
+    q: 'Can I change my Aadhaar card photo online by uploading a file?',
+    a: 'No. The Unique Identification Authority of India (UIDAI) does not permit online photo uploads for biometric updates. To update the photograph on your Aadhaar card, you must visit an authorized Aadhaar Seva Kendra (ASK) in person, where an operator captures your live photograph using their official digital camera.',
   },
   {
-    q: 'What is the photo size for Aadhaar card applications?',
-    a: 'The official photo size is 2x2 inches (51x51 mm), which is the standard Indian passport size.',
+    q: 'What are the photo dimensions for Indian passport and KYC forms?',
+    a: 'The standard photograph dimension for Indian identity documents, physical Aadhaar correction forms, and passport applications is 3.5 cm × 4.5 cm (35 mm × 45 mm). 2×2 inches (51×51 mm) is typically used for US visa and OCI applications, not standard domestic Indian identity documents.',
   },
   {
-    q: 'Can I upload a photo with a blue background?',
-    a: 'No. UIDAI and Indian passport offices strictly reject photos with blue, red, or patterned backgrounds. Only white/off-white is accepted.',
+    q: 'What background color is required for Indian official photos?',
+    a: 'UIDAI and Indian passport authorities specify a solid, plain white or very light off-white background without shadows or patterns.',
+  },
+  {
+    q: 'What is the official source for Aadhaar guidelines?',
+    a: 'Official guidelines and enrollment procedures are published directly by the Unique Identification Authority of India at uidai.gov.in.',
   },
 ];
 
 const schemaMarkup = {
   '@context': 'https://schema.org',
   '@type': 'Article',
-  headline: 'Aadhaar Card Photo Size, Background & Upload Requirements',
-  description: 'Official guidelines for Aadhaar card photo dimensions, background, and upload limits.',
+  headline: 'Aadhaar Card Photo Size, Background & Verification Guidelines',
+  description: 'Accurate guidelines on Aadhaar card photo requirements, live biometric capture rules, and standard Indian 35x45mm photo specifications.',
   image: 'https://imageflow.in/og-image.png',
   author: {
     '@type': 'Organization',
@@ -70,8 +79,8 @@ const schemaMarkup = {
     },
   },
   datePublished: '2026-06-30',
-  dateModified: '2026-06-30',
-  articleBody: 'Understand the official Aadhaar card photo size and background requirements. Learn how to prepare your photo for UIDAI portal updates.',
+  dateModified: '2026-10-11',
+  articleBody: 'Detailed guide explaining UIDAI in-person biometric capture rules for Aadhaar card photo updates and standard 35x45mm photo specifications for Indian forms.',
 };
 
 const faqSchema = {
@@ -109,11 +118,11 @@ export default function AadhaarBlog() {
           <section className="blog-hero">
             <div className="blog-hero-content">
               <span className="blog-badge">🪪 Identity Document Guide</span>
-              <h1>Aadhaar Card Photo Size, Background & Upload Requirements</h1>
-              <p>Prepare your photo for Aadhaar updates. Learn the official UIDAI specifications for background, dimensions, and facial alignment to ensure quick approval.</p>
+              <h1>Aadhaar Card Photo Size, Background &amp; Verification Guidelines</h1>
+              <p>Understand the official UIDAI rules for Aadhaar card photo updates, in-person biometric procedures, and standard 35×45mm photo sizing for physical forms and Indian KYC documents.</p>
               <div className="blog-cta-buttons">
-                <a href="/tools/passport-photo-maker/" className="btn-primary">Make Aadhaar Photo</a>
-                <a href="#requirements" className="btn-secondary">Check Rules</a>
+                <a href="/tools/passport-photo-maker/" className="btn-primary">Format 35×45mm Photo</a>
+                <a href="#requirements" className="btn-secondary">Check Official Rules</a>
               </div>
             </div>
             <div className="blog-features">
@@ -126,19 +135,38 @@ export default function AadhaarBlog() {
             </div>
           </section>
 
+          {/* Important UIDAI Notice Callout */}
+          <section className="blog-section" style={{
+            background: 'var(--surface-card)',
+            border: '1px solid var(--hairline)',
+            borderRadius: 16,
+            padding: '24px 28px',
+          }}>
+            <h2 style={{ color: 'var(--ink)', fontSize: 20, marginTop: 0, marginBottom: 12 }}>
+              Important Official Notice: How Aadhaar Photo Updates Actually Work
+            </h2>
+            <p style={{ color: 'var(--body)', lineHeight: 1.7, marginBottom: 14 }}>
+              Many online tutorials mistakenly suggest you can upload a self-taken digital photo directly to the <em>myAadhaar</em> portal to update your Aadhaar card picture. <strong>This is incorrect.</strong>
+            </p>
+            <p style={{ color: 'var(--body)', lineHeight: 1.7, margin: 0 }}>
+              Under UIDAI regulations, changing your photograph is classified as a <strong>biometric update</strong>. You must visit an authorized Aadhaar Enrolment Centre or Aadhaar Seva Kendra in person. The operator captures your live photograph using their official equipment against a white backdrop. Digital photo formatting tools are used when preparing printed photographs (3.5 × 4.5 cm) for physical Aadhaar enrolment forms, PAN applications (NSDL/UTIITSL), and passport documentation.
+            </p>
+          </section>
+
           <section id="requirements" className="blog-section">
-            <h2>Official UIDAI Photo Specifications</h2>
-            <p>To avoid delays or rejection when updating your Aadhaar card online or at an enrollment center, make sure your photo meets these criteria:</p>
+            <h2>Standard Indian Identity Photo Specifications</h2>
+            <p>For physical submission forms and related Indian KYC documents, adhere to these official standards:</p>
             <ul>
-              <li><strong>Background:</strong> Solid white or off-white. Avoid shadows.</li>
-              <li><strong>Size:</strong> 2x2 inches (51x51 mm) or 3.5 x 4.5 cm.</li>
-              <li><strong>Face Coverage:</strong> Close-up showing head and shoulders. Face must occupy 70-80% of the photo.</li>
-              <li><strong>Eyes:</strong> Open and looking straight. No red-eye or glare on glasses.</li>
+              <li><strong>Dimensions:</strong> 3.5 cm width × 4.5 cm height (35 mm × 45 mm) at 300 DPI.</li>
+              <li><strong>Background:</strong> Solid plain white or very light off-white. No shadows, gradients, or household patterns.</li>
+              <li><strong>Facial Coverage:</strong> The face from chin to top of hair must occupy approximately 70% to 80% of the frame.</li>
+              <li><strong>Posture &amp; Lighting:</strong> Full frontal view, both ears visible, neutral facial expression with closed mouth.</li>
+              <li><strong>Official Source:</strong> Verify current enrolment guidelines directly at the <a href="https://uidai.gov.in" target="_blank" rel="noopener noreferrer">UIDAI Official Portal</a>.</li>
             </ul>
           </section>
 
           <section className="blog-section">
-            <h2>How to Prepare Your Photo Using ImageFlow</h2>
+            <h2>How to Format Your Photo Using ImageFlow</h2>
             <div className="steps-grid">
               {STEPS.map((step, idx) => (
                 <div key={idx} className="step-item">

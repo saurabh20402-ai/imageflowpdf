@@ -80,9 +80,9 @@ const NEXT_STEP_MAP = {
     actionText: 'Compress PDF',
   },
   'jpg-to-png': {
-    text: 'Need to remove the background of your new PNG image?',
-    toolSlug: 'remove-background',
-    actionText: 'Remove Background',
+    text: 'Need to crop or frame your newly converted PNG image?',
+    toolSlug: 'crop-image',
+    actionText: 'Crop Image',
   },
   'png-to-jpg': {
     text: 'Need to compress your new JPG photo under 50KB?',
@@ -105,9 +105,9 @@ const NEXT_STEP_MAP = {
     actionText: 'Compress Image',
   },
   'svg-to-png': {
-    text: 'Need to make the background of your PNG cutout transparent?',
-    toolSlug: 'remove-background',
-    actionText: 'Remove Background',
+    text: 'Need to crop or frame your newly rasterized PNG graphic?',
+    toolSlug: 'crop-image',
+    actionText: 'Crop Image',
   },
   'heic-converter': {
     text: 'Want to reduce the file size of your newly converted JPG photo?',
@@ -136,11 +136,6 @@ const NEXT_STEP_MAP = {
   },
   'rotate-image': {
     text: 'Need to resize your rotated image to fit profile picture dimensions?',
-    toolSlug: 'resize-image',
-    actionText: 'Resize Image',
-  },
-  'remove-background': {
-    text: 'Need to resize your transparent cutout for a profile picture?',
     toolSlug: 'resize-image',
     actionText: 'Resize Image',
   },

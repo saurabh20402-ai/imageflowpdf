@@ -36,11 +36,11 @@ const USE_CASES = [
   'Preparing marksheets and ID proofs for college admissions.',
 ];
 
-const COMPARISON = [
-  { feature: 'Precise KB Target', our: '✓', adobe: '✗', ilove: '✓' },
-  { feature: '100% Offline/Private', our: '✓', adobe: '✗', ilove: '✗' },
-  { feature: 'No Registration', our: '✓', adobe: '✗', ilove: '✗' },
-  { feature: 'Mobile Friendly', our: '✓', md: '✓', ilove: '✓' },
+const EXAM_SPECS = [
+  { exam: 'SSC (CGL, CHSL, MTS)', photo: '20 KB – 50 KB (3.5 × 4.5 cm)', sig: '10 KB – 20 KB (4.0 × 2.0 cm)', format: 'JPG / JPEG', portal: 'ssc.gov.in' },
+  { exam: 'UPSC (Civil Services, CDS)', photo: '20 KB – 300 KB (min 350×350 px)', sig: '20 KB – 300 KB (min 350×350 px)', format: 'JPG', portal: 'upsconline.nic.in' },
+  { exam: 'IBPS (PO, Clerk, RRB)', photo: '20 KB – 50 KB (4.5 × 3.5 cm)', sig: '10 KB – 20 KB (140 × 60 px)', format: 'JPG / JPEG', portal: 'ibps.in' },
+  { exam: 'Railway RRB (NTPC, Group D)', photo: '20 KB – 50 KB (35 × 45 mm)', sig: '10 KB – 20 KB (JPG only)', format: 'JPG / JPEG', portal: 'rrbcdg.gov.in' },
 ];
 
 const PRO_TIPS = [
@@ -153,14 +153,34 @@ export default function SscUpscBlog() {
 
           <section className="blog-section">
             <h2>Official Size Limits for Major Government Portals</h2>
-            <p>Indian competitive exam portals have rigid validation scripts. If your file is even 1KB over the limit, the upload will fail. Here is a quick reference table:</p>
-            <div className="grid-auto">
-              {WHO_NEEDS.map((item) => (
-                <div key={item.title} className="grid-card">
-                  <h3>{item.title}</h3>
-                  <p>{item.detail}</p>
-                </div>
-              ))}
+            <p>Indian competitive exam portals enforce strict validation scripts. Always verify notification dates and portal requirements before submitting:</p>
+            <div style={{ overflowX: 'auto', marginTop: 16, marginBottom: 20 }}>
+              <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14 }}>
+                <thead>
+                  <tr style={{ background: 'var(--surface-card)', borderBottom: '2px solid var(--hairline)' }}>
+                    <th style={{ padding: '12px 14px', textAlign: 'left', fontWeight: 700 }}>Examination</th>
+                    <th style={{ padding: '12px 14px', textAlign: 'left', fontWeight: 700 }}>Photo Requirement</th>
+                    <th style={{ padding: '12px 14px', textAlign: 'left', fontWeight: 700 }}>Signature Requirement</th>
+                    <th style={{ padding: '12px 14px', textAlign: 'left', fontWeight: 700 }}>Format</th>
+                    <th style={{ padding: '12px 14px', textAlign: 'left', fontWeight: 700 }}>Official Source</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {EXAM_SPECS.map((row) => (
+                    <tr key={row.exam} style={{ borderBottom: '1px solid var(--hairline-soft)' }}>
+                      <td style={{ padding: '12px 14px', fontWeight: 600 }}>{row.exam}</td>
+                      <td style={{ padding: '12px 14px' }}>{row.photo}</td>
+                      <td style={{ padding: '12px 14px' }}>{row.sig}</td>
+                      <td style={{ padding: '12px 14px' }}>{row.format}</td>
+                      <td style={{ padding: '12px 14px' }}>
+                        <a href={`https://${row.portal}`} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--primary)', fontWeight: 600 }}>
+                          {row.portal}
+                        </a>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           </section>
 

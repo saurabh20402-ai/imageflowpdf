@@ -165,10 +165,10 @@ export default function HomePage() {
               Architecture &amp; Ethics
             </p>
             <h2 style={{ fontSize: 'clamp(24px, 3.5vw, 36px)', fontWeight: 800, color: 'var(--ink)', letterSpacing: '-0.02em', marginBottom: 14 }}>
-              How ImageFlow Works: Zero-Upload Technology
+              How ImageFlow Works: Client-Side Processing Architecture
             </h2>
             <p style={{ fontSize: 16, color: 'var(--muted)', maxWidth: 680, margin: '0 auto', lineHeight: 1.65 }}>
-              Most online file tools secretly upload your documents, confidential IDs, and photos to external cloud storage. ImageFlow is built differently.
+              Unlike services that require uploading your private documents and photos to remote cloud servers, ImageFlow processes your files directly on your device.
             </p>
           </div>
 
@@ -198,7 +198,7 @@ export default function HomePage() {
                 1. Local Execution Engine
               </h3>
               <p style={{ fontSize: 14, color: 'var(--muted)', lineHeight: 1.7, margin: 0 }}>
-                When you drag a file into ImageFlow, your web browser executes the file manipulation algorithms using HTML5 Canvas and client-side WebAssembly. No bytes leave your device or travel over the internet.
+                When you load a file into standard ImageFlow tools, your web browser executes the file algorithms directly on your machine. Your document and photo contents are never uploaded to or stored on our servers.
               </p>
             </div>
 

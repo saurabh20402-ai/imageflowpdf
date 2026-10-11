@@ -141,10 +141,10 @@ export default function AboutUsPage() {
                   <ShieldCheck size={20} />
                 </div>
                 <h3 style={{ fontSize: 17, fontWeight: 700, color: 'var(--ink)', marginBottom: 8 }}>
-                  100% Privacy by Design
+                  Client-Side File Processing
                 </h3>
                 <p style={{ fontSize: 14, color: 'var(--muted)', lineHeight: 1.6, margin: 0 }}>
-                  Your files never upload to our servers. All operations execute locally in your web browser, ensuring zero risk of interception or unauthorized storage.
+                  Your document and image files are processed directly on your device using client-side browser APIs. Your files are not transmitted to or stored on our application servers for standard utility operations.
                 </p>
               </div>
 
@@ -163,10 +163,10 @@ export default function AboutUsPage() {
                   <Cpu size={20} />
                 </div>
                 <h3 style={{ fontSize: 17, fontWeight: 700, color: 'var(--ink)', marginBottom: 8 }}>
-                  Hardware Acceleration
+                  Modern Web Architecture
                 </h3>
                 <p style={{ fontSize: 14, color: 'var(--muted)', lineHeight: 1.6, margin: 0 }}>
-                  We leverage WebAssembly, HTML5 Canvas, and modern browser standards to deliver workstation-grade speeds right inside mobile and desktop browsers.
+                  We leverage HTML5 Canvas, pdf-lib, and modern browser standards to deliver responsive file formatting right inside mobile and desktop web browsers.
                 </p>
               </div>
 
@@ -188,7 +188,7 @@ export default function AboutUsPage() {
                   Free &amp; Accessible
                 </h3>
                 <p style={{ fontSize: 14, color: 'var(--muted)', lineHeight: 1.6, margin: 0 }}>
-                  No accounts, no email gates, and no hidden subscriptions. We build tools so students, job seekers, and creators can achieve their goals freely.
+                  No accounts, no email gates, and no hidden subscriptions. We build practical tools so students, job seekers, and creators can format files without barriers.
                 </p>
               </div>
             </div>
@@ -205,10 +205,10 @@ export default function AboutUsPage() {
                 Our Editorial &amp; Technical Standards
               </h2>
               <p style={{ marginBottom: 16 }}>
-                Every tool, tutorial, and guide published on ImageFlow undergoes rigorous verification by our development team. We independently verify official government form specifications (such as Aadhaar photo rules, SSC CGL guidelines, and UPSC portal constraints) to ensure students and applicants never face rejection due to faulty formatting.
+                Every guide and tutorial published on ImageFlow is compiled from publicly available official portals, including UIDAI for identity documentation and the Staff Selection Commission (SSC) and UPSC for competitive exam requirements. Because portal submission specifications can update with new notification cycles, we provide direct references to official sources and encourage users to confirm details against their active application bulletin.
               </p>
               <p style={{ margin: 0 }}>
-                Our algorithms are regularly tested across multiple operating systems (Windows, macOS, Android, iOS) and all modern browsers (Chrome, Edge, Safari, Firefox) to maintain consistent reliability, minimal memory footprints, and sharp visual outputs.
+                Our client-side processing workflows are tested across modern mobile and desktop browsers (Chrome, Edge, Safari, Firefox). While core PDF and image manipulation operations run locally on your device without server uploads, optional third-party integrations (such as the AI text prompt feature in Thumbnail Creator) and anonymous site traffic telemetry communicate with their designated endpoints as detailed in our Privacy Policy.
               </p>
             </div>
 

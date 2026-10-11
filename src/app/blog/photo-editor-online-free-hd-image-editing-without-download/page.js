@@ -63,7 +63,7 @@ const PRO_TIPS = [
 
 const RELATED_TOOLS = [
   { title: 'Resize Image', description: 'Resize photos to perfect dimensions.', href: '/tools/resize-image/' },
-  { title: 'Remove Background', description: 'Remove unwanted backgrounds easily.', href: '/tools/remove-background/' },
+  { title: 'Crop Image', description: 'Trim photos and frame your subjects cleanly.', href: '/tools/crop-image/' },
   { title: 'Image to PDF', description: 'Convert edited photos to PDF format.', href: '/tools/image-to-pdf/' },
 ];
 
