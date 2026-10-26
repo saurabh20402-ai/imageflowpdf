@@ -57,8 +57,8 @@ export default function Hero() {
             lineHeight: 1.7
           }}
         >
-          Merge, split, compress, and convert PDF and image files instantly.
-          All processing happens in your browser — your files never leave your device.
+          Merge, split, compress, and convert PDF and image files in your browser.
+          Standard file operations run client-side on your device without server uploads.
         </motion.p>
 
         {/* CTA */}

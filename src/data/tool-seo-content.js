@@ -645,7 +645,7 @@ export const TOOL_SEO_CONTENT = {
   "compress-pdf": {
     "title": "Compress PDF Size — Optimize Quality",
     "subtitle": "Reduce PDF file sizes for easy sharing. **secure and client-side.**",
-    "introduction": "Large PDF files can be incredibly cumbersome, making them difficult to share via email, upload to application portals, or store efficiently on your device. The ImageFlow Compress PDF tool provides the perfect solution, enabling you to significantly reduce your file sizes without sacrificing essential document quality. Whether you are a student submitting a heavy assignment filled with high-resolution images, a professional sharing extensive marketing portfolios, or simply trying to free up valuable hard drive space, our compression tool delivers exceptional results. We prioritize your digital security and privacy above all else. With ImageFlow, the entire compression process takes place locally right inside your web browser. You never have to upload your private files to unknown servers, ensuring a secure and client-side, risk-free experience. This local processing model guarantees that your sensitive financial documents, confidential business contracts, and personal records remain strictly on your own hardware. Additionally, by eliminating the need for cloud uploads and downloads, you can compress hefty documents almost instantly, completely bypassing slow internet bottlenecks. Our smart compression algorithms automatically balance file size reduction with visual fidelity, giving you the best of both worlds. Experience seamless, ultra-fast, and private and client-side document optimization. Compress your PDFs today to ensure effortless sharing and efficient storage, all while maintaining absolute control over your sensitive digital assets.",
+    "introduction": "Large PDF files can be incredibly cumbersome, making them difficult to share via email, upload to application portals, or store efficiently on your device. The ImageFlow Compress PDF tool provides an effective solution, enabling you to reduce your file sizes without sacrificing essential document readability. Whether you are a student submitting an assignment, a professional sharing portfolios, or simply trying to free up valuable storage space, our compression tool delivers reliable results. With ImageFlow, standard PDF compression takes place locally right inside your web browser without uploading your files to ImageFlow application servers. This local processing model ensures that your documents remain strictly on your own hardware. Additionally, by eliminating the need for cloud uploads and downloads, operations run directly without slow internet bottlenecks. Our compression algorithms balance file size reduction with visual clarity. Experience seamless and client-side document optimization to ensure easier sharing and efficient storage.",
     "useCases": {
       "title": "Common Use Cases for Compressing PDFs",
       "items": [
@@ -825,7 +825,7 @@ export const TOOL_SEO_CONTENT = {
   "watermark-pdf": {
     "title": "Add Watermark to PDF — Brand Protection",
     "subtitle": "Stamp PDFs with text or image watermarks. **secure and client-side.**",
-    "introduction": "Protecting your intellectual property and establishing brand identity is crucial in today's digital landscape. The ImageFlow Watermark PDF tool empowers you to easily add customized text or image watermarks to your documents, ensuring your work is properly attributed and safeguarded against unauthorized use. Whether you are a photographer sharing sample proofs, a business sending out confidential internal memos, or a creative agency distributing draft designs, watermarking adds an essential layer of professionalism and security. Speaking of security, ImageFlow sets the standard by ensuring your files remain private and client-side. Our advanced platform processes your documents entirely within your web browser. You do not need to upload your sensitive files to external servers, which guarantees a secure and client-side, risk-free experience. When you are stamping documents with 'Confidential' or applying your company logo, you can rest easy knowing that the data never leaves your personal device. This fully local processing architecture also means you benefit from incredibly fast rendering times, completely unaffected by network latency or bandwidth limitations. You can easily adjust the transparency, position, and rotation of your watermark to achieve the perfect balance between visibility and readability. Secure your digital assets, promote your brand, and maintain absolute privacy with our fast, upload-free in-browser PDF watermarking tool.",
+    "introduction": "Protecting your intellectual property and establishing document status is crucial in modern workflows. The ImageFlow Watermark PDF tool empowers you to easily add customized text or image watermarks to your documents, ensuring your work is properly attributed. Whether you are a creator sharing sample proofs, an office sending out internal draft memos, or an agency distributing proposals, watermarking adds an essential layer of clarity. ImageFlow processes your documents directly within your web browser without uploading your files to application servers. This local processing architecture allows you to adjust the transparency, position, and rotation of your watermark to achieve the right balance between visibility and readability, directly on your machine.",
     "useCases": {
       "title": "Common Use Cases for Watermarking",
       "items": [
@@ -930,7 +930,7 @@ export const TOOL_SEO_CONTENT = {
     "faqs": [
       {
         "q": "Are my signatures and documents stored online?",
-        "a": "No, our tool is fully local. Your sensitive documents and signature data never leave your computer."
+        "a": "No. Signature stamping is handled client-side in your browser. Your documents and signature inputs are not uploaded to or stored on our servers."
       },
       {
         "q": "Can I type my signature instead of drawing it?",
@@ -1005,7 +1005,7 @@ export const TOOL_SEO_CONTENT = {
   "bulk-compress": {
     "title": "Bulk Image Compressor — Optimize Multiple Photos at Once",
     "subtitle": "Batch compress thousands of images simultaneously. **secure and client-side.**",
-    "introduction": "When managing extensive libraries of digital photographs or preparing massive e-commerce product catalogs, compressing files one by one is an incredibly tedious and inefficient process. Our bulk image compressor is explicitly designed to solve this problem by allowing you to optimize hundreds or even thousands of images simultaneously. Utilizing powerful web-assembly and modern browser APIs, this batch image optimization tool processes your entire queue locally on your machine. Because there are no file uploads required, you can bypass the frustrating waiting times associated with slow internet connections or restrictive server upload limits. More importantly, this client-side processing guarantees enhanced data security—your unreleased product shots, private family albums, and confidential business assets never leave your computer. Photographers can rapidly prepare high-resolution event galleries for client delivery, while web developers can effortlessly crush entire directories of assets for modern web applications. The tool intelligently balances file size reduction and image quality across the entire batch, ensuring consistent results. Stop wasting precious hours on manual repetitive tasks. Empower your workflow with our secure, lightning-fast batch image compressor and reclaim your time while maintaining total control over your digital content.",
+    "introduction": "When managing libraries of digital photographs or preparing e-commerce product catalogs, compressing files one by one can be time-consuming. Our bulk image compressor is designed to streamline this process by allowing you to optimize multiple images simultaneously. Utilizing browser APIs and canvas processing, this batch image optimization tool processes your queue locally on your machine. Because files are handled client-side without uploading them to ImageFlow application servers, operations run directly without cloud upload bottlenecks. Photographers can prepare high-resolution galleries, while web developers can compress directories of web assets. The tool balances file size reduction and image clarity across the batch. Empower your workflow with our client-side batch image compressor directly in your browser.",
     "useCases": {
       "title": "Common Use Cases for Bulk Compression",
       "items": [
@@ -1110,7 +1110,7 @@ export const TOOL_SEO_CONTENT = {
       },
       {
         "q": "Is my location data uploaded?",
-        "a": "Never. All scrubbing happens locally in your browser, ensuring your private data never leaves your device."
+        "a": "No. EXIF and metadata stripping runs locally in your browser. Location tags and camera data are removed on your device without transmitting files to ImageFlow servers."
       }
     ]
   },
@@ -1282,7 +1282,7 @@ export const TOOL_SEO_CONTENT = {
       },
       {
         "q": "Is it safe to convert confidential company documents?",
-        "a": "Yes, 100%. All format conversions are processed locally, so your sensitive files never leave your computer."
+        "a": "Yes. Format conversion routines run in your browser using local canvas and decoders, without uploading files to ImageFlow application servers."
       },
       {
         "q": "Can I convert images to a transparent format?",
@@ -1293,7 +1293,7 @@ export const TOOL_SEO_CONTENT = {
   "merge-images": {
     "title": "Merge Images Online — Stitch Photos Vertically or Horizontally",
     "subtitle": "Seamlessly join multiple pictures together. **secure and client-side.**",
-    "introduction": "There are countless scenarios where you need to combine several separate pictures into one continuous graphic. Our online image merger is the perfect utility for seamlessly stitching photos together, whether vertically or horizontally. This tool is exceptionally useful for creating long scrolling infographics, assembling panoramic landscape shots, or combining multiple screenshots into a single, easily readable document. Designed with simplicity and speed in mind, you can effortlessly align your images, adjust the canvas background, and export a unified file in seconds. The most critical feature of this image joining tool is its absolute commitment to your privacy. Utilizing state-of-the-art client-side processing, the entire merging operation takes place locally within your web browser. This means there is zero server upload involved. Your confidential financial screenshots, private chat histories, or proprietary design mockups are never transmitted across the internet, ensuring enhanced data security. Avoid the steep learning curve of complex desktop software and the privacy risks of cloud-based applications. Quickly append images top-to-bottom or side-by-side, perfectly tailored to your exact needs, completely free and securely on your own device.",
+    "introduction": "There are many scenarios where you need to combine several separate pictures into one continuous graphic. Our online image merger is a utility for stitching photos together vertically or horizontally. This tool is useful for creating scrolling infographics, assembling panoramic landscape shots, or combining multiple screenshots into a single document. Designed for straightforward use, you can align your images, adjust the canvas background, and export a unified file directly. Utilizing client-side processing, merging takes place locally within your web browser without uploading source images to ImageFlow application servers. Quickly append images top-to-bottom or side-by-side on your own device.",
     "useCases": {
       "title": "Common Use Cases for Merging Images",
       "items": [
@@ -1353,7 +1353,7 @@ export const TOOL_SEO_CONTENT = {
   "crop-image": {
     "title": "Free Online Image Cropper — Crop Photos with Custom & Preset Ratios",
     "subtitle": "Crop your images instantly in your browser with exact aspect ratio presets. **secure and client-side.**",
-    "introduction": "Looking for a fast, precise, and completely secure way to crop images online? The ImageFlow Image Cropper allows you to trim and frame your photos directly inside your web browser with zero server uploads. Whether you need a square 1:1 crop for an Instagram profile picture, a 16:9 cinematic crop for a YouTube thumbnail or banner, or a customized freehand selection to cut out unwanted backgrounds, our tool handles it seamlessly with pixel-perfect accuracy. Unlike traditional online photo editors that force you to send your personal photos to a remote server, ImageFlow processes all canvas operations locally on your machine using hardware-accelerated HTML5 Canvas technology. This guarantees that your private snapshots, official documents, and creative designs never leave your computer. You retain complete control over zoom, aspect ratio locks, and boundary snapping, ensuring clean and sharp results with zero loss in resolution or color fidelity. Ideal for content creators preparing social media graphics, designers formatting product images for e-commerce stores, and job applicants sizing passport photos. Enjoy blazing-fast performance without downloading heavy desktop software or registering for an account. Crop your images safely, effortlessly, and completely free of charge.",
+    "introduction": "Looking for a fast and precise way to crop images online? The ImageFlow Image Cropper allows you to trim and frame your photos directly inside your web browser. Whether you need a square 1:1 crop for an avatar, a 16:9 crop for a banner, or a customized freehand selection, our tool handles it seamlessly. ImageFlow processes canvas operations locally on your machine using HTML5 Canvas technology, without uploading your image files to external application servers. You retain control over zoom, aspect ratio locks, and boundary snapping. Ideal for preparing social media graphics, formatting product images for e-commerce, and sizing passport photos, all without downloading desktop software or registering for an account.",
     "useCases": {
       "title": "Common Use Cases for Image Cropping",
       "items": [
@@ -1402,7 +1402,7 @@ export const TOOL_SEO_CONTENT = {
       },
       {
         "q": "Are my images uploaded to any server during cropping?",
-        "a": "No, all image calculations and exports happen locally inside your web browser. Your images remain 100% private and never touch our servers."
+        "a": "No. All image processing and exports happen locally inside your web browser. Your images are not uploaded to ImageFlow application servers."
       },
       {
         "q": "What aspect ratio presets are supported?",
@@ -1417,7 +1417,7 @@ export const TOOL_SEO_CONTENT = {
   "resize-image": {
     "title": "Free Online Image Resizer — Fast & Secure",
     "subtitle": "Resize your photos instantly in your browser. **secure and client-side.**",
-    "introduction": "Are you looking for a fast, reliable, and secure way to resize your images online without compromising on quality or privacy? Our free in-browser Image Resizer is the ultimate solution for photographers, social media managers, web developers, and everyday users who need to adjust image dimensions instantly. Unlike traditional cloud-based tools that require you to upload your personal files to external servers, our innovative platform processes everything locally right within your web browser. This means absolutely no uploads are required, ensuring your photos remain secure and client-side and private on your device at all times. Whether you need to shrink a massive high-resolution photo for faster website loading, crop a picture to fit specific social media aspect ratios for Instagram, Facebook, or Twitter, or reduce file sizes for easy email sharing, this tool handles it all seamlessly. You can maintain the original aspect ratio to avoid distortion or input custom width and height dimensions for exact pixel-perfect results. With support for popular formats like JPEG, PNG, and WebP, our local image resizer guarantees crisp, clear, and professional output every single time. Stop risking your privacy with third-party servers and start using the safest, most efficient image resizing tool available today. Experience lightning-fast processing speeds, zero wait times, and complete peace of mind knowing your digital assets never leave your computer. Perfect for optimizing images for SEO, enhancing blog posts, or preparing visuals for digital marketing campaigns. Try it now and take full control over your image editing workflow with unmatched security and convenience.",
+    "introduction": "Looking for a fast and reliable way to resize your images online? Our in-browser Image Resizer provides a straightforward solution for photographers, social media managers, web developers, and everyday users who need to adjust image dimensions. Unlike cloud tools that process personal files on remote servers, ImageFlow processes your files locally right within your web browser without uploading image assets to application servers. Whether you need to scale an image for faster website loading, adapt a photo to fit specific social media aspect ratios, or reduce dimensions for email sharing, this tool handles it directly. You can preserve the original aspect ratio to avoid distortion or enter custom width and height values for exact dimensions. With support for JPEG, PNG, and WebP, resize images cleanly and conveniently on your machine.",
     "useCases": {
       "title": "Common Use Cases for Resizing Images",
       "items": [
@@ -1522,7 +1522,7 @@ export const TOOL_SEO_CONTENT = {
     "faqs": [
       {
         "q": "Is the photo editing really private?",
-        "a": "Yes! All processing is handled by your browser, meaning your photos never leave your device."
+        "a": "Yes. All processing is handled client-side by your browser, without uploading your photos to ImageFlow servers."
       },
       {
         "q": "Do I need to install any software?",

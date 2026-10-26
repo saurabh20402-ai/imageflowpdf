@@ -66,7 +66,7 @@ export default function HomePage() {
               Start with our top tools
             </h2>
             <p className="home-section-subtitle">
-              The most-used image and PDF tools by creators worldwide
+              Essential browser-based image and PDF utilities for everyday document workflows
             </p>
           </div>
           <div className="tools-responsive-grid">
@@ -222,7 +222,7 @@ export default function HomePage() {
                 2. Instant Hardware Speeds
               </h3>
               <p style={{ fontSize: 14, color: 'var(--muted)', lineHeight: 1.7, margin: 0 }}>
-                Because you never wait for slow file uploads or server queues, even large files compress, convert, or merge in milliseconds directly on your device&apos;s processor and GPU.
+                By eliminating round-trip cloud upload bottlenecks, operations run directly using your device&apos;s browser memory and local hardware.
               </p>
             </div>
 

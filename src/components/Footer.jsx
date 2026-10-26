@@ -62,7 +62,7 @@ export default function Footer() {
               <ImageFlowLogoImg height={42} />
             </Link>
             <p className="footer-brand-text">
-              Free, instant online PDF and image processing tools. Client-side processing for standard utilities with no accounts or software installation required.
+              Standard file processing runs locally in your browser. No account or software installation is required.
             </p>
             <div className="footer-badges-wrap">
               <span className="footer-badge">
@@ -71,7 +71,7 @@ export default function Footer() {
               </span>
               <span className="footer-badge">
                 <Zap size={14} className="text-[#10b981]" />
-                Fast &amp; No Signup
+                No Account Required
               </span>
             </div>
           </div>

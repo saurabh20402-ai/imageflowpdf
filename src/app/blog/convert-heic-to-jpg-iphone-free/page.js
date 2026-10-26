@@ -44,7 +44,7 @@ const FAQs = [
   },
   {
     q: 'Is it safe to convert my private photos online?',
-    a: 'Yes, on ImageFlow. Since all processing is done locally in your browser using JavaScript, your photos are never uploaded to any server, keeping them 100% private.',
+    a: 'Yes. Since all processing is done locally in your browser using JavaScript, your photos are never uploaded to any server, processing your images locally on your device without transmitting them to ImageFlow servers.',
   },
 ];
 

@@ -81,7 +81,7 @@ const FAQs = [
   },
   {
     q: 'How much can I compress a PDF?',
-    a: 'Compression depends on your PDF content. Typically, you can reduce file size by 30-70% while maintaining quality.',
+    a: 'Reduction depends directly on document structure. PDFs containing uncompressed image streams often see substantial size reductions, whereas text-heavy documents or already compressed files will yield smaller percentage changes.',
   },
   {
     q: 'Can I compress multiple PDFs at once?',
