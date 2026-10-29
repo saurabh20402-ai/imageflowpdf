@@ -6,6 +6,18 @@ export const metadata = {
   alternates: {
     canonical: 'https://imageflow.in/blog/image-to-pdf-converter-free-online-convert-jpg-png-instantly/',
   },
+  openGraph: {
+    title: 'Image to PDF Converter Free Online (Convert JPG & PNG Instantly) — ImageFlow',
+    description: 'Use our free image to PDF converter online to convert JPG and PNG files instantly. Create PDFs without losing quality.',
+    url: 'https://imageflow.in/blog/image-to-pdf-converter-free-online-convert-jpg-png-instantly/',
+    type: 'article',
+    images: [{ url: 'https://imageflow.in/og-image.png', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Image to PDF Converter Free Online (Convert JPG & PNG Instantly) — ImageFlow',
+    description: 'Use our free image to PDF converter online to convert JPG and PNG files instantly. Create PDFs without losing quality.',
+  },
 };
 
 const FEATURES = [

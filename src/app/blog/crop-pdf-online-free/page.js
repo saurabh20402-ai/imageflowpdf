@@ -6,6 +6,18 @@ export const metadata = {
   alternates: {
     canonical: 'https://imageflow.in/blog/crop-pdf-online-free/',
   },
+  openGraph: {
+    title: 'Crop PDF Online Free (Remove Margins & Crop PDF Pages Easily) — ImageFlow',
+    description: 'Crop PDF online free and remove unwanted margins instantly. Auto crop PDF pages and trim documents without losing quality.',
+    url: 'https://imageflow.in/blog/crop-pdf-online-free/',
+    type: 'article',
+    images: [{ url: 'https://imageflow.in/og-image.png', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Crop PDF Online Free (Remove Margins & Crop PDF Pages Easily) — ImageFlow',
+    description: 'Crop PDF online free and remove unwanted margins instantly. Auto crop PDF pages and trim documents without losing quality.',
+  },
 };
 
 const FEATURES = [

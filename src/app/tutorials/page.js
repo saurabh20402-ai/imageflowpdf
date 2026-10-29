@@ -1,15 +1,22 @@
 import TutorialsPageClient from './TutorialsPageClient';
 
 export const metadata = {
-  title: 'Tutorials — How to Use ImageFlow Tools',
-  description:
-    'Step-by-step tutorials for every ImageFlow tool. Learn how to merge, split, compress, rotate, crop, watermark, and sign PDFs, convert image formats, resize, compress, and edit photos — all free in your browser.',
+  title: 'Tutorials & Guides',
+  description: 'Step-by-step tutorials for every ImageFlow tool. Learn how to merge, split, compress, rotate, and convert files in your browser.',
   alternates: {
     canonical: 'https://imageflow.in/tutorials/',
   },
-  robots: {
-    index: true,
-    follow: true,
+  openGraph: {
+    title: 'Tutorials & Guides — ImageFlow',
+    description: 'Step-by-step tutorials for every ImageFlow tool. Learn how to merge, split, compress, rotate, and convert files in your browser.',
+    url: 'https://imageflow.in/tutorials/',
+    type: 'website',
+    images: [{ url: 'https://imageflow.in/og-image.png', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Tutorials & Guides — ImageFlow',
+    description: 'Step-by-step tutorials for every ImageFlow tool. Learn how to merge, split, compress, rotate, and convert files in your browser.',
   },
 };
 

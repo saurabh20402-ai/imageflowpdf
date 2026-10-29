@@ -3,15 +3,22 @@ import ImageFlowLogoImg from '@/components/ImageFlowLogoImg';
 import { ShieldCheck, Cpu, HeartHandshake, Mail, Globe, Users } from 'lucide-react';
 
 export const metadata = {
-  title: 'About Us — The Webrise Company & ImageFlow Team',
-  description:
-    'Discover the story behind ImageFlow and The Webrise Company. Founded by Harshit Negi and Saurav Kumar, dedicated to creating privacy-first, browser-based digital utilities.',
+  title: 'About Us — The Webrise Company',
+  description: 'Discover the story behind ImageFlow and The Webrise Company. Dedicated to creating privacy-first, browser-based digital utilities.',
   alternates: {
     canonical: 'https://imageflow.in/about-us/',
   },
-  robots: {
-    index: true,
-    follow: true,
+  openGraph: {
+    title: 'About Us — The Webrise Company — ImageFlow',
+    description: 'Discover the story behind ImageFlow and The Webrise Company. Dedicated to creating privacy-first, browser-based digital utilities.',
+    url: 'https://imageflow.in/about-us/',
+    type: 'website',
+    images: [{ url: 'https://imageflow.in/og-image.png', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About Us — The Webrise Company — ImageFlow',
+    description: 'Discover the story behind ImageFlow and The Webrise Company. Dedicated to creating privacy-first, browser-based digital utilities.',
   },
 };
 

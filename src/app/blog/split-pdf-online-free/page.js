@@ -6,6 +6,18 @@ export const metadata = {
   alternates: {
     canonical: 'https://imageflow.in/blog/split-pdf-online-free/',
   },
+  openGraph: {
+    title: 'Split PDF Online Free (Extract PDF Pages Instantly) — ImageFlow',
+    description: 'Split PDF online free and extract PDF pages into separate files instantly. Fast, secure, and easy-to-use PDF splitter tool with no signup required.',
+    url: 'https://imageflow.in/blog/split-pdf-online-free/',
+    type: 'article',
+    images: [{ url: 'https://imageflow.in/og-image.png', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Split PDF Online Free (Extract PDF Pages Instantly) — ImageFlow',
+    description: 'Split PDF online free and extract PDF pages into separate files instantly. Fast, secure, and easy-to-use PDF splitter tool with no signup required.',
+  },
 };
 
 const FEATURES = [

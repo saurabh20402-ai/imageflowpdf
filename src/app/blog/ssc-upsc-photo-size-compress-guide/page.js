@@ -6,6 +6,18 @@ export const metadata = {
   alternates: {
     canonical: 'https://imageflow.in/blog/ssc-upsc-photo-size-compress-guide/',
   },
+  openGraph: {
+    title: 'How to Compress Photo & Signature to 20KB/50KB for SSC & UPSC Exams — ImageFlow',
+    description: 'Complete guide to compress and resize photographs and signatures to 20KB, 50KB, and 100KB for SSC, UPSC, IBPS, and Railway online application forms.',
+    url: 'https://imageflow.in/blog/ssc-upsc-photo-size-compress-guide/',
+    type: 'article',
+    images: [{ url: 'https://imageflow.in/og-image.png', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'How to Compress Photo & Signature to 20KB/50KB for SSC & UPSC Exams — ImageFlow',
+    description: 'Complete guide to compress and resize photographs and signatures to 20KB, 50KB, and 100KB for SSC, UPSC, IBPS, and Railway online application forms.',
+  },
 };
 
 const FEATURES = [

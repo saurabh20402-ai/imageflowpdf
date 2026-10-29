@@ -6,6 +6,18 @@ export const metadata = {
   alternates: {
     canonical: 'https://imageflow.in/blog/convert-heic-to-jpg-iphone-free/',
   },
+  openGraph: {
+    title: 'How to Convert HEIC iPhone Photos to JPG Free (In-Browser) — ImageFlow',
+    description: 'Easily convert Apple HEIC photos to standard JPG format for free. Learn how to do it locally in your browser with zero server uploads to protect your privacy.',
+    url: 'https://imageflow.in/blog/convert-heic-to-jpg-iphone-free/',
+    type: 'article',
+    images: [{ url: 'https://imageflow.in/og-image.png', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'How to Convert HEIC iPhone Photos to JPG Free (In-Browser) — ImageFlow',
+    description: 'Easily convert Apple HEIC photos to standard JPG format for free. Learn how to do it locally in your browser with zero server uploads to protect your privacy.',
+  },
 };
 
 const FEATURES = [

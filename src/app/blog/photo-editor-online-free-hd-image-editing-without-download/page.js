@@ -6,6 +6,18 @@ export const metadata = {
   alternates: {
     canonical: 'https://imageflow.in/blog/photo-editor-online-free-hd-image-editing-without-download/',
   },
+  openGraph: {
+    title: 'Free Photo Editing Tools Online — Resize, Crop & Optimize In-Browser — ImageFlow',
+    description: 'Learn how to edit, crop, resize, rotate, and optimize photos online for free with ImageFlow. High-quality browser tools with no download and no signup.',
+    url: 'https://imageflow.in/blog/photo-editor-online-free-hd-image-editing-without-download/',
+    type: 'article',
+    images: [{ url: 'https://imageflow.in/og-image.png', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Free Photo Editing Tools Online — Resize, Crop & Optimize In-Browser — ImageFlow',
+    description: 'Learn how to edit, crop, resize, rotate, and optimize photos online for free with ImageFlow. High-quality browser tools with no download and no signup.',
+  },
   robots: {
     index: true,
     follow: true,

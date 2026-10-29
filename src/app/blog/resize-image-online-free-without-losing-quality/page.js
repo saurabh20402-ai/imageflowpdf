@@ -6,6 +6,18 @@ export const metadata = {
   alternates: {
     canonical: 'https://imageflow.in/blog/resize-image-online-free-without-losing-quality/',
   },
+  openGraph: {
+    title: 'Resize Image Online Free — Scale Dimensions with High Clarity (20KB, 50KB, 100KB & More) — ImageFlow',
+    description: 'Resize images online free while preserving visual clarity. Easily resize images to 20KB, 50KB, 100KB, or 200KB with our fast, in-browser image resizer.',
+    url: 'https://imageflow.in/blog/resize-image-online-free-without-losing-quality/',
+    type: 'article',
+    images: [{ url: 'https://imageflow.in/og-image.png', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Resize Image Online Free — Scale Dimensions with High Clarity (20KB, 50KB, 100KB & More) — ImageFlow',
+    description: 'Resize images online free while preserving visual clarity. Easily resize images to 20KB, 50KB, 100KB, or 200KB with our fast, in-browser image resizer.',
+  },
 };
 
 const FEATURES = [

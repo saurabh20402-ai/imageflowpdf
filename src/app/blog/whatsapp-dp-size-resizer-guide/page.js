@@ -6,6 +6,18 @@ export const metadata = {
   alternates: {
     canonical: 'https://imageflow.in/blog/whatsapp-dp-size-resizer-guide/',
   },
+  openGraph: {
+    title: 'WhatsApp DP Size Resizer Guide — Fit Full Photo Without Cropping — ImageFlow',
+    description: 'Crop and resize your profile picture to the perfect 640x640 or 1080x1080 square size for WhatsApp DP without losing quality.',
+    url: 'https://imageflow.in/blog/whatsapp-dp-size-resizer-guide/',
+    type: 'article',
+    images: [{ url: 'https://imageflow.in/og-image.png', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'WhatsApp DP Size Resizer Guide — Fit Full Photo Without Cropping — ImageFlow',
+    description: 'Crop and resize your profile picture to the perfect 640x640 or 1080x1080 square size for WhatsApp DP without losing quality.',
+  },
 };
 
 const FEATURES = [

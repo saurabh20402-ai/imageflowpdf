@@ -22,13 +22,6 @@ export const metadata = {
     template: '%s — ImageFlow',
   },
   description: 'Use free online PDF and image tools to merge, split, compress, convert, resize, rotate, watermark, and sign files in your browser with no signup.',
-  keywords: [
-    'pdf tools', 'image tools', 'merge pdf', 'split pdf', 'compress pdf', 'rotate pdf',
-    'watermark pdf', 'sign pdf', 'crop pdf', 'image compressor', 'image converter',
-    'jpg to png', 'png to jpg', 'webp to png', 'webp to jpg', 'remove background',
-    'image upscaler', 'passport photo maker', 'bulk format convert', 'image to pdf',
-    'heic converter', 'resize image online', 'batch resize images',
-  ],
   alternates: {
     canonical: 'https://imageflow.in/',
   },

@@ -6,6 +6,18 @@ export const metadata = {
   alternates: {
     canonical: 'https://imageflow.in/blog/jpg-to-png-converter-online-free/',
   },
+  openGraph: {
+    title: 'JPG to PNG Converter Online Free (Fast, Secure & No Quality Loss) — ImageFlow',
+    description: 'Convert JPG to PNG online free without losing quality. Fast, secure, and easy-to-use image converter. No signup required.',
+    url: 'https://imageflow.in/blog/jpg-to-png-converter-online-free/',
+    type: 'article',
+    images: [{ url: 'https://imageflow.in/og-image.png', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'JPG to PNG Converter Online Free (Fast, Secure & No Quality Loss) — ImageFlow',
+    description: 'Convert JPG to PNG online free without losing quality. Fast, secure, and easy-to-use image converter. No signup required.',
+  },
 };
 
 const FEATURES = [

@@ -1,8 +1,20 @@
 export const metadata = {
-  title: 'Terms & Conditions — ImageFlow',
-  description: 'Terms and conditions for using ImageFlow image tools.',
+  title: 'Terms & Conditions',
+  description: 'Terms and conditions for using ImageFlow online PDF and image processing tools.',
   alternates: {
     canonical: 'https://imageflow.in/terms/',
+  },
+  openGraph: {
+    title: 'Terms & Conditions — ImageFlow',
+    description: 'Terms and conditions for using ImageFlow online PDF and image processing tools.',
+    url: 'https://imageflow.in/terms/',
+    type: 'website',
+    images: [{ url: 'https://imageflow.in/og-image.png', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Terms & Conditions — ImageFlow',
+    description: 'Terms and conditions for using ImageFlow online PDF and image processing tools.',
   },
 };
 

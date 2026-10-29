@@ -6,6 +6,18 @@ export const metadata = {
   alternates: {
     canonical: 'https://imageflow.in/blog/compress-pdf-email-attachment-limit/',
   },
+  openGraph: {
+    title: 'How to Compress a PDF to Fit Gmail & Outlook 25MB Limit — ImageFlow',
+    description: 'Learn how to reduce your PDF file size to under 25MB for Gmail and Outlook email attachments without losing text or image quality.',
+    url: 'https://imageflow.in/blog/compress-pdf-email-attachment-limit/',
+    type: 'article',
+    images: [{ url: 'https://imageflow.in/og-image.png', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'How to Compress a PDF to Fit Gmail & Outlook 25MB Limit — ImageFlow',
+    description: 'Learn how to reduce your PDF file size to under 25MB for Gmail and Outlook email attachments without losing text or image quality.',
+  },
 };
 
 const FEATURES = [

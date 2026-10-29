@@ -6,6 +6,18 @@ export const metadata = {
   alternates: {
     canonical: 'https://imageflow.in/blog/sign-pdf-online-free/',
   },
+  openGraph: {
+    title: 'Sign PDF Online Free (Add Digital Signatures Instantly) — ImageFlow',
+    description: 'Sign PDF online free without creating an account. Add digital signatures to PDF files instantly with secure browser-based processing.',
+    url: 'https://imageflow.in/blog/sign-pdf-online-free/',
+    type: 'article',
+    images: [{ url: 'https://imageflow.in/og-image.png', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Sign PDF Online Free (Add Digital Signatures Instantly) — ImageFlow',
+    description: 'Sign PDF online free without creating an account. Add digital signatures to PDF files instantly with secure browser-based processing.',
+  },
 };
 
 const FEATURES = [

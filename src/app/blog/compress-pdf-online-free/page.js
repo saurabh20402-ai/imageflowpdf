@@ -6,6 +6,18 @@ export const metadata = {
   alternates: {
     canonical: 'https://imageflow.in/blog/compress-pdf-online-free/',
   },
+  openGraph: {
+    title: 'Compress PDF Online Free While Maintaining Readability — ImageFlow',
+    description: 'Compress PDF online free while maintaining document readability. Reduce file size instantly with a fast, secure, and easy-to-use in-browser tool.',
+    url: 'https://imageflow.in/blog/compress-pdf-online-free/',
+    type: 'article',
+    images: [{ url: 'https://imageflow.in/og-image.png', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Compress PDF Online Free While Maintaining Readability — ImageFlow',
+    description: 'Compress PDF online free while maintaining document readability. Reduce file size instantly with a fast, secure, and easy-to-use in-browser tool.',
+  },
 };
 
 const FEATURES = [

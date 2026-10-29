@@ -6,6 +6,18 @@ export const metadata = {
   alternates: {
     canonical: 'https://imageflow.in/blog/aadhaar-card-photo-size-requirements/',
   },
+  openGraph: {
+    title: 'Aadhaar Card Photo Size, Background & Verification Guidelines — ImageFlow',
+    description: 'Verified guidelines for Aadhaar card photo updates, in-person biometric capture rules, and standard 35x45mm photo formatting for Indian identity documents.',
+    url: 'https://imageflow.in/blog/aadhaar-card-photo-size-requirements/',
+    type: 'article',
+    images: [{ url: 'https://imageflow.in/og-image.png', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Aadhaar Card Photo Size, Background & Verification Guidelines — ImageFlow',
+    description: 'Verified guidelines for Aadhaar card photo updates, in-person biometric capture rules, and standard 35x45mm photo formatting for Indian identity documents.',
+  },
   robots: {
     index: true,
     follow: true,

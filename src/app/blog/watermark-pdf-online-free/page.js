@@ -6,6 +6,18 @@ export const metadata = {
   alternates: {
     canonical: 'https://imageflow.in/blog/watermark-pdf-online-free/',
   },
+  openGraph: {
+    title: 'Watermark PDF Online Free (Add Text & Image Watermarks Instantly) — ImageFlow',
+    description: 'Add watermarks to PDF online free. Watermark PDF documents with text or images instantly. Secure browser-based PDF watermarking tool with no signup required.',
+    url: 'https://imageflow.in/blog/watermark-pdf-online-free/',
+    type: 'article',
+    images: [{ url: 'https://imageflow.in/og-image.png', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Watermark PDF Online Free (Add Text & Image Watermarks Instantly) — ImageFlow',
+    description: 'Add watermarks to PDF online free. Watermark PDF documents with text or images instantly. Secure browser-based PDF watermarking tool with no signup required.',
+  },
   robots: {
     index: true,
     follow: true,

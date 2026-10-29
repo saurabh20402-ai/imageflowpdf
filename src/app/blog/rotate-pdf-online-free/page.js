@@ -6,6 +6,18 @@ export const metadata = {
   alternates: {
     canonical: 'https://imageflow.in/blog/rotate-pdf-online-free/',
   },
+  openGraph: {
+    title: 'Rotate PDF Online Free (Rotate PDF Pages Instantly) — ImageFlow',
+    description: 'Rotate PDF online free and rotate PDF pages instantly without losing quality. Fast, secure, and easy-to-use PDF rotation tool.',
+    url: 'https://imageflow.in/blog/rotate-pdf-online-free/',
+    type: 'article',
+    images: [{ url: 'https://imageflow.in/og-image.png', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Rotate PDF Online Free (Rotate PDF Pages Instantly) — ImageFlow',
+    description: 'Rotate PDF online free and rotate PDF pages instantly without losing quality. Fast, secure, and easy-to-use PDF rotation tool.',
+  },
 };
 
 const FEATURES = [

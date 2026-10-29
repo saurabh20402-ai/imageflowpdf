@@ -1,10 +1,22 @@
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Support — ImageFlow',
-  description: 'Get help with ImageFlow tools. Contact The Webrise Company by email.',
+  title: 'Support & FAQs',
+  description: 'Get help with ImageFlow tools. Frequently asked questions and contact details for The Webrise Company.',
   alternates: {
     canonical: 'https://imageflow.in/support/',
+  },
+  openGraph: {
+    title: 'Support & FAQs — ImageFlow',
+    description: 'Get help with ImageFlow tools. Frequently asked questions and contact details for The Webrise Company.',
+    url: 'https://imageflow.in/support/',
+    type: 'website',
+    images: [{ url: 'https://imageflow.in/og-image.png', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Support & FAQs — ImageFlow',
+    description: 'Get help with ImageFlow tools. Frequently asked questions and contact details for The Webrise Company.',
   },
 };
 

@@ -6,6 +6,18 @@ export const metadata = {
   alternates: {
     canonical: 'https://imageflow.in/blog/merge-pdf-online-free/',
   },
+  openGraph: {
+    title: 'Merge PDF Online Free (Fast, Secure & Easy) — ImageFlow',
+    description: 'Merge PDF online free and combine multiple PDF files into one instantly. Fast, secure, and easy-to-use PDF merger tool with no signup required.',
+    url: 'https://imageflow.in/blog/merge-pdf-online-free/',
+    type: 'article',
+    images: [{ url: 'https://imageflow.in/og-image.png', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Merge PDF Online Free (Fast, Secure & Easy) — ImageFlow',
+    description: 'Merge PDF online free and combine multiple PDF files into one instantly. Fast, secure, and easy-to-use PDF merger tool with no signup required.',
+  },
 };
 
 const FEATURES = [

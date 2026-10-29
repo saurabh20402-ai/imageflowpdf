@@ -1,8 +1,20 @@
 export const metadata = {
-  title: 'Security — ImageFlow',
-  description: 'How ImageFlow keeps your images and data secure.',
+  title: 'Security Standards',
+  description: 'How ImageFlow keeps your files and data secure with client-side browser processing.',
   alternates: {
     canonical: 'https://imageflow.in/security/',
+  },
+  openGraph: {
+    title: 'Security Standards — ImageFlow',
+    description: 'How ImageFlow keeps your files and data secure with client-side browser processing.',
+    url: 'https://imageflow.in/security/',
+    type: 'website',
+    images: [{ url: 'https://imageflow.in/og-image.png', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Security Standards — ImageFlow',
+    description: 'How ImageFlow keeps your files and data secure with client-side browser processing.',
   },
 };
 

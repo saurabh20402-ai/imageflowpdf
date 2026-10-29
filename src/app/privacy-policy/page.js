@@ -1,10 +1,22 @@
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Privacy Policy — ImageFlow',
+  title: 'Privacy Policy',
   description: 'Latest ImageFlow privacy policy with updated data handling, security, and contact details.',
   alternates: {
     canonical: 'https://imageflow.in/privacy-policy/',
+  },
+  openGraph: {
+    title: 'Privacy Policy — ImageFlow',
+    description: 'Latest ImageFlow privacy policy with updated data handling, security, and contact details.',
+    url: 'https://imageflow.in/privacy-policy/',
+    type: 'website',
+    images: [{ url: 'https://imageflow.in/og-image.png', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Privacy Policy — ImageFlow',
+    description: 'Latest ImageFlow privacy policy with updated data handling, security, and contact details.',
   },
 };
 

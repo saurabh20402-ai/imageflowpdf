@@ -1,8 +1,20 @@
 export const metadata = {
-  title: 'Cookie Policy — ImageFlow',
-  description: 'How ImageFlow uses cookies and browser storage.',
+  title: 'Cookie Policy',
+  description: 'Learn how ImageFlow uses essential cookies, local storage, and advertising cookies to provide free online tools.',
   alternates: {
     canonical: 'https://imageflow.in/cookies/',
+  },
+  openGraph: {
+    title: 'Cookie Policy — ImageFlow',
+    description: 'Learn how ImageFlow uses essential cookies, local storage, and advertising cookies to provide free online tools.',
+    url: 'https://imageflow.in/cookies/',
+    type: 'website',
+    images: [{ url: 'https://imageflow.in/og-image.png', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Cookie Policy — ImageFlow',
+    description: 'Learn how ImageFlow uses essential cookies, local storage, and advertising cookies to provide free online tools.',
   },
 };
 

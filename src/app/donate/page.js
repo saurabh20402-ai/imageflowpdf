@@ -4,11 +4,22 @@ import CopyTextButton from '@/components/CopyTextButton';
 import InstagramGlyph from '@/components/icons/InstagramGlyph';
 
 export const metadata = {
-  title: 'Donate — Support ImageFlow',
-  description:
-    'Support The Webrise Company and ImageFlow via UPI. Simple, private donations.',
+  title: 'Donate & Support',
+  description: 'Support The Webrise Company and ImageFlow via UPI. Simple, private donations.',
   alternates: {
     canonical: 'https://imageflow.in/donate/',
+  },
+  openGraph: {
+    title: 'Donate & Support — ImageFlow',
+    description: 'Support The Webrise Company and ImageFlow via UPI. Simple, private donations.',
+    url: 'https://imageflow.in/donate/',
+    type: 'website',
+    images: [{ url: 'https://imageflow.in/og-image.png', width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Donate & Support — ImageFlow',
+    description: 'Support The Webrise Company and ImageFlow via UPI. Simple, private donations.',
   },
 };
 

@@ -31,10 +31,10 @@ const FOOTER_LINKS = {
   'Guides & Learn': [
     { label: 'Tutorials & Guides', href: '/tutorials/' },
     { label: 'JPG to PNG Guide', href: '/blog/jpg-to-png-converter-online-free/' },
-    { label: 'Image Compression 101', href: '/blog/compress-pdf-online-free/' },
+    { label: 'Compress PDF Guide', href: '/blog/compress-pdf-online-free/' },
     { label: 'Split PDF Guide', href: '/blog/split-pdf-online-free/' },
     { label: 'Photo Editor Online', href: '/blog/photo-editor-online-free-hd-image-editing-without-download/' },
-    { label: 'Resize Without Losing Quality', href: '/blog/resize-image-online-free-without-losing-quality/' },
+    { label: 'Resize Image Guide', href: '/blog/resize-image-online-free-without-losing-quality/' },
     { label: 'Aadhaar Photo Requirements', href: '/blog/aadhaar-card-photo-size-requirements/' },
   ],
   'Company & Legal': [
