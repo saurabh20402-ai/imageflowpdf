@@ -96,9 +96,9 @@ const TOOL_META = {
     keywords: 'resize image online free, change image size, image resizer free, resize photo to exact pixels, resize for social media',
   },
   'photo-editor': {
-    title: 'Photo Editor Online Free — Edit Photos Without Download',
-    description: 'Edit photos online with quick access to crop, resize, compress, rotate, add filters, remove background, and convert — all in one place. HD quality. No download, no signup, no watermark. Free browser tool.',
-    keywords: 'photo editor online free, edit photos online, hd image editing no download, online photo editor free',
+    title: 'Photo Editor Online Free — Browser Photo Editing Suite',
+    description: 'Edit photos online with quick access to resize, crop, compress, and rotate tools in one convenient hub. Fast in-browser processing with no download, no signup, and zero file uploads.',
+    keywords: 'photo editor online free, edit photos online, online image tools, resize crop compress rotate',
   },
   'crop-image': {
     title: 'Crop Image Online Free — Custom & Preset Aspect Ratios',

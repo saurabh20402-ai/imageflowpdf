@@ -1,8 +1,8 @@
 import '../blog-post.css';
 
 export const metadata = {
-  title: 'Compress PDF Online Free Without Losing Quality (Fast, Secure & Easy)',
-  description: 'Compress PDF online free without losing quality. Reduce file size instantly with a fast, secure, and easy-to-use tool. No signup required.',
+  title: 'Compress PDF Online Free While Maintaining Readability',
+  description: 'Compress PDF online free while maintaining document readability. Reduce file size instantly with a fast, secure, and easy-to-use in-browser tool.',
   alternates: {
     canonical: 'https://imageflow.in/blog/compress-pdf-online-free/',
   },
@@ -92,7 +92,7 @@ const FAQs = [
 const schemaMarkup = {
   '@context': 'https://schema.org',
   '@type': 'Article',
-  headline: 'Compress PDF Online Free Without Losing Quality (Fast, Secure & Easy)',
+  headline: 'Compress PDF Online Free While Maintaining Readability',
   description: 'Learn how to compress PDF files online for free using ImageFlow. Reduce file size while maintaining quality.',
   image: 'https://imageflow.in/og-image.png',
   author: {
@@ -173,7 +173,7 @@ export default function CompressPdfBlog() {
             <div className="blog-hero-content">
               <span className="blog-badge">🚀 100% Free · No Signup Required</span>
               <div>
-                <h1>Compress PDF Online Free Without Losing Quality</h1>
+                <h1>Compress PDF Online Free While Maintaining Readability</h1>
                 <p>Reduce PDF file size instantly with a fast and secure browser tool. No downloads, no signup, and no hidden steps — just reliable compression for clean, readable documents that are easy to share and store.</p>
               </div>
               <div className="blog-cta-buttons">

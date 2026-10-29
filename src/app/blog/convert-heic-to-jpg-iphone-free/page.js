@@ -1,15 +1,15 @@
 import '../blog-post.css';
 
 export const metadata = {
-  title: 'How to Convert HEIC iPhone Photos to JPG for Free (Offline)',
-  description: 'Easily convert Apple HEIC photos to standard JPG format for free. Learn how to do it offline in your browser to protect your privacy.',
+  title: 'How to Convert HEIC iPhone Photos to JPG Free (In-Browser)',
+  description: 'Easily convert Apple HEIC photos to standard JPG format for free. Learn how to do it locally in your browser with zero server uploads to protect your privacy.',
   alternates: {
     canonical: 'https://imageflow.in/blog/convert-heic-to-jpg-iphone-free/',
   },
 };
 
 const FEATURES = [
-  { title: '100% Offline & Private', text: 'Files are processed locally in your browser. No server uploads.', bg: '#eef2ff' },
+  { title: 'In-Browser & Private', text: 'Files are processed locally in your browser. No server uploads.', bg: '#eef2ff' },
   { title: 'Keep Original Quality', text: 'Convert without losing details or compression artifacts.', bg: '#f5f3ff' },
   { title: 'Batch Conversion', text: 'Convert multiple HEIC files at once and download as a ZIP.', bg: '#ecfdf5' },
 ];
@@ -51,8 +51,8 @@ const FAQs = [
 const schemaMarkup = {
   '@context': 'https://schema.org',
   '@type': 'Article',
-  headline: 'How to Convert HEIC iPhone Photos to JPG for Free (Offline)',
-  description: 'Convert iPhone HEIC photos to JPEG format for free, offline, and privately.',
+  headline: 'How to Convert HEIC iPhone Photos to JPG Free (In-Browser)',
+  description: 'Convert iPhone HEIC photos to JPEG format for free, in-browser, and privately.',
   image: 'https://imageflow.in/og-image.png',
   author: {
     '@type': 'Organization',
@@ -69,7 +69,7 @@ const schemaMarkup = {
   },
   datePublished: '2026-06-30',
   dateModified: '2026-06-30',
-  articleBody: 'Learn how to convert HEIC photos from your iPhone to standard JPG format. Free, instant, and completely offline in your browser.',
+  articleBody: 'Learn how to convert HEIC photos from your iPhone to standard JPG format. Free, instant, and completely client-side in your browser.',
 };
 
 const faqSchema = {
@@ -108,7 +108,7 @@ export default function HeicBlog() {
             <div className="blog-hero-content">
               <span className="blog-badge">📱 iPhone Photo Compatibility</span>
               <h1>How to Convert HEIC iPhone Photos to JPG for Free</h1>
-              <p>Solve the "Unsupported File Format" error on web portals. Convert Apple HEIC images to standard JPG format instantly, securely, and completely offline.</p>
+              <p>Solve the "Unsupported File Format" error on web portals. Convert Apple HEIC images to standard JPG format instantly, securely, and completely in your browser without server uploads.</p>
               <div className="blog-cta-buttons">
                 <a href="/tools/heic-converter/" className="btn-primary">Convert HEIC Now</a>
                 <a href="#how-to-convert" className="btn-secondary">View Steps</a>
@@ -130,7 +130,7 @@ export default function HeicBlog() {
           </section>
 
           <section id="how-to-convert" className="blog-section">
-            <h2>Step-by-Step: Convert HEIC to JPG Offline</h2>
+            <h2>Step-by-Step: Convert HEIC to JPG In-Browser</h2>
             <div className="steps-grid">
               {STEPS.map((step, idx) => (
                 <div key={idx} className="step-item">

@@ -90,7 +90,7 @@ export default function Hero() {
           {[
             { icon: Shield, text: 'Local Processing' },
             { icon: Zap, text: 'Instant Processing' },
-            { icon: Globe, text: 'Works Offline' },
+            { icon: Globe, text: 'No Account Required' },
           ].map(({ icon: Icon, text }) => (
             <div key={text} style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '13px', color: 'var(--muted)' }}>
               <Icon size={14} style={{ color: 'var(--primary)' }} />

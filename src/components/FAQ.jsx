@@ -6,11 +6,11 @@ import { Plus, Minus } from 'lucide-react';
 
 const FAQS = [
   { q: 'Is ImageFlow really free?', a: 'Yes, completely free. No sign-up, no hidden fees. All tools work without any payment.' },
-  { q: 'Are my images safe?', a: 'Your images never leave your device. All processing happens directly in your browser using client-side technology. We don\'t upload, store, or have access to your files.' },
+  { q: 'Are my files safe and private?', a: 'For all standard PDF and image tools, files never leave your device and process entirely in your browser using client-side technology. The optional Thumbnail Creator sends user-entered text prompts to AI APIs for idea and background generation, while canvas rendering remains local.' },
   { q: 'What image formats are supported?', a: 'We support JPEG, PNG, WebP, SVG, HEIC (iPhone photos), and more. You can convert between any supported format.' },
   { q: 'Is there a file size limit?', a: 'There\'s no hard limit, but very large files (50MB+) may process slower on older devices since everything runs in your browser.' },
   { q: 'Can I process multiple images at once?', a: 'Yes! Tools like Compress, Resize, and Collage support batch processing. Multiple files are downloaded as a ZIP archive.' },
-  { q: 'Does it work offline?', a: 'Most tools work offline after the initial page load because processing runs locally in your browser using modern WebAssembly and HTML5 Canvas technology.' },
+  { q: 'Do files get uploaded to your servers?', a: 'No. File processing for standard image and PDF tools executes entirely client-side using WebAssembly and HTML5 Canvas inside your browser. No files are stored or uploaded to our servers.' },
 ];
 
 export default function FAQ() {

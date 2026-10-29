@@ -273,8 +273,8 @@ export const TOOL_SEO_CONTENT = {
     },
     "faqs": [
       {
-        "q": "Does this tool work entirely offline?",
-        "a": "Once the page is loaded in your browser, the actual conversion process works entirely offline without sending any data."
+        "q": "Do I need an active internet connection to process files?",
+        "a": "An internet connection is required to load the page. Once loaded, file processing executes entirely in your browser without transmitting your files to any external server."
       },
       {
         "q": "What happens to the transparent parts of my WebP?",
@@ -465,7 +465,7 @@ export const TOOL_SEO_CONTENT = {
   "convert-format": {
     "title": "Universal Image Converter — Fast & Private",
     "subtitle": "Convert between all major image formats instantly in your browser. **secure and client-side.**",
-    "introduction": "Experience the ultimate flexibility with the ImageFlow Universal Image Converter, your all-in-one solution for format transformations. Whether you need to switch between JPG, PNG, WebP, SVG, or HEIC, this powerful tool handles it all directly within your web browser. The defining feature of our platform is our unwavering commitment to your privacy and data security. Unlike conventional online converters that force you to upload your personal files to vulnerable remote servers, our application leverages advanced browser technologies to perform all conversions locally on your own device. This zero-upload architecture ensures that your sensitive images are never exposed to the internet, providing a secure and client-side, offline-like experience once the page loads. Ideal for creative professionals, developers, and everyday users, this tool effortlessly manages batch processing, allowing you to transform massive image libraries in mere seconds. Enjoy a flawlessly fast, entirely free, and uncompromisingly secure workflow that adapts to whatever format requirements your current project demands.",
+    "introduction": "Experience the ultimate flexibility with the ImageFlow Universal Image Converter, your all-in-one solution for format transformations. Whether you need to switch between JPG, PNG, WebP, SVG, or HEIC, this powerful tool handles it all directly within your web browser. The defining feature of our platform is our unwavering commitment to your privacy and data security. Unlike conventional online converters that force you to upload your personal files to vulnerable remote servers, our application leverages advanced browser technologies to perform all conversions locally on your own device. This zero-upload architecture ensures that your sensitive images are never exposed to the internet, providing secure and client-side processing once the page loads. Ideal for creative professionals, developers, and everyday users, this tool effortlessly manages batch processing, allowing you to transform massive image libraries in mere seconds. Enjoy a flawlessly fast, entirely free, and uncompromisingly secure workflow that adapts to whatever format requirements your current project demands.",
     "useCases": {
       "title": "Common Use Cases for Universal Image Conversion",
       "items": [
@@ -585,7 +585,7 @@ export const TOOL_SEO_CONTENT = {
   "split-pdf": {
     "title": "Split PDF Pages Easily — Free & Secure",
     "subtitle": "Extract pages and divide PDFs instantly. **secure and client-side.**",
-    "introduction": "Managing large, unwieldy PDF files can be a frustrating and time-consuming task, especially when you only need a few specific pages. The ImageFlow Split PDF tool is designed to solve this problem by allowing you to easily extract, divide, or separate your documents exactly how you want them. Whether you need to pull a single chapter from a massive digital textbook, extract specific financial statements for your accountant, or divide a scanned batch of individual contracts, our tool makes it incredibly simple. Security is at the core of the ImageFlow experience. All document splitting happens entirely locally within your web browser. There is absolutely no need to upload your sensitive files to external cloud servers, guaranteeing secure and client-side processing. Your confidential data, whether it comprises legal agreements, proprietary business plans, or personal records, remains safely on your device at all times. Since everything is handled offline within the browser environment, you will also benefit from fast and responsive processing speeds, regardless of your internet connection quality. The user-friendly interface lets you preview pages and precisely select the ranges you wish to extract. Simplify your digital document management and improve your daily productivity with our secure, upload-free PDF splitter. Enjoy the perfect blend of complete privacy, blazing speed, and professional-grade document manipulation without ever compromising your sensitive information.",
+    "introduction": "Managing large, unwieldy PDF files can be a frustrating and time-consuming task, especially when you only need a few specific pages. The ImageFlow Split PDF tool is designed to solve this problem by allowing you to easily extract, divide, or separate your documents exactly how you want them. Whether you need to pull a single chapter from a massive digital textbook, extract specific financial statements for your accountant, or divide a scanned batch of individual contracts, our tool makes it incredibly simple. Security is at the core of the ImageFlow experience. All document splitting happens entirely locally within your web browser. There is absolutely no need to upload your sensitive files to external cloud servers, guaranteeing secure and client-side processing. Your confidential data, whether it comprises legal agreements, proprietary business plans, or personal records, remains safely on your device at all times. Since everything is handled locally within the browser session, you will also benefit from fast and responsive processing speeds, regardless of your internet connection quality. The user-friendly interface lets you preview pages and precisely select the ranges you wish to extract. Simplify your digital document management and improve your daily productivity with our secure, upload-free PDF splitter. Enjoy the perfect blend of complete privacy, blazing speed, and reliable document manipulation without ever compromising your sensitive information.",
     "useCases": {
       "title": "Common Use Cases for Splitting PDFs",
       "items": [
@@ -1475,47 +1475,47 @@ export const TOOL_SEO_CONTENT = {
     ]
   },
   "photo-editor": {
-    "title": "Secure Online Photo Editor — Enhance Images Instantly",
-    "subtitle": "Edit, crop, and filter photos locally. **secure and client-side.**",
-    "introduction": "Enhance, retouch, and transform your digital photos instantly with our comprehensive in-browser Photo Editor. Designed for both beginners and experienced creators, this powerful tool brings professional-grade editing capabilities directly to your web browser without the need for heavy software installations or expensive subscriptions. Best of all, our photo editor operates entirely locally on your device. There are zero file uploads to external servers, meaning your personal memories, confidential business graphics, and creative projects remain strictly private and secure and client-side. You can confidently edit sensitive images knowing that no data ever leaves your computer. Our intuitive interface offers a wide array of features including cropping, color correction, brightness and contrast adjustments, saturation tweaking, and customizable filters to give your pictures that perfect aesthetic touch. Whether you are fine-tuning a portrait, enhancing landscape photography, or preparing engaging graphics for your social media channels, you have all the essential tools at your fingertips. The local processing engine ensures lightning-fast performance, allowing you to see your edits in real-time without annoying lag or loading screens. Save your edited masterworks in high quality in formats like JPG or PNG instantly. Say goodbye to intrusive watermarks, hidden fees, and privacy concerns associated with cloud editors. Embrace a seamless, secure, and highly efficient workflow that empowers you to unleash your creativity while maintaining absolute control over your digital files. Start using our free, secure photo editor today and elevate your visual content effortlessly.",
+    "title": "Online Photo Editing Hub — Quick Image Tools",
+    "subtitle": "Resize, crop, compress, and rotate photos locally. **Secure and client-side.**",
+    "introduction": "Organize and optimize your digital photos quickly with ImageFlow's in-browser photo editing tools. This quick-access hub connects you directly to dedicated browser tools for resizing, cropping, compressing, rotating, and converting images without heavy software installations. Best of all, standard image processing runs entirely client-side in your web browser with zero file uploads to external servers. Your personal photos, business graphics, and creative assets remain private on your own device. Access the right tool for the job instantly and export high-quality results in popular formats like JPG, PNG, and WebP without watermarks or subscriptions.",
     "useCases": {
       "title": "Common Use Cases for Photo Editing",
       "items": [
         {
-          "icon": "Palette",
-          "title": "Color Correction",
-          "description": "Adjust brightness, contrast, and saturation for the perfect look."
+          "icon": "Maximize",
+          "title": "Resize & Dimensions",
+          "description": "Scale photos to exact dimensions or social media presets."
         },
         {
-          "icon": "Camera",
-          "title": "Portrait Retouching",
-          "description": "Apply filters and fine-tune details on your favorite portraits."
+          "icon": "Crop",
+          "title": "Crop & Rotate",
+          "description": "Trim margins and straighten image orientation cleanly."
         },
         {
-          "icon": "Image",
-          "title": "Marketing Graphics",
-          "description": "Prepare beautiful visual content for your business campaigns."
+          "icon": "FileDown",
+          "title": "Compress & Convert",
+          "description": "Reduce file sizes and switch between JPG, PNG, and WebP."
         }
       ]
     },
     "steps": {
-      "title": "How to Edit a Photo in 4 Steps",
+      "title": "How to Use the Photo Editing Suite",
       "items": [
         {
-          "title": "Upload",
-          "description": "Drag and drop your image into the secure editor."
+          "title": "Choose Tool",
+          "description": "Select Resize, Crop, Compress, or Rotate from the editing hub."
         },
         {
-          "title": "Adjust Settings",
-          "description": "Use the sliders to adjust brightness, contrast, and saturation."
+          "title": "Load File",
+          "description": "Open your image directly in your browser without uploading."
         },
         {
-          "title": "Apply Filters",
-          "description": "Choose from a variety of creative filters to enhance the mood."
+          "title": "Apply Changes",
+          "description": "Customize dimensions, quality, or rotation angles in real time."
         },
         {
-          "title": "Save",
-          "description": "Download your beautifully edited photo directly to your device."
+          "title": "Download Output",
+          "description": "Save your optimized image directly to your local drive."
         }
       ]
     },
@@ -1651,9 +1651,9 @@ export const TOOL_SEO_CONTENT = {
     ]
   },
   "image-upscaler": {
-    "title": "AI Image Upscaler — Enhance Resolution Securely",
-    "subtitle": "Enlarge images without losing quality. **secure and client-side.**",
-    "introduction": "Breathe new life into your low-resolution photos and grainy graphics with our state-of-the-art Image Upscaler. Using advanced local processing algorithms, this tool intelligently enlarges your images while preserving crucial details, enhancing sharpness, and minimizing unwanted noise. Perfect for photographers recovering old digital archives, designers preparing print-ready materials, and anyone needing crisp, high-definition visuals from small source files. What makes our upscaler truly exceptional is our unwavering dedication to your privacy and data security. The entire upscaling process runs directly in your web browser. There are zero file uploads, no cloud processing, and absolutely no data transmission to external servers. Your valuable photos, sensitive documents, and proprietary graphics remain secure and client-side on your own device throughout the entire enhancement process. You can confidently enlarge private family portraits, confidential business charts, and exclusive artwork without fearing data breaches or unauthorized access. By leveraging your device's computational power, our tool delivers fast and responsive, high-quality results without the frustrating wait times associated with uploading large files over the internet. Increase your image dimensions by 2x, 4x, or more while maintaining stunning clarity and vibrant colors. Download your newly upscaled, high-resolution images instantly in popular formats like JPG and PNG. Upgrade your visual assets securely, efficiently, and for free with the most reliable browser-based image upscaler available online today. Don't let low resolution hold your projects back—enhance your images with complete privacy and zero compromises.",
+    "title": "Browser Image Upscaler — Enlarge Images In-Browser",
+    "subtitle": "Enlarge image dimensions using high-quality browser scaling. **Secure and client-side.**",
+    "introduction": "Scale up your photos and graphics directly in your browser with the ImageFlow Image Upscaler. Using high-quality client-side canvas interpolation, this tool enlarges your image dimensions while keeping processing fast and entirely private. Perfect for preparing graphics for larger displays, adapting assets for print layouts, and scaling small icons without installing desktop software. What makes our upscaler truly secure is our dedication to local processing. The entire scaling operation runs directly in your web browser. There are zero file uploads, no cloud processing, and absolutely no data transmission to external servers. Your valuable photos, sensitive documents, and proprietary graphics remain client-side on your own device throughout the entire process. Increase your image dimensions by 2x or 4x quickly and download your newly scaled images in popular formats like JPG and PNG without delays.",
     "useCases": {
       "title": "Common Use Cases for Image Upscaling",
       "items": [
@@ -1687,7 +1687,7 @@ export const TOOL_SEO_CONTENT = {
         },
         {
           "title": "Process Locally",
-          "description": "Our in-browser AI will enhance the image without uploading it."
+          "description": "Our in-browser canvas engine scales the image dimensions without uploading it."
         },
         {
           "title": "Save HD Image",
@@ -1697,8 +1697,8 @@ export const TOOL_SEO_CONTENT = {
     },
     "faqs": [
       {
-        "q": "Will upscaling make my image blurry?",
-        "a": "No, our intelligent AI adds realistic detail and sharpens edges, preventing the blur normally caused by enlarging."
+        "q": "How does this upscaler enlarge images?",
+        "a": "The tool uses high-quality bicubic canvas interpolation in your browser to scale image dimensions by 2x or 4x without sending your file to any server. For best results, start with clean source images."
       },
       {
         "q": "Is the upscaler completely free to use?",
@@ -1822,7 +1822,7 @@ export const TOOL_SEO_CONTENT = {
       },
       {
         "q": "Is my unreleased video content safe?",
-        "a": "Yes! Because our tool works offline in your browser, your unreleased frames and assets remain entirely private."
+        "a": "Yes. Your image assets and canvas layers are processed locally in your browser and are never uploaded to our servers. Only optional text prompts entered for AI thumbnail ideas are sent to AI APIs."
       },
       {
         "q": "Can I add custom fonts?",
