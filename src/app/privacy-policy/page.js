@@ -44,7 +44,8 @@ const policySections = [
     ],
     bullets: [
       'Usage & Analytics: Aggregated traffic trends, pages visited, tools used, device/browser specifications, and performance telemetry collected via Google Analytics and Ahrefs Web Analytics.',
-      'Optional AI Prompt Input: When you explicitly use the optional AI Generator tab in the Thumbnail Creator tool, the text topic you enter is sent to our API to generate layout suggestions via Google Gemini.',
+      'Optional AI Prompt Input & Image Generation: When you explicitly use the optional AI Generator tab in the Thumbnail Creator tool, text prompts you type are sent via POST to /api/generate-thumbnail (routed to Google Gemini API for title and concept ideas) and via GET to /api/proxy-image (routed to Pollinations at image.pollinations.ai for background image generation). To prevent abuse, your IP address is hashed using SHA-256 and stored in Upstash Redis for rate limiting (maximum 5 requests per hour), expiring automatically after 1 hour.',
+      'Client-Side WebAssembly Processing: For PDF tools, your browser downloads client-side WebAssembly (.wasm) modules (via pdfjs-dist and pdf-lib). These modules run entirely within your local browser sandbox without transmitting your documents to our servers.',
       'Direct Contact: Any information you voluntarily provide if you email us for support or feedback.',
       'Local Browser Storage: Client-side preferences stored only on your own device (such as light/dark mode selection and local canvas state).',
     ],
@@ -106,9 +107,10 @@ const policySections = [
     title: '6. How long do we keep your information?',
     content: [
       'We keep information only as long as needed to support the purpose for which it was collected, unless a longer retention period is required by law.',
+      'Temporary IP rate limiting keys in Upstash Redis expire automatically after a 1-hour rolling window.',
       'Information stored locally in your browser is cleared automatically when it is no longer needed.',
     ],
-    note: 'No purpose in this policy requires us to keep your information longer than 8 hours in local storage.',
+    note: 'No purpose in this policy requires us to keep your information longer than 1 hour in Redis or 8 hours in local storage.',
   },
   {
     id: 'infosafe',
@@ -172,7 +174,7 @@ export default function PrivacyPolicyPage() {
                 Privacy Policy
               </h1>
               <p style={{ fontSize: 16, color: 'var(--muted)', lineHeight: 1.8, maxWidth: 720 }}>
-                Last updated: May 07, 2026 · This notice explains how ImageFlow collects, uses, and protects your information when you use our services at ImageFlow.in.
+                Last updated: October 29, 2026 · This notice explains how ImageFlow collects, uses, and protects your information when you use our services at ImageFlow.in.
               </p>
             </div>
 
