@@ -1,4 +1,5 @@
 import { TOOLS } from '@/lib/tools-registry';
+import { notFound } from 'next/navigation';
 import ToolPageClient from '@/components/ToolPageClient';
 import { TOOL_SEO_CONTENT } from '@/data/tool-seo-content';
 
@@ -195,6 +196,9 @@ const TOOL_META = {
 };
 
 
+// Return 404 for slugs not in generateStaticParams (unpublished or unknown tools)
+export const dynamicParams = false;
+
 // Generate static paths for all tools
 export function generateStaticParams() {
   return TOOLS.map((tool) => ({
@@ -208,7 +212,7 @@ export async function generateMetadata({ params }) {
   const tool = TOOLS.find(t => t.slug === slug);
 
   if (!tool) {
-    return { title: 'Tool Not Found — ImageFlow' };
+    notFound();
   }
 
   const custom = TOOL_META[slug];
@@ -260,7 +264,7 @@ export default async function ToolPage({ params }) {
   const tool = TOOLS.find(t => t.slug === slug);
 
   if (!tool) {
-    return <ToolPageClient slug={slug} />;
+    notFound();
   }
 
   const custom = TOOL_META[slug];
