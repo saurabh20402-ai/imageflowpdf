@@ -11,6 +11,57 @@ import { toast } from 'sonner';
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
 const MIN = 36;
 
+const getVisiblePageBox = (page) => {
+  const media = page.getMediaBox();
+  const crop = page.getCropBox();
+  const x = Math.max(media.x, crop.x);
+  const y = Math.max(media.y, crop.y);
+  const right = Math.min(media.x + media.width, crop.x + crop.width);
+  const top = Math.min(media.y + media.height, crop.y + crop.height);
+  if (right <= x || top <= y) throw new Error('This page has invalid page bounds.');
+  return { x, y, width: right - x, height: top - y };
+};
+
+const selectionToPdfBox = (page, box, viewport) => {
+  const visible = getVisiblePageBox(page);
+  const u0 = Math.max(0, Math.min(1, box.x / viewport.w));
+  const u1 = Math.max(u0, Math.min(1, (box.x + box.w) / viewport.w));
+  const v0 = Math.max(0, Math.min(1, box.y / viewport.h));
+  const v1 = Math.max(v0, Math.min(1, (box.y + box.h) / viewport.h));
+  const rotation = ((page.getRotation().angle % 360) + 360) % 360;
+  const { x, y, width, height } = visible;
+  let left;
+  let bottom;
+  let right;
+  let top;
+
+  if (rotation === 0) {
+    left = x + u0 * width;
+    right = x + u1 * width;
+    bottom = y + (1 - v1) * height;
+    top = y + (1 - v0) * height;
+  } else if (rotation === 90) {
+    left = x + v0 * width;
+    right = x + v1 * width;
+    bottom = y + u0 * height;
+    top = y + u1 * height;
+  } else if (rotation === 180) {
+    left = x + (1 - u1) * width;
+    right = x + (1 - u0) * width;
+    bottom = y + v0 * height;
+    top = y + v1 * height;
+  } else if (rotation === 270) {
+    left = x + (1 - v1) * width;
+    right = x + (1 - v0) * width;
+    bottom = y + (1 - u1) * height;
+    top = y + (1 - u0) * height;
+  } else {
+    throw new Error(`Page rotation ${rotation}° is not supported.`);
+  }
+
+  return { x: left, y: bottom, width: right - left, height: top - bottom };
+};
+
 export default function CropPdfTool() {
   const [file, setFile] = useState(null);
   const [pdfBytes, setPdfBytes] = useState(null);
@@ -176,20 +227,12 @@ export default function CropPdfTool() {
     try {
       const doc = await PDFDocument.load(pdfBytes);
       const pages = doc.getPages();
-      const pX = box.x / pageSize.w;
-      const pY = box.y / pageSize.h;
-      const pW = box.w / pageSize.w;
-      const pH = box.h / pageSize.h;
       const targetPages = applyMode === 'current' ? [pages[pageNumber - 1]].filter(Boolean) : pages;
       targetPages.forEach((p) => {
-        const { width, height } = p.getSize();
-        const x = width * pX;
-        const w = width * pW;
-        const h = height * pH;
-        const y = height - (height * pY) - h;
-        p.setCropBox(x, y, w, h);
-        p.setMediaBox(x, y, w, h);
-        if (p.setTrimBox) p.setTrimBox(x, y, w, h);
+        const crop = selectionToPdfBox(p, box, pageSize);
+        p.setCropBox(crop.x, crop.y, crop.width, crop.height);
+        p.setMediaBox(crop.x, crop.y, crop.width, crop.height);
+        if (p.setTrimBox) p.setTrimBox(crop.x, crop.y, crop.width, crop.height);
       });
       const blob = new Blob([await doc.save()], { type: 'application/pdf' });
       if (result?.url) URL.revokeObjectURL(result.url);
@@ -270,11 +313,14 @@ export default function CropPdfTool() {
               </div>
               <aside style={{ flex: '0 0 280px', width: 280, maxWidth: '100%', borderLeft: '1px solid var(--hairline-soft)', paddingLeft: 12 }}>
                 <p style={{ fontSize: 12, fontWeight: 700, marginBottom: 8 }}>Crop Settings</p>
+                <p style={{ fontSize: 12, lineHeight: 1.45, marginBottom: 12, color: 'var(--muted)' }}>
+                  Cropping changes the visible page area. Content outside the crop may remain in the PDF; use a redaction tool to remove sensitive information.
+                </p>
                 <label style={{ display: 'block', fontSize: 13, marginBottom: 8 }}><input type="radio" checked={applyMode === 'all'} onChange={() => setApplyMode('all')} /> All pages</label>
                 <label style={{ display: 'block', fontSize: 13, marginBottom: 12 }}><input type="radio" checked={applyMode === 'current'} onChange={() => setApplyMode('current')} /> Current page</label>
                 <button className="btn-secondary" onClick={() => initBox(pageSize.w, pageSize.h)} style={{ width: '100%', marginBottom: 10 }}>Reset selection</button>
                 {!result ? (
-                  <button className="btn-primary" style={{ width: '100%' }} onClick={processCrop} disabled={processing}>
+                  <button className="btn-primary" style={{ width: '100%' }} onClick={processCrop} disabled={processing || !pageSize.w || !pageSize.h || !numPages}>
                     {processing ? <Loader2 size={16} className="animate-spin" /> : <Crop size={16} />}
                     {processing ? 'Cropping...' : 'Crop PDF'}
                   </button>
